@@ -31,16 +31,16 @@ git: [vite-a-bit](https://github.com/DeepJavaScript/vite-a-bit)
 ## git 記錄型式
 
 分支: 每一個人一個分支，每一個都要寫 README.md
-tag: `聚會日期.英文名字.版號` (ex: `20201113.chris.2`)
+tag: `聚會日期.英文名字.專案資料夾名稱.版號` (ex: `20201113.chris.2`)
 資料夾: 做了幾個練習 project
 
 不能上傳到 main 分支
 
 tags
 
-- `20201113.chris.1`
-- `20201113.chris.2`
-- `20201126.chris.1`
+- `20201113.chris.t2.1`
+- `20201113.chris.t2_t3.2` 一次做兩個專案
+- `20201126.chris.t4.1`
 
 ## 進度
 
@@ -50,6 +50,7 @@ tags
 
 1. 預備: 開你的分支上傳到 repo
 1. webpack 打包
+    - 原生寫法，選一個渲染出來 + [guide 看到 Asset Management](https://webpack.js.org/guides/output-management/)
 1. webpack, vue-loader, with eslint/prettier
 1. rollupjs 打包 (反思 webpack), with eslint/prettier
 1. vite,
