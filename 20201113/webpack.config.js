@@ -10,7 +10,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "yachen-t1",
       template: 'index.html'
     }),
   ],
