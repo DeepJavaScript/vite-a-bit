@@ -5,7 +5,8 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    publicPath: './'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -23,8 +24,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         loader: "url-loader",
         options: {
-          limit: 8192,
-          esModule: false
+          limit: 8192
         }
       },
       {
