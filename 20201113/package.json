@@ -1,0 +1,28 @@
+{
+  "name": "vite-a-bit",
+  "version": "1.0.0",
+  "description": "「vite 一下」聚會記錄",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepJavaScript/vite-a-bit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepJavaScript/vite-a-bit/issues"
+  },
+  "homepage": "https://github.com/DeepJavaScript/vite-a-bit#readme",
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {}
+}

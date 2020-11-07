@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-gray: #EFEFEF;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: "Red Hat Display", sans-serif;
+    min-width: 1200px;
+}
+
+
+/* ------ 全域 -------- */
+
+p {
+    color: #555;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #333;
+}
+
+.wrapper {
+    width: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*------header------*/
+
+header {
+    background-color: var(--color-gray);
+}
+
+nav {
+    font-size: 0;
+    padding: 25px 0;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav .logo {
+    width: 12%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+nav h1 {
+    font-size: 16px;
+    color: #333;
+}
+
+nav .list {
+    display: inline-block;
+    width: 88%;
+    vertical-align: middle;
+    padding-left: 5%;
+}
+
+nav .list a {
+    color: #666;
+    font-size: 18px;
+    padding: 10px 0;
+    width: 10%;
+    text-align: center;
+}
+
+nav .list a+a {
+    margin-left: 10%;
+}
+
+nav .list a:hover {
+    color: #F28500;
+}
+
+
+/*------main-------*/
+
+.banner {
+    font-size: 0;
+    background-color: #FDFDFD;
+}
+
+.banner .wrapper {
+    padding: 55px 6%;
+}
+
+.ideas,
+.image {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+
+.ideas {
+    padding-right: 4%;
+}
+
+.ideas h2 {
+    font-size: 65px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.ideas h3 {
+    margin: 0;
+}
+
+.ideas p {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.image img {
+    width: 100%;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #FFBD55 50%, #F99500 50%);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.ideas a,
+span {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.ideas a {
+    text-decoration: none;
+    color: black;
+}
+
+.ideas span {
+    font-size: 15px;
+    color: #555;
+}
+
+
+/* ---- article ---- */
+
+.article .wrapper {
+    column-count: 2;
+    column-gap: 60px;
+    padding: 70px 5% 200px;
+}
+
+.article h3 {
+    column-span: all;
+    margin-bottom: 35px;
+}
+
+.article p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+/* ------footer----- */
+
+footer {
+    background-color: var(--color-gray);
+}
+
+footer .wrapper {
+    padding: 25px 35px;
+    font-size: 0;
+}
+
+.copyright,
+.social {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.copyright {
+    color: #555;
+    font-size: 14px;
+}
+
+.social {
+    text-align: right;
+    font-size: 0;
+}
+
+.social a {
+    display: inline-block;
+}
+
+.social img {
+    width: 35px;
+    margin-right: 20px;
+}
