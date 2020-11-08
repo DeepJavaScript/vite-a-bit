@@ -23,7 +23,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         loader: "url-loader",
         options: {
-          limit: 8192,
+          limit: false,
           outputPath: 'images'
         }
       },
