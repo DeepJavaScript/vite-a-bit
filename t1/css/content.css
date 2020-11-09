@@ -1,0 +1,93 @@
+#content {
+  font-family: sans-serif;
+}
+
+.try_it_text_side_space {
+  margin: 0 auto;
+  width: 795px;
+}
+
+#content .try_it img {
+  float:right;
+  padding-top: 60px;
+  width: 357px;
+}
+
+#try_it_text {
+  width: 365px;
+  padding: 7px;
+}
+
+#try_it_text h1 {
+  padding-top: 40px;
+  font-size: 50pt;
+  line-height: 50pt;
+  margin: 0;
+}
+
+#try_it_text h2 {
+  padding-top: 0px;
+  font-size: 22pt;
+  line-height: 22pt;
+  margin: 0;
+}
+
+#try_it_text p {
+  font-size: 16px;
+  color: #585858;
+}
+
+#try_it_text div {
+  margin: 0 auto;
+  width: 230px;
+}
+
+#try_it_text div p{
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+#try_it_button {
+  background-color: #4098D3;
+  color: #FFF;
+  font-size: 25px;
+  background-image:
+  linear-gradient(#FFBA53 50%, #F99303 50%);
+  border-radius: 6px;
+  border-style: none;
+  height: 59px;
+  width: inherit;
+}
+
+#content_try_it_content_button {
+  margin: 0 auto;
+  width: 300px;
+}
+
+
+.content_text_side_space {
+  margin: 151px auto;
+  width: 820px;
+}
+
+.content_text_side_space p {
+  font-size: 17px;
+}
+
+#content_head {
+  font-size: 28px;
+  margin: 28px 0;
+}
+
+#content_text {
+  column-count: 2;
+  column-gap: 50px;
+}
+
+#content_text p{
+  display: block;
+  color: #585858;
+  line-height: 24px;
+  margin-bottom: 28px;
+  margin-top: 0;
+}
