@@ -1,0 +1,28 @@
+#app {
+  text-align: center;
+}
+
+#app h1 {
+  color: #2c3e50;
+  font-weight: 300;
+  margin: 0;
+}
+
+.banner {
+  height: 200px;
+  background-color: #f6f6f6;
+  padding: 50px 10px;
+}
+
+.fade {
+  font-size: 14px;
+}
+
+.logo {
+  animation: spin 4s 1s infinite linear
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
