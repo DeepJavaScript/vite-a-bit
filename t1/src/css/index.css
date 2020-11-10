@@ -1,0 +1,18 @@
+body {
+  margin: 0px;
+}
+
+.side_space {
+  margin: 0 auto;
+  width: 910px;
+}
+
+.debug_css {
+  border: 1px solid;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
