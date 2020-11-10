@@ -1,1 +1,1 @@
-alert('Vite a bit!!');
+require('./index.css')
