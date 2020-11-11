@@ -1,4 +1,5 @@
 import './index.css';
+import logo from './assets/logo.png';
 
 function app() {
   const appElement = document.createElement('div');
@@ -8,7 +9,7 @@ function app() {
   bannerElement.className = 'banner';
   bannerElement.innerHTML = `
     <img
-      src="./assets/logo.png"
+      src="${logo}"
       width="100"
       alt="vue"
       class="logo"
