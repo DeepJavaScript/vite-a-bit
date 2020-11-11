@@ -1,0 +1,76 @@
+
+
+/* container------------------------- */
+/* 切的真的廢，但是懶得改 XD */
+.main_container {
+	width: 900px;
+	margin: 0 auto;
+	padding: 80px 0 30px;
+}
+.main_container .article {
+	width: 50%;
+	padding: 20px 24px 0;
+	display: inline-block;
+	vertical-align: top;
+}
+.main_container .title {
+	font-size: 7rem;
+	line-height: 1;
+}
+.main_container .subtitle {
+	font-size: 3rem;
+	line-height: 1;
+}
+.main_container .text {
+	margin-top: 18px;
+	font-size: 1.6rem;
+	color: #868686;
+}
+.main_container .button_area {
+	text-align: center;
+	margin: 22px 80px 0;
+	font-size: 2rem;
+}
+.main_container .button_box {
+	border-radius: 8px;
+	display: inline-block;
+	color: #fff;
+	width: 240px;
+	line-height: 60px;
+	background:linear-gradient(#FFBC57 60%,#F99302 60%);
+}
+.main_container .button_text {
+	width: 132px;
+	font-size: 0.5rem;
+}
+.main_container .container_img{
+	display: inline-block;
+	vertical-align: top;
+}
+.main_container img{
+	width: 429px;
+	height: 399px;
+}
+
+/* articles-------------------------- */
+.article_container {
+	width: 850px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+.article_container .article_title{
+	font-size: 3rem;
+	margin-bottom: 36px;
+}
+.article_container .article_cloumn_box{
+	-moz-column-count: 2;
+	-moz-column-gap: 50px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 50px;
+	column-count: 2;
+	column-gap: 50px;
+	font-size: 1.6rem;
+}
+.article_container .article_elements{
+	margin-bottom: 30px;
+}
