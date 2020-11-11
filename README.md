@@ -1,4 +1,4 @@
-# vite a bit - RURU ⛩
+# vite a bit
 
 ## 每週紀錄
 
