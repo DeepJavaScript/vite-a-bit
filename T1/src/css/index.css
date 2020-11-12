@@ -1,0 +1,215 @@
+/* * {
+	outline: solid 1px;
+} */
+
+body {
+	box-sizing: border-box;
+	min-width: 1200px;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+figure {
+	margin: 0px;
+}
+
+/* .background{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	opacity: 20%;
+}
+
+.background img{
+	width: 100%;
+} */
+
+header {
+	background-color: #eeeeee;
+}
+
+nav {
+	width: 1050px;
+	margin: 0 auto;
+	font-size: 0;
+	padding: 38px 0;
+}
+
+nav img {
+	width: 50px;
+	vertical-align: bottom;
+}
+
+nav > a {
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	width: 100px;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 15px;
+	color: #030303;
+}
+
+.menu {
+	display: inline-block;
+	vertical-align: middle;
+	/* width: 852px; */
+	padding: 15px 0;
+}
+
+.menu > a {
+	padding: 15px;
+	font-size: 16px;
+	text-decoration: none;
+	color: #818181;
+	margin-left: 90px;
+}
+
+.menu a:hover {
+	color: #f99603;
+}
+
+main {
+	background-color: #fdfdfd;
+	padding-top: 75px;
+	padding-bottom: 116px;
+}
+
+section {
+	width: 900px;
+	margin: 0 auto;
+	font-size: 0;
+}
+
+.content {
+	width: 450px;
+	display: inline-block;
+}
+
+.content a {
+	display: block;
+}
+
+.content h2 {
+	font-size: 65px;
+	line-height: 69px;
+}
+
+.content h3 {
+	font-size: 32px;
+	line-height: 38px;
+}
+
+.content p {
+	font-size: 18px;
+	padding-bottom: 40px;
+}
+
+.tryitnow {
+	margin: 0 auto;
+	width: 250px;
+}
+
+.tryitnow a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+	padding: 15px 0;
+	border-radius: 5px;
+	background: linear-gradient(#f6be66 50%, #ed9937 50%);
+}
+.tryitnow a:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.content span {
+	font-size: 16px;
+}
+
+figure {
+	display: inline-block;
+	vertical-align: top;
+	width: 450px;
+}
+
+figure img {
+	width: 100%;
+}
+
+article {
+	background-color: #ffffff;
+}
+
+.text {
+	margin: 0 auto;
+	padding: 30px 0 210px;
+	width: 940px;
+	column-count: 2;
+	column-gap: 50px;
+}
+
+.text h3 {
+	column-span: all;
+	font-size: 35px;
+	margin-bottom: 28px;
+}
+
+.text p {
+	font-size: 18px;
+	margin-bottom: 40px;
+	/* margin-top: 40px; */
+}
+
+footer {
+	background-color: #eeeeee;
+	padding: 21px 0;
+}
+
+.copyright {
+	margin: 0 auto;
+	width: 980px;
+	font-size: 0;
+}
+
+.copytext {
+	font-size: 14px;
+	line-height: 38px;
+}
+
+.contact {
+	width: 178px;
+	float: right;
+}
+
+.contact::after {
+	content: "";
+	clear: both;
+}
+
+.contact a {
+	display: inline-block;
+}
+
+.contact a + a {
+	margin-left: 15px;
+}
+
+.contact a i {
+	font-size: 38px;
+	color: #000000;
+}
+
+.contact a i:hover {
+	color: red;
+}
