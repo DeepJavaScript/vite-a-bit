@@ -1,0 +1,255 @@
+
+
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.wrap{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* header========================================================= */
+
+header{
+    background: rgba(234, 234, 234, 1);
+    padding: 40px 0;
+}
+
+header .wrap{
+    max-width: 1080px;
+}
+
+header .wrap .logo{
+    background-repeat: no-repeat;
+    background-position:  center;
+    float: left;
+    background-image: url("../src/assets/img/logo.png");
+}
+
+header .wrap .logo p{
+    padding-top: 85px;
+}
+
+
+header  .wrap .list{
+    font-size: 0;
+    float: left;
+}
+
+header .wrap ul{
+    line-height: 107px;
+}
+
+header .list ul li {
+    display: inline-block;
+    font-size: 16px;  
+    margin-left: 73px;
+}
+header .list ul li + li{
+    margin-left: 151px;
+}
+header .list ul  li a{
+    text-decoration: none;
+    text-align: center;
+    color: #6e6e6e;
+    transition: all .5s;
+}
+
+header .list ul li a:hover{
+    color: #000;
+}
+
+header .list ul .active a {
+    color: rgba(245, 131, 11, 1);
+}
+
+
+
+
+
+
+
+
+/* ideas========================================================= */
+.ideas{
+    padding: 50px 0  100px 0;
+    background: rgba(252,252,252,1);
+}
+
+.ideas .wrap .ideas-container{
+    width: 50%;
+    float: left;
+}
+
+.ideas .wrap .ideas-pic{
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.ideas .wrap .ideas-container .title{
+    font-size: 48px;
+    letter-spacing: 2px;
+    font-weight:normal;
+}
+
+.ideas .wrap .ideas-container .sub-title{
+    font-size: 28px;
+    font-weight:normal;
+}
+
+.ideas .wrap .ideas-container .info{
+    font-size: 14px;
+    color: rgba(69, 69, 69, 1);
+    margin-bottom: 30px;
+    padding-right: 50px;
+}
+
+
+.ideas .wrap .ideas-container .link-container {
+    width: 270px;
+    margin: 0 auto;
+}
+
+.ideas .wrap .ideas-container .link-container a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;    
+    background: rgba(244,128,10);
+    margin: 5px auto;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom,rgba(255, 187, 82,1) 0%,rgba(255, 187, 82,1) 50%,rgba(249, 148, 0 ,1) 51%);
+    
+    /* 使用偽元素的話，需要使用 */
+    /* 
+    position: relative;
+    z-index: 1; 
+    */
+}
+
+/* 使用偽元素 */
+/* .ideas .wrap .ideas-container .btn:before{
+    content: 'TRY IT NOW!';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    background: rgba(254, 171, 66, 1);
+    padding: 10px 20px 0px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: -1;
+} */
+.ideas .wrap .ideas-container .link-container  p{
+    color: rgba(125, 125, 125, 1);
+}
+
+
+
+
+
+
+/* article==================================================  */
+
+.article{
+    padding: 50px 0 150px 0;
+}
+
+.article .wrap .title{
+    font-size: 28px;
+}
+
+.article .wrap .info{
+    padding-top: 30px;
+    column-count:2;
+}
+
+.article .wrap .info p{
+    font-size: 14px;
+    color: rgba(69, 69, 69, 1);
+}
+
+.article .wrap .info p + p{
+    padding-top: 30px;
+}
+
+.article .wrap .info p:nth-child(4){
+    padding-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* footer================================================================  */
+footer{
+    padding: 50px 0;
+    background: rgba(234, 234, 234, 1);    
+}
+footer .wrap {
+    max-width: 1080px;
+}
+footer .wrap .copyright{
+    float: left;
+    line-height: 48px;
+}
+
+footer .wrap .social-link{
+    font-size: 0;
+    text-align: right;
+}
+
+footer .wrap .social-link li{
+    display:inline-block;
+}
+
+footer .wrap .social-link li + li{
+    margin-left: 15px;
+}
+
+footer .wrap .social-link li a { 
+    display: block;
+    text-decoration: none;
+    color: #000;
+    border-radius: 6px;
+    transition: all .4s;
+}
+
+footer .wrap .social-link li a:hover{
+    color:rgb(65, 63, 63);
+}
+
+footer .wrap .social-link li a  i{
+    font-size: 48px;
+}
+
+
+
+
+/* clearfix ========================================================= */
+
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
