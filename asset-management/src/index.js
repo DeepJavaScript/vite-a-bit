@@ -16,6 +16,13 @@ function component() {
 
   element.appendChild(myIcon);
 
+  // Use Web fonts
+  element.innerHTML += `
+    <span class="my-icon">
+      <i class="far fa-grin"></i>
+    </span>
+  `;
+
   return element;
 }
 
