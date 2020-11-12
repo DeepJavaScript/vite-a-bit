@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import "./css/style.css";
 
 function header() {
   const element = document.createElement('div');
