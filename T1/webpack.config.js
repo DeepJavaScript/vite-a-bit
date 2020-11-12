@@ -21,14 +21,14 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[hash:10][ext][query]'
+                    filename: 'images/[hash:10][ext]'
                 }
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'svg/[hash:10][ext][query]'
+                    filename: 'svg/[hash:10][ext]'
                 }
             },
             {
