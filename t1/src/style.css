@@ -1,8 +1,4 @@
-/* -----------------------Header------------------------ */
-
-/* * {
-    outline: 1px solid #000;
-} */
+/* -----------------------Reset------------------------ */
 
 body, h1, h2, h3, p {
     margin:0;
@@ -14,6 +10,12 @@ a {
 ul{
     padding: 0;
 }
+
+/* -----------------------Header------------------------ */
+
+/* * {
+    outline: 1px solid #000;
+} */
 
 header {
     background-color: #eeeeee;
@@ -197,6 +199,7 @@ footer nav a:hover {
     color: #6e6e6e;
 }
 
-.fab{
-    font-size: 2rem;
+.svg-inline--fa.fa-w-14 {
+    width: 2rem;
+    height: auto;
 }
