@@ -2,13 +2,16 @@
   "name": "t1",
   "version": "1.0.0",
   "description": "webpack 練習渲染 t1",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "Jinwen",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
   }
