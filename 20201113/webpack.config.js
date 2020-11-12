@@ -7,7 +7,8 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: './'
+    publicPath: './',
+    assetModuleFilename: 'images/[hash:10][ext][query]'
   },
   plugins: [
     new CleanWebpackPlugin(),
