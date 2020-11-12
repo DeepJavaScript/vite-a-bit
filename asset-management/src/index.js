@@ -2,6 +2,8 @@ import _ from 'lodash';
 
 import './style.css';
 import Icon from './webpack-icon.png';
+import myXML from './data.xml';
+import myCSV from './data.csv';
 
 function component() {
   const element = document.createElement('div');
@@ -22,6 +24,9 @@ function component() {
       <i class="far fa-grin"></i>
     </span>
   `;
+
+  console.log(myXML);
+  console.log(myCSV);
 
   return element;
 }
