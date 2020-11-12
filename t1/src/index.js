@@ -1,5 +1,11 @@
 import _ from 'lodash';
 import "./css/style.css";
+import zerotype from "./img/zerotype.png";
+import box from "./img/box.png";
+import icon_pinterest from "./img/pinterest_icon.png";
+import icon_twitter from "./img/twitter_icon.png";
+import icon_google from "./img/google_icon.png";
+import icon_facebook from "./img/facebook_icon.png";
 
 function header() {
   const element = document.createElement('div');
@@ -7,7 +13,7 @@ function header() {
 	element.innerHTML = `
 		<div class="navbar_div">
 			<div class="navbar_content">
-				<img src="img/zerotype.png">
+				<img src="${zerotype}">
 				<span class="home_txt_color">Home</span>
 				<span>Features</span>
 				<span>News</span>
@@ -23,7 +29,7 @@ function main() {
 	element.innerHTML = `
 		<div class="body_txt1_content">
 			<div class="body_img1_div">
-				<img src="img/box.png">
+				<img src="${box}">
 			</div>
 			<div class="body_txt1_div">
 				<h1>IDEAS?</h1>
@@ -80,10 +86,10 @@ function footer() {
 	element.innerHTML = `
 		<div class="footer_content">
     <span>(c) 2023 Zerotype. All Rights Reserved.</span>
-    <img src="img/pinterest_icon.png">
-    <img src="img/twitter_icon.png">
-    <img src="img/google_icon.png">
-    <img src="img/facebook_icon.png">`;
+    <img src="${icon_pinterest}">
+    <img src="${icon_twitter}">
+    <img src="${icon_google}">
+    <img src="${icon_facebook}">`;
 
   return element;
 }
