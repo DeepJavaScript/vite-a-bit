@@ -21,11 +21,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        loader: "url-loader",
-        options: {
-          limit: false,
-          outputPath: 'images'
-        }
+        type: 'asset/resource',
       },
       {
         test: /\.html$/i,
