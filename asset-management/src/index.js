@@ -4,6 +4,7 @@ import './style.css';
 import Icon from './webpack-icon.png';
 import myXML from './data.xml';
 import myCSV from './data.csv';
+import myJSON from './data.json';
 
 function component() {
   const element = document.createElement('div');
@@ -27,6 +28,7 @@ function component() {
 
   console.log(myXML);
   console.log(myCSV);
+  console.log(myJSON);
 
   return element;
 }
