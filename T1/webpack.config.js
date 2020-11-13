@@ -24,17 +24,17 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[hash:10][ext][query]'
+          filename: 'images/[hash:10][ext]'
         }
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'svg/[hash:10][ext][query]'
+          filename: 'typeface/[hash:10][ext]'
         }
       },
       {

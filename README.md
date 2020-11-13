@@ -112,7 +112,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({verbose:true}),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
@@ -144,7 +144,7 @@ module.exports = {
 
 ```
 $ npm install --save @fortawesome/fontawesome-free
-```
+``` 
 
 ```javascript
 import '@fortawesome/fontawesome-free/css/all.css'; 
@@ -153,4 +153,10 @@ import '@fortawesome/fontawesome-free/css/all.css';
 index.js 設定檔
 ```
 
+---
 
+課堂學習：
+
+class purgeCSS webpack plugin : 清除多餘的 CSS
+[字型最小化](https://www.npmjs.com/package/fontmin-webpack) 尚未研究可行性
+miniCssExtractPlugin : 獨立 CSS 檔案
