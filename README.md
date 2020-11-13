@@ -157,6 +157,6 @@ index.js 設定檔
 
 課堂學習：
 
-class purgeCSS webpack plugin : 清除多餘的 CSS
-[字型最小化](https://www.npmjs.com/package/fontmin-webpack) 尚未研究可行性
-miniCssExtractPlugin : 獨立 CSS 檔案
+- class purgeCSS webpack plugin : 清除多餘的 CSS
+- [字型最小化](https://www.npmjs.com/package/fontmin-webpack) 尚未研究可行性
+- miniCssExtractPlugin : 獨立 CSS 檔案
