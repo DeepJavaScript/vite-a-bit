@@ -19,7 +19,7 @@
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/0fea249691.eot\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot?");
+eval("module.exports = __webpack_require__.p + \"typeface/0fea249691.eot\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot?");
 
 /***/ }),
 
@@ -32,7 +32,7 @@ eval("module.exports = __webpack_require__.p + \"svg/0fea249691.eot\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/e33e2cf6e0.svg\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.svg?");
+eval("module.exports = __webpack_require__.p + \"typeface/e33e2cf6e0.svg\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.svg?");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ eval("module.exports = __webpack_require__.p + \"svg/e33e2cf6e0.svg\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/ec82f282c7.ttf\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf?");
+eval("module.exports = __webpack_require__.p + \"typeface/ec82f282c7.ttf\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf?");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ eval("module.exports = __webpack_require__.p + \"svg/ec82f282c7.ttf\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/dc2cbadd69.woff\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff?");
+eval("module.exports = __webpack_require__.p + \"typeface/dc2cbadd69.woff\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff?");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ eval("module.exports = __webpack_require__.p + \"svg/dc2cbadd69.woff\";\n\n//# s
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/c967a94cfb.woff2\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2?");
+eval("module.exports = __webpack_require__.p + \"typeface/c967a94cfb.woff2\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2?");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ eval("module.exports = __webpack_require__.p + \"svg/c967a94cfb.woff2\";\n\n//# 
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/08f9891a6f.eot\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot?");
+eval("module.exports = __webpack_require__.p + \"typeface/08f9891a6f.eot\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot?");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ eval("module.exports = __webpack_require__.p + \"svg/08f9891a6f.eot\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/06b9d19ced.svg\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.svg?");
+eval("module.exports = __webpack_require__.p + \"typeface/06b9d19ced.svg\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.svg?");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ eval("module.exports = __webpack_require__.p + \"svg/06b9d19ced.svg\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/1495f57845.ttf\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf?");
+eval("module.exports = __webpack_require__.p + \"typeface/1495f57845.ttf\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf?");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ eval("module.exports = __webpack_require__.p + \"svg/1495f57845.ttf\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/1069ea55be.woff\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff?");
+eval("module.exports = __webpack_require__.p + \"typeface/1069ea55be.woff\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("module.exports = __webpack_require__.p + \"svg/1069ea55be.woff\";\n\n//# s
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/1008b52269.woff2\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2?");
+eval("module.exports = __webpack_require__.p + \"typeface/1008b52269.woff2\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2?");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ eval("module.exports = __webpack_require__.p + \"svg/1008b52269.woff2\";\n\n//# 
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/3a24a60e7f.eot\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot?");
+eval("module.exports = __webpack_require__.p + \"typeface/3a24a60e7f.eot\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot?");
 
 /***/ }),
 
@@ -162,7 +162,7 @@ eval("module.exports = __webpack_require__.p + \"svg/3a24a60e7f.eot\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/371dbce0dd.svg\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg?");
+eval("module.exports = __webpack_require__.p + \"typeface/371dbce0dd.svg\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg?");
 
 /***/ }),
 
@@ -175,7 +175,7 @@ eval("module.exports = __webpack_require__.p + \"svg/371dbce0dd.svg\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/10ecefc282.ttf\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf?");
+eval("module.exports = __webpack_require__.p + \"typeface/10ecefc282.ttf\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf?");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ eval("module.exports = __webpack_require__.p + \"svg/10ecefc282.ttf\";\n\n//# so
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/46fdbd2d89.woff\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff?");
+eval("module.exports = __webpack_require__.p + \"typeface/46fdbd2d89.woff\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff?");
 
 /***/ }),
 
@@ -201,7 +201,7 @@ eval("module.exports = __webpack_require__.p + \"svg/46fdbd2d89.woff\";\n\n//# s
 /*! runtime requirements: module, __webpack_require__.p, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"svg/3ceb50e7bc.woff2\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2?");
+eval("module.exports = __webpack_require__.p + \"typeface/3ceb50e7bc.woff2\";\n\n//# sourceURL=webpack://webpack-demo/./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2?");
 
 /***/ }),
 
