@@ -12,7 +12,7 @@
 publicPath 預設值是 "auto"，
 
 
-2. 
+### question 2
 ```
 Multiple chunks emit assets to the same filename main.js
 ```
