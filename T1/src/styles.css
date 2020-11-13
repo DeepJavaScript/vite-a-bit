@@ -1,0 +1,200 @@
+/* .....reset..... */
+
+* {
+  margin: 0;
+  /* body h1 h2 h3 p ul */
+  /* padding: 0;
+    ul button */
+}
+
+/* .....header..... */
+
+header {
+  padding: 25px 0;
+  background: #eeeeee;
+  box-shadow: 0 1px #e6e6e6;
+}
+
+.container {
+  display: flow-root;
+  margin: 0 auto;
+  width: 900px;
+}
+
+header .container > a {
+  display: block;
+  width: 67px;
+}
+
+header a img {
+  width: 100%;
+}
+
+header .container nav {
+  float: right;
+}
+
+header .container ul {
+  padding-left: 0px;
+}
+
+header .container ul li {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 95px;
+}
+
+header .container ul li + li {
+  margin-left: 70px;
+}
+
+header .container ul li:nth-child(5) {
+  margin-right: -20px;
+}
+
+header .container ul li a {
+  display: block;
+  color: #818181;
+  padding: 0 20px;
+  text-decoration: none;
+}
+
+header .container ul li a:hover {
+  color: #f99603;
+  transition: 0.2s;
+}
+
+/* .....main..... */
+
+main.container {
+  padding: 100px 0;
+  width: 800px;
+}
+
+main .row {
+  display: flow-root;
+  margin-bottom: 100px;
+}
+
+main .row .col-title {
+  box-sizing: border-box;
+  width: 55%;
+  padding-right: 40px;
+}
+
+main .row .col-title h1 {
+  color: #2c2c2c;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 1em;
+}
+
+main .row .col-title h2 {
+  color: #2c2c2c;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+main .row .col-title > p {
+  margin-bottom: 20px;
+  color: #585858;
+  line-height: 1.5em;
+}
+
+main .row .col-title .btn-link {
+  margin: 0 auto;
+  width: 235px;
+}
+
+main .row .col-title .btn-link button {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(#ffb94f 55%, #f99403 45%);
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  padding: 0;
+}
+
+main .row .col-title .btn-link p {
+  margin-top: 3px;
+  color: #585858;
+  text-align: left;
+  font-size: 12px;
+}
+
+main .row .col-pic {
+  width: 45%;
+  text-align: right;
+  float: right;
+}
+
+main .row .col-pic img {
+  width: 360px;
+}
+
+/* .....article..... */
+
+article {
+  margin-bottom: 100px;
+}
+
+article h3 {
+  color: #3e3e3e;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 2.5em;
+}
+
+article .content p + p {
+  margin-top: 20px;
+}
+
+article .content {
+  column-count: 2;
+  column-gap: 60px;
+}
+
+article .content p {
+  color: #585858;
+  line-height: 1.5em;
+}
+
+/* .....footer..... */
+
+footer {
+  padding: 30px 0 15px 0;
+  background: #eeeeee;
+  box-shadow: 0 -1px #e6e6e6;
+}
+
+footer .container {
+  display: flow-root;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+footer .container p {
+  color: #585858;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+footer .container .social-media {
+  float: right;
+}
+
+footer .container .social-media a {
+  display: inline-block;
+  color: #000;
+}
+
+footer .container .social-media a + a {
+  margin-left: 18px;
+}
+
+footer .container .social-media a i {
+  font-size: 30px;
+}
