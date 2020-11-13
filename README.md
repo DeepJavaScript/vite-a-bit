@@ -51,6 +51,7 @@ tags
 1. 預備: 開你的分支上傳到 repo
 1. webpack 打包
     - 原生寫法，選一個渲染出來 + [guide 看到 Asset Management](https://webpack.js.org/guides/output-management/)
+    - Bootstrap，選一個渲染出來 + [guide 看到 Code Splitting](https://webpack.js.org/guides/code-splitting/)
 1. webpack, vue-loader, with eslint/prettier
 1. rollupjs 打包 (反思 webpack), with eslint/prettier
 1. vite,
