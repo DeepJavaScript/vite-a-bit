@@ -25,12 +25,9 @@ Multiple chunks emit assets to the same filename main.js
 * 跟 mini-css-extract-plugin 一起搭配服用
 
 * before
+
 ![](./README-image/before.png)
 
 * after
+
 ![](./README-image/after.png)
-
-
-
-
-![](https://raw.githubusercontent.com/jantimon/html-webpack-plugin/master/flow.png)
