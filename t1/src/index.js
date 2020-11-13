@@ -1,1 +1,1 @@
-import './style.css';
+import './style-t1v2.css';

@@ -52,7 +52,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     // 透過 plugins 自動幫我們產生一個 html 檔
     new HtmlWebpackPlugin({
-        template: 'src/index.html'
+        template: 'src/cathy_t1v2.html'
       })
   ],
   // 環境模式
