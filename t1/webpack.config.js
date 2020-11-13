@@ -45,10 +45,16 @@ module.exports = {
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				type: 'asset/resource',
+				generator: {
+					filename: '[hash:5][ext]'
+				}
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
+				generator: {
+					filename: 'font-type/[hash:5][ext]'
+				}
 			},
 		],
 	},
