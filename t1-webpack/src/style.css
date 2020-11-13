@@ -1,0 +1,191 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+	/* outline: 1px solid gold; */
+	font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+	max-width: 900px;
+	font-size: 0; /* 消掉 <div> 換行造成的空白 */
+}
+
+h1 {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 60px;
+	font-weight: normal;
+}
+
+h3 {
+	font-size: 36px;
+	font-weight: normal;
+	margin-bottom: 1em;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
+
+/* ----- navbar ----- */
+.navbar {
+	background: #eeeeee;
+	border-bottom: 1px solid #eee;
+}
+
+.navbar .wrapper {
+	padding: 30px 0;
+	min-width: 900px;
+	position: relative;
+}
+
+.navbar__logo {
+	display: inline-block;
+	text-align: center;
+}
+
+.navbar__logo img {
+	width: 60px;
+}
+
+.navbar__logo p {
+	margin: 0;
+	font-size: 14px;
+}
+
+.navbar__list {
+	font-size: 0;
+	/* float: right; */
+	transform: translateY(-50%);
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+
+/* .navbar .wrapper::after {
+	content: "";
+	clear: both;
+	display: block;
+} */
+
+.navbar__list a {
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+	padding: 1em 2em;
+	margin-right: 30px;
+}
+
+.navbar__list a:last-child {
+	margin-right: 0;
+}
+
+.navbar__list a:hover {
+	color: orange;
+}
+
+/* ----- section 1 ----- */
+.banner {
+	background: rgb(253, 253, 253);
+	padding: 90px 0;
+}
+
+.btn {
+	width: fit-content;
+}
+
+.btn button {
+	border: none;
+	background: linear-gradient(to bottom, rgb(250, 180, 80) 50%, rgb(250, 150, 40) 50%);
+	padding: 1.5em 2.4em;
+	font-size: 18px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+}
+
+.banner__container {
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+}
+
+.banner__container p:last-child {
+	margin: 0;
+	text-align: left;
+	font-size: 12px;
+}
+
+.banner__img {
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* ----- section 2 ----- */
+.content {
+	padding: 90px 0;
+}
+
+.content .wrapper {
+	column-count: 2;
+	column-gap: 5%;
+}
+
+.content h3 {
+	column-span: all;
+}
+
+/* ----- footer ----- */
+.footer {
+	background: #eeeeee;
+	border-top: 1px solid #eee;
+}
+
+.footer .wrapper {
+	padding: 45px 0;
+}
+
+.footer__rights {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+}
+
+.footer__rights p {
+	margin: 0;
+	font-size: 12px;
+}
+
+.footer__social {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	text-align: right;
+}
+
+.footer__social div {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.social__icon {
+	display: inline-block;
+}
+
+.social__icon img {
+	width: 30px;
+	height: 30px;
+}
+
+
+
+
