@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: './'
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -18,6 +19,17 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name].[hash:8][ext]'
+        }
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader'
       }
     ]
   }
