@@ -1,0 +1,16 @@
+body {
+  background-color: pink;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+
+  display: inline-block;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
