@@ -1,5 +1,6 @@
 // 引入 Html Plugin  
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 引入清除廢棄檔案 Plugin 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // 輸出的路徑
@@ -53,7 +54,7 @@ module.exports = {
     // 透過 plugins 自動幫我們產生一個 html 檔
     new HtmlWebpackPlugin({
         template: 'src/cathy_t1v2.html'
-      })
+    })
   ],
   // 環境模式
   mode: 'development'
