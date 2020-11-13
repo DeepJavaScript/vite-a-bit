@@ -5,10 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: "./src/main.js",
   output: {
-    filename: "bundle.js",
+    filename: "js/bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: './',
-    assetModuleFilename: 'images/[hash:10][ext][query]'
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -25,9 +24,12 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash:8][ext]'
+        }
       },
       {
-        test: /\.html$/i,
+        test: /\.html$/,
         loader: 'html-loader',
       },
     ],
