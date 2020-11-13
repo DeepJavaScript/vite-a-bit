@@ -13,6 +13,9 @@
       - cdn 引用 (fontawesome)
       - html 要用 element
       - 圖片可以直接引入
+      - [Asset Modules](https://webpack.js.org/guides/asset-modules/#custom-data-uri-generator) for webpack 5
+      - [fontmin-webpack](https://www.npmjs.com/package/fontmin-webpack) for min font
+      - [purgecss-webpack-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) for link css file, not style tags
 1. webpack, vue-loader, with eslint/prettier
 1. rollupjs 打包 (反思 webpack), with eslint/prettier
 1. vite,
