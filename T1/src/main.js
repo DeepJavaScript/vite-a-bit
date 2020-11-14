@@ -20,5 +20,6 @@ library.add(faGooglePlusSquare)
 library.add(faFacebookSquare)
 library.add(faTwitterSquare)
 library.add(faPinterestSquare)
+
 // fontawesome 替換 fontawesome icon 函式
 dom.watch()

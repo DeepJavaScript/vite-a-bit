@@ -1,4 +1,5 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -9,9 +10,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       },
@@ -28,5 +29,15 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // filename: '[name].css',
+      // chunkFilename: '[id].css',
+      insert: function (linkTag) {
+        document.head.appendChild(linkTag)
+      }
+    })
+  ],
+  mode: 'development'
 }
