@@ -1,0 +1,50 @@
+/* 切的真的廢，但是懶得改 XD */
+
+.header {
+	background-color: #eee;
+}
+.header .wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+.header .logo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.header .logo p {
+	text-align: center;
+}
+.header .img {
+	width: 99px;
+	height: 93px;
+}
+.header .nav {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 114px;
+}
+.header .nav_item {
+	display: inline-block;
+	margin-left: 70px;
+	font-size: 1.6rem;
+}
+.header .nav_item:first-of-type {
+	margin-left: 0;
+}
+.header .button {
+	display: inline-block;
+	padding: 20px;
+}
+.header .button:link {
+	color: #686868;
+}
+.header .button:visited{
+	color: #686868;
+}
+.header .button:hover {
+	color: #FFBC57;
+}
+.header .button:active {
+	color: #686868;
+}
