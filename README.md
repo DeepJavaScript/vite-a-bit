@@ -14,4 +14,8 @@ output filename 為檔案名稱，path為設定路徑與資料夾名稱。
 6. npm i html-webpack-plugin，可打包 html 
 7. npm i clean-webpack-plugin，預先清除dist內檔案，再重新生成檔案
 
+讀書會學習：
+1. miniCssExtractPlugin 可獨立css檔
+2. fontmin-webpack 字型最小化
+3. PurgeCSSPlugin 清除多餘的 css
 
