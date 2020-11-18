@@ -470,6 +470,93 @@ module.exports = {
 };
 ```
 
+## minify web font 和 SVG
+
+目前找到有這兩個 Webpack plugin 可以使用：
+- [patrickhulce/fontmin-webpack](https://github.com/patrickhulce/fontmin-webpack)
+- [dhardtke/font-awesome-minify-plugin](https://github.com/dhardtke/font-awesome-minify-plugin)
+
+### `fontmin-webpack`
+
+文件說 font 一定要用 `file-loader` 處理：
+
+```javascript
+const FontminPlugin = require('fontmin-webpack');
+
+module.exports = {
+  plugins: [
+    new FontminPlugin()
+  ],
+  module: {
+    rules: [
+      {
+        test: /fontawesome.*\.(svg|eot|ttf|woff|woff2)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'vendor/font-awesome',
+          name: '[name].[hash:8].[ext]',
+        }
+      }
+    ]
+  }
+};
+```
+
+但明顯成功 minify 的只有 SVG，其餘的 font 根本沒差或沒變：
+
+```shell
+# 比較前
+$ ls -al dist/vendor/font-awesome
+總計 1184
+-rw-rw-r-- 136822 fa-brands-400.0fea2496.eot
+-rw-rw-r--  78460 fa-brands-400.c967a94c.woff2
+-rw-rw-r--  92136 fa-brands-400.dc2cbadd.woff
+-rw-rw-r-- 747545 fa-brands-400.e33e2cf6.svg
+-rw-rw-r-- 136516 fa-brands-400.ec82f282.ttf
+
+# 比較後
+$ ls -al dist/vendor/font-awesome
+總計 900
+-rw-rw-r-- 136822 fa-brands-400.0fea2496.eot
+-rw-rw-r--  78444 fa-brands-400.c967a94c.woff2
+-rw-rw-r--  92136 fa-brands-400.dc2cbadd.woff
+-rw-rw-r-- 456590 fa-brands-400.e33e2cf6.svg
+-rw-rw-r-- 136516 fa-brands-400.ec82f282.ttf
+```
+
+
+### `font-awesome-minify-plugin`
+
+```javascript
+const FontAwesomeMinifyPlugin = require('font-awesome-minify-plugin');
+
+module.exports = {
+  plugins: [
+    new FontAwesomeMinifyPlugin()
+  ]
+};
+```
+
+不支援 Webpack 5 (稍微查一下應該是 Webpack 5 不支援 `NormalModuleFactory` 了)，會產生下面錯誤訊息：
+
+```shell
+/home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/webpack/lib/NormalModuleFactory.js:251
+                                                        throw new Error(deprecationChangedHookMessage("afterResolve"));
+                                                        ^
+
+Error: NormalModuleFactory.afterResolve is no longer a waterfall hook, but a bailing hook instead. Do not return the passed object, but modify it instead. Returning false will ignore the request and results in no module created.
+    at /home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/webpack/lib/NormalModuleFactory.js:251:14
+    at eval (eval at create (/home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:10:1)
+    at afterResolve (/home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/font-awesome-minify-plugin/index.js:252:24)
+    at Hook.eval [as callAsync] (eval at create (/home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:5:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/tapable/lib/Hook.js:18:14)
+    at /home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/webpack/lib/NormalModuleFactory.js:247:30
+    at eval (eval at create (/home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)
+    at /home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/webpack/lib/NormalModuleFactory.js:481:7
+    at /home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/webpack/lib/NormalModuleFactory.js:116:11
+    at /home/titan/project/goodidea-frontend/vite-a-bit/t1/node_modules/webpack/lib/NormalModuleFactory.js:513:8
+```
+
 
 # 疑難雜症
 
