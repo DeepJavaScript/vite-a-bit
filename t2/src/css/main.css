@@ -1,0 +1,270 @@
+body {
+  background-image: url(../img/bg-body.jpg);
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  background-color: #356618;
+}
+
+header {
+  background-color: white;
+}
+
+header button.navbar-toggler {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 0 5px;
+}
+
+#navbarToggler {
+  padding: 0;
+}
+
+#navbarToggler a {
+  background-color: #4b4b4b;
+  line-height: 2.5rem;
+  color: #e3e699;
+  flex: 1;
+}
+
+#navbarToggler a.active {
+  background-color: #96b285;
+  color: #356618;
+}
+
+#navbarToggler a:hover {
+  background-color: #dde9d5;
+  color: #356618;
+}
+
+/* #carouselFade::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  outline: 2px pink solid;
+  z-index: 1;
+} */
+
+._transparent-section {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 15px 0;
+  height: 100px;
+  max-height: 40%;
+  overflow: auto;
+  color: white;
+  text-decoration: none;
+}
+
+._transparent-section:hover {
+  color: white;
+}
+
+._transparent-section h3 {
+  color: #e3e699;
+}
+
+._transparent-section span {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+._transparent-section i {
+  border-radius: 50%;
+  background-color: gray;
+  border: 3px solid gray;
+}
+
+._carousel-menu {
+  color: white;
+}
+
+._carousel-menu>div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+._carousel-menu>div+div {
+  border-top: 1px solid mintcream;
+}
+
+._carousel-item {
+  display: flex;
+}
+
+._carousel-item img {
+  border: 2px solid white;
+  border-radius: 2px;
+  margin-right: 15px;
+}
+
+._carousel-item h3 {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: #e3e699;
+}
+
+._carousel-item p {
+  line-height: 1.1rem;
+  font-size: initial;
+}
+
+main {
+  padding: 15px 15px 30px;
+}
+
+main h2 {
+  background-color: #dde9d5;
+  color: #836145;
+  padding: 10px 15px;
+  border-bottom: 2px solid #96b285;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+._featured {
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+}
+
+._featured section {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+._featured section div:first-child {
+  margin-top: 15px;
+}
+
+._featured section h3 {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #836145;
+}
+
+._featured section p {
+  margin-top: 15px;
+}
+
+._tips div {
+  margin-top: 15px;
+}
+
+._tips ol {
+  list-style-type: none;
+  counter-reset: tips;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+._tips li {
+  display: flex;
+  margin-top: 15px;
+  font-size: large;
+}
+
+._tips li::before {
+  counter-increment: tips;
+  content: counter(tips) ".";
+  flex-basis: 2rem;
+  flex-shrink: 0;
+  text-align: right;
+  margin-left: -15px;
+  margin-right: 15px;
+  font-weight: 600;
+}
+
+._information-block {
+  background-color: #dde9d5;
+  color: #8c8c8c;
+}
+
+._information-block>div {
+  border: 1px solid #a1a1a1;
+  padding: 15px;
+}
+
+._information-block>div>p {
+  font-size: larger;
+}
+
+._information-block ._connect-block>div {
+  font-size: 0;
+  margin-top: 10px;
+}
+
+._information-block ._connect-block i {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: green;
+}
+
+._information-block ._connect-block a {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: initial;
+  margin-left: 10px;
+}
+
+._copyright {
+  color: white;
+  font-size: 0;
+}
+
+._copyright span {
+  display: inline-block;
+  font-size: initial;
+}
+
+._copyright ._split-line {
+  display: none;
+}
+
+._copyright span {
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 576px) {
+  ._copyright ._split-line {
+    display: inline-block;
+  }
+  ._copyright span {
+    width: unset;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  ._carousel-menu>div+div {
+    border-top: none;
+  }
+  ._carousel-menu>div+div::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 15px;
+    bottom: 15px;
+    border: 1px solid rgba(0, 128, 0, 0.692);
+    width: 0;
+  }
+  ._tips li {
+    margin-bottom: 0;
+  }
+}
