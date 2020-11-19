@@ -6,9 +6,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    bootstrap: './src/boostrap.js',
+    fontawesome: './src/fontawesome.js',
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name][hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: './',
     assetModuleFilename: 'images/[hash][ext]'
@@ -28,13 +32,6 @@ module.exports = {
         type: 'asset/resource',
         
       },
-      {
-				test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-					filename: 'font/[hash][name]'
-				}
-			},
     ],
   },
   plugins: [
