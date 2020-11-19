@@ -1,0 +1,168 @@
+body {
+    background-image: url("../img/bg-body.jpg");
+    color: white;
+}
+
+.green_background {
+    background-color: #356618;
+}
+
+.white_background {
+    background-color: #fff;
+}
+
+.white_border {
+    border: 15px solid #fff;
+}
+
+.logo_img{
+    padding: 14px;
+    text-align: center;
+}
+
+.menu{
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 15px;
+}
+
+.menu_item{
+    list-style-type: none;
+    line-height: 40px;
+    background-color: #4b4b4b;
+}
+
+.menu_selected_page {
+    background-color: #96b285;
+    color: #356618;
+}
+
+.slider_img {
+    background-image: url("../img/gardening1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px;
+    text-align: left;
+}
+
+.carousel-item > img {
+    width: 100%;
+    opacity: 0;
+}
+
+.carousel-caption p {
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+.banner_select_list {
+    border-style: solid;
+    border-color: #356618;
+    border-width: 0 15px;
+}
+
+.banner_select_list img {
+    border: 1px white solid;
+}
+
+.banner_text p {
+    margin-bottom: 0;
+    font-size: 9pt;
+}
+
+.banner_title {
+    color: #e4e899;
+}
+
+.banner_select_item {
+    margin: 15px 0;
+}
+
+.black_font_color {
+    color: #111;
+}
+
+.garden img {
+    width: 100%;
+}
+
+.center-block {
+    margin: 0 auto;
+    display: block;
+}
+
+.garden_title_style {
+    display: block;
+    margin: 0;
+    background: #dde9d5;
+    border-bottom: 2px solid #abc79a;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.garden_heading_type {
+    padding: 15px 0;
+}
+
+.garden_heading_font {
+    color: #640a00;
+}
+
+.garden_h_line_style {
+    border: 1px solid #111;
+    margin-bottom: 15px;
+}
+
+.garden_featured_list {
+    padding-left: 20px;
+}
+
+.connect_list {
+    background-color: #dce9d4;
+    border: 1px solid #cbddc1;
+    margin: 0;
+}
+.connect_item {
+    border-left: 1px solid #cbddc1;
+    border-right: 1px solid #cbddc1;
+    padding-left: 15px;
+    padding-top: 15px;
+    min-height: 175px;
+}
+
+.connect_list h6 {
+    color: #7f7d80;
+}
+
+.connect_list dt {
+    color: #969895;
+    font-size: 18pt;
+    line-height: 18px;
+}
+
+.connect_list dd{
+    color: #969895;
+    font-size: 11pt;
+    line-height: 18px;
+}
+
+.connect_list i {
+    font-size: 16pt;
+    color: #356618;
+}
+
+.copy_right {
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 10pt;
+}
