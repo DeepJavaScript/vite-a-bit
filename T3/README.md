@@ -19,3 +19,4 @@ output filename 為檔案名稱，path為設定路徑與資料夾名稱。
 2. fontmin-webpack 字型最小化
 3. PurgeCSSPlugin 清除多餘的 css
 
+<!-- purgeCssplugin使動畫效果消失？ -->
