@@ -4,6 +4,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
     // entry:進入點，專案執行時先從 index.js 開始
     entry: './src/index.js',
@@ -18,7 +20,10 @@ module.exports = {
 			rules: [
 				{
 					test: /\.css$/,
-					use: ['style-loader', 'css-loader']
+					use: [
+						MiniCssExtractPlugin.loader,
+						'css-loader'
+					]
 				},
 				{
 					test: /\.(jpe?g|png|gif|svg)$/,
@@ -38,5 +43,8 @@ module.exports = {
 			new HtmlWebpackPlugin({
 				template: './src/index.html'
 			}),
+			new MiniCssExtractPlugin({
+				filename: 'css/style.css'
+			})
 		],
 };
