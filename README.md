@@ -20,6 +20,10 @@
         * asset/source exports the source code of the asset. Previously achievable by using raw-loader.
         * asset automatically chooses between exporting a data URI and emitting a separate file. Previously achievable by using url-loader with asset size limit.
 
+    * [bootstrap jquery undefine issue](https://stackoverflow.com/questions/62559131/webpack-4-bootstrap-typeerror-cannot-read-property-jquery-of-undefined)
+
+    * [module instantiated once only issue](https://bundlers.tooling.report/code-splitting/multi-entry/)
+
 1. webpack, vue-loader, with eslint/prettier
 1. rollupjs 打包 (反思 webpack), with eslint/prettier
 1. vite,
