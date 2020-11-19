@@ -1,0 +1,158 @@
+body{
+  margin: 0;
+    background-image: url(../img/outside_100x100.jpg);
+}
+.backcolor_green{
+  background-color: #336814;
+}
+/** nav *********************************/
+.logo{
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+.logo img{
+  width:50%;
+}
+.nav{
+  color: white;
+  text-align: center;
+}
+.nav_item{
+  background-color: #4b4b4b;
+  padding: 10px;
+}
+.nav_home_color{
+  background-color: #96b285;
+  color: #356618;
+}
+/** end nav *********************************/
+/** banner photo block *********************************/
+.banner_photo{
+  background-image: url(../img/banner_900x431.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 50%;
+}
+.banner_content{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 18px;
+}
+.banner_content h1{
+  color: #e4e899;
+}
+.banner_content p{
+  color: white;
+  text-overflow: ellipsis;/*本文溢出部分用...表示*/
+  white-space: nowrap;/*本文一直在同一行不會換下一行直到遇到<br>，用text-overflow必須加此屬性*/
+  overflow: hidden;/*用text-overflow必須加此屬性*/
+}
+/** end banner photo block *********************************/
+/** three small photo block *********************************/
+.small_photo{
+  padding: 15px;
+  float: left;
+}
+.small_photo img{
+  border: 1px white solid;
+  float: left;
+}
+.small_photo_text{
+  color: white;
+  overflow: hidden;
+  padding-top: 15px;
+}
+.small_photo_text h3{
+  color: #e4e899;
+}
+/** end three small photo block *********************************/
+/** white block *********************************/
+.backcolor_white{
+  background-color: white;
+}
+.four_photo_header{
+  background-color: #dde9d5;
+  color: #640a00;
+  margin: 15px;
+  border-bottom: 2px solid #abc79a;
+}
+.four_photo_header h5{
+  margin: 0;
+  padding: 15px;
+}
+.four_photo,.four_photo_text{
+  padding: 15px;
+}
+.four_photo img{
+  width: 100%;
+}
+.four_photo_text h5{
+  color: #640a00;
+}
+.hr_line{
+  border: 1px solid gray;
+  margin: 15px 15px 30px 15px;
+}
+.one_photo_row{
+  margin-bottom: 4%;
+}
+.one_photo{
+  padding: 15px;
+}
+.one_photo img{
+  width: 100%;
+}
+.one_photo_text{
+  padding: 15px;
+}
+.one_photo_text h5{
+  background-color: #dde9d5;
+  color: #640a00;
+  padding: 15px;
+  border-bottom: 2px solid #abc79a;
+}
+/** end white block *********************************/
+/** footer block *********************************/
+.backcolor_light_green{
+  background-color: #dde9d5;
+}
+.footer_text{
+  color: #7f7d80;
+  padding: 15px;
+}
+.right-line{
+  border-right: 2px solid #abc79a;
+}
+.copyright{
+  color: white;
+  text-align: center;
+}
+.footer_text i{
+  font-size: 25px;
+}
+.fa-envelope,.fa-twitter{
+  padding-right: 15px;
+}
+.fa-facebook{
+  padding-right: 25px;
+}
+.fa-google-plus{
+  padding-right: 10px;
+}
+/** end footer block *********************************/
+
+
+/*如果外面設定max-width:1000px，在縮放時會限制住綠色外框大小
+ .backcolor_green{
+  background-color: #336814;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.logo{
+  text-align: center;
+  background-color: white;
+}
+.logo img{
+  width:60%;
+} */
