@@ -1,0 +1,66 @@
+/* header */
+
+header .custom_bg-color {
+  background-color: #4b4b4b;
+}
+
+/* header-nav */
+
+header .custom_navbar-toggler {
+  border: 1px solid #daead0;
+}
+
+header .custom_navbar-toggler-icon {
+  color: rgb(218, 234, 208);
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(218, 234, 208, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+header nav .custom_nav-link {
+  color: #e3e699;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+header nav .custom_nav-link:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: #daead0;
+}
+
+/* body */
+/* body-carousel */
+
+main .custom_carousel-caption {
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  top: auto;
+  margin: 0;
+  text-align: start;
+  padding: 1rem;
+}
+
+main .custom_carousel-caption p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  main .custom_carousel-caption p {
+    -webkit-line-clamp: 5;
+  }
+}
+
+main .custom_carousel-caption h3 {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  main .custom_carousel-caption h3 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,35 @@
+body {
+  background: url(../../assets/images/bg-body.jpg);
+}
+
+/* module */
+/* module-title-link */
+
+.custom_title-link {
+  color: #e3e699;
+}
+
+.custom_title-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* container */
+
+.custom_container {
+  padding: 0;
+  background-color: #356618;
+}
+
+@media (min-width: 576px) {
+  .custom_container {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom_container {
+    max-width: 960px;
+  }
+}
+
