@@ -13,7 +13,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: ""
   },
-
+  // devtool: 'inline-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    // port: 9000
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
