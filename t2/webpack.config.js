@@ -34,10 +34,6 @@ module.exports = {
           filename: 'image/[name][hash:5][ext]'
         }
       },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
     ]
   },
 }
