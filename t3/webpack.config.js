@@ -14,6 +14,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      title: 'Garden Walkthrough',
       template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
