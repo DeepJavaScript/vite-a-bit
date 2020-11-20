@@ -14,23 +14,28 @@ module.exports = {
     output: {
         filename: 'main.js',
 				path: path.resolve(__dirname, 'dist'),
-				publicPath: './'
+				publicPath: './',
 		},
 		module: {
 			rules: [
-				{
-					test: /\.css$/,
-					use: [
-						MiniCssExtractPlugin.loader,
-						'css-loader'
-					]
-				},
 				{
 					test: /\.(jpe?g|png|gif|svg)$/,
 					type: 'asset/resource',
 					generator: {
 						filename: 'img/[name].[hash:8][ext]'
 					}
+				},
+				{
+					test: /\.css$/,
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								publicPath: '../',
+							}
+						},
+						'css-loader'
+					]
 				},
 				{
 					test: /\.html$/,
