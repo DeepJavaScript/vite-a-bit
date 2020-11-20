@@ -258,6 +258,8 @@ hr {
 }
 
 .banner-item {
+  display: flex;
+  align-items: flex-start;
   cursor: pointer;
 }
 
@@ -294,6 +296,10 @@ hr {
   .banner-item p  {
     font-size: 17px;
   }
+}
+
+.banner-body {
+  flex: 1;
 }
 
 
