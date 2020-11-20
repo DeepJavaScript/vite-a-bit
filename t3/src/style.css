@@ -1,0 +1,246 @@
+h1, h2, h3 ,h4 ,p ,ul, ol {
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-image: url(./img/bg-body.jpg);
+}
+
+.my-background {
+  background-color: #356618;
+}
+
+/* ------------header------------- */
+.my-logo img {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .my-logo img {
+    display: block;
+    width: 65%;
+    margin: auto;
+  }
+}
+
+nav a {
+  background-color: #4b4b4b;
+  color: #f6f8ce;
+}
+
+.nav a:hover {
+  background-color: #d9eacf;
+  color: #4b4b4b;
+  
+}
+
+nav > button {
+  width: 100%;
+}
+
+.navbar-toggler {
+  padding: 2px 14px;
+  border-radius: 0;
+}
+
+nav > button > span {
+  font-size: 12px;
+}
+
+/* ------------banner------------- */
+.my-first-banner {
+  background-image: url(./img/gardening1a.jpg);
+  background-position: center top;
+}
+
+.my-second-banner {
+  background-image: url(./img/gardening-elder.jpg);
+  background-position: center;
+}
+
+.my-third-banner {
+  background-image: url(./img/gardening_friendship_03.jpg);
+  background-position: center;
+}
+
+.my-banner {
+  height: 84vh;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .my-banner {
+    height: 70vh;
+  }
+}
+
+.my-banner > div {
+  background-color: #000000aa;
+  bottom: 0;
+}
+
+.my-banner h2 {
+  color: #f1f5a3;
+  font-size: 18px;
+}
+
+@media (min-width: 992px) {
+  .my-banner h2 {
+    font-size: 24px;
+  }
+}
+
+.my-banner p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@media (min-width: 992px) {
+  .my-banner p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+.my-banner p a {
+  width: 18px;
+}
+
+.my-banner img {
+  width: 18px;
+}
+
+.my-banner-index h2 {
+  font-size: 20px;
+  color: #e2e498;
+}
+
+.my-banner-index > div:nth-of-type(1),
+.my-banner-index > div:nth-of-type(2) {
+    border-bottom: 2px solid #3e7320;
+    box-shadow: 0px 1px #2c5d10;
+  }
+
+@media (min-width: 576px) {
+  .my-banner-index > div:nth-of-type(1),
+  .my-banner-index > div:nth-of-type(2) {
+    border: none;
+    border-right: 2px solid #3e7320;
+    box-shadow: 1px 0px #2c5d10;
+  }
+}
+
+
+
+/* ------------feature------------- */
+.my-features > a:hover {
+  background-color: #f1f5a3;
+  box-shadow: 2px 2px 0px #aec2a3;
+}
+
+.my-features h3, 
+.my-tips h3 {
+  font-size: 22px;
+  color: #6f3d0d;
+  text-shadow: 1px 1px #fff;
+  background-color: #dce9d4;
+  border-bottom: 1px solid #b8d0aa;
+}
+
+.my-features h4 {
+  color: #6f3d0d;
+  font-size: 20px;
+}
+
+.my-features p {
+  color: #4b4b4b;
+}
+
+/* ------------tips------------- */
+.my-tips p {
+  color: #4b4b4b;
+}
+
+.my-tips ol {
+  counter-reset: item;
+}
+
+.my-tips ol > li {
+  padding: 0 0 0 .5em;
+  text-indent: -.7em;
+  list-style-type: none;
+  counter-increment: num;
+}
+
+.my-tips ol > li:before {
+  display: inline-block;
+  padding-right: .5em;
+  font-weight: bold;
+  content: counter(num) ".";
+}
+
+/* ------------footer------------- */
+footer > div {
+  background-color: #dce9d4;
+  border-bottom: 1px solid #bac9b2;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  footer > div {
+    text-align: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .my-footer-nav {
+    border-right: 1px solid #bac9b2;
+  }
+}
+
+footer h4 {
+  color: #8e908d;
+  text-shadow: 1px 1px #fff;
+}
+
+@media (min-width: 576px) {
+  footer h4 {
+    font-size: 20px;
+  }
+}
+
+footer a {
+  color: #8e908d;
+}
+
+@media (min-width: 576px) {
+  footer a {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  footer a {
+    font-size: 14px;
+  }
+}
+
+footer a:hover {
+  color: #3e7320;
+}
+
+footer img {
+  width: 20px;
+}
+
+footer > p {
+  font-size: 12px;
+}
