@@ -6,6 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
  module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    port: '5500',
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -39,7 +43,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[hash:8][ext][query]'
+          filename: 'images/[hash:8][ext]'
         }
       },
       {
