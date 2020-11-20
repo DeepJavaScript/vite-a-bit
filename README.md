@@ -16,6 +16,25 @@
       - [Asset Modules](https://webpack.js.org/guides/asset-modules/#custom-data-uri-generator) for webpack 5
       - [fontmin-webpack](https://www.npmjs.com/package/fontmin-webpack) for min font
       - [purgecss-webpack-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) for link css file, not style tags
+    - Bootstrap，選一個渲染出來 + [guide 看到 Code Splitting](https://webpack.js.org/guides/code-splitting/)
+      - bootstrap 直接引入
+      - webpack
+        - `HtmlWebpackPlugin` 版本問題，出現 warning，版本要用 `@next`
+            ```
+            (node:94791) [DEP_WEBPACK_COMPILATION_ASSETS] DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.
+            BREAKING CHANGE: No more changes should happen to Compilation.assets after sealing the Compilation.
+             Do changes to assets earlier, e. g. in Compilation.hooks.processAssets.
+             Make sure to select an appropriate stage from Compilation.PROCESS_ASSETS_STAGE_*.
+            ```
+        - `MiniCssExtractPlugin` 要指定 publicPath 才會 work，預設會吃 output 的 publicPath，都沒指定會出錯。
+            ```
+              {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: './'
+                }
+              },
+            ```
 1. webpack, vue-loader, with eslint/prettier
 1. rollupjs 打包 (反思 webpack), with eslint/prettier
 1. vite,
