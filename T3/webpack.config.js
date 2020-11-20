@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const PATHS = {
 //     src: path.join(__dirname, 'src')
 // }
-// const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -59,18 +58,25 @@ module.exports = {
                     'css-loader'
                 ]
             },
-            {
-                test: /\.(eot|ttf|woff|woff2)$/,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'font/[hash:10][ext]'
-                }
-            },
+            // {
+            //     test: /\.(eot|ttf|woff|woff2)$/,
+            //     type: 'asset/resource',
+            //     generator: {
+            //         filename: 'font/[hash:10][ext]'
+            //     }
+            // },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
                     filename: 'images/[hash:10][ext]'
+                }
+            },
+            {
+                exclude: /\.(html|css|js|png|svg|jpg|jpeg|gif)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'font/[hash:10][ext]'
                 }
             },
             {
@@ -86,8 +92,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: "[name].bundle.css",
+            chunkFilename: '[id].css',
         }),
-        // new CompressionPlugin(),
         // new PurgeCSSPlugin({
         //     paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         // }),

@@ -2,21 +2,14 @@
 「vite 一下」聚會記錄
 
 實作步驟：
-1. npm i webpack webpack-cli --save-dev。
-2. entry、output{filename、path.resolve(__dirname,'dist')}
-entry 為 webpack 進入點。
-output filename 為檔案名稱，path為設定路徑與資料夾名稱。
+1. bootstrap、fontawesome cdn 改為 npm 引入
+2. MiniCssExtractPlugin 獨立 css 檔案
+3. devServer 設定{
+    // serve 設定 從 ./dist 提供服務
+        contentBase: './dist',
+        //指定打開瀏覽器，open:true 會打開 src 資料夾
+        open: 'Google Chrome'
+    },
+4. module 使用 exclude 來處理 exclude 之外的檔案
+5. 使用 purgeCssplugin 清除無使用 css，但發現會使動畫效果消失？
 
-3. npm i css-loader、style-loader 
-4. type:'asset/resource'，可以產出檔案與 url
-    generator，設定產出檔名
-5. npm i html-loader，可打包 tag 內的 src
-6. npm i html-webpack-plugin，可打包 html 
-7. npm i clean-webpack-plugin，預先清除dist內檔案，再重新生成檔案
-
-讀書會學習：
-1. miniCssExtractPlugin 可獨立css檔
-2. fontmin-webpack 字型最小化
-3. PurgeCSSPlugin 清除多餘的 css
-
-<!-- purgeCssplugin使動畫效果消失？ -->
