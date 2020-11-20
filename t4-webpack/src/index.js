@@ -1,7 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/style.css';
-import './script/bootstrap.bundle.min.js';
-// import $ from 'jquery';
-
-// $('#navbarToggler').collapse({
-//   toggle: false
-// })
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '@fortawesome/fontawesome-free/js/all.js';

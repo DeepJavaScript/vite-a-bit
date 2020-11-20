@@ -1,4 +1,3 @@
-// const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -33,10 +32,6 @@ module.exports = {
       title: 't4-webpack-eva',
       template: './src/index.html',
     }),
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery'
-    // }),
   ],
   mode: 'development',
 };
