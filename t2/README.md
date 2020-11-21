@@ -4,6 +4,7 @@
 
 1. 不必在 index.js 裡面 import jquery 只需要安裝就可以妥當的包好並且運作正常? (npm)
 	20201118.Lo.t2.1
+> 因為bootstrap 裡面的 js file 就已經有 require jquery 的程式碼, 所以不需要自己引入， 但是仍然需要安裝
 2. 直接在 index.js 裡面寫  `import "bootstrap"`, 結果是根據 bootstrap module 裡面的 package.json 的 main 所聲明的檔案 (npm)
 3. 瀏覽器出現 `DevTools failed to load SourceMap: Could not load content for webpack://t2/node_modules/bootstrap/dist/js/bootstrap.bundle.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME`
 	1. ![]("./screenShot.png")
