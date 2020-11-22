@@ -35,6 +35,10 @@
                 }
               },
             ```
+    - Sass + PostCSS
+        - [引入 npm 的 fontawesome](https://stackoverflow.com/questions/52376720/how-to-make-font-awesome-5-work-with-webpack)
+        - 假裝使用[前端框架的寫法](https://vuejs.org/v2/guide/instance.html)
+        - [migration bootstrap v4-alpha to v5](https://v5.getbootstrap.com/docs/5.0/migration/)
 1. webpack, vue-loader, with eslint/prettier
 1. rollupjs 打包 (反思 webpack), with eslint/prettier
 1. vite,
