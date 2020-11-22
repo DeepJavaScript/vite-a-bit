@@ -3,10 +3,12 @@ const template = `<div class="container-fluid">
     <div class="col-12 col-sm-12">
       <div class="contact text-right">
         <span>
-          <i class="fa fa-envelope"></i>090-223-44-66
+          <i class="fa fa-envelope"></i>
+          090-223-44-66
         </span>
         <span>
-          <i class="fa fa-phone"></i>help@trendd.com
+          <i class="fa fa-phone"></i>
+          help@trendd.com
         </span>
       </div>
     </div>
@@ -338,9 +340,9 @@ const template = `<div class="container-fluid">
     </div>
     <div class="col-12 col-sm-12 col-lg-2 align-middle">
       <div class="footer_icon">
-        <i class="fa fa-facebook-square"></i>
-        <i class="fa fa-twitter-square"></i>
-        <i class="fa fa-pinterest-square"></i>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-pinterest-square"></i>
       </div>
     </div>
   </div>
@@ -349,6 +351,10 @@ const template = `<div class="container-fluid">
 import "bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./sass/print.scss";
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
 
 const app = document.createElement('div')
 app.classList.add("page_container")
