@@ -1,0 +1,12 @@
+@import "../module/base";
+
+.contact {
+    @extend %font_size_s;
+    margin: 2vh 0;
+    > span {
+        margin-left: 23px;
+        > i {
+            margin: 5px;
+        }
+    }
+}

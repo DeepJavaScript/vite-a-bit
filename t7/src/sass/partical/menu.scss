@@ -1,0 +1,26 @@
+.menu {
+    li {
+        line-height: 1;
+        padding: 0 9px;
+        font-size: 11pt;
+        a {
+            // font-size: 10pt;
+            // padding: 0;
+            // margin: 0 .5vw;
+        }
+
+        &:nth-last-child(1n+3) {
+            border-right: 1px solid black;
+        }
+    }
+
+    .search {
+        border-radius: 50px;
+        padding: 5px 10px;
+        font-size: 10pt;
+    }
+
+    input {
+
+    }
+}

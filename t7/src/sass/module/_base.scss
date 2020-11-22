@@ -1,0 +1,23 @@
+@import "./color";
+
+$speed_fast: 0.3s;
+
+
+body {
+    background: $dark_white;
+    .page_container{
+        max-width: 800px;
+    }
+}
+
+%font_size_s {
+    font-size: 9pt;
+}
+
+
+@mixin bk_img($img_name) {
+    background-position: center;
+    background-image: url($img_name);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,114 @@
+// contact
+
+.contact {}
+// logo
+
+.logo {}
+
+.login {
+    li {
+        display: inline-block;
+    }
+}
+// menu
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    // display: inline-block;
+    li {
+        display: inline-block;
+    }
+
+    input {
+        display: inline;
+    }
+}
+// filter
+
+.filter {
+    .select_brands {}
+
+    .select_age {
+        .select_item {
+            display: inline-block;
+        }
+    }
+
+    .select_color {
+        .color_box {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .select_price {}
+}
+// product
+
+.product_title {}
+
+.product_photo {
+    > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .view_photo {}
+}
+
+.product_detail {
+    .appraise {
+        // stars
+    }
+
+    .ruling_price {
+        text-decoration: line-through;
+        background: red;
+    }
+
+    .sale_price {
+        border-top: solid 1px black;
+        background-color: white;
+    }
+
+    .line {
+        border-top: solid 1px black;
+    }
+
+    .product_text {}
+
+    .input_area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        > .size {
+            > input {
+                width: 108px;
+            }
+        }
+
+        > .buy_count {
+            > input {
+                width: 40px;
+            }
+        }
+    }
+    .price_details {
+
+    }
+}
+
+
+.footer {
+    div {
+        display: inline-block;
+    }
+
+    .footer_menu {
+        li {
+            display: inline;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import "../module/color";
+
+.logo {
+
+    .login {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        border: 2px white solid;
+
+        padding: 5px;
+
+        .border_right {
+            border-right: 1px solid $light_gray;
+        }
+
+        .shopping_cart_icon {
+            // height: 28px;
+            // width: 28px;
+            border-radius: 50%;
+            border: 1px solid $light_gray;
+            background-color: white;
+            // text-align: center;
+            // padding: 10px;
+
+            .fa-shopping-cart {
+                margin: 5px;
+            }
+        }
+
+        > div {
+            // display: inline-block;
+            padding: 5px 10px;
+        }
+
+        i {
+            // margin-left: 12px;
+        }
+
+        button {
+            width: 132px;
+            height: 32px;
+            border: none;
+            background-color: $dark_red;
+            color: $dark_white;
+
+            i {
+                font-size: 12pt;
+                margin-left: 12px
+            }
+        }
+    }
+}

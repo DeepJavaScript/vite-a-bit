@@ -1,0 +1,137 @@
+@import "../module/base";
+
+.filter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background-color: white;
+
+    position: relative;
+    margin-top: 40px;
+
+    padding: 20px;
+    &::after{
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+
+        content: "FILTER";
+        background-color: black;
+        color: white;
+        padding: 3px 25px;
+        margin-left: 10px;
+    }
+
+    .select_brands {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 125px;
+
+        ul {
+            padding-left: 0;
+            display: flex;
+            align-items: flex-start;
+
+            > li {
+                padding: 0 5px;
+                display: inline-block;
+
+                &:nth-child(1) {
+                    border-right: 1px solid black;
+                }
+
+                > div {
+                    font-size: 9pt;
+                    transition: color $speed_fast;
+
+                    &:hover {
+                        color: $dark_red;
+                    }
+                }
+            }
+        }
+    }
+
+    .select_age {
+        display: flex;
+        justify-content: space-between;
+
+        // width: 33.33vw;
+
+        .select_item {
+            margin: 0 5px;
+            max-width: 110px;
+            min-height: 206px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            @mixin img_size {
+                height: 82px;
+                width: 82px;
+            }
+
+            > .back_img1,
+            > .back_img3,
+            > .back_img2 {
+                @include img_size;
+
+                > img {
+                    @include img_size;
+                    padding: 20%;
+                    opacity: 0;
+                    transition: opacity $speed_fast;
+                }
+            }
+
+            > .back_img1 {
+                @include bk_img("/src/images/p1.jpg");
+            }
+
+            > .back_img2 {
+                @include bk_img("/src/images/p2.jpg");
+            }
+
+            > .back_img3 {
+                @include bk_img("/src/images/p3.jpg");
+            }
+
+            > div {
+                > h5 {
+                    color: $dark_red;
+                }
+
+                > div {
+                    font-size: 9pt;
+                }
+            }
+
+            &:hover {
+                 > .back_img1,
+                 > .back_img3,
+                > .back_img2 {
+                    > img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .select_color {
+        width: 200px;
+
+        .color_box {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .select_price {
+        width: 200px;
+    }
+}
