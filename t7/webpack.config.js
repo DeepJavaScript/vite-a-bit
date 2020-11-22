@@ -45,16 +45,28 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use:  [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: './'
             }
-          },
-          'css-loader',
-          "sass-loader",
-        ],
+          }, {
+            loader: 'css-loader', // translates CSS into CommonJS modules
+          }, {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "precss",
+                    "autoprefixer",
+                  ],
+                ]
+              }
+            }
+          }, {
+            loader: 'sass-loader' // compiles Sass to CSS
+          }],
       },
     ],
   },

@@ -1,5 +1,3 @@
-import "./sass/print.scss";
-
 const template = `<div class="container-fluid">
   <div class="row">
     <div class="col-12 col-sm-12">
@@ -348,6 +346,9 @@ const template = `<div class="container-fluid">
   </div>
 </div>
 `
+import "bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./sass/print.scss";
 
 const app = document.createElement('div')
 app.classList.add("page_container")
