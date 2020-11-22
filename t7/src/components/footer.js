@@ -1,5 +1,6 @@
-const template = document.createElement('template');
-template.innerHTML = `<div class="footer_area mt-5">
+import Chm from "./../libs/Chm";
+
+const template = `<div class="footer_area mt-5">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 page_container mx-auto my-4">
@@ -30,4 +31,6 @@ template.innerHTML = `<div class="footer_area mt-5">
   </div>
 </div>`
 
-module.exports = template.innerHTML;
+export default new Chm({
+  template
+})

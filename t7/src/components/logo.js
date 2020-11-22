@@ -1,5 +1,6 @@
-const template = document.createElement('template');
-template.innerHTML = `<div class="container-fluid">
+import Chm from "./../libs/Chm";
+
+const template = `<div class="container-fluid">
   <div class="row">
     <div class="col-12 col-sm-12 logo d-flex justify-content-between flex-wrap">
       <div class="my-2">
@@ -21,4 +22,6 @@ template.innerHTML = `<div class="container-fluid">
   </div>
 </div>`
 
-module.exports = template.innerHTML;
+export default new Chm({
+  template
+})
