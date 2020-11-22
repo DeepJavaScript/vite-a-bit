@@ -17,7 +17,7 @@ module.exports = {
       filename: '[name].[hash:4].css',
     }),
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 't7',
       template: "./src/index.html",
       // meta: {
       //   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
