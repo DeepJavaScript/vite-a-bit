@@ -18,7 +18,7 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			// template: "./src/index.html"
+			template: "./src/index.html"
 		}),
 	],
 
@@ -26,7 +26,17 @@ module.exports = {
 		rules: [
 			{
 				test: /\.s[ac]ss$/i,
-				use: ['style-loader', 'css-loader', "sass-loader",],
+				use: ['style-loader', 'css-loader', 'resolve-url-loader',
+					{
+						loader: 'sass-loader',
+						options:
+						{
+							sourceMap: true,
+							// sourceMapContents: false
+							// resolve-url-loader 的文件有寫需要這個，但 sass-loader 文件說不需要，當設置 sourceMap 時就部不需要設Contents
+						}
+					}
+				]
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -34,6 +44,10 @@ module.exports = {
 				generator: {
 					filename: 'image/[name][hash:5][ext]'
 				}
+			},
+			{
+				test: /\.html$/i,
+				loader: 'html-loader',
 			},
 		]
 	},
