@@ -1,5 +1,6 @@
 import 'bootstrap';
 import $ from 'jquery';
+import Swiper from 'swiper';
 
 import './scss/main.scss';
 
