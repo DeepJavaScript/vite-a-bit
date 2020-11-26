@@ -41,7 +41,7 @@ module.exports = {
         }
       },
       {
-        test: /fontawesome.*\.(svg|eot|ttf|woff|woff2)$/i,
+        test: /@fortawesome\/fontawesome-free.*\.(svg|eot|ttf|woff|woff2)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'vendor/font-awesome/[name].[hash:8][ext]'
