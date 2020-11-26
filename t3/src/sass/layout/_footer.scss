@@ -1,0 +1,119 @@
+@use '../base/base';
+
+$conversation-border-lenght: 30px;
+footer {
+	
+	@extend %sub-background;
+	
+	div.row > div {
+		padding: 15px;
+	}
+}
+
+._footer-card {
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	h3 + div {
+		margin-top: 15px;
+		min-width: 100px;
+	}
+
+	p {
+		font-size: 0.5rem;
+	}
+}
+
+._testimonials {
+	._conversation {
+		position: relative;
+		background-color: lightgray;
+		padding: $conversation-border-lenght / 2;
+
+		&::after {
+			display: block;
+			content: "";
+			width: $conversation-border-lenght;
+			height: $conversation-border-lenght;
+			border-top: $conversation-border-lenght / 2 solid lightgray;
+			border-right: $conversation-border-lenght solid transparent;
+			position: absolute;
+			bottom: - $conversation-border-lenght;
+			left: 0;
+		}
+	}
+
+	._lecturer {
+		margin-top: 40px;
+		font-size: 0;
+
+		div {
+			display: inline-block;
+			vertical-align: middle;
+
+			p {
+				font-size: 1rem;
+				font-weight: 600;
+			}
+		}
+
+		img {
+			margin-right: 15px;
+		}
+
+		&-company {
+			color: base.$theme-green;
+			font-style: italic;
+		}
+	}
+}
+
+._email-form {
+	input,
+	textarea {
+		border: none;
+		background-color: lightgray;
+		width: 100%;
+		padding: 5px;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	input + input,
+	textarea {
+		margin-top: 5px;
+	}
+
+	button {
+		border: none;
+		color: white;
+		font-weight: 600;
+		padding: 5px 15px;
+	}
+
+	form > div {
+		margin-top: 30px;
+	}
+
+	&-clear {
+		background-color: black;
+	}
+
+	&-send {
+		background-color: base.$theme-green;
+	}
+}
+
+._flickr-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 5px;
+
+	img {
+		width: 100%;
+	}
+}
+
+

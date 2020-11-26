@@ -1,0 +1,132 @@
+@use '../base/base';
+@use '../utilities/media-query';
+@use '../utilities/_custom-grid';
+
+
+%margin-gap {
+	margin-top: custom-grid.$gap;
+}
+
+%full-side {
+	margin-left: -(custom-grid.$gap);
+	margin-right: -(custom-grid.$gap);
+}
+
+main {
+	margin-bottom: custom-grid.$gap;
+	@extend %sub-background;
+
+	div.row {
+		img,
+		p,
+		a,
+		ul {
+			@extend %margin-gap;
+		}
+	}
+
+	._card-group,
+	._introduction,
+	hr,
+	._featured-works {
+		position: relative;
+		top: -(custom-grid.$gap);
+	}
+}
+
+._container {
+	._main-nav {
+		margin-top: custom-grid.$gap;
+		background-image: linear-gradient(transparent 40px, #fbfbfb 40px);
+		@extend %full-side;
+	}
+
+	._main-carousel {
+		@extend %full-side;
+	}
+}
+
+._why-choose {
+	$circle-diameter: 40px;
+
+	ul {
+		margin-bottom: 0;
+		list-style-type: none;
+		padding-left: 0;
+
+		li {
+			display: flex;
+			align-items: baseline;
+			margin-top: 15px;
+			padding: 0 15px 15px;
+			border-bottom: 1px lightgray solid;
+		}
+
+		li::before {
+			content: ">";
+			color: white;
+			border-radius: 50%;
+			line-height: $circle-diameter;
+			background-color: lightgray;
+			text-align: center;
+			align-self: baseline;
+			flex: 0 0 $circle-diameter;
+			margin-right: 15px;
+		}
+	}
+}
+
+._news {
+	%margin-half-gap {
+		margin-top: custom-grid.$gap / 2;
+	}
+
+	color: gray;
+
+	article {
+		display: flex;
+		flex-direction: column;
+
+		._article-content {
+			@extend %margin-half-gap;
+		}
+		@include media-query.media-breakpoint-up(sm) {
+			flex-direction: row;
+
+			._article-content {
+				margin-top: 0;
+			}
+		}
+	}
+
+	article + article {
+		@extend %margin-half-gap;
+	}
+
+	img {
+		margin-right: custom-grid.$gap;
+	}
+
+	._article-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	._date {
+		background-color: base.$theme-green;
+		width: fit-content;
+		padding: 5px 10px;
+		color: white;
+		font-weight: 600;
+	}
+
+	span {
+		color: black;
+	}
+}
+
+hr {
+	margin-top: custom-grid.$gap;
+	margin-bottom: custom-grid.$gap;
+}

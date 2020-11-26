@@ -1,0 +1,110 @@
+@use '../utilities/media-query';
+
+$col-counts: 12;
+$gap: 30px;
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+) !default;
+
+$grid-breakpoints: media-query.$grid-breakpoints;
+
+
+// bootstrap-4.5.2/sass/mixins/_grid.scss
+@mixin make-container-max-width($grid-breakpoints: $grid-breakpoints) {
+	@each $name, $width in $container-max-widths {
+		@include media-query.media-breakpoint-up($name) {
+			max-width: $width;
+		}
+	}
+}
+
+// bootstrap-4.5.2/sass/mixins/_grid.scss
+@mixin make-container($padding: $gap / 2) {
+	width: 100%;
+	padding-right: $padding;
+	padding-left: $padding;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+._container {
+	@include make-container($gap);
+	@include make-container-max-width();
+}
+
+// row
+
+// bootstrap-4.5.2/sass/mixins/_grid.scss
+@mixin make-row($margin: $gap / 2) {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -$margin / 2;
+	margin-left: -$margin / 2;
+	// margin-top: -$margin / 2;
+}
+
+._row {
+	@include make-row(40px);
+}
+
+// col
+
+@function infix($point) {
+	@if ($point == xs) {
+		$point: "";
+	} @else {
+		$point: "-#{$point}";
+	}
+	@return $point;
+}
+
+// bootstrap-4.5.2/sass/mixins/_grid.scss
+@mixin make-col($padding: $gap, $breakpoint: $grid-breakpoints) {
+	%col-common-properties {
+		position: relative;
+		width: 100%;
+		padding-left: $padding / 2;
+		padding-right: $padding / 2;
+		margin-top: $padding / 2;
+		margin-bottom: $padding / 2;
+	}
+
+	@each $point in map-keys($map: $breakpoint) {
+		@for $i from 1 through $col-counts {
+			$infix: infix($point);
+			._col#{$infix}-#{$i} {
+				@extend %col-common-properties;
+			}
+		}
+	}
+
+	@each $point in map-keys($map: $breakpoint) {
+		@include media-query.media-breakpoint-up($point) {
+			@for $i from 1 through $col-counts {
+				$infix: infix($point);
+
+				._col#{$infix}-#{$i} {
+
+					flex: 0 0 percentage($number: $i / 12);
+					max-width: percentage($number: $i / 12);
+				}
+
+				._col#{$infix} {
+					flex-basis: 0;
+					flex-grow: 1;
+					max-width: 100%;
+				}
+
+				._oreder#{$infix}-#{$i} {
+					order: #{$i};
+				}
+			}
+		}
+	}
+}
+
+@include make-col();

@@ -1,0 +1,68 @@
+@use '../utilities/_custom-grid';
+
+._main-carousel {
+	$control-button-width: custom-grid.$gap;
+
+	.carousel-control-prev,
+	.carousel-control-next {
+		opacity: 1;
+		width: auto;
+
+		.carousel-control-prev-icon,
+		.carousel-control-next-icon {
+			width: $control-button-width;
+			height: ($control-button-width * 3) - 1px;
+			background-repeat: no-repeat;
+			background-image: url(../img/slider_prev.gif);
+			background-size: cover;
+			background-position: top;
+
+			&:hover {
+				background-position: 0 100%;
+			}
+		}
+
+		.carousel-control-next-icon {
+			transform: scaleX(-1);
+		}
+	}
+}
+
+._featured-works {
+	$control-button-lenght: 50px;
+
+	._carousel-title {
+		display: flow-root;
+
+		h2,
+		._carousel-control {
+			display: inline-block;
+		}
+
+		h2 {
+			margin-bottom: 0;
+			line-height: $control-button-lenght;
+		}
+	}
+
+	._carousel-control {
+		float: right;
+		font-size: 0;
+	}
+
+	._carousel- {
+		&prev,
+		&next {
+			display: inline-block;
+			width: $control-button-lenght;
+			height: $control-button-lenght;
+			text-align: center;
+			color: lightgray;
+
+			i {
+				font-size: $control-button-lenght;
+			}
+		}
+
+	}
+}

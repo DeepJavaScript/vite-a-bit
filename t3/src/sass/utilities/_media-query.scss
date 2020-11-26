@@ -1,0 +1,30 @@
+
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);
+
+// bootstrap-4.5.2/sass/mixins/_grid.scss
+@function breakpoint-min($name, $grid-breakpoint-list: $grid-breakpoints) {
+	$min: map-get(
+		$map: $grid-breakpoint-list,
+		$key: $name,
+	);
+	@return if($min != 0, $min, null);
+}
+
+// bootstrap-4.5.2/sass/mixins/_grid.scss
+@mixin media-breakpoint-up($name, $grid-breakpoints-list: $grid-breakpoints) {
+	$min: breakpoint-min($name, $grid-breakpoints-list);
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}

@@ -1,0 +1,61 @@
+@use '../utilities/media-query';
+@use '../base/base';
+@use '../utilities/_custom-grid';
+
+
+header {
+	@extend %sub-background;
+	display: flex;
+	flex-direction: column;
+	padding-top: custom-grid.$gap;
+	padding-bottom: custom-grid.$gap;
+
+	@include media-query.media-breakpoint-up(md) {
+		flex-direction: row;
+		justify-content: space-between;
+	};
+}
+
+._contact {
+	font-size: 0;
+	text-align: right;
+	margin-top: 10px;
+	vertical-align: bottom;
+
+	@include media-query.media-breakpoint-up(md) {
+		margin-top: 0;
+	}
+
+	a {
+		background-image: url(../img/social.png);
+		background-repeat: no-repeat;
+		display: inline-block;
+		height: 27px;
+		width: 27px;
+
+		& + a {
+			margin-left: 10px;
+		}
+
+		&:hover {
+			background-position-y: -27px;
+		}
+
+		$x-offset: -37px;
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i}) {
+				background-position-x: ($i - 1) * $x-offset;
+			}
+			// a:nth($list: , $n: )
+		}
+
+		&:last-of-type {
+			background-position-x: -150px;
+		}
+	}
+
+	p {
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+}

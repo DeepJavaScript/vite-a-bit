@@ -1,0 +1,35 @@
+@use '../base/base';
+
+
+$icon-min-lenght: 40px;
+
+._search {
+	display: flex;
+	padding: 5px 10px;
+	align-content: stretch;
+	margin: 0;
+	flex-basis: 200px;
+
+	input {
+		border: 1px solid lightgray;
+		background-color: base.$theme-gray;
+		color: gray;
+		box-sizing: border-box;
+		border-right: 0;
+		width: 100%;
+
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	button {
+		border: 1px solid lightgray;
+		box-sizing: border-box;
+		border-left: 0;
+		background-color: #f1f1f1;
+		min-height: $icon-min-lenght;
+		min-width: $icon-min-lenght;
+		// 方便小尺寸時點按
+	}
+}
