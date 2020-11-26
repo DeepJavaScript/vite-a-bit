@@ -46,7 +46,8 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         // true 會打開 src 資料夾
-        open: 'Google Chrome'
+        open: 'Google Chrome',
+        compress: true
     },
     module: {
         rules: [
