@@ -1,0 +1,16 @@
+@use "../settings/settings";
+
+.display-2 {
+  font-size: settings.$display2-size;
+  font-weight: settings.$display2-weight;
+  line-height: settings.$display2-line-height;
+  text-transform: uppercase;
+}
+
+.display-3 {
+  font-size: settings.$display3-size;
+  font-weight: settings.$display3-weight;
+  line-height: settings.$display3-line-height;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}

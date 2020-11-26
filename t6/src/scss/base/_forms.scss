@@ -1,0 +1,18 @@
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  resize: none;
+}

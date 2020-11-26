@@ -1,0 +1,79 @@
+@use "../settings/colors" as color;
+@use "../settings/settings";
+@use "../tools/breakpoint";
+
+footer {
+  margin-top: 40px;
+
+  @include breakpoint.media-breakpoint-up(md) {
+    margin-top: 72px;
+  }
+}
+
+.footer_list {
+  padding: 30px 20px;
+  background-image: settings.$sub-background-image;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .3);
+
+  @include breakpoint.media-breakpoint-up(md) {
+    padding: 34px 40px 38px;
+  }
+}
+
+.footer_item {
+  font-size: 13px;
+  background-color: transparent;
+
+  .display-3 {
+    margin: 0 0 25px;
+  }
+}
+
+.footer_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+
+  @include breakpoint.media-breakpoint-up(lg) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include breakpoint.media-breakpoint-up(xl) {
+    padding: 18px 0;
+  }
+}
+
+.footer_nav {
+  margin-bottom: 10px;
+
+  @include breakpoint.media-breakpoint-up(lg) {
+    margin-bottom: 0;
+  }
+
+  .nav {
+    display: block;
+
+    @include breakpoint.media-breakpoint-up(md) {
+      margin-right: 8px;
+    }
+
+    &-item {
+      display: inline-block;
+    }
+  }
+}
+
+.copyright {
+  font-size: 14px;
+
+  p {
+    margin: 0;
+    color: color.$copyright-text-color;
+  }
+
+  a {
+    color: color.$copyright-link-color;
+  }
+}

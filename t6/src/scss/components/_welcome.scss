@@ -1,0 +1,62 @@
+@use '../settings/colors' as color;
+@use "../tools/breakpoint";
+
+.welcome {
+  padding: 0;
+  background-color: transparent;
+
+  .card {
+    &_title {
+      margin-bottom: 30px;
+    }
+
+    &_img {
+      margin: 22px 0;
+    }
+
+    &_text {
+      font-size: 14px;
+      line-height: 18px;
+      color: color.$welcome-card-text-color;
+    }
+  }
+
+  @include breakpoint.media-breakpoint-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .card {
+      &_title {
+        flex: 0 0 100%;
+      }
+
+      &_img {
+        flex: 0 0 200px;
+        margin: 0;
+      }
+
+      &_body {
+        flex: 1 0 0;
+        margin: 0 0 0 20px;
+      }
+
+      &_text {
+        margin: 0;
+      }
+    }
+  }
+
+  @include breakpoint.media-breakpoint-up(md) {
+    display: block;
+
+    .card {
+      &_img {
+        margin: 22px 0;
+      }
+
+      &_body {
+        margin: 0;
+      }
+    }
+  }
+}

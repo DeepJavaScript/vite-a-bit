@@ -1,0 +1,22 @@
+@use "../settings/settings";
+@use "../tools/breakpoint";
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: settings.$album-margin;
+
+  @include breakpoint.media-breakpoint-up(sm) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include breakpoint.media-breakpoint-up(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &_item {
+    img {
+      width: 100%;
+    }
+  }
+}

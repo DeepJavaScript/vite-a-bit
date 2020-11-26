@@ -1,0 +1,16 @@
+@use "../settings/settings";
+@use "../tools/breakpoint";
+
+main {
+  padding: 20px 20px 30px;
+  background-image: settings.$sub-background-image;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .3);
+  
+  @include breakpoint.media-breakpoint-up(md) {
+    padding: 30px;
+  }
+
+  @include breakpoint.media-breakpoint-up(lg) {
+    padding: 0 40px 76px;
+  }
+}

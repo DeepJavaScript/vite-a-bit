@@ -1,0 +1,27 @@
+.contact {
+  font-size: 0;
+
+  .form_control {
+    padding: 4px;
+    font-size: 13px;
+    border-radius: 2px;
+  }
+  
+  textarea.form_control {
+    height: 110px;
+  }
+
+  .button {
+    padding: 6px 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &_group {
+      margin-top: 18px;
+    }
+
+    & + .button {
+      margin-left: 5px;
+    }
+  }
+}

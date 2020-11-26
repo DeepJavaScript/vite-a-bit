@@ -1,0 +1,56 @@
+@use '../settings/colors' as color;
+@use "../tools/breakpoint";
+
+.news_list {
+  .display-2 {
+    margin: 0 0 30px;
+  }
+}
+
+.news {
+  display: flex;
+  padding: 0;
+  background-color: transparent;
+
+  + .news {
+    margin-top: 35px;
+  }
+
+  .card {
+    &_img {
+      flex: 0 0 90px;
+      margin: 0;
+
+      @include breakpoint.media-breakpoint-up(sm) {
+        flex: 0 0 144px;
+      }
+    }
+
+    &_body {
+      margin: 0 0 0 20px;
+
+      @include breakpoint.media-breakpoint-up(md) {
+        margin: 0 0 0 30px;
+      }
+
+      time {
+        display: inline-block;
+        padding: 5px 12px;
+        background-color: color.$news-time-background-color;
+        color: color.$news-time-color;
+        font-weight: bold;
+      }
+    }
+
+    &_text {
+      margin: 12px 0 0;
+      font-size: 13px;
+      line-height: 20px;
+      color: color.$news-text-color;
+
+      @include breakpoint.media-breakpoint-up(sm) {
+        margin: 24px 0 0;
+      }
+    }
+  }
+}

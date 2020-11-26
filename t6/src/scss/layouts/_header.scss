@@ -1,0 +1,101 @@
+@use "../settings/colors" as color;
+@use "../settings/settings";
+@use "../tools/breakpoint";
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  margin-bottom: 20px;
+  background-image: settings.$sub-background-image;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .3);
+
+  @include breakpoint.media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 36px 40px 34px;
+    margin-bottom: 32px;
+  }
+}
+
+.logo {
+  h1 {
+    margin: 0;
+  }
+  img {
+    max-width: 330px;
+    width: 100%;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+
+  @include breakpoint.media-breakpoint-up(md) {
+    align-items: normal;
+    margin-top: 0;
+  }
+}
+
+.social {
+  text-align: right;
+  font-size: 0;
+
+  @include breakpoint.media-breakpoint-up(md) {
+    margin: 4px 0 15px;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  background: url(../../src/images/social.png) no-repeat;
+
+  &:hover {
+    background-position-y: -28px;
+  }
+
+  & + .icon {
+    margin-left: 6px;
+  }
+
+  &_facebook {
+    background-position: 0 0;
+  }
+
+  &_twitter {
+    background-position: -38px 0;
+  }
+
+  &_flickr {
+    background-position: -75px 0;
+  }
+
+  &_dribbble {
+    background-position: -112px 0;
+  }
+
+  &_rss {
+    background-position: right 0;
+  }
+}
+
+.telephone {
+  margin-top: 10px;
+
+  @include breakpoint.media-breakpoint-up(md) {
+    margin-top: 0;
+  }
+
+  address {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 14px;
+  }
+}

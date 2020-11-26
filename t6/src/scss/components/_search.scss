@@ -1,0 +1,35 @@
+@use "../settings/colors" as color;
+
+.search {
+  background-color: color.$background-color;
+
+  &_toggler {
+    padding: 8px 20px;
+    border: none;
+    background-color: transparent;
+  }
+
+  &_form {
+    display: flex;
+    padding: 12px;
+    background-color: color.$background-color;
+
+    input {
+      width: 100%;
+      padding: 12px 8px;
+      border: 1px solid color.$border-color;
+      border-right: none;
+      background-color: color.$search-background-color;
+      line-height: 14px;
+    }
+
+    button {
+      flex: 0 0 32px;
+      height: 40px;
+      padding: 6px;
+      border: 1px solid color.$border-color;
+      border-left: none;
+      background: color.$search-background-color url(../../src/images/search.png) no-repeat center ;
+    }
+  }
+}

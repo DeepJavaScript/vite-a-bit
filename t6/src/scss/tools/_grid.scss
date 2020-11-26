@@ -1,0 +1,32 @@
+@use "../settings/settings";
+@use "./breakpoint";
+
+
+// ref: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_grid.scss#L29
+@mixin make-col($size, $columns: settings.$grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+// ref: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_grid.scss#L61
+@mixin make-grid-columns($columns: settings.$grid-columns, $gutter: settings.$grid-gutter-width, $breakpoints: settings.$breakpoints) {
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint.breakpoint-infix($breakpoint, $breakpoints);
+
+    @include breakpoint.media-breakpoint-up($breakpoint) {
+      .col#{$infix} {
+        flex: 1 0 0;
+        min-width: 0;
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+          padding-top: settings.$grid-gutter-width;
+          padding-left: settings.$grid-gutter-width;
+        }
+      }
+    }
+  }
+}

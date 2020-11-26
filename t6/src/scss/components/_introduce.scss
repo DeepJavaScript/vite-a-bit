@@ -1,0 +1,9 @@
+@use "../tools/breakpoint";
+
+.introduce {
+  padding-bottom: 20px;
+
+  @include breakpoint.media-breakpoint-up(sm) {
+    padding-bottom: 44px;
+  }
+}

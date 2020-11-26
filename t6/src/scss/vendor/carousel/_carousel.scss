@@ -1,0 +1,91 @@
+@use "../../tools/breakpoint";
+
+.carousel {
+  img {
+    width: 100%;
+  }
+}
+
+// *------------------------------------------------*\
+// `.banner` use Bootstrap navbar component
+// *------------------------------------------------*/
+
+.banner {
+  %carousel_control {
+    width: 40px;
+    height: 60px;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    background-position-y: -30px;
+    cursor: pointer;
+    
+    @include breakpoint.media-breakpoint-up(md) {
+      height: 119px;
+      background-position-y: 0;
+    }
+    
+    &:hover {
+      background-position-y: 89px;
+
+      @include breakpoint.media-breakpoint-up(md) {
+        background-position-y: 119px;
+      }
+    }
+    
+    &::after {
+      font-size: 15px;
+    }
+  }
+  
+  .carousel_control-prev {
+    @extend %carousel_control;
+    left: 0;
+    background-image: url(../../src/images/slider_prev.gif);
+  }
+  
+  .carousel_control-next {
+    @extend %carousel_control;
+    right: 0;
+    background-image: url(../../src/images/slider_next.gif);
+  }
+}
+
+.feature {
+  position: relative;
+
+  .carousel {
+    &_control {
+      display: flex;
+      position: absolute;
+      top: 16px;
+      right: 0;
+
+      &-prev,
+      &-next {
+        font-family: swiper-icons;
+      }
+
+      &-prev {
+        padding-right: 6px;
+
+        &::after {
+          content: "prev";
+          font-family: swiper-icons;
+        }
+      }
+      
+      &-next {
+        padding-left: 6px;
+        margin-left: 2px;
+
+        &::after {
+          content: "next";
+          font-family: swiper-icons;
+        }
+      }
+    }
+  }
+}

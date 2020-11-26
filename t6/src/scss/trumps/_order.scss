@@ -1,0 +1,16 @@
+@use "../tools/breakpoint";
+
+@include breakpoint.media-breakpoint-up(lg) {
+  .order-lg-first {
+    order: -1 !important;
+  }
+  .order-lg-1 {
+    order: 1 !important;
+  }
+}
+
+@include breakpoint.media-breakpoint-up(xl) {
+  .order-xl-0 {
+    order: 0 !important;
+  }
+}

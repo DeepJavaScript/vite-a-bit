@@ -1,0 +1,36 @@
+@use "../settings/colors" as color;
+
+.bubble {
+  position: relative;
+  padding: 18px 14px 18px 28px;
+  border: 1px solid color.$bubble-border-color;
+  margin-bottom: 18px;
+  background-color: color.$bubble-background-color;
+  border-radius: 2px 2px 2px 0;
+
+  &::before {
+    content: "";
+    border-bottom: 17px solid transparent;
+    border-left: 25px solid color.$bubble-border-color;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left:- 1px;
+  }
+  
+  &::after {
+    content: "";
+    border-bottom: 15px solid transparent;
+    border-left: 23px solid color.$bubble-background-color;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  &_text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}

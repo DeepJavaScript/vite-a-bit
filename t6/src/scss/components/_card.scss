@@ -1,0 +1,72 @@
+@use "../settings/settings";
+@use "../settings/colors" as color;
+@use "../tools/breakpoint";
+
+.card {
+  padding: 30px;
+  background-color: color.$card-background-color;
+
+  &_title {
+    margin: 0 0 20px;
+  }
+
+  &_img {
+    margin: 20px 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_body {
+    margin-top: 20px;
+  }
+
+  &_text {
+    margin: 20px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &_link {
+    text-transform: capitalize;
+  }
+
+  &_footer {
+    margin-top: 20px;
+  }
+
+  &_action-btn {
+    display: inline-block;
+    padding: 2px 14px;
+    font-size: 14px;
+    background-color: color.$card-action-btn-background-color;
+  }
+}
+
+.card_deck {
+  @include breakpoint.media-breakpoint-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -(settings.$card-deck-margin);
+    margin-left: -(settings.$card-deck-margin);
+  }
+
+  .card {
+    margin-bottom: settings.$card-deck-margin;
+
+    @include breakpoint.media-breakpoint-up(md) {
+      width: calc(50% - #{settings.$card-deck-margin});
+      flex: 0 1 auto;
+      margin-top: settings.$card-deck-margin;
+      margin-left: settings.$card-deck-margin;
+      margin-bottom: 0;
+    }
+
+    @include breakpoint.media-breakpoint-up(lg) {
+      flex: 1 0 0;
+    }
+  }
+}

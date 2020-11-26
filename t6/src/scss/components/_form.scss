@@ -1,0 +1,14 @@
+@use "../settings/colors" as color;
+
+.form_control {
+  display: block;
+  width: 100%;
+  padding: 3px 5px;
+  border: 1px solid color.$input-border-color;
+  background-color: color.$input-background-color;
+  color: color.$input-text-color;
+
+  & + & {
+    margin-top: 4px;
+  }
+}

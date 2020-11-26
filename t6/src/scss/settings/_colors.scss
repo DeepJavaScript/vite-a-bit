@@ -1,0 +1,119 @@
+// colors
+$white: #fff;
+$black: #000;
+$black-100: #161616;
+$gray: #636363;
+$gray-100: #949393;
+$green: #81b800;
+$light-green: #93d200;
+$light-gray-100: #f3f3f3;
+$light-gray-200: #ebebeb;
+$light-gray-300: #e7e7e7;
+$light-gray-400: #dcdcdc;
+$light-gray-500: #cecece;
+$light-gray-600: #c7c7c7;
+
+// body color
+$body-background-color: $white;
+$body-box-shadow-color: $black-100;
+$body-color: $black;
+
+// border color
+$border-color: $light-gray-300;
+
+// background color
+$background-color: $white;
+
+
+
+// *----------------------------------*\
+// vendor color
+// *----------------------------------*/
+
+// nav-primary
+$nav-primary-link-color: $black;
+$nav-primary-link-hover-color: $white;
+$nav-primary-link-hover-background-color: $light-green;
+$nav-primary-link-active-background-color: $green;
+
+// nav-secondary
+$nav-secondary-link-color: $gray;
+$nav-secondary-link-active-color: $light-green;
+$nav-secondary-link-hover-color: $light-green;
+$nav-secondary-separate-line-color: $light-gray-600;
+
+
+
+// *----------------------------------*\
+// base color
+// *----------------------------------*/
+
+$link-color: $black;
+
+
+
+// *----------------------------------*\
+// layout color
+// *----------------------------------*/
+
+// main layout
+$main-background-color: $white;
+$hr-border-color: $light-gray-600;
+
+// footer layout
+$copyright-text-color: $gray;
+$copyright-link-color: $green;
+
+
+
+// *----------------------------------*\
+// component color
+// *----------------------------------*/
+
+// dropdown
+$dropdown-border-color: $light-gray-200;
+
+// search
+$search-background-color: $light-gray-100;
+
+// card
+$card-background-color: $white;
+$card-action-btn-background-color: $light-gray-500;
+
+// presentation
+$presentation-background-color: $light-gray-300;
+$presentation-border-color: $light-gray-400;
+$presentation-hover-background-color: rgba($black, .6);
+$presentation-hover-color: $white;
+$presentation-hover-border-color: $black-100;
+
+// welcome
+$welcome-card-text-color: $gray;
+
+// choose
+$choose-img-background-color: $light-gray-400;
+$choose-img-color: $white;
+$choose-text-color: $gray;
+
+// news
+$news-time-background-color: $green;
+$news-time-color: $white;
+$news-text-color: $gray;
+
+// bubble
+$bubble-background-color: $light-gray-300;
+$bubble-border-color: $light-gray-400;
+
+// media
+$media-link-color: $green;
+
+// button
+$button-primary-background-color: $green;
+$button-primary-text-color: $white;
+$button-secondary-background-color: $black-100;
+$button-secondary-text-color: $white;
+
+// form
+$input-background-color: $light-gray-300;
+$input-border-color: $light-gray-400;
+$input-text-color: $gray;

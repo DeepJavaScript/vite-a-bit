@@ -1,0 +1,103 @@
+@use "../../settings/colors" as color;
+@use "../../tools/breakpoint";
+
+
+// *------------------------------------------------*\
+// `.nav--primary` use Bootstrap navbar component
+// *------------------------------------------------*/
+
+.nav--primary {
+  .navbar {
+    padding: 0;
+    background-color: color.$background-color;
+    box-shadow: 1px 0 4px 0 rgba(0, 0, 0, .3);
+
+    &-toggler {
+      padding: 15px;
+      border: none;
+    }
+
+    &-collapse {
+      background-color: color.$background-color;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, .3);
+  
+      @include breakpoint.media-breakpoint-up(lg) {
+        box-shadow: none;
+      }
+    }
+
+    &-nav {
+      & > .nav-item {
+        border-right: 1px solid color.$border-color;
+      }
+
+      .active > .nav-link {
+        background-color: color.$nav-primary-link-active-background-color;
+        color: color.$nav-primary-link-hover-color;
+      }
+
+      .nav-link {
+        padding: 20px 30px;
+        font-size: 13px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: color.$nav-primary-link-color;
+  
+        &:hover {
+          background-color: color.$nav-primary-link-hover-background-color;
+          color: color.$nav-primary-link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+
+
+// *------------------------------------------------*\
+// `.nav--primary` use Bootstrap dropdown component
+// *------------------------------------------------*/
+
+.nav--primary {
+  .dropdown {
+    &-toggle {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &.show .nav-link {
+      background-color: color.$nav-primary-link-hover-background-color;
+      color: color.$nav-primary-link-hover-color;
+    }
+
+    &-menu {
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    &-item {
+      padding: 20px 24px 20px 40px;
+      font-size: 13px;
+      line-height: 20px;
+
+      @include breakpoint.media-breakpoint-up(lg) {
+        padding: 20px 30px;
+      }
+
+      & + .dropdown-item {
+        border-top: 1px solid color.$dropdown-border-color;
+      }
+  
+      &:hover {
+        background-color: color.$nav-primary-link-hover-background-color;
+        color: color.$nav-primary-link-hover-color;
+      }
+    }
+  }
+}

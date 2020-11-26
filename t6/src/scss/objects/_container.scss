@@ -1,0 +1,51 @@
+@use "../settings/settings";
+@use "../tools/breakpoint";
+@use "../tools/container";
+
+// *----------------------------------*\
+// base container
+// *----------------------------------*/
+
+// 具有每個斷點的 max-width 的 container
+.container {
+  @include container.make-container();
+  // 不同裝置斷點的最大寬度
+  @include container.make-container-max-widths();
+}
+
+// container 在所以斷點的寬度都為 100%
+.container-fluid {
+  @include container.make-container();
+}
+
+// container 的寬度為 100%，至斷點為止
+@each $breakpoint, $container-max-width in settings.$container-max-widths {
+  .container-#{$breakpoint} {
+    @extend .container-fluid;
+  }
+  
+  @include breakpoint.media-breakpoint-up($breakpoint) {
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    @each $name, $width in settings.$breakpoints {
+      @if ($container-max-width > $width or $breakpoint == $name) {
+        .container#{breakpoint.breakpoint-infix($name)} {
+          @extend %responsive-container-#{$breakpoint};
+        }
+      }
+    }
+  }
+}
+
+
+
+// *----------------------------------*\
+// custom container
+// *----------------------------------*/
+
+// 客製化容器
+.modify_container {
+  padding-top: 6px;
+}

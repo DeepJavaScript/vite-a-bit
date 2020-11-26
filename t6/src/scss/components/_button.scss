@@ -1,0 +1,21 @@
+@use "../settings/colors" as color;
+
+.button {
+  padding: 3px 5px;
+
+  &--primary {
+    border: none;
+    background-color: color.$button-primary-background-color;
+    color: color.$button-primary-text-color;
+  }
+
+  &--secondary {
+    border: none;
+    background-color: color.$button-secondary-background-color;
+    color: color.$button-secondary-text-color;
+  }
+
+  &_group {
+    font-size: 0;
+  }
+}

@@ -1,0 +1,33 @@
+@use "../settings/colors" as color;
+
+.media {
+  display: flex;
+
+  &_img {
+    flex: 0 0 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_body {
+    flex: 1 0 0;
+    align-self: center;
+    margin-left: 14px;
+  }
+
+  &_title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 14px;
+  }
+
+  &_link {
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    color: color.$media-link-color;
+  }
+}

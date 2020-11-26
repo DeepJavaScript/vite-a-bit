@@ -1,0 +1,8 @@
+// bootstrap
+@use "./bootstrap/bootstrap";
+@use "./bootstrap/nav-primary";
+@use "./bootstrap/nav-secondary";
+
+// carousel
+@use "./carousel/swiper";
+@use "./carousel/carousel";

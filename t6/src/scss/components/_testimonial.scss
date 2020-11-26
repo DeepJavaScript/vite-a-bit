@@ -1,0 +1,10 @@
+@use "../settings/colors" as color;
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+
+  &_person {
+    margin-top: 16px;
+  }
+}

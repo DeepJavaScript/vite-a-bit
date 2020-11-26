@@ -1,0 +1,40 @@
+@use '../settings/colors' as color;
+@use "../tools/breakpoint";
+
+.choose {
+  .display-2 {
+    margin: 0 0 14px;
+  }
+
+  &_item {
+    display: flex;
+    padding: 12px 8px;
+    border-bottom: 1px solid color.$border-color;
+    background-color: transparent;
+  
+    @include breakpoint.media-breakpoint-up(sm) {
+      padding: 16px 12px;
+    }
+
+    &::before {
+      content: "next";
+      height: 46px;
+      padding-left: 4px;
+      flex: 0 0 46px;
+      background-color: color.$choose-img-background-color;
+      border-radius: 50%;
+      font-family: swiper-icons;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 46px;
+      text-align: center;
+      color: color.$choose-img-color;
+    }
+  }
+
+  &_text {
+    margin: 12px 0 0 14px;
+    line-height: 19px;
+    color: color.$choose-text-color;
+  }
+}

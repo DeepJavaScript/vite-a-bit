@@ -1,0 +1,27 @@
+@use "../settings/settings";
+
+// 最小斷點寬度。最小 (第一個) 斷點為 null
+// ref: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_breakpoints.scss#L29
+@function breakpoint-min($name, $breakpoints: settings.$breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// 如果是最小斷點，則回傳空字串，否則回傳的名稱前面會帶有 dash
+// ref: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_breakpoints.scss#L55
+@function breakpoint-infix($name, $breakpoints: settings.$breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// 至少具有最小斷點寬度的 media。不查詢最小斷點
+// ref: https://github.com/twbs/bootstrap/blob/master/scss/mixins/_breakpoints.scss#L61
+@mixin media-breakpoint-up($name) {
+  $min: breakpoint-min($name, settings.$breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

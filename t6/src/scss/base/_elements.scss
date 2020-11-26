@@ -1,0 +1,24 @@
+@use "../settings/settings";
+@use "../settings/colors" as color;
+@use "../tools/breakpoint";
+
+body {
+  font-size: settings.$font-size-base;
+  font-family: settings.$font-family-base;
+  font-weight: settings.$font-weight-base;
+  line-height: settings.$line-height-base;
+  color: color.$body-color;
+  background-color: color.$body-background-color;
+  background-image: url(../../src/images/bg.jpg);
+  box-shadow: inset 0 98px color.$body-box-shadow-color, inset 0 -234px color.$body-box-shadow-color;
+}
+
+a {
+  color: color.$link-color;
+}
+
+hr {
+  margin: 40px 0 50px;
+  border: none;
+  border-top: 1px solid color.$hr-border-color;
+}

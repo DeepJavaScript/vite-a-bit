@@ -1,0 +1,48 @@
+@use "../../settings/colors" as color;
+@use "../../tools/breakpoint";
+
+
+// *------------------------------------------------*\
+// `.nav--secondary` use Bootstrap nav component
+// *------------------------------------------------*/
+
+.nav--secondary {
+  .nav {
+    font-size: 0;
+    text-align: center;
+
+    @include breakpoint.media-breakpoint-up(lg) {
+      text-align: left;
+    }
+
+    &-item {
+      & + .nav-item {
+        padding-left: 10px;
+
+        &::before {
+          content: "|";
+          display: inline-block;
+          margin-right: 10px;
+          font-size: 14px;
+          color: color.$nav-secondary-separate-line-color;
+        }
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      padding: 0;
+      font-size: 14px;
+      color: color.$nav-secondary-link-color;
+      text-transform: uppercase;
+      
+      &:hover {
+        color: color.$nav-secondary-link-hover-color;
+      }
+
+      &.active {
+        color: color.$nav-secondary-link-active-color;
+      }
+    }
+  }
+}

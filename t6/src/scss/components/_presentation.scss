@@ -1,0 +1,107 @@
+@use "../settings/colors" as color;
+@use "../settings/settings";
+@use "../tools/breakpoint";
+
+.presentation {
+  // 因絕對定位 top -30px，所以 margin-bottom 需 -30px 抵消
+  margin-bottom: 62px - 30px;
+
+  @include breakpoint.media-breakpoint-up(lg) {
+    position: relative;
+    z-index: 1;
+    top: -30px;
+  }
+
+  .row {
+    margin-top: -20px;
+    margin-left: -20px;
+    
+    @include breakpoint.media-breakpoint-up(md) {
+      margin-top: -(settings.$grid-gutter-width);
+      margin-left: -(settings.$grid-gutter-width);
+    }
+  }
+  
+  [class*="col-"] {
+    padding-top: 20px;
+    padding-left: 20px;
+
+    @include breakpoint.media-breakpoint-up(md) {
+      padding-top: settings.$grid-gutter-width;
+      padding-left: settings.$grid-gutter-width;
+    }
+  }
+}
+
+.presentation .card {
+  padding: 34px 28px 28px 28px;
+  text-align: center;
+  background-color: color.$presentation-background-color;
+  border: 1px solid color.$presentation-border-color;
+
+  @include breakpoint.media-breakpoint-up(sm) {
+    padding: 34px 50px 28px 50px;
+  }
+
+  @include breakpoint.media-breakpoint-up(md) {
+    padding: 34px 30px 28px 30px;
+  }
+
+  @include breakpoint.media-breakpoint-up(lg) {
+    padding: 34px 20px 28px 20px;
+  }
+
+  @include breakpoint.media-breakpoint-up(xl) {
+    padding: 34px 28px 28px 28px;
+  }
+
+  &:hover {
+    background-color: color.$presentation-hover-background-color;
+    color: color.$presentation-hover-color;
+    border: 1px solid color.$presentation-hover-border-color;
+
+    .card_text {
+      font-weight: bold;
+    }
+  }
+
+  &_title {
+    margin-bottom: 26px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &_img {
+    margin: 26px 0;
+
+    img {
+      width: auto;
+    }
+  }
+
+  &_body {
+    @include breakpoint.media-breakpoint-up(md) {
+      height: 64px;
+    }
+
+    @include breakpoint.media-breakpoint-up(xl) {
+      height: 88px;
+    }
+  }
+
+  &_text {
+    font-size: 13px;
+    line-height: 1.3;
+
+    @include breakpoint.media-breakpoint-up(md) {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+    }
+
+    @include breakpoint.media-breakpoint-up(xl) {
+      -webkit-line-clamp: 5;
+    }
+  }
+}

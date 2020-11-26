@@ -1,0 +1,37 @@
+@use "../settings/settings";
+
+@if (settings.config(debug) == true) {
+  * {
+    outline: 1px solid red;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  img {
+    opacity: 0.2;
+  }
+
+  @media (min-width: 1200px) {
+    .container-xl {
+      max-width: 1250px !important;
+    }
+  }
+
+  // screen width: 1364px
+  body::before {
+    content: "";
+    background: url(../../template_6.png) no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    max-width: 1494px;
+    height: 2435px;
+    margin: 0 auto;
+    position: absolute;
+    left: -17px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.6;
+    z-index: -1;
+  }
+}

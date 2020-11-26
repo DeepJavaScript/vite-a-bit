@@ -1,0 +1,19 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// 覆寫 bootstrap 的 變數，斷點數值維持原狀，只留需要的斷點
+$grid-breakpoints: (
+  xs: 0,
+  lg: 992px
+);
+  
+// 覆寫 bootstrap 的 變數，此變數與 $grid-breakpoints 需同時存在，寬度值維持原狀
+$container-max-widths: (
+  lg: 960px 
+);
+
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/nav";
