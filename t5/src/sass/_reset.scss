@@ -1,0 +1,24 @@
+body,h1,h2,p{
+  margin: 0;
+  padding: 0;
+}
+*,::before,::after{
+  box-sizing: border-box;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a:link{
+  /* a連結底線消失 */
+  text-decoration: none;
+}
+img{
+  display: block;
+}
+button{
+  border: none;
+  /* cursor: pointer;把滑鼠游標變成手指形狀 */
+  cursor: pointer;
+}

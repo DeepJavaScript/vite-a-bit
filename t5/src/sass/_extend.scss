@@ -1,0 +1,68 @@
+@import 'color';
+/************************************
+排版用
+------------------------------------*/
+//margin，padding等填充空間用
+$spacer:20px;
+//水平排列，置中
+%flex-container{
+  display: flex;
+  justify-content: center;
+}
+/************************************/
+
+/************************************
+文字樣式
+------------------------------------*/
+//文字大小
+$font-size:16px;
+//文字粗細
+$font-weight:300;
+//文字間距
+$letter-spacing:2px;
+//網頁字型
+$primary-font:'geometric';
+%secondary-font{
+  // 因為很多區塊的標題都用到這字型，用@extend比較快
+  font-family: 'Georgia';
+}
+/************************************/
+
+/************************************
+圓點樣式
+------------------------------------*/
+%dot-content{
+  content: "...";
+  display: block;
+  font-size: $font-size*2;
+}
+/************************************/
+
+/************************************
+對話框下倒三角形樣式
+------------------------------------*/
+$arrow-size:20px;
+%down-triangle{
+  content:"";
+  display:block;
+  width: 0;
+  /*  箭頭位置調整  */
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  /*  箭頭樣式大小  */
+  border-top:$arrow-size*1.25 solid $secondary-color;
+  border-left:$arrow-size*0.75 solid rgba(0,0,0,0);
+  border-right:$arrow-size*0.75 solid rgba(0,0,0,0);
+}
+/************************************/
+
+/************************************
+<a>的按鈕樣式
+------------------------------------*/
+%link-button-style{
+  padding: $spacer/2 $spacer*1.5;
+  font-size: $font-size;
+}
+/************************************/

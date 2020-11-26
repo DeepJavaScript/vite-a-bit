@@ -1,0 +1,15 @@
+
+$tables-width:760px;
+$desktop-width:1020px;
+// 平板
+@mixin tables{
+  @media only screen and (min-width: $tables-width){
+    @content;
+  }
+}
+//桌電
+@mixin desktops{
+  @media (min-width: $desktop-width){
+    @content;
+  }
+}
