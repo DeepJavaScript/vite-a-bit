@@ -1,0 +1,54 @@
+/*
+*本檔案是對於網頁基礎的樣式進行設定，包含 margin、字型、盒模型大小等
+*/
+
+/*
+*box-sizing 大小
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/*
+*標題文字設定
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+}
+
+/*
+*標題文字設定字形
+*/
+h1 {
+  @include font(italic, 2.5rem, normal, $font-primary);
+  letter-spacing: 0.2rem;
+}
+h2,
+h3 {
+  @include font(normal, 1rem, normal, $font-primary);
+}
+
+/*
+*連結樣式設定
+*/
+a {
+  text-decoration: none;
+}
+
+/*
+*margin改變
+*/
+body {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}

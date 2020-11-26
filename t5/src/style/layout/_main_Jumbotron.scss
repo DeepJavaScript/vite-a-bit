@@ -1,0 +1,81 @@
+/*
+* main
+*/
+
+/*
+* Jumbotron
+*/
+.jumbotron {
+  padding: 1rem 1rem;
+  background: url(../img/banner.png) top center;
+  color: #fff;
+  background-size: cover;
+  text-align: center;
+  height: calc(50vh);
+  @media (min-width: 375px) {
+    padding: 2rem 1rem;
+  }
+  @include Mediaquery-phone {
+    padding: 3rem 1rem;
+  }
+  @include Mediaquery-pad {
+    padding: 8rem 1rem;
+    height: calc(80vh - 3rem);
+  }
+  @include Mediaquery-pc {
+    padding: 8rem 1rem;
+    height: calc(100vh - 3rem);
+  }
+  h1 {
+    margin: 0;
+    @include Mediaquery-pc {
+      font-size: 3.5rem;
+    }
+    span {
+      @include font(normal, 2.5rem, normal, $font-secondary);
+      letter-spacing: normal;
+      @include Mediaquery-pc {
+        font-size: 3.5rem;
+      }
+    }
+  }
+  h2 {
+    @include font(normal, 1rem, normal, $font-primary);
+    letter-spacing: 0.2rem;
+    @include Mediaquery-pc {
+      letter-spacing: 0.4rem;
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    margin: 1rem 0;
+    br {
+      display: none;
+      @media (min-width: 375px) {
+        display: initial;
+      }
+    }
+    @include font(normal, 0.8rem, 1rem, $font-primary);
+    letter-spacing: 0.2rem;
+    @include Mediaquery-pc {
+      line-height: 2rem;
+      font-size: 1.4rem;
+    }
+  }
+  .jumbotron-point {
+    margin-top: 2rem;
+    @include point(0, 1rem, 0, -1rem);
+    @media (min-width: 375px) {
+      @include point(0, 1.5rem, 0, -1.5rem);
+      margin-top: 4rem;
+    }
+    @include Mediaquery-pad {
+      @include point(0, 2rem, 0, -2rem);
+      margin-top: 5rem;
+    }
+    @include Mediaquery-pc {
+      @include point(0, 2rem, 0, -2rem);
+      margin-top: 8rem;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+/*
+*main sass file
+*/
+@charset 'utf-8';
+/*
+* abstract
+*/
+@import "abstracts/_color";
+@import "abstracts/_typography";
+@import "abstracts/_mediaquery";
+
+/*
+* base
+*/
+@import "base/_reset";
+@import "base/_base";
+
+/*
+* component
+*/
+@import "component/_nav";
+@import "component/_grid";
+@import "component/_point";
+@import "component/_triange";
+@import "component/_button";
+
+/*
+* layout
+*/
+@import "layout/_main_Jumbotron";
+@import "layout/_main_album";
+@import "layout/_main_member";
+@import "layout/_main_article";
+@import "layout/_footer";

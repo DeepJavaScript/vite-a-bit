@@ -1,0 +1,15 @@
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  span {
+    @include font(300, 0.8rem, normal, $font);
+    br {
+      @media (min-width: 576px) {
+        display: none;
+      }
+    }
+    a {
+      color: $brand-secondary;
+    }
+  }
+}

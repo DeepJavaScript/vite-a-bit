@@ -1,0 +1,62 @@
+/*
+* main
+*/
+/*
+* article_section
+*/
+
+.article_section {
+  background: url(../img/sea-horse-bg.jpg) no-repeat fixed;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  .container {
+    padding: 1rem 1rem;
+    @include Mediaquery-phone {
+      padding: 1rem 3rem;
+    }
+    @include Mediaquery-pc {
+      width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    > div:first-of-type {
+      text-shadow: 1px 1px 1px #000;
+      @include Mediaquery-pc {
+        column-count: 2;
+        column-gap: 5rem;
+      }
+      h4 {
+        text-align: left;
+        @include font(normal, 1.5rem, normal, $font-primary);
+        // padding-top: 3rem;
+        letter-spacing: 0.2rem;
+        @include Mediaquery-phone {
+          font-size: 2rem;
+        }
+      }
+      > p {
+        text-align-last: left;
+        text-align: justify;
+        font-weight: 200;
+        line-height: 1.6;
+        text-justify: inter-word;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .article_point {
+    margin: 3rem auto auto auto;
+    @include point(2rem, 0, -2rem, 0);
+  }
+  .display-pc {
+    @include Mediaquery-pc {
+      display: none;
+    }
+  }
+  .space {
+    @include Mediaquery-pc {
+      height: 20rem;
+    }
+  }
+}

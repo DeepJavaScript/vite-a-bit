@@ -1,0 +1,47 @@
+.member_section {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+  > div:first-of-type {
+    width: 100%;
+    background: $brand-secondary;
+    color: #fff;
+    position: relative;
+    h3 {
+      @include font(300, 1rem, normal, $font);
+      margin: 0 1rem;
+      padding: 1rem 0;
+      text-align-last: center;
+    }
+  }
+  > h4 {
+    width: 100%;
+    @include font(normal, 1.5rem, normal, $font-primary);
+    color: $brand-secondary;
+    margin: 3rem 0;
+  }
+  img {
+    width: 50%;
+    @include Mediaquery-phone {
+      width: 100%;
+    }
+  }
+  h2 {
+    @include font(normal, 2rem, normal, $font-primary);
+    color: $brand-secondary;
+    margin-bottom: 0;
+  }
+  h3 {
+    @include font(100, 0.8rem, normal, $font);
+    margin: 0;
+    padding-bottom: 3rem;
+  }
+  div:last-of-type {
+    width: 100%;
+    padding: 3rem 0;
+  }
+  button {
+    margin: 0;
+  }
+}

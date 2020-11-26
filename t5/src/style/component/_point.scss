@@ -1,0 +1,17 @@
+/*
+* point mixin 調整三個點另外兩個點的方向，使用陰影去造成
+*/
+@mixin point($one, $two, $three, $four) {
+  box-shadow: $one $two #fff, $three $four #fff;
+}
+
+/*
+* point class
+*/
+.point {
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+}

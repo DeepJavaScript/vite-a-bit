@@ -1,0 +1,40 @@
+/*
+* grid 系統
+*/
+
+.row {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/*
+*column-a-b-c，a 代表在 phone 大小、b 代表在 pad 大小、c 代表在 pc 欄位占比
+
+例如：
+    column-4-2-1 代表在電腦時是四欄，
+    在平板時是兩欄，
+    在手機時是一欄。
+*/
+.column-4-2-1 {
+  position: relative;
+  width: 100%;
+  font-size: 0;
+  @include Mediaquery-phone {
+    width: 50%;
+  }
+  @include Mediaquery-pc {
+    width: 25%;
+  }
+}
+
+.column-2-2-1 {
+  width: 100%;
+  @include Mediaquery-phone {
+    width: 50%;
+  }
+  @include Mediaquery-pc {
+    width: 50%;
+    max-width: 450px;
+  }
+}

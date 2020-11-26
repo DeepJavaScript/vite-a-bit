@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700i&display=swap");
+// font style
+$font: sans-serif;
+$font-primary: Georgia, serif;
+$font-secondary: "Lobster Two", cursive;
+
+@mixin font($style, $size, $lineheight, $fontfamily) {
+  font: $style $size $fontfamily;
+  line-height: $lineheight;
+}
+
+// @mixin point($one, $two) {
+//   box-shadow: 0 $one #fff, 0 $two #fff;
+// }

@@ -1,0 +1,21 @@
+/*
+* Mediaquery-pc 指的是在電腦以上包含電腦的斷點、
+* Mediaquery-pad 指的是在平板以上包含平板的斷點、
+* Mediaquery-phone 指的是在手機以上包含手機的斷點
+*/
+
+@mixin Mediaquery-pc {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin Mediaquery-pad {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin Mediaquery-phone {
+  @media (min-width: 576px) {
+    @content;
+  }
+}

@@ -1,0 +1,14 @@
+/*
+* 本檔案統一瀏覽器部分不同的預設數值，包含文字大小統一、連結樣式統一
+*/
+html {
+  font: 16px $font;
+}
+
+/*
+* 連接樣式統一
+*/
+a {
+  text-decoration-line: none;
+  color: inherit;
+}

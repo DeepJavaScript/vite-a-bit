@@ -1,0 +1,15 @@
+.triangle:after {
+  content: "";
+  display: block;
+  z-index: 3;
+  position: absolute;
+  top: auto;
+  bottom: -1.8rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border: 1rem solid;
+  width: 0;
+  height: 0;
+  border-color: $brand-secondary transparent transparent transparent;
+}
