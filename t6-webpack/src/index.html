@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>t6</title>
+  <!-- <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css"> -->
+  <!-- Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="css/main.css"> -->
+  <script src="https://kit.fontawesome.com/626796f880.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site__title">
+      <h1>
+        <a href="##">
+          <img src="img/logo.png" alt="Business Planet">
+        </a>
+      </h1>
+      <div class="site__togglers">
+        <div>
+          <button class="search__toggler">
+            <a href="#searchToggler"></a>
+          </button>
+          <button class="navbar__toggler">
+            <a href="#navbarToggler">
+              <div></div>
+              <div></div>
+              <div></div>
+            </a>
+          </button>
+        </div>
+      </div>
+      <div class="site__social">
+        <div class="site__social__icon">
+          <a href="##">
+            <i class="fab fa-facebook-f fa-fw"></i>
+          </a>
+          <a href="##">
+            <i class="fab fa-twitter fa-fw"></i>
+          </a>
+          <a href="##">
+            <i class="fab fa-tumblr fa-fw"></i>
+          </a>
+          <a href="##">
+            <i class="fab fa-dribbble fa-fw"></i>
+          </a>
+          <a href="##">
+            <i class="fas fa-rss fa-fw"></i>
+          </a>
+        </div>
+        <p class="site__social__contact">Call Us Now: <a href="tel:+17771234568">+1 (777) 123-45-68</a></p>
+      </div>
+    </div>
+    <div class="site__nav">
+      <form 
+        class="site__nav__search" 
+        id="searchToggler" 
+        method="GET" 
+        action="">
+        <input 
+          type="text" 
+          name="input" 
+          placeholder="Search this site...">
+      </form>
+      <nav class="dropdown" id="navbarToggler">
+        <a href="##">Home</a>
+        <a href="##">About</a>
+        <a 
+          href="##" 
+          class="dropdown-toggle"
+          id="aboutDropdown" 
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="false">Features
+          <!-- <i class="fas fa-chevron-down"></i> -->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        <a 
+          href="##" 
+          class="dropdown-toggle"
+          id="portfolioDropdown" 
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="false">Portfolio
+          <!-- <i class="fas fa-chevron-down"></i> -->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        <a 
+          href="##" 
+          class="dropdown-toggle"
+          id="blogDropdown" 
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="false">Blog
+          <!-- <i class="fas fa-chevron-down"></i> -->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="blogDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        <a href="##">Contacts</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container main">
+    <section class="banner site__banner swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-banner"></div>
+        <div class="swiper-slide swiper-slide-banner"></div>
+        <div class="swiper-slide swiper-slide-banner"></div>
+      </div>
+      <div class="banner__ctrl__prev swiper-button-prev"></div>
+      <div class="banner__ctrl__next swiper-button-next"></div>
+    </section>
+    <section class="site__feature">
+      <div class="row">
+        <div class="col-3">
+          <div class="card">
+            <h3 class="card-title">
+              Growth Strategies
+            </h3>
+            <div class="card-img">
+              <img src="img/p1.png" alt="">
+            </div>
+            <p class="card-text">
+              Vestibulum dignissim, dui ac hendrerit blandit, sapien orci dictum nibh, vel suscipit augue nibh in enim. Nullam dignissim euismodnunc at.
+            </p>
+            <button class="btn">More</button>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <h3 class="card-title">
+              Perfect Support
+            </h3>
+            <div class="card-img">
+              <img src="img/p2.png" alt="">
+            </div>
+            <p class="card-text">
+              Donec semper, dolor eu iaculis laoreet, erat diam interdum nisi, vel consequat leo neque in ante. Curabitur fringilla tristque nisl ut.
+            </p>
+            <button class="btn">More</button>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <h3 class="card-title">
+              Partners Programs
+            </h3>
+            <div class="card-img">
+              <img src="img/p3.png" alt="">
+            </div>
+            <p class="card-text">
+              Nunc pellentesque malesuada enim utdignissim. Etiam aliquam malesuada magna, vel scelerisque lectus pharetra quis.
+            </p>
+            <button class="btn">More</button>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <h3 class="card-title">
+              Premium Services
+            </h3>
+            <div class="card-img">
+              <img src="img/p4.png" alt="">
+            </div>
+            <p class="card-text">
+              Cumque quibusdam quae ipsam unde cupiditate dolor, adipisci ut, excepturi quidem fugit, fugiat? Maxime placeat mollitia excepturi dolores exercitationem impedit cupiditate sunt.
+            </p>
+            <button class="btn">More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site__intro">
+      <div class="row">
+        <div class="col-4">
+          <div class="site__intro__card">
+            <h2>Welcome</h2>
+            <img src="img/welcome.jpg" alt="welcome">
+            <p>Duis molestie commodo sapien, non mollis diam consequat in. Nulla blandit viverra sodales. Donec sit amet diam neque.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="site__intro__card">
+            <h2>Why choose us?</h2>
+            <div class="card__choose">
+              <a href="##">
+                <i class="fas fa-chevron-right fa-fw"></i>
+              </a>
+              <p>
+                Etiam rutrum venenatis dui, non
+              </p>
+            </div>
+            <div class="card__choose">
+              <a href="##">
+                <i class="fas fa-chevron-right fa-fw"></i>
+              </a>
+              <p>Aliquam ac diam in lorem vulputate auctor.</p>
+            </div>
+            <div class="card__choose">
+              <a href="##">
+                <i class="fas fa-chevron-right fa-fw"></i>
+              </a>
+              <p>Vestibulum vitae urna quis eros convallis</p>
+            </div>
+            <div class="card__choose">
+              <a href="##">
+                <i class="fas fa-chevron-right fa-fw"></i>
+              </a>
+              <p>Sed magna magna, congue</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="site__intro__card">
+            <h2>News & Events</h2>
+            <div class="card__news">
+              <div class="card__news__img">
+                <img src="img/news1.jpg" alt="news & events">
+              </div>
+              <div class="card__news__info">
+                <span>12.12.12</span>
+                <p>Aliquam ac diam in lorem vulputate auctor. Aliquam rhoncus nunc et justo imperdiet blandit</p>
+              </div>
+            </div>
+            <div class="card__news">
+              <div class="card__news__img">
+                <img src="img/news2.jpg" alt="news & events">
+              </div>
+              <div class="card__news__info">
+                <span>12.12.12</span>
+                <p>Sed auctor laoreet augue, is pulvinar lacus mattis non. In hac habitassw platea dictumst. Proin et lorem</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site__work">
+      <div class="site__work__head">
+        <h2>Featured Works</h2>
+      </div>
+      <div class="swiper-container site__work__carousel">
+        <div class="site__work__arrow">
+          <a href="##" class="swiper-button-prev">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <a href="##" class="swiper-button-next">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/g1.jpg" alt="featured work">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/g2.jpg" alt="featured work">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/g3.jpg" alt="featured work">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/g4.jpg" alt="featured work">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="site__footer">
+      <div class="row">
+        <div class="col-3">
+          <div class="site__footer__card latestTweets">
+            <h4>Latest Tweets</h4>
+            <p>loading tweets...</p>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="site__footer__card testimonials">
+            <h4>Testimonials</h4>
+            <div class="tooltip">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae officia accusamus atque veniam cumque vero perspiciatis!
+            </div>
+            <div class="tooltip-info">
+              <div class="tooltip-info-avatar">
+                <img src="img/men.jpg" alt="tooltip avatar">
+              </div>
+              <div class="tooltip-info-detail">
+                <span>Stepfen Bingham</span>
+                <a href="##">demolink.new</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="site__footer__card getInTouch">
+            <h4>Get in touch!</h4>
+            <form 
+              class="contact__form" 
+              action="" 
+              method="POST" 
+              accept-charset="utf-8">
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Name">
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Email">
+              <textarea 
+                name="message" 
+                placeholder="Message"
+                rows="5"></textarea>
+              <button class="btn-clear" type="reset">Clear Form</button>
+              <button class="btn-send" type="submit">Send!</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="site__footer__card flickr">
+            <h4>Flickr</h4>
+            <div class="gallery">
+              <div class="gallery-img">
+                <img src="img/f1.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f2.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f3.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f4.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f5.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f6.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f7.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f8.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f9.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f10.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f11.jpg" alt="flickr img collection">
+              </div>
+              <div class="gallery-img">
+                <img src="img/f12.jpg" alt="flickr img collection">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site__info">
+      <div class="site__info__rights">
+        <p>Business Planet &copy; 2030 | <a href="##">Private Policy</a></p>
+      </div>
+      <div class="site__info__nav">
+        <a href="##">Home</a>
+        <span> | </span>
+        <a href="##">About</a>
+        <span> | </span>
+        <a href="##">Features</a>
+        <span> | </span>
+        <a href="##">Portfolio</a>
+        <span> | </span>
+        <a href="##">Blog</a>
+        <span> | </span>
+        <a href="##">Contacts</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Swiper -->
+<!-- <script src="node_modules/swiper/swiper-bundle.min.js"></script> -->
+<!-- Bootstrap -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+<!-- my scripts -->
+<!-- <script src="js/script.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+@use "../base/typo";
+
+%btn {
+  border: none;
+  border-radius: 0;
+  background: #CDCDCD;
+  cursor: pointer;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 0;
+  padding: .4rem 1rem;
+  font-family: typo.$roboto;
+}
+
+.btn {
+  @extend %btn;
+}
+
+.btn-clear, 
+.btn-send {
+  @extend %btn;
+  text-transform: uppercase;
+  color: #fff;
+  padding: .4rem .8rem;
+  font-size: 0.1rem;
+}
+
+.btn-clear {
+  background: #000;
+  font-weight: 700;
+}
+
+.btn-send {
+  background: #80b600;
+  font-weight: 700;
+}
+
+
+
+

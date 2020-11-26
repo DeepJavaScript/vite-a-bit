@@ -1,0 +1,42 @@
+@use "../utils/breakpoint";
+
+.banner {
+  height: 360px;
+  position: relative;
+  @include breakpoint.tp {
+    height: 480px;
+  }
+}
+
+.banner__ctrl__prev, 
+.banner__ctrl__next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 90px;
+  background-size: 100% auto;
+  @include breakpoint.tp {
+    width: 40px;
+    height: 120px;
+  }
+}
+
+.banner__ctrl__prev {
+  background-image: url('../img/slider_prev.gif');
+  left: 0;
+  &:hover {
+    background: url('../img/slider_prev.gif') no-repeat bottom;
+    background-size: 100% auto;
+  }
+}
+
+.banner__ctrl__next {
+  background-image: url('../img/slider_next.gif');
+  right: 0;
+  &:hover {
+    background: url('../img/slider_next.gif') no-repeat bottom;
+    background-size: 100% auto;
+  }
+}

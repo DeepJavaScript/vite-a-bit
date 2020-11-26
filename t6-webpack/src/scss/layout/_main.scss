@@ -1,0 +1,167 @@
+@use "../base/typo";
+@use "../utils/breakpoint";
+
+%body {
+  background-image: url('../img/subbg.gif');
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* ----- .site__feature ----- */
+.site__feature {
+  @extend %body;
+  margin-top: -24px;
+  padding-bottom: 3rem;
+  .col-3 {
+    z-index: 1;
+    margin-bottom: 1rem
+  }
+}
+
+/* ----- .site__intro ----- */
+.site__intro {
+  @extend %body;
+  font-family: typo.$roboto;
+  padding-bottom: 3rem;
+  .col-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+.site__intro__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  > h2 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 0;
+  }
+  > img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  > p {
+    font-size: .8rem;
+    margin-top: 0;
+  }
+}
+
+.card__choose {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E7E7E7;
+  > a {
+    width: 45px;
+    height: 45px;
+    font-size: 0;
+    background: #E7E7E7;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > svg {
+      color: #fff;
+      font-size: 1rem;
+    }
+  }
+  > p {
+    color: #808080;
+    font-size: .8rem;
+    margin: 0 0 0 1rem;
+  }
+}
+
+.card__news {
+  display: flex;
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card__news__img {
+  flex: 0 0 50%;
+  padding-right: 1rem;
+  @include breakpoint.ml {
+    flex: 0 0 30%;
+  }
+  @include breakpoint.tp {
+    flex: 0 0 50%;
+  }
+  > img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card__news__info {
+  > span {
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 700;
+    display: inline-block;
+    padding: .2rem .4rem;
+    margin-bottom: .8rem;
+    background: #80B600;
+  }
+  > p {
+    font-size: .8rem;
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* ----- .site__work ----- */
+.site__work {
+  @extend %body;
+  padding-bottom: 3rem;
+  > .row {
+    flex-wrap: nowrap; // 
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.site__work__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  > h2 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.site__work__arrow {
+  display: flex;
+  > a {
+    text-decoration: none;
+    font-size: 0;
+    padding: .4rem;
+    > svg {
+      color: #CCCCCC;
+      font-size: 1.2rem;
+      position: absolute;
+      &:hover {
+        color: #000;
+        transition: .2s ease;
+      }
+    }
+  }
+}
+
+
+
+

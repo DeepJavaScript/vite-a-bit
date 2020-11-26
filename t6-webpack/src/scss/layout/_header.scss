@@ -1,0 +1,255 @@
+@use "../base/typo";
+@use "../utils/breakpoint";
+
+header {
+  background: linear-gradient(to bottom, #1c1c1c 45%, transparent 45%);
+}
+
+/* ----- .site__title ----- */
+
+.site__nav__search, 
+nav {
+  background: #fff;
+  box-shadow: 0px -1px 5px #808080;
+}
+
+.site__title {
+  background-image: url('../img/subbg.gif');
+  box-shadow: 0px 1px 5px #808080;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  @include breakpoint.ml {
+    padding: 0 2.4rem;
+  }
+  @include breakpoint.tp {
+    margin-bottom: 2rem;
+    justify-content: space-between;
+  }
+  > h1 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    @include breakpoint.tp {
+      flex: 1;
+      text-align: left;
+    }
+    > a {
+      display: inline-block;
+      font-size: 0;
+      padding: 1.6rem 0;
+      @include breakpoint.tp {
+        padding: 2.4rem 2.4rem 2.4rem 0;
+      }
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.site__togglers {
+  width: 100%;
+  font-size: 0;
+  order: 3;
+  @include breakpoint.tp {
+    display: none;
+    width: auto;
+  }
+  > div {
+    width: 90%;
+    margin: .5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.site__social {
+  display: none;
+  width: 100%;
+  text-align: center;
+  order: 2;
+  @include breakpoint.ml {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include breakpoint.tp {
+    width: fit-content;
+    flex-direction: column;
+    // margin-right: 2.4rem;
+  }
+}
+
+.site__social__icon {
+  font-size: 0;
+  width: 100%;
+  margin: 1rem auto;
+  @include breakpoint.tp {
+    margin: 0;
+    display: flex;
+    flex: 0 0 50%;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  > a {
+    display: inline-block;
+    text-decoration: none;
+    > svg {
+      color: #fff;
+      font-size: 1.2rem;
+      background: #000;
+      padding: .35rem;
+      border-radius: 50%;
+      height: 24px;
+      &:hover {
+        background: #80b600;
+        transition: .2s ease;
+      }
+    }
+  }
+  > a + a {
+    @include breakpoint.ml {
+      margin-left: 1rem;
+    }
+    @include breakpoint.tp {
+      margin-left: .5rem;
+    }
+  }
+}
+
+.site__social__contact {
+  display: none;
+  font-family: typo.$roboto;
+  font-size: .9rem;
+  margin: 0;
+  white-space: pre;
+  @include breakpoint.tp {
+    display: flex;
+    flex: 0 0 50%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 1rem;
+  }
+  > a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+/* ----- .site__nav ----- */
+.site__nav {
+  background: linear-gradient(to top, #fff 45%, transparent 45%);
+  @include breakpoint.tp {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.site__nav__search {
+  position: relative;
+  text-align: center;
+  margin: .5rem auto;
+  @include breakpoint.tp {
+    margin: 0;
+    width: 29.5%;
+    order: 2;
+  }
+  > input {
+    background-color: #F3F3F3;
+    background-image: url('../img/search.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border: 1px solid #EAEAEA;
+    cursor: pointer;
+    font-size: .8rem;
+    padding: .8rem;
+    width: 90%;
+    margin: 1rem auto;
+    @include breakpoint.tp {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+  margin: .5rem 0;
+  @include breakpoint.ml {
+    margin: 0;
+  }
+  @include breakpoint.tp {
+    width: 69.5%;
+  }
+  > a {
+    border-bottom: 1px solid #EAEAEA;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-family: typo.$roboto;
+    font-size: .8rem;
+    padding: 1.2rem 0;
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint.ml {
+      flex: auto;
+      border-bottom: none;
+      border-right: 1px solid #EAEAEA;
+    }
+    @include breakpoint.tl {
+      flex: none;
+      padding: 1.2rem;
+    }
+    &:first-child, 
+    &:hover {
+      background: #80b600;
+      color: #fff;
+    }
+    &:last-child {
+      border-bottom: none;
+      @include breakpoint.ml {
+        border-right: none;
+      }
+      @include breakpoint.tl {
+        border-right: 1px solid #EAEAEA;
+      }
+    }
+    > svg {
+      display: none;
+      margin-left: .3rem;
+      @include breakpoint.tp {
+        display: block;
+      }
+    }
+    > .svg-inline--fa {
+      font-size: .5rem;
+    }
+  }
+}
+
+#searchToggler, 
+#navbarToggler {
+  display: none;
+  @include breakpoint.tp {
+    display: flex;
+  }
+}
+
+#searchToggler:target, 
+#navbarToggler:target {
+  display: flex;
+}
+
+
+
+

@@ -1,0 +1,35 @@
+.search__toggler, 
+.navbar__toggler {
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0;
+}
+
+.search__toggler {
+  width: 28px;
+  height: 28px;
+  background-image: url('../img/search.png');
+  background-color: white;
+  background-size: 100%;
+  > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.navbar__toggler {
+  padding: .3rem .5rem;
+  background: transparent;
+  div {
+    width: 28px;
+    height: 2px;
+    background: #80b600;
+    margin: 7px auto;
+  }
+}
+
+
+
+

@@ -1,0 +1,42 @@
+// base
+@use "base/reset";
+@use "base/base";
+// @use "base/typo";
+
+// components
+@use "components/banner";
+@use "components/button";
+@use "components/card";
+@use "components/form";
+@use "components/gallery";
+@use "components/toggler";
+@use "components/tooltip";
+
+// layout
+@use "layout/grid";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
+
+// utils
+// @use "utils/breakpoint";
+// @use "utils/extend";
+// @use "utils/mixin";
+
+// vendor
+@use "vendor/swiper";
+@use "vendor/dropdown";
+// Bootstrap
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/dropdown";
+// @import "functions";
+// @import "variables";
+// @import "mixins";
+// @import "dropdown";
+
+* {
+  // outline: 1px solid;
+  outline-color: rgba(170, 50, 220, 0.2);
+}

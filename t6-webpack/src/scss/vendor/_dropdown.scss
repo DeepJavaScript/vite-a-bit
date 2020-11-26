@@ -1,0 +1,19 @@
+@use "../utils/breakpoint";
+
+a[class="dropdown-toggle"] + div.dropdown-menu {
+  border: none;
+  border-radius: 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+.dropdown-menu.show {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  @include breakpoint.ml {
+    width: auto;
+    text-align: left;
+  }
+}

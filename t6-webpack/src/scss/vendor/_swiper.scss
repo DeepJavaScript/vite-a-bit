@@ -1,0 +1,28 @@
+%swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgba(#fff, 0) !important;
+}
+
+.swiper-slide-banner:nth-child(3n-2) {
+  @extend %swiper-slide;
+  background-image: url('../img/banner1.jpg');
+}
+
+.swiper-slide-banner:nth-child(3n-1) {
+  @extend %swiper-slide;
+  background-image: url('../img/banner2.jpg');
+}
+
+.swiper-slide-banner:nth-child(3n) {
+  @extend %swiper-slide;
+  background-image: url('../img/banner3.jpg');
+}
+
+
+
+

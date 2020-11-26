@@ -1,0 +1,62 @@
+// $mobile-portrait: 375px;
+// $mobile-landscape: 576px;
+// $tablet-portrait: 768px;
+// $tablet-landscape: 992px;
+// $desktop: 1200px;
+
+// @mixin RWD($device-width) {
+//   @media (min-width: $device-width) {
+//     @content;
+//   }
+// }
+
+// @include RWD($mobile-landscape){
+
+// }
+
+// ----
+
+@mixin mp { // mobile-portrait
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin ml { // mobile-landscape
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tp { // tablet-portrait
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tl { // tablet-landscape
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin d { // desktop
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// @mixin test($point){
+//   @if $point = xl{
+//     @media (min-width: 1200px) {
+//     @content;
+//     }
+//   @else if $point = lg{
+
+//   }
+//   }
+// }
+
+// @include breakpoint.test(xl){
+  
+// }

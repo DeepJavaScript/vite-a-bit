@@ -1,0 +1,43 @@
+@use "../base/typo";
+
+.card {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background: #E7E7E7;
+  align-self: stretch;
+  padding: 1.5rem;
+  font-family: typo.$roboto;
+  &:hover {
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    transition: .1s ease-out;
+  }
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.card-img {
+  width: 100%;
+  text-align: center;
+  margin: 1.6rem 0;
+  > img {
+    display: block;
+    width: 30%;
+    margin: auto;
+  }
+}
+
+.card-text {
+  font-size: .8rem;
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
