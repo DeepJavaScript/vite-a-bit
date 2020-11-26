@@ -1,12 +1,12 @@
 @use "./base/base";
 
-@use "component/search";
-@use "component/card-group";
-@use "component/page-bottom";
+@use "./component/search";
+@use "./component/card-group";
+@use "./component/page-bottom";
 
-@use "vendor/carousel";
-@use "vendor/main-nav";
+@use "./vendor/carousel";
+@use "./vendor/main-nav";
 
-@use "layout/header";
-@use "layout/body";
-@use "layout/footer";
+@use "./layout/header";
+@use "./layout/body";
+@use "./layout/footer";
