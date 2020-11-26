@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'myFont';
+  src: url(./FiraCode-Bold.woff) format('woff'),
+       url(./FiraCode-Light.woff) format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: #19caad;
+  background-image: url('./image.jpg');
+  font-family: 'myFont';
+}
