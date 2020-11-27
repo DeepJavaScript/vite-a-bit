@@ -1,0 +1,56 @@
+.review {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  font-size: 0;
+  nav {
+    flex: 0 0 100%;
+    margin-bottom: 5px;
+    @include fontstyle(16px, 400, uppercase, $mid-gray);
+    text-align: center;
+    ul {
+      display: inline-block;
+    }
+    li {
+      display: inline-block;
+      margin-bottom: 5px;
+      line-height: .8;
+    }
+    li + li {
+      border-left: 2px solid $mid-gray;
+    }
+    a {
+      display: block;
+      padding: 0 10px;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+  p {
+    flex: 0 0 100%;
+    @include fontstyle(15px, 400, uppercase, $mid-gray);
+    text-align: center;
+    a {
+      text-transform: capitalize;
+      color: $green;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@include mediaquery_pc {
+  .review {
+    nav {
+      flex: 0 0 65%;
+      order: 2;
+      text-align: right;
+    }
+    p {
+      flex: 0 0 35%;
+      text-align: left;
+    }
+  }
+}

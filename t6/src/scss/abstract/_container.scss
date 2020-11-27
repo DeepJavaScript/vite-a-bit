@@ -1,0 +1,17 @@
+.container {
+  width: 96%;
+  margin: auto;
+}
+
+// @media all and (min-width: 576px) {
+//   .container {
+//     width: 84%;
+//   }
+// }
+
+@include mediaquery_phone {
+  .container {
+    width: 84%;
+    max-width: 1640px;
+  }
+}

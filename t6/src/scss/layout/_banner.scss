@@ -1,0 +1,54 @@
+.banner {
+  height: 55vh;
+  &-slider {
+    &-left {
+      background: url(../images/banner3.jpg) top left/cover no-repeat;
+    }
+    &-center {
+      background: url(../images/banner2.jpg) top center/cover no-repeat;
+    }
+    &-right {
+      background: url(../images/banner1.jpg) top center/cover no-repeat;
+    }
+  }
+  &-button-prev {
+    width: 25px;
+    height: 60px;
+    background: $dark-gray url(../images/back.png) center center/9px 14px no-repeat;
+    left: 0;
+    top: 50%;
+    transform: translateY(-25%);
+    &::after {
+      content: "";
+    }
+    &:hover {
+      background: $green url(../images/back.png) center center/9px 14px no-repeat;
+    }
+  }
+  &-button-next {
+    width: 25px;
+    height: 60px;
+    // width: 34px;
+    // height: 118px;
+    background: $dark-gray url(../images/next.png) center center/9px 14px no-repeat;
+    right: 0;
+    top: 50%;
+    transform: translateY(-25%);
+    &::after {
+      content: "";
+    }
+    &:hover {
+      background: $green url(../images/next.png) center center/9px 14px no-repeat;
+    }
+  }
+}
+
+@include mediaquery_pc {
+  .banner {
+    height: 70vh;
+    &-button-next, &-button-prev {
+      width: 34px;
+      height: 118px;
+    }
+  }
+}

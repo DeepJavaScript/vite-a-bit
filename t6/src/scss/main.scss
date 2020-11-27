@@ -1,0 +1,24 @@
+@import "./base/reset";
+
+@import "./abstract/color";
+@import "./abstract/typography";
+@import "./abstract/shadow";
+@import "./abstract/mediaquery";
+@import "./abstract/container";
+
+@import "./component/button";
+@import "./component/card";
+
+@import "./layout/substrate";
+@import "./layout/header";
+@import "./layout/navbar";
+@import "./layout/main-area";
+@import "./layout/banner";
+@import "./layout/service";
+@import "./layout/introduction";
+@import "./layout/footer";
+@import "./layout/review";
+
+img {
+  width: 100%;
+}

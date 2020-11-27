@@ -1,0 +1,145 @@
+footer {
+  background: url(../images/subbg.gif);
+  padding: 32px 4%;
+  box-shadow: 0px -1px 3px $crystal-gray;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  > section {
+    flex: 0 0 100%;
+  }
+  > section + section {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid $light-gray;
+  }
+}
+h3 {
+  margin-bottom: 25px;
+  @include fontstyle(24px, 400, uppercase, $dark-gray);
+}
+
+.latest, .testimonials {
+  p, h4 {
+    @include fontstyle(16px, 400, capitalize, $mid-gray);
+  }
+}
+
+.testimonials {
+  p {
+    position: relative;
+    border-radius: 5px 5px 5px 0;
+    background: $lighter-gray;
+    padding: 20px 10px 20px 20px;
+    margin-bottom: 35px;
+    border: 1px solid $light-gray;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      width: 34px;
+      height: 20px;
+      background: $light-gray;
+      clip-path: polygon(0 0 , 100% 0, 0 100%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 99.9%;
+      left: 0;
+      width: 32px;
+      height: 18px;
+      background: $lighter-gray;
+      clip-path: polygon(0 0 , 100% 0, 0 100%);
+    }
+  }
+  figure::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  img {
+    float: left;
+    width: 22%;
+  }
+  figcaption {
+    float: right;
+    width: 78%;
+    padding: 8px 0 0 13px;
+    a {
+      font-size: 15px;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
+
+.interaction {
+  input, textarea {
+    width: 100%;
+    background: $lighter-gray;
+    padding: 0 5px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+    border: 1px solid $light-gray;
+    line-height: 28px;
+  }
+  textarea {
+    height: 106px;
+  }
+  &-btn-group {
+    margin-top: 20px;
+  }
+  button {
+    margin-bottom: 5px;
+  }
+}
+
+.flickr {
+  &-graphy {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -3px;
+    margin-right: -3px;
+    a {
+      flex: 0 0 25%;
+      padding: 0 3px;
+    }
+  }
+}
+
+@include mediaquery_pad {
+  footer {
+    padding-bottom: 0;
+  }
+  .footer-main {
+    margin-left: -10px;
+    margin-right: -10px;
+    > section {
+      flex: 0 0 50%;
+      padding: 0 10px;
+      margin-bottom: 32px;
+    }
+    > section + section {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+}
+
+@include mediaquery_pc {
+  footer {
+    padding-bottom: 32px;
+  }
+  .footer-main {
+    > section {
+      flex: 0 0 25%;
+      margin-bottom: 0;
+    }
+  }
+}

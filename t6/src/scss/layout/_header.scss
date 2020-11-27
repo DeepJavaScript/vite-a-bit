@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 30px;
+  background: url(../images/subbg.gif);
+  margin-bottom: 26px;
+  h1 {
+    flex: 0 0 100%;
+    margin-bottom: 15px;
+    text-align: centet;
+    > a {
+      display: block;
+      text-align: center;
+    }
+  }
+  section {
+    flex: 0 0 100%;
+  }
+  img {
+    width: 100%;
+    max-width: 280px;
+    vertical-align: middle;
+  }
+}
+
+// .contact {
+//   padding: 0 20px;
+// }
+
+.contact-link {
+  margin-bottom: 10px;
+  text-align: center;
+  a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+    &:nth-child(1) {
+      background: url(../images/social.png) 0% 0%/660% no-repeat;
+      &:hover {
+        background: url(../images/social.png) 0% 100%/660% no-repeat;
+      }
+    }
+    &:nth-child(2) {
+      background: url(../images/social.png) 24.5% 0%/660% no-repeat;
+      &:hover {
+        background: url(../images/social.png) 24.5% 100%/660% no-repeat;
+      }
+    }
+    &:nth-child(3) {
+      background: url(../images/social.png) 49% 0%/660% no-repeat;
+      &:hover {
+        background: url(../images/social.png) 49% 100%/660% no-repeat;
+      }
+    }
+    &:nth-child(4) {
+      background: url(../images/social.png) 74% 0%/660% no-repeat;
+      &:hover {
+        background: url(../images/social.png) 74% 100%/660% no-repeat;
+      }
+    }
+    &:nth-child(5) {
+      background: url(../images/social.png) 100% 0%/660% no-repeat;
+      &:hover {
+        background: url(../images/social.png) 100% 100%/660% no-repeat;
+      }
+    }
+  }
+}
+
+.contact-number {
+  text-align: center;
+  @include fontstyle(12px, 400, capitalize, $black);
+}
+
+@include mediaquery_pad {
+  .header {
+    h1 {
+      flex: 0 0 50%;
+      > a {
+        text-align: left;
+      }
+    }
+    section {
+      flex: 0 0 50%;
+    }
+  }
+  .contact-link, .contact-number {
+    text-align: right;
+  }
+  
+}

@@ -1,0 +1,46 @@
+.service-card {
+  flex: 0 0 100%;
+  background: $lighter-gray;
+  margin-bottom: 15px;
+  padding: 40px 34px 27px 34px;
+  border: 1px solid $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:hover {
+    background: $crystal-gray;
+    h2, p {
+      color: $white;
+    }
+  }
+  h2 {
+    @include fontstyle(15px, 600, uppercase, $dark-gray);
+    text-align: center;
+  }
+  img {
+    display: block;
+    width: 52px;
+    margin: 0 auto;
+  }
+  p {
+    @include fontstyle(12px, 600, capitalize, $dark-gray);
+    text-align: center;
+  }
+  h2, img, p {
+    margin-bottom: 15px;
+  }
+}
+
+@include mediaquery_phone {
+  .service-card {
+    flex: 0 0 48%;
+    transform: translateY(-30px);
+    z-index: 9;
+  }
+}
+
+@include mediaquery_pc {
+  .service-card {
+    flex: 0 0 23%;
+  }
+}

@@ -1,0 +1,21 @@
+@mixin basic-button($bg-color, $color, $hover-color, $text-transform, $line-height) {
+  display: inline-block;
+  background: $bg-color;
+  padding: 0 15px;
+  @include fontstyle(14px, 400, $text-transform, $color);
+  font-family: $font;
+  line-height: $line-height;
+  text-align: center;
+  &:hover {
+    background: $green;
+    color: $hover-color;
+  }
+}
+
+.primary-button {
+  @include basic-button($light-gray, $dark-gray, $white, capitalize, 2);
+}
+
+.secondary-button {
+  @include basic-button($dark-gray, $white, $white, uppercase, 2.5);
+}

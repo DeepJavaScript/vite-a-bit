@@ -1,0 +1,26 @@
+//$phone: 手機螢幕尺寸（576px以上）
+//$pad: 平板螢幕尺寸（768px以上）
+//$pc: 電腦螢幕尺寸（992px以上）
+
+$phone-width: 576px;
+$pad-width: 768px;
+$pc-width: 992px;
+
+@mixin mediaquery_phone {
+  @media all and (min-width: $phone-width) {
+      @content;
+  }
+}
+
+@mixin mediaquery_pad {
+  @media all and (min-width: $pad-width) {
+      @content;
+  }
+}
+
+@mixin mediaquery_pc {
+  @media all and (min-width: $pc-width){
+      @content;
+  }
+}
+

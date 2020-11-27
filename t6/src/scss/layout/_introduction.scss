@@ -1,0 +1,200 @@
+.introduction {
+  padding: 0 4% 0 4%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &-item {
+    flex: 0 0 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid $light-gray;
+    h2 {
+      margin-bottom: 20px;
+      @include fontstyle(30px, 500, uppercase, $black);
+      text-align: center;
+    }
+    p {
+      @include fontstyle(14px, 500, capitalize, $mid-gray);
+      > a {
+        color: $black;
+        font-weight: 600;
+        &:hover {
+          color: $green;
+        }
+      }
+    }   
+  }
+  @include mediaquery_pad {
+    h2 {
+      text-align: left;
+    }
+  }
+}
+
+.welcome {
+  img {
+    width: 100%;
+    vertical-align: top;
+    margin-bottom: 30px;
+  }
+}
+
+.why-choose-us {
+  li {
+    padding: 14px 0;
+    border-bottom: 1px solid $lighter-gray;
+    font-size: 0;
+    &:last-child {
+      border: 0;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    a {
+      display: inline-block;
+      background: $lighter-gray;
+      border-radius: 999px;
+      vertical-align: middle;
+      padding: 15px 18px;
+      &:hover {
+        background: $green;
+      }
+    }
+    img {
+      display: block;
+      width: 10px;
+      height: 15px;
+    }
+    p {
+      display: inline-block;
+      width: calc(100% - 46px);
+      padding-left: 10px;
+      vertical-align: middle;
+      font-size: 16px;
+    }
+  }
+}
+
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  h2 {
+    flex: 0 0 100%;
+  }
+  figure {
+    flex: 0 0 100%;
+    max-width: 380px;
+    padding: 0 15px;
+    margin: 0 auto;
+    margin-bottom: 34px;
+  }
+  img {
+    margin-bottom: 30px;
+    vertical-align: top;
+  }
+  time {
+    display: inline-block;
+    background: $green;
+    padding: 0 12px;
+    margin-bottom: 25px;
+    line-height: 33px;
+    @include fontstyle(1rem, 500, capitalize, $white);
+  }
+}
+
+.worker {
+  flex: 0 0 100%;
+  font-size: 0;
+  border: 0;
+  h2 {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+  }
+  &-btn-group {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+  }
+  button {
+    padding: 0;
+  }
+  svg {
+    fill: $light-gray;
+    width: 15px;
+    height: 15px;
+  }
+  &-group {
+    display: flex;
+    overflow: hidden;
+    a {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@include mediaquery_phone {
+  .worker {
+    &-group {
+      margin-right: -10px;
+      margin-left: -10px;
+      a {
+        flex: 0 0 50%;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@include mediaquery_pad {
+  .welcome, .why-choose-us {
+    flex: 0 0 48%;
+    border-bottom: 0;
+  }
+  .news {
+    flex: 0 0 100%;
+    border-top: 1px solid $light-gray;
+    figure {
+      flex: 0 0 48%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+
+@include mediaquery_pc {
+  .welcome, .why-choose-us, .news {
+    flex: 0 0 31%;
+  }
+  .news {
+    border: 0;
+    figure {
+      flex: 0 0 100%;
+      font-size: 0;
+      margin-bottom: 35px;
+      img {
+        display: inline-block;
+        width: 34%;
+      }
+      figcaption {
+        display: inline-block;
+        width: 66%;
+        vertical-align: top;
+        padding-left: 25px;
+      }
+    }
+  }
+  .worker {
+    border-top: 1px solid $light-gray;
+    margin-top: 50px;
+    margin-bottom: 75px;
+    &-group {
+      a {
+        flex: 0 0 25%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

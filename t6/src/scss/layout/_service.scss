@@ -1,0 +1,25 @@
+@import "../component/card";
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: $white;
+  &-card {
+    a {
+      margin: 0 auto;
+    }
+  }
+}
+
+@include mediaquery_phone {
+  .service {
+    padding: 0 4%;
+  }
+}
+
+// @include mediaquery_pc {
+//   .service {
+//     padding: 0 2%;
+//   }
+// }

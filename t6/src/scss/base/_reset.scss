@@ -1,0 +1,23 @@
+body, h1, h2, h3, h4, p, ul, figure {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: inherit;
+  cursor: pointer;
+}
