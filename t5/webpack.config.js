@@ -9,6 +9,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     // entry:進入點，專案執行時先從 index.js 開始
 		entry: './src/index.js',
+		
+		// 讓 chrome devtool 看到 scss 檔
+		devtool: 'inline-source-map',
 
     // output:輸出點，專案打包後輸出的檔名和檔案路徑
     output: {
