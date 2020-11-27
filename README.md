@@ -52,6 +52,8 @@ tags
 1. webpack 打包
     - 原生寫法，選一個渲染出來 + [guide 看到 Asset Management](https://webpack.js.org/guides/output-management/)
     - Bootstrap，選一個渲染出來 + [guide 看到 Code Splitting](https://webpack.js.org/guides/code-splitting/)
+    - Sass 選一個渲染出來 + [Environment Variables](https://webpack.js.org/guides/environment-variables/) + [Hot Module Replacement](https://webpack.js.org/guides/hot-module-replacement/)
+    - 下次: Tree Shaking、Production
 1. webpack, vue-loader, with eslint/prettier
    - [guide 看到 Lazy Loading](https://webpack.js.org/guides/lazy-loading/)
    - ESlint, Prettier, Babel 獨立練習，先練習完後再裝 `loader`
