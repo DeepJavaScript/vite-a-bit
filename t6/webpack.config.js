@@ -17,6 +17,14 @@ module.exports = {
     rules: [
       {
         // 打包時會遍歷所有檔案去查找有設定過的檔案後綴名稱
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
+      },
+      {
+        // 打包時會遍歷所有檔案去查找有設定過的檔案後綴名稱
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
