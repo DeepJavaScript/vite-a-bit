@@ -1,0 +1,46 @@
+@use '../utility/color.scss';
+@use '../utility/sizing.scss';
+@use '../utility/font.scss';
+@use '../utility/background.scss';
+@use '../element/button.scss';
+
+.service_area{
+    position: relative;
+    margin-top: 30px;
+    @media (min-width:992px) {
+        top: -30px;
+        margin: 0;
+    }
+    .card_content{
+        background-color: color.$background-gray;
+        border-radius: 0em;
+        text-align: center;
+        margin-bottom: 30px;
+        &:hover{
+            background-color: color.$background-black;
+            color: color.$font-white;
+        }
+        @media (min-width:992px) {
+            margin-bottom: 0;
+        }
+        .card_title{
+            @extend %card-title;
+        }
+        .card_image{
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+        }
+        .card_text{
+            @extend %context;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+            text-align: center;
+        }
+        .card_button{
+            @extend %gray-more-button;
+        }
+    }
+}

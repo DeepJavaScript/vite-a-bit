@@ -1,0 +1,75 @@
+@use '../utility/reset';
+@use '../utility/color.scss';
+@use '../utility/sizing.scss';
+@use '../utility/font.scss';
+@use '../utility/background.scss';
+
+.header{
+    @extend %background-shadow;
+    background-image: url(../images/subbg.gif);
+    padding: 15px 30px;
+
+    .logo{
+        width: sizing.$width-75;
+        margin: 0 auto 30px;
+        text-align: center;
+        @media(min-width:768px) {
+            text-align: left;
+            margin: 0;
+        }
+        img{
+            width: sizing.$width-full;
+        }
+    }
+    .social_media_area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        @media (min-width:768px) {
+            align-items: flex-end;
+        }
+        
+        .social_media_icon{
+            display: flex;
+
+            .facebook{
+                @include background.social-media-image(2px,0px);
+                &:hover{
+                    @include background.social-media-image(2px,-27px);
+                }
+            }
+            .twitter{
+                @include background.social-media-image(-35px,0px);
+                &:hover{
+                    @include background.social-media-image(-35px,-27px);
+                }
+            }
+            .flickr{
+                @include background.social-media-image(-72px,0px);
+                &:hover{
+                    @include background.social-media-image(-72px,-27px);
+                }
+            }
+            .dribbble{
+                @include background.social-media-image(-109px,0px);
+                &:hover{
+                    @include background.social-media-image(-109px,-27px);
+                }
+            }
+            .rss{
+                @include background.social-media-image(-148px,0px);
+                &:hover{
+                    @include background.social-media-image(-148px,-27px);
+                }
+            }
+        }
+        .telephone{
+            margin-bottom: 0;
+            a{
+                color: color.$black;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

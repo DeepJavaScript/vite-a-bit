@@ -1,0 +1,42 @@
+@use '../utility/color.scss';
+
+%font-h2{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    @media (min-width:992px) {
+        text-align: left;
+    }
+}
+
+%font-h4{
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+%context{
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+%more-link{
+    font-size: 16px;
+    color: color.$font-black;
+    display: inline;
+    text-transform: capitalize;
+}
+
+%card-title{
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@mixin copyright-font($font-color,$text-transform) {
+    font-size: 14px;
+    font-weight: 600;
+    color: $font-color;
+    text-transform: $text-transform;
+}

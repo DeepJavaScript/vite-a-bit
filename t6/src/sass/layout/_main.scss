@@ -1,0 +1,120 @@
+@use '../utility/reset';
+@use '../utility/color.scss';
+@use '../utility/sizing.scss';
+@use '../utility/font.scss';
+@use '../utility/background.scss';
+@use '../components/banner.scss';
+@use '../components/card.scss';
+@use '../components/gallery.scss';
+@use '../element/button.scss';
+
+main{
+    box-shadow: 1px 1px 5px 1px color.$background-black, 0 -30px 0 0 color.$background-white ;
+    background-image: url(../images/subbg.gif);
+    padding: 0 30px 45px;
+
+    .info_area{
+        figure{
+            h2{
+                @extend %font-h2;
+            }
+
+            .company_image{
+                margin-bottom: 15px;
+                position: relative;
+                img{
+                    width: sizing.$width-full;
+                }
+                a{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background: color.$background-black url(../images/icon2.png) no-repeat top 50% left 50%;
+
+                    transition: opacity .5s ease;
+                    opacity: 0;                    
+                }
+                &:hover {
+                    a {
+                        opacity: 1;
+                    }
+                }                    
+            }
+
+            figcaption{
+                p{
+                    display: inline-block;
+                    color: color.$font-gray;
+                    @extend %context;
+                    a{
+                        @extend %more-link;
+                    }
+                }
+            }
+        }
+        .why_chose_us{
+            h2{
+                @extend %font-h2;
+            }
+            .choose_list{
+                .choose_item{
+                    border-bottom: solid 2px color.$background-gray;
+                    .choose_list_style{
+                        @extend %gray-list-button
+                    }
+                    .choose_list_content{
+                        width: sizing.$width-75;
+                        color: color.$font-gray;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .news_and_events{
+            h2{
+                @extend %font-h2;
+            }
+            .news_item{
+                display: flex;
+                margin-bottom: 30px;
+                justify-content: space-between;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                .news_image{
+                    flex: 0 0 45%;
+                    img{
+                        width: sizing.$width-full
+                    }
+                }
+                .news_content{
+                    flex: 0 0 50%;
+                    time{
+                        display: inline-block;
+                        color: color.$font-white;
+                        font-weight: 600;
+                        padding: 5px 10px;
+                        margin-bottom: 10px;
+                        background-color: color.$green;
+                    }
+                    p{
+                        color: color.$font-gray;
+                        @extend %context;
+                        a{
+                            @extend %more-link;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .line_gap{
+        border-bottom: solid 2px color.$background-gray;
+        margin: 30px 15px;
+    }
+
+}

@@ -1,0 +1,11 @@
+@use './utility/background.scss';
+@use './layout/header.scss';
+@use './layout/navbar.scss';
+@use './layout/main.scss';
+@use './layout/footer.scss';
+
+
+body{
+    @include background.body-background;
+}
+ 

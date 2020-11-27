@@ -1,0 +1,29 @@
+@use '../utility/color.scss';
+@use '../utility/sizing.scss';
+@use '../utility/font.scss';
+@use '../utility/background.scss';
+@use '../element/button.scss';
+
+
+.banner_area{
+    margin: 0 -30px;
+    .banner{
+        a{
+            display: none;
+            @media (min-width:576px) {
+                display: inline-block;
+            }
+        }
+        .control_button_left{
+            @include button.control-button;
+            }
+        }
+        .control_button_right{
+            transform: scaleX(-1);
+            @include button.control-button;
+        }
+        .control_button_icon{
+            display: none;
+        }
+}
+

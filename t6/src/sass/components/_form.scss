@@ -1,0 +1,14 @@
+@use '../utility/color.scss';
+@use '../utility/sizing.scss';
+@use '../utility/font.scss';
+@use '../utility/background.scss';
+
+%input-style{
+    width: sizing.$width-full;
+    height: sizing.$width-25 * 0.5;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: color.$background-gray;
+    border-radius: 5px;
+}

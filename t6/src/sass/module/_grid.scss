@@ -1,0 +1,42 @@
+@use '../module/breakpoint.scss';
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.no-gutters{
+    margin: 0; 
+    & .col , [class*="col-"]{
+        padding: 0;
+    }
+}
+
+@mixin col-($colum-number) {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 ($colum-number/12)*100%;
+    max-width: ($colum-number/12)*100%;
+}
+
+.col-12{
+    @include col-(12)
+}
+.col-10{
+    @include col-(10)
+}
+.col-8{
+    @include col-(8)
+}
+.col-6{
+    @include col-(6)
+}
+.col-4{
+    @include col-(4)
+}
+.col-3{
+    @include col-(3)
+}
+

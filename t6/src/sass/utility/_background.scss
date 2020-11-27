@@ -1,0 +1,97 @@
+@use '../utility/color.scss';
+@use '../utility/sizing.scss'; 
+@use '../utility/font.scss';
+
+%background-shadow{
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.5);
+}
+
+@mixin social-media-image($positionX,$positionY) {
+    width: 30px;
+    height: 28px;
+    background: url(../images/social.png) no-repeat $positionX $positionY;
+}
+
+@mixin body-background{
+    background: linear-gradient(color.$black 10vh, transparent 15px,90%,color.$black 90%) no-repeat,
+                url(../images/bg.jpg);
+}
+
+@mixin menu-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    background-image: url(../images/menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 80%;
+}
+
+@mixin search-icon {
+    background-color: color.$background-gray;
+    @media (min-width:768px) {
+        background: color.$background-gray url(../images/search.png) no-repeat top 7px right 7px;
+    }
+}
+
+@mixin dropdown-arrow {
+    background: url(../images/down-arrow.svg) no-repeat;
+}
+
+@mixin dropdown-arrow-white {
+    background: url(../images/down-arrow-white.svg) no-repeat;
+}
+
+@mixin balloon-triangle {
+    border-top: solid 19px color.$background-gray;
+    border-left: solid 0;
+    border-right: solid 23px transparent;
+}
+
+@mixin balloon-triangle-back {
+    border-top: solid 20px color.$button-gray;
+    border-left: solid 0;
+    border-right: solid 25px transparent;
+}
+
+.text_balloon{
+    width: 100%;
+    background-color: color.$background-gray;
+    border: solid 1px color.$button-gray;
+    border-radius: 5px;
+    position: relative;
+    @media (min-width: 992px) {
+        border-radius: 5px 5px 5px 0}
+    &::before{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        @include balloon-triangle-back();
+        @media (min-width:992px) {
+            left: -1px;
+            top: 100%;
+            transform: translateX(0);
+        }
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 99%;
+        transform: translateX(-50%);
+        @include balloon-triangle;
+        @media (min-width:992px) {
+            left: 0;
+            top: 100%;
+            transform: translateX(0);
+        }
+    }
+
+    p{
+        @extend %context;
+        color: color.$font-gray;
+    }
+}
