@@ -6,14 +6,17 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.js',
 	output: {
-		filename: '[name][hash:5]].js',
+		filename: '[name].[contenthash]].js',
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: ""
 	},
+	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
-		compress: true,
-		port: 9000
+		// Enable gzip compression for everything served:
+		// compress: true,
+		port: 9000,
+		hot: true,
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
@@ -21,7 +24,6 @@ module.exports = {
 			template: "./src/index.html"
 		}),
 	],
-
 	module: {
 		rules: [
 			{
