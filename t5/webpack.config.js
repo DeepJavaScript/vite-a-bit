@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     // entry:進入點，專案執行時先從 index.js 開始
-    entry: './src/index.js',
+		entry: './src/index.js',
 
     // output:輸出點，專案打包後輸出的檔名和檔案路徑
     output: {
@@ -26,19 +26,7 @@ module.exports = {
 					}
 				},
 				{
-					test: /\.css$/,
-					use: [
-						{
-							loader: MiniCssExtractPlugin.loader,
-							options: {
-								publicPath: '../',
-							}
-						},
-						'css-loader'
-					]
-				},
-				{
-					test: /\.s[ac]ss$/i,
+					test: /\.(s[ac]ss|css)$/i,
 					use: [
 						{
 							loader: MiniCssExtractPlugin.loader,
