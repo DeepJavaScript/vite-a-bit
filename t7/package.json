@@ -1,5 +1,5 @@
 {
-  "name": "t3",
+  "name": "t7",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "autoprefixer": "^10.0.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
+    "css-minimizer-webpack-plugin": "^1.1.5",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.0.0-alpha.14",
     "mini-css-extract-plugin": "^1.3.1",

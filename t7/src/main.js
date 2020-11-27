@@ -1,11 +1,4 @@
 import Chm from "./libs/Chm";
-import "bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./sass/print.scss";
-import '@fortawesome/fontawesome-free/js/fontawesome'
-import '@fortawesome/fontawesome-free/js/solid'
-import '@fortawesome/fontawesome-free/js/regular'
-import '@fortawesome/fontawesome-free/js/brands'
 
 import communication from "./components/communication.js";
 import logo from "./components/logo.js";

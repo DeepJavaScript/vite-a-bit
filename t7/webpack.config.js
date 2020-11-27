@@ -2,10 +2,20 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/main.js',
+  entry: [
+    './src/main.js',
+    "bootstrap",
+    'bootstrap/dist/css/bootstrap.min.css',
+    "./src/sass/print.scss",
+    '@fortawesome/fontawesome-free/js/fontawesome',
+    '@fortawesome/fontawesome-free/js/solid',
+    '@fortawesome/fontawesome-free/js/regular',
+    '@fortawesome/fontawesome-free/js/brands',
+  ],
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -39,9 +49,14 @@ module.exports = {
     rules: [
       {
         test: /\.(png|svg|jpg|gif)$/,
-        type: 'asset/resource',
+        type: 'asset',
         generator: {
           filename: "img/[name].[hash:4][ext]"
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1024 // 4kb
+          }
         }
       },
       {
@@ -73,7 +88,23 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: 'async',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          filename: '[name].[hash:4][ext]',
+          reuseExistingChunk: true
+        },
+        default: {
+          reuseExistingChunk: true
+        }
+      }
     },
+    minimize: true,
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`
+      new CssMinimizerPlugin(),
+    ],
   },
 };
