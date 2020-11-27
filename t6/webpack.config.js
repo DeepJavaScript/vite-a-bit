@@ -1,5 +1,7 @@
 // 引入 Html Plugin  
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 引入清除廢棄檔案 Plugin 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // 輸出的路徑
 const path = require('path');
@@ -40,6 +42,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-  })
+  }),
+    new CleanWebpackPlugin()
   ]
 }
