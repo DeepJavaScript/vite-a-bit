@@ -53,16 +53,25 @@ tags
     - 原生寫法，選一個渲染出來 + [guide 看到 Asset Management](https://webpack.js.org/guides/output-management/)
     - Bootstrap，選一個渲染出來 + [guide 看到 Code Splitting](https://webpack.js.org/guides/code-splitting/)
 1. webpack, vue-loader, with eslint/prettier
-1. rollupjs 打包 (反思 webpack), with eslint/prettier
-1. vite,
-1. vue-cli 環境設定, config 全餐
-1. vue3,
-1. Composition API (Vue2/3)
-1. vue-router,
-1. vuex,
-1. [vue 官網沒寫的 vue](https://hackmd.io/zYPD_lQ6R--UbU4jFYWzfw),
-1. vue-rx,
-1. vue-typescript,
+   - [guide 看到 Lazy Loading](https://webpack.js.org/guides/lazy-loading/)
+   - ESlint, Prettier, Babel 獨立練習，先練習完後再裝 `loader`
+       - [ESLint - Pluggable JavaScript linter](https://eslint.org/)
+       - [Prettier · Opinionated Code Formatter](https://prettier.io/)
+       - [Babel · The compiler for next generation JavaScript](https://babeljs.io/)
+   - eslint-loader, babel-loader + webpack
+   - browserlist
+       - [browserslist/browserslist: 🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env](https://github.com/browserslist/browserslist)
+       - cover TW 90%
+2. rollupjs 打包 (反思 webpack), with eslint/prettier
+3. vite,
+4. vue-cli 環境設定, config 全餐
+5. vue3,
+6. Composition API (Vue2/3)
+7. vue-router,
+8. vuex,
+9. [vue 官網沒寫的 vue](https://hackmd.io/zYPD_lQ6R--UbU4jFYWzfw),
+10. vue-rx,
+11. vue-typescript,
 
 
 
