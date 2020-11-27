@@ -92,6 +92,8 @@ html-loader 可以想像成 把 template html file 轉換成 js code ,
 
 [What is the problem with sass](https://github.com/bholloway/resolve-url-loader/blob/v4-development/packages/resolve-url-loader/README.md#whats-the-problem-with-sass)
 
+[Problems with url(...)](https://github.com/webpack-contrib/sass-loader#problems-with-url)
+
 2. HMR: 原本的程式碼已經因為 HMR 更新，但是瀏覽器上的程式碼可能還在使用舊的 referance
 
 [Gotchas](https://webpack.js.org/guides/hot-module-replacement/#gotchas)
