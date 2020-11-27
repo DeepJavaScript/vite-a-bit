@@ -35,24 +35,15 @@ npm install sass-loader sass webpack --save-dev
 
 // ...
 module.exports = {
-    // ...
+		// ...
+		// 讓 browser devtool 看到 scss source code
+		devtool: 'inline-source-map',
     module: {
       rules: [
 				// ...
 				{
-					test: /\.css$/,
-					use: [
-						{
-							loader: MiniCssExtractPlugin.loader,
-							options: {
-								publicPath: '../',
-							}
-						},
-						'css-loader'
-					]
-				},
-				{
-					test: /\.s[ac]ss$/i,
+					//因為需要 import scss 檔跟 bootstrap css 檔
+					test: /\.(s[ac]ss|css)$/i,
 					use: [
 						{
 							loader: MiniCssExtractPlugin.loader,
