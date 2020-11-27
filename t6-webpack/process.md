@@ -179,8 +179,8 @@ import 'swiper';
 
 - `$ npm run build` -> ❌ (2 errors: swiper)
 - 修改 `index.js`：
-    - `main.css`
-    - `swiper`
+  - `main.css`
+  - `swiper`
 
 ```js
 import '../../node_modules/swiper/swiper-bundle.min.css';
@@ -209,14 +209,14 @@ module.exports = {
 
 - `$ npm run build` -> ❌ (1 errors: publicPath)
 - 在 `webpack.config.js`
-    - 加上 `publicPath: './',`: `ReferenceError: document is not defined`;
-    - 不加 `publicPath: './',`: `Error: Automatic publicPath is not supported in this browser`
+  - 加上 `publicPath: './',`: `ReferenceError: document is not defined`;
+  - 不加 `publicPath: './',`: `Error: Automatic publicPath is not supported in this browser`
 - 所以要加 `publicPath`，怎麼加才對？
 
-    > `publicPath` 讓我們可以指定所有 assets 的根路徑
+  > `publicPath` 讓我們可以指定所有 assets 的根路徑
 
-    - Documentation [Public Path](https://webpack.js.org/guides/public-path/) 超級看不懂啊。
-    - 🔍 Stackoverflow
+  - Documentation [Public Path](https://webpack.js.org/guides/public-path/) 超級看不懂啊。
+  - 🔍 Stackoverflow
 
 - 修改 `webpack.config.js`：
 
@@ -233,8 +233,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (2 errors)
-    - `SassError: Can't find stylesheet to import.`
-    - `ReferenceError: document is not defined`
+  - `SassError: Can't find stylesheet to import.`
+  - `ReferenceError: document is not defined`
 
 > ###### Ask:
 >  
@@ -247,8 +247,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (2 errors)
-    - `SassError: Can't find stylesheet to import.`
-    - `ReferenceError: Swiper is not defined`
+  - `SassError: Can't find stylesheet to import.`
+  - `ReferenceError: Swiper is not defined`
 - 在 `index.html` 註解掉：
 
 ```html
@@ -283,7 +283,7 @@ import '../../node_modules/bootstrap/scss/bootstrap.scss'
 
 - `$ npm run build` -> ✅
 - 去 Chrome 看畫面，`swiper` 壞掉惹 T_T
-- 🔍 [Stackoverflow](https://stackoverflow.com/questions/55066093/swiper-slider-not-work-when-i-user-webpack-and-import-this-in-app-js)，參考 Swiper API [Custom Build](https://swiperjs.com/api/#custom-build)
+- 🔍 [Stackoverflow: swiper slider not work when i user webpack and import this in app js](https://stackoverflow.com/questions/55066093/swiper-slider-not-work-when-i-user-webpack-and-import-this-in-app-js)，參考 Swiper API [Custom Build](https://swiperjs.com/api/#custom-build)
 - 以下不成功：
 
 ```js
@@ -326,13 +326,25 @@ Swiper.use([Navigation]);
 ```
 
 - 修理壞掉的 UI：
-    - [x] FEATURED WORKS 原本的 navigation icons 跑出來了；
-        - `!important`
-    - [x] TESTIMONIALS 的對話框消失了
-        - `opacity: 1;`
+  - [x] FEATURED WORKS 原本的 navigation icons 跑出來了；
+    - `!important`
+  - [x] TESTIMONIALS 的對話框消失了
+    - `opacity: 1;`
 
 > ###### Ask: 
 > 
 > 1. 打包後多出一些我沒寫的樣式？
 > 
 > 2. 開始打包後無法預處理 (preprocessor) `.scss` -> `.css`？
+
+- `$ npm install --save-dev @fortawesome/fontawesome-free` 安裝 `@fortawesome/fontawesome-free`
+- 在 `index.html` 註解掉：
+
+```html
+<script src="https://kit.fontawesome.com/626796f880.js" crossorigin="anonymous"></script>
+```
+
+- `$ npm run build` -> ✅
+- 去 Chrome 看畫面，`fontawesome` icons 不見惹 :(
+- 在 `index.js` 加上 `import '@fortawesome/fontawesome-free`，icons 還是沒跑出來
+- 換成 `import '@fortawesome/fontawesome-free/js/all.js';` 就可以了
