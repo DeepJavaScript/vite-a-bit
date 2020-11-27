@@ -2,6 +2,7 @@ import "@fortawesome/fontawesome-free/css/fontawesome.css";
 import "@fortawesome/fontawesome-free/css/solid.css";
 // import './css/index.css'
 import "./sass/index.scss";
+import "./js/carousel.js"
 // import { carousel } from "./js/carousel.js"
 
 // carousel()

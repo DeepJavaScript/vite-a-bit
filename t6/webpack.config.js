@@ -6,10 +6,11 @@ let webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
-    entry: {
-        main: './src/index.js',
-        carousel: './src/js/carousel.js'
-    },
+    // entry: {
+    //     main: './src/index.js',
+    //     carousel: './src/js/carousel.js'
+    // },
+    entry: './src/index.js',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
