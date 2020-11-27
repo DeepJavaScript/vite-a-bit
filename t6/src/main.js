@@ -1,18 +1,16 @@
 import 'bootstrap';
-import $ from 'jquery';
 import Swiper from 'swiper';
 
 import './scss/main.scss';
 
-let $navPrimary = $('.nav--primary');
+import { defineComponent } from './lib/custom-component';
 
-$(window).scroll(function() {
-  if ($navPrimary.offset().top <= $(window).scrollTop()) {
-    $navPrimary.addClass('is-fixed-top');
-  } else {
-    $navPrimary.removeClass('is-fixed-top');
-  }
-});
+defineComponent('l-header', require('./layout/header.html'));
+defineComponent('l-nav', require('./layout/nav.html'));
+defineComponent('l-main', require('./layout/main.html'));
+defineComponent('l-footer', require('./layout/footer.html'));
+
+defineComponent('c-banner', require('./components/banner.html'));
 
 const bannerSwiper = new Swiper('.banner .swiper-container', {
   loop: true,

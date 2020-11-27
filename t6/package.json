@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve",
     "build": "webpack",
     "build-sass-watch": "sass --watch -I node_modules src/scss:dict/styles",
     "build-sass-minify": "sass -s compressed --load-path=node_modules src/scss:dict/styles"

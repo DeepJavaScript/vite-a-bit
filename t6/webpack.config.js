@@ -11,9 +11,11 @@ module.exports = {
     publicPath: './'
   },
   devServer: {
-    contentBase: './dist',
-    compress: true
+    open: true,
+    hot: true,
+    contentBase: './dist'
   },
+  devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
