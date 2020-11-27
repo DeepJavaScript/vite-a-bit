@@ -400,3 +400,60 @@ module.exports = {
 
 - `$ npm run build` -> ✅
 - 畫面沒問題
+
+### 使用 `webpack-dev-server`
+- `$ npm install --save-dev webpack-dev-server`
+- 在 `webpack.config.js` 加入：
+
+```js
+module.exports = {
+  devServer: {
+    contentBase: './dist',
+  },
+};
+```
+
+- 在 `package.json` `scripts` 加入 `"dev": "webpack serve,`
+- 在 `webpack.config.js` 加入：
+
+```js
+module.exports = {
+  devServer: {
+    contentBase: './dist',
+    compress: true,
+    open: true,
+    port: 5050,
+  },
+};
+```
+
+- `$ npm run dev` -> ✅，會自己打開瀏覽器 👍
+
+### 啟用 [HMR](https://webpack.js.org/guides/hot-module-replacement/)
+
+> ...It allows all kinds of modules to be updated at runtime without the need for a full refresh.
+> 
+> *HMR is not intended for use in production, meaning it should only be used in development.*
+
+- 在 `webpack.config.js` 加入：
+
+```js
+module.exports = {
+  devServer: {
+    hot: true,
+  },
+};
+```
+
+- 在 `index.js` 加入：
+
+```js
+if (module.hot) {
+  module.hot.accept('./script.js', function() {
+    console.log('changing again!!!');
+ })
+}
+```
+
+- `$ npm run dev` -> ✅，會自己打開瀏覽器 👍
+- 改動 `index.js` 或 `script.js`，在瀏覽器開啟的網頁會自己即時重載 👍

@@ -6,13 +6,19 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/js/index.js',
-    // script: './src/js/script.js',
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: './',
     assetModuleFilename: 'img/[hash][ext][query]',
+  },
+  devServer: {
+    contentBase: './dist',
+    compress: true,
+    open: true,
+    port: 5050,
+    hot: true,
   },
   module: {
     rules: [
