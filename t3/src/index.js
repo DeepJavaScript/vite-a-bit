@@ -1,19 +1,24 @@
-import "./sass/main.scss";
-import printMe from "./print.js";
+import "./css/main.css";
 
-var handler = printMe;
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const header = document.querySelector("header._container");
-header.addEventListener("mouseover", handler);
+// 預設是 "main": "dist/js/bootstrap.js"
+// import "bootstrap"
+// 不想額外安裝 popper.js 所以用 bundle 版本
+import "bootstrap/dist/js/bootstrap.bundle.js";
 
-if (module.hot) {
-	module.hot.accept('./print.js', function () {
-		console.log('Accepting the updated printMe module!');
-		printMe();
+import header from "./components/header.js";
+import mainContent from "./components/content";
+import footer from "./components/footer";
 
-		// print.js 因為 HMR 而更新但是 listener 還是綁在舊的 printMe
-		header.removeEventListener("mouseover", handler);
-		header.addEventListener("mouseover", printMe);
-		handler = printMe;
-	})
-}
+
+const mainPage = document.createElement("div")
+mainPage.classList.add("container");
+console.log(mainContent.content)
+
+mainPage.appendChild(header.content);
+mainPage.appendChild(mainContent.content);
+mainPage.appendChild(footer.content);
+
+document.body.appendChild(mainPage)
+// document.body.appendChild( document.createElement("div") )
