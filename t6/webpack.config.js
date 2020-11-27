@@ -6,6 +6,7 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index.js',
 	output: {
+		// 依照內容的 hash ，如果內容不變，再次產出 hash 不會改變, 官網 "Caching" 章節
 		filename: '[name].[contenthash]].js',
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: ""
@@ -34,8 +35,8 @@ module.exports = {
 						options:
 						{
 							sourceMap: true,
-							// sourceMapContents: false
 							// resolve-url-loader 的文件有寫需要這個，但 sass-loader 文件說不需要，當設置 sourceMap 時就部不需要設Contents
+							// sourceMapContents: false
 						}
 					}
 				]
