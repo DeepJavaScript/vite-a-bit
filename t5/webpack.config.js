@@ -14,6 +14,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
+    open: 'Google Chrome',
     contentBase: './dist'
   },
   module: {
@@ -56,10 +57,6 @@ module.exports = {
             maxSize: 4 * 1024 // 4kb
           }
         }
-      },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader'
       }
     ]
   },
