@@ -39,17 +39,34 @@
         - [引入 npm 的 fontawesome](https://stackoverflow.com/questions/52376720/how-to-make-font-awesome-5-work-with-webpack)
         - 假裝使用[前端框架的寫法](https://vuejs.org/v2/guide/instance.html)
         - [migration bootstrap v4-alpha to v5](https://v5.getbootstrap.com/docs/5.0/migration/)
-1. webpack, vue-loader, with eslint/prettier
-1. rollupjs 打包 (反思 webpack), with eslint/prettier
-1. vite,
-1. vue-cli 環境設定, config 全餐
-1. vue3,
-1. Composition API (Vue2/3)
-1. vue-router,
-1. vuex,
-1. [vue 官網沒寫的 vue](https://hackmd.io/zYPD_lQ6R--UbU4jFYWzfw),
-1. vue-rx,
-1. vue-typescript,
+        - css-loader 前處理器，css to js
+        - postcss-loader 後處理器，css to css
+            - precss: 用 postCSS 做類似 Sass 的功能
+        - sass-loader 前處理器，scss to css
+        - 加分技能：快取設定，檔案切分，讓專案最佳化
+2. webpack, vue-loader, with eslint/prettier
+   - webpack doc
+       - Tree Shaking
+       - Production
+       - Lazy Loading
+   - ESlint, Prettier, Babel 獨立練習，先練習完後再裝 `loader`
+       - [ESLint - Pluggable JavaScript linter](https://eslint.org/)
+       - [Prettier · Opinionated Code Formatter](https://prettier.io/)
+       - [Babel · The compiler for next generation JavaScript](https://babeljs.io/)
+   - eslint-loader, babel-loader + webpack
+   - browserlist
+       - [browserslist/browserslist: 🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env](https://github.com/browserslist/browserslist)
+       - cover TW 90%
+3. rollupjs 打包 (反思 webpack), with eslint/prettier
+4. vite,
+5. vue-cli 環境設定, config 全餐
+6. vue3,
+7. Composition API (Vue2/3)
+8. vue-router,
+9.  vuex,
+10. [vue 官網沒寫的 vue](https://hackmd.io/zYPD_lQ6R--UbU4jFYWzfw),
+11. vue-rx,
+12. vue-typescript,
 
 
 
