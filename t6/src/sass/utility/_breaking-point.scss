@@ -1,0 +1,76 @@
+@mixin breaking-point($point) {
+  @if $point == xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+  }
+}
+
+// @mixin above-contain($point) {
+//     width: 100%;
+//     margin-left:auto;
+//     margin-right:auto;
+//     padding-left:15px;
+//     padding-right: 15px;
+//     @if $point == all or $point == sm{
+//         @media (min-width:576px){
+//         max-width: 540px;
+//     }
+//     }
+
+//     @if $point == all or $point == md or $point == sm {
+//         @media(min-width:768px){
+//         max-width: 720px;
+//     }
+//     }
+
+//     @if $point == all or $point == lg or $point == md or $point == sm {
+//         @media(min-width: 992px){
+//         max-width: 960px;
+//     }
+//     }
+
+//     @if $point == all or $point == xl or $point == lg or $point == md or $point == sm {
+//         @media(min-width:1200px){
+//             max-width: 1140px;
+//         }
+//     }
+// }
+.container {
+  // %above-contain {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  &-fluid {
+    @extend .container;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  // }
+}

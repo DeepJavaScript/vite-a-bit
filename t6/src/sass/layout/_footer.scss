@@ -1,0 +1,228 @@
+@use '../theme/background-image';
+@use '../theme/font';
+@use '../utility/breaking-point';
+@use '../utility/grid';
+
+footer {
+  .comment {
+    // @extend %above-contain;
+    box-shadow: 0 0 5px 1px gray;
+    padding: 35px;
+    @include background-image.content-background-image;
+  }
+  h2 {
+    @extend %font-title;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    // @extend %row;
+    flex-wrap: wrap;
+  }
+  .col {
+    &-12 {
+      @include grid.col(12);
+    }
+
+    &-lg-3 {
+      @include breaking-point.breaking-point(lg) {
+        @include grid.col(3);
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.comment-items:nth-of-type(-n + 3) {
+  margin-bottom: 20px;
+  @include breaking-point.breaking-point(lg) {
+    margin-bottom: 0;
+  }
+}
+.comment-items {
+  border-bottom: 1px solid #dfdfdf;
+  @include breaking-point.breaking-point(lg) {
+    border-bottom: 0;
+  }
+}
+
+.last-tweet {
+  p {
+    margin-bottom: 20px;
+    @include breaking-point.breaking-point(lg) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.testimonials-text {
+  color: #828282;
+  font-size: 0.5rem;
+  line-height: 1.2;
+  background-color: #e7e7e7;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  margin-bottom: 34px;
+  padding: 15px 0 15px 25px;
+  &::before {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 13px;
+    background-color: #e7e7e7;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 999;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 15px;
+    background-color: #dfdfdf;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    position: absolute;
+    top: calc(100% - 1px);
+    left: -1px;
+    z-index: 998;
+  }
+}
+.testimonials-media {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  @include breaking-point.breaking-point(lg) {
+    margin-bottom: 0;
+  }
+  img {
+    margin-right: 15px;
+  }
+  .name {
+    font-size: 0.8rem;
+  }
+  a {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #91b83e;
+  }
+}
+.contact-us {
+  input {
+    width: 100%;
+    background-color: #e7e7e7;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    outline: none;
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 113px;
+    padding: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
+  }
+
+  button {
+    padding: 10px 10px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #ffff;
+    letter-spacing: 1px;
+    background-color: #8db537;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      color: red;
+    }
+    @include breaking-point.breaking-point(lg) {
+      margin-bottom: 0;
+    }
+  }
+  .clear {
+    background-color: #151515;
+  }
+}
+
+.photo-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2px;
+  a:nth-of-type(-n + 8) {
+    margin-bottom: 4px;
+  }
+}
+
+.photo-img {
+  flex: 0 1 25%;
+  padding: 0 2px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+
+.bottom-information {
+  // @extend %above-contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  background-color: #000000;
+  font-size: 0.9rem;
+  @include breaking-point.breaking-point(lg) {
+    flex-direction: row;
+  }
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  a {
+    display: block;
+    color: #5d5d5d;
+    &:hover {
+      color: #8db537;
+    }
+  }
+  a + a {
+    margin-left: 10px;
+  }
+
+  span {
+    color: #8e8e8e;
+    padding-left: 5px;
+  }
+  .current-page {
+    color: #82a633;
+  }
+}
+
+.copyright {
+  color: #535353;
+  span {
+    margin: 0 2px;
+  }
+  a {
+    color: #82a633;
+  }
+}
+
+.order-first {
+  @include breaking-point.breaking-point(lg) {
+    order: -1;
+  }
+}

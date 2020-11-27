@@ -1,0 +1,5 @@
+$content:url(../images/subbg.gif);
+
+@mixin content-background-image(){
+    background-image:$content;
+}

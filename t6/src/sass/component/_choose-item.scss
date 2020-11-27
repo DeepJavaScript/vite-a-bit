@@ -1,0 +1,24 @@
+@use '../utility/grid';
+@use "../utility/breaking-point";
+@use '../theme/font';
+
+.choose-items {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #eaeaea;
+  margin-top: 25px;
+  padding-bottom: 10px;
+  .arrow {
+    border-radius: 50%;
+    padding: 15px 18px 15px 25px;
+    // text-align: center;
+    background-color: #dadada;
+    margin-right: 10px;
+    color: #ffffff;
+  }
+}
+.choose-text {
+  align-self: center;
+  font-weight: bold;
+  color: #828282;
+}

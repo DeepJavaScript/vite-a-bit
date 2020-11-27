@@ -1,0 +1,46 @@
+// $h2-color: #000000;
+
+// @mixin h2() {
+//   color: $h2-color;
+//   font-size: 1.5rem;
+// }
+
+%font-title {
+  color: #000000;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+// $h3-color: #000000;
+
+// @mixin h3() {
+//   font-size: 1rem;
+//   color: $h3-color;
+// }
+
+%font-subtitle {
+  color: #000000;
+  font-size: 1rem;
+}
+
+// $text-color: #000000;
+
+// @mixin text() {
+//   color: $text-color;
+// }
+
+%font-text {
+  color: #000000;
+}
+
+// $article-h2-color:#000000;
+
+// @mixin article-h2-color() {
+//     color:$article-h2-color;
+// }
+
+// $article-text-color:#8f8f8f;
+
+// @mixin article-text-color() {
+//     color:$article-text-color;
+// }

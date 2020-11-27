@@ -1,0 +1,98 @@
+@use "../utility/breaking-point";
+@use "../utility/grid";
+@use '../theme/background-image';
+@use '../layout/nav';
+
+.header {
+  // & {
+  //   padding-left: 0;
+  //   padding-right: 0;
+  // }
+  // @extend %above-contain;
+  padding-top: 5px;
+  margin-bottom: 15px;
+  @include breaking-point.breaking-point(lg) {
+    margin-bottom: 30px;
+  }
+}
+
+.logo-wrap {
+  @include background-image.content-background-image();
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 1px gray;
+  padding: 5px;
+  h1 {
+    margin-bottom: 10px;
+  }
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  @include breaking-point.breaking-point(lg) {
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 35px;
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.social {
+  font-size: 0;
+  text-align: center;
+  @include breaking-point.breaking-point(lg) {
+    text-align: right;
+  }
+  a {
+    display: inline-block;
+    width: 27px;
+    height: 28px;
+    margin-bottom: 10px;
+  }
+  a + a {
+    margin-left: 10px;
+  }
+  div {
+    font-size: 0.9rem;
+  }
+}
+
+.facebook {
+  background: url(../images/social.png) no-repeat 0 1px;
+  &:hover {
+    background: url(../images/social.png) no-repeat 0 -27px;
+  }
+}
+
+.twitter {
+  background: url(../images/social.png) no-repeat -37px 1px;
+
+  &:hover {
+    background: url(../images/social.png) no-repeat -37px -27px;
+  }
+}
+
+.flicker {
+  background: url(../images/social.png) no-repeat -74px 1px;
+  &:hover {
+    background: url(../images/social.png) no-repeat -74px -27px;
+  }
+}
+
+.dribbble {
+  background: url(../images/social.png) no-repeat -111px 1px;
+  &:hover {
+    background: url(../images/social.png) no-repeat -111px -27px;
+  }
+}
+
+.rss {
+  background: url(../images/social.png) no-repeat -150px 1px;
+  &:hover {
+    background: url(../images/social.png) no-repeat -150px -27px;
+  }
+}

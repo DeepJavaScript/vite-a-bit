@@ -1,0 +1,133 @@
+@use "../utility/breaking-point";
+@use "../utility/grid";
+@use '../theme/font';
+// @use '../theme/background-image';
+
+.banner {
+  // .container {
+  // @extend %above-contain;
+  // padding-right: 0;
+  // padding-left: 0;
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  // }
+
+  .swiper-pagination {
+    @include breaking-point.breaking-point(sm) {
+      display: none;
+    }
+  }
+
+  .next {
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // margin: auto;
+    // z-index: 999;
+    // width: 20px;
+    // height: 20px;
+    // color: darkgray;
+    // outline: none;
+    // font-size: 2rem;
+
+    @include breaking-point.breaking-point(sm) {
+      background: url(../images/slider_next.gif) no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 999;
+      width: 40px;
+      height: 119px;
+      margin: auto;
+      outline: none;
+      i {
+        display: none;
+      }
+      &:hover {
+        background-position: 0 -119px;
+      }
+    }
+  }
+
+  .prev {
+    // position: absolute;
+    // width: 20px;
+    // height: 20px;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // margin: auto;
+    // z-index: 999;
+    // color: darkgray;
+    // outline: none;
+    // font-size: 2rem;
+    @include breaking-point.breaking-point(sm) {
+      background: url(../images/slider_prev.gif) no-repeat;
+      position: absolute;
+      width: 40px;
+      height: 119px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 999;
+      margin: auto;
+      outline: none;
+      i {
+        display: none;
+      }
+      &:hover {
+        background-position: 0 -119px;
+      }
+    }
+  }
+}
+
+.product {
+  // @include background-image.content-background-image();
+  position: relative;
+  padding: 0 35px;
+  h2 {
+    @extend %font-title;
+    @include breaking-point.breaking-point(lg) {
+      margin-bottom: 35px;
+    }
+  }
+
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  .swiper-pagination {
+    @include breaking-point.breaking-point(lg) {
+      display: none;
+    }
+  }
+}
+.btn {
+  color: #cdcdce;
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  z-index: 999;
+  @include breaking-point.breaking-point(lg) {
+    display: flex;
+    top: 30px;
+  }
+  .next {
+    outline: none;
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .prev {
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+}

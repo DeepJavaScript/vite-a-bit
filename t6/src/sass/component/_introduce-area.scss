@@ -1,0 +1,142 @@
+@use "../utility/breaking-point";
+@use "../utility/grid";
+@use '../theme/font';
+@use '../theme/background-image';
+
+.introduce {
+  @include background-image.content-background-image();
+  margin-bottom: 3rem;
+  padding: 0 35px;
+  .row {
+    // @extend %row;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+    @include breaking-point.breaking-point(xl) {
+      padding-bottom: 5rem;
+    }
+    border-bottom: 1px solid darkgray;
+  }
+  .col {
+    &-12 {
+      @include grid.col(12);
+    }
+    &-md-6 {
+      @include breaking-point.breaking-point(md) {
+        @include grid.col(6);
+      }
+    }
+    &-lg-4 {
+      @include breaking-point.breaking-point(lg) {
+        @include grid.col(4);
+      }
+    }
+  }
+}
+
+.welcome {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-bottom: 15px;
+
+  @include breaking-point.breaking-point(md) {
+    border: 0;
+    padding-bottom: 0;
+  }
+  h2 {
+    @extend %font-title;
+    padding-top: 15px;
+    text-align: center;
+
+    @include breaking-point.breaking-point(lg) {
+      padding-top: 0;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+  }
+
+  img {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  span {
+    line-height: 1.5;
+    @extend %font-text;
+  }
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.order-last {
+  order: 13;
+  // @include breaking-point.breaking-point(md) {
+  //   @include grid.col(12);
+  // }
+}
+
+.order-lg-0 {
+  @include breaking-point.breaking-point(lg) {
+    // @include grid.col(4);
+    order: 0;
+  }
+}
+
+.why-choose {
+  margin-top: 20px;
+  @include breaking-point.breaking-point(lg) {
+    margin-top: 0;
+  }
+}
+
+.news {
+  border-bottom: 1px solid gray;
+  padding-bottom: 15px;
+  @include breaking-point.breaking-point(md) {
+    padding-bottom: 0;
+    border: 0;
+  }
+}
+.news-media {
+  text-align: center;
+  margin-bottom: 20px;
+  @include breaking-point.breaking-point(sm) {
+    display: flex;
+    text-align: left;
+    margin-bottom: 0;
+    align-items: flex-start;
+  }
+  @include breaking-point.breaking-point(lg) {
+    margin-top: 30px;
+  }
+  img {
+    margin-right: 15px;
+  }
+}
+
+.news-media-text {
+  color: #828282;
+  font-size: 0;
+  a {
+    font-weight: bold;
+    color: #000000;
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 0.9rem;
+  }
+}
+
+.date {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: #8db537;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  margin-bottom: 15px;
+  @include breaking-point.breaking-point(xl) {
+    width: 50%;
+  }
+}

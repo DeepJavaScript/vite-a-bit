@@ -1,0 +1,12 @@
+@use '../utility/grid';
+@use "../utility/breaking-point";
+$more-background-color: #cecece;
+
+%more {
+  display: block;
+  background-color: $more-background-color;
+  width: 30%;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 2px;
+}

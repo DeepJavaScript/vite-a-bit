@@ -1,0 +1,19 @@
+@use "../utility/breaking-point";
+@use "../utility/grid";
+@use '../theme/background-image';
+@use '../component/carousel';
+@use "../component/card";
+@use '../component/introduce-area';
+@use "../component/choose-item";
+
+.main {
+  // @extend %above-contain;
+  // padding-left: 0;
+  // padding-right: 0;
+  // margin-top: -25px;
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+  // border-top: 25px solid #f2f2f2;
+  @include background-image.content-background-image();
+  box-shadow: 0 0 5px 1px gray, 0 -25px 0 0 white;
+}

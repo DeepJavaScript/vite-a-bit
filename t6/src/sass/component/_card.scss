@@ -1,0 +1,94 @@
+@use '../component/more-button';
+@use '../utility/grid';
+@use "../utility/breaking-point";
+@use '../theme/font';
+@use '../theme/background-image';
+
+.card {
+  // @include background-image.content-background-image();
+  padding: 0 35px;
+  @include breaking-point.breaking-point(lg) {
+    margin-top: -40px;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 50px;
+  }
+}
+.row {
+  // @extend %row;
+  flex-wrap: wrap;
+  // @include grid.content-fluid(-15px);
+}
+
+.card-body {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.col {
+  &-12 {
+    @include grid.col(12);
+  }
+  &-md-6 {
+    @include breaking-point.breaking-point(md) {
+      @include grid.col(6);
+    }
+  }
+  &-lg-3 {
+    @include breaking-point.breaking-point(lg) {
+      @include grid.col(3);
+    }
+  }
+}
+
+.card-text {
+  background-color: #e8e8e8;
+  box-shadow: inset 0 0 2px 0.5px gray;
+  border-radius: 2px;
+  padding-bottom: 10px;
+  @include breaking-point.breaking-point(sm) {
+    padding-bottom: 20px;
+  }
+  &:hover {
+    background-color: rgba(100, 100, 100, 0.9);
+    border: 1px solid;
+  }
+
+  &:hover > h3,
+  &:hover > p {
+    color: white;
+  }
+
+  h3 {
+    padding: 30px 0;
+    @extend %font-subtitle;
+    @include breaking-point.breaking-point(sm) {
+      padding-bottom: 25px;
+    }
+  }
+  p {
+    font-size: 0.9rem;
+    height: 90px;
+    @extend %font-text;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    @include breaking-point.breaking-point(lg) {
+      margin-top: 20px;
+      height: 110px;
+    }
+  }
+}
+
+.more {
+  color: black;
+  @extend %more;
+  &:hover {
+    color: red;
+  }
+}

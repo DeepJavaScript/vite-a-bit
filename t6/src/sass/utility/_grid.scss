@@ -1,0 +1,55 @@
+// %row {
+//   display: flex;
+//   margin: 0 -15px;
+// }
+
+.row {
+  display: flex;
+  margin: 0 -15px;
+  &-no-gutters {
+    @extend .row;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &-no-gutters > col {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// @mixin content-fluid($edge-gutter) {
+//   margin-left: $edge-gutter;
+//   margin-right: $edge-gutter;
+// }
+
+@mixin col($number) {
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 0 0 $number/12 * 100%;
+  // @if $number == 1 {
+  //   flex: 0 0 1/12 * 100%;
+  // } @else if $number == 2 {
+  //   flex: 0 0 2/12 * 100%;
+  // } @else if $number == 3 {
+  //   flex: 0 0 3/12 * 100%;
+  // } @else if $number == 4 {
+  //   flex: 0 0 4/12 * 100%;
+  // } @else if $number == 5 {
+  //   flex: 0 0 5/12 * 100%;
+  // } @else if $number == 6 {
+  //   flex: 0 0 6/12 * 100%;
+  // } @else if $number == 7 {
+  //   flex: 0 0 7/12 * 100%;
+  // } @else if $number == 8 {
+  //   flex: 0 0 8/12 * 100%;
+  // } @else if $number == 9 {
+  //   flex: 0 0 9/12 * 100%;
+  // } @else if $number == 10 {
+  //   flex: 0 0 10/12 * 100%;
+  // } @else if $number == 11 {
+  //   flex: 0 0 11/12 * 100%;
+  // } @else if $number == 12 {
+  //   flex: 0 0 100%;
+  // }
+}
