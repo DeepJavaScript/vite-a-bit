@@ -381,3 +381,22 @@ Swiper.use([Navigation]);
 - 去 Chrome 看畫面，`fontawesome` icons 不見惹 :(
 - 在 `index.js` 加上 `import '@fortawesome/fontawesome-free`，icons 還是沒跑出來
 - 換成 `import '@fortawesome/fontawesome-free/js/all.js';` 就可以了
+
+### 載入 JavaScript
+- 問題：重工
+  - 設定了兩個進入點
+  - 在主要進入點 `index.js` 又載入 `script.js`
+- 做了什麼修正？
+  - 在 `webpack.config.js` 註解掉 `script.js`
+
+```js
+module.exports = {
+  entry: {
+    index: './src/js/index.js',
+    // script: './src/js/script.js',
+  },
+};
+```
+
+- `$ npm run build` -> ✅
+- 畫面沒問題
