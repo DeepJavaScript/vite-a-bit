@@ -70,8 +70,7 @@ module.exports = {
       title: 'T5',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      },
-      template: './index.html'
+      }
     })
   ],
   optimization: {
