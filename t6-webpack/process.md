@@ -1,6 +1,10 @@
 # bundle practice & record
 
 ## 20201126
+
+以下以流水帳形式記錄實作過程：
+
+### 基本設定
 - 複製檔案
 - `$ npm install` 安裝 `package.json` 裡的套件
 - 建立 `src` 和 `dist` 兩個資料夾，把檔案移到 `src` 裡
@@ -10,6 +14,8 @@
 - `$ npx webpack --config webpack.config.js` -> ✅
 - `package.json` `scripts` 加上 `"build": "webpack"`
 - `$ npm run build` -> ✅
+
+### 載入樣式
 - `$ npm install --save-dev style-loader css-loader` 安裝 `style-loader` 和 `css-loader`
 - 在 `webpack.config.js` 加上：
 
@@ -56,6 +62,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (1 errors)
+
+### 載入 HTML (1)
 - `$ npm install --save-dev html-loader` 安裝 `html-loader`
 - `html-loader` 的作用機制 (ref. [Loading Images](https://webpack.js.org/guides/asset-management/#loading-images))：
 
@@ -79,6 +87,8 @@ module: {
 ```
 
 - `$ npm run build` -> ❌ (1 errors)
+
+### 設定進入點
 - 把 `index.js` 移動到 `src/js` 裡
 - `index.js` 改路徑、加上 `script.js`：
 
@@ -103,6 +113,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (1 errors)
+
+### 載入 HTML (2)
 - `$ npm install --save-dev html-webpack-plugin` 安裝 `html-webpack-plugin`
 - 在 `webpack.config.js` 加上：
 
@@ -121,6 +133,8 @@ module.exports = {
 > Before we do a build, you should know that the `HtmlWebpackPlugin` by default will generate its own `index.html` file, even though we already have one in the `dist/` folder. This means that it will replace our `index.html` file with a newly generated one.
 
 - `$ npm run build` -> ❌ (1 errors)
+
+### 載入圖片
 - 在 `webpack.config.js` 加上：
 
 ```js
@@ -135,6 +149,8 @@ module: {
 ```
 
 - `$ npm run build` -> ❌ (1 errors)
+
+### 打包前清理 `/dist`
 - `$ npm install --save-dev clean-webpack-plugin` 安裝 `clean-webpack-plugin`
 - 在 `webpack.config.js` 加上：
 
@@ -149,6 +165,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (1 errors)
+
+### 設定打包方式
 - 在 `webpack.config.js` 加上：
 
 ```js
@@ -156,6 +174,10 @@ module.exports = {
   mode: 'development',
 };
 ```
+
+### 修改 HTML 打包模板
+
+> `webpack` relative or absolute path to the template. By default it will use `src/index.ejs` if it exists. Please see the [docs](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) for details
 
 - 在 `webpack.config.js` 加上：
 
@@ -171,6 +193,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (2 errors: swiper)
+
+### 載入 Swiper
 - 在 `index.js` 加上：
 
 ```js
@@ -197,6 +221,8 @@ import './script.js';
 ```
 
 - `$ npm run build` -> ❌ (1 errors: publicPath)
+
+### 設定圖片打包路徑＆命名
 - 在 `webpack.config.js` 加上：
 
 ```js
@@ -218,6 +244,7 @@ module.exports = {
   - Documentation [Public Path](https://webpack.js.org/guides/public-path/) 超級看不懂啊。
   - 🔍 Stackoverflow
 
+### 載入 scss
 - 修改 `webpack.config.js`：
 
 ```js
@@ -256,6 +283,8 @@ module.exports = {
 ```
 
 - `$ npm run build` -> ❌ (1 errors: Sass)
+
+### 載入 Bootstrap
 - 在 `index.html` 註解掉：
 
 ```html
@@ -283,6 +312,8 @@ import '../../node_modules/bootstrap/scss/bootstrap.scss'
 
 - `$ npm run build` -> ✅
 - 去 Chrome 看畫面，`swiper` 壞掉惹 T_T
+
+### 設定 Swiper
 - 🔍 [Stackoverflow: swiper slider not work when i user webpack and import this in app js](https://stackoverflow.com/questions/55066093/swiper-slider-not-work-when-i-user-webpack-and-import-this-in-app-js)，參考 Swiper API [Custom Build](https://swiperjs.com/api/#custom-build)
 - 以下不成功：
 
@@ -325,6 +356,7 @@ import {
 Swiper.use([Navigation]);
 ```
 
+### debugging
 - 修理壞掉的 UI：
   - [x] FEATURED WORKS 原本的 navigation icons 跑出來了；
     - `!important`
@@ -337,6 +369,7 @@ Swiper.use([Navigation]);
 > 
 > 2. 開始打包後無法預處理 (preprocessor) `.scss` -> `.css`？
 
+### 載入 Font Awesome
 - `$ npm install --save-dev @fortawesome/fontawesome-free` 安裝 `@fortawesome/fontawesome-free`
 - 在 `index.html` 註解掉：
 
