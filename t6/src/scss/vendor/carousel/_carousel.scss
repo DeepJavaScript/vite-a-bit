@@ -21,12 +21,12 @@
     transform: translateY(-50%);
     background-position-y: -30px;
     cursor: pointer;
-    
+
     @include breakpoint.media-breakpoint-up(md) {
       height: 119px;
       background-position-y: 0;
     }
-    
+
     &:hover {
       background-position-y: 89px;
 
@@ -34,22 +34,22 @@
         background-position-y: 119px;
       }
     }
-    
+
     &::after {
       font-size: 15px;
     }
   }
-  
+
   .carousel_control-prev {
     @extend %carousel_control;
     left: 0;
-    background-image: url(../../src/images/slider_prev.gif);
+    background-image: url(../images/slider_prev.gif);
   }
-  
+
   .carousel_control-next {
     @extend %carousel_control;
     right: 0;
-    background-image: url(../../src/images/slider_next.gif);
+    background-image: url(../images/slider_next.gif);
   }
 }
 
@@ -76,7 +76,7 @@
           font-family: swiper-icons;
         }
       }
-      
+
       &-next {
         padding-left: 6px;
         margin-left: 2px;

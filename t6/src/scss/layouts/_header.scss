@@ -9,7 +9,7 @@ header {
   padding: 24px 16px;
   margin-bottom: 20px;
   background-image: settings.$sub-background-image;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .3);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
 
   @include breakpoint.media-breakpoint-up(md) {
     flex-direction: row;
@@ -55,7 +55,7 @@ header {
   display: inline-block;
   width: 27px;
   height: 27px;
-  background: url(../../src/images/social.png) no-repeat;
+  background: url(../images/social.png) no-repeat;
 
   &:hover {
     background-position-y: -28px;

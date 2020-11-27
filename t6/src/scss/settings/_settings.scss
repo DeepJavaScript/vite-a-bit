@@ -6,7 +6,7 @@
 // Inspired by: https://github.com/ahmadajmi/itcss/blob/master/settings/_config.scss
 
 $config: (
-  debug: true
+  debug: true,
 );
 
 // Example:
@@ -16,13 +16,12 @@ $config: (
   @return map-get($config, $key);
 }
 
-
-
 // *----------------------------------*\
 // Settings > Typography
 // *----------------------------------*/
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+  sans-serif;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 16px;
@@ -40,8 +39,6 @@ $display3-size: 24px;
 $display3-weight: normal;
 $display3-line-height: 24px;
 
-
-
 // *----------------------------------*\
 // Settings > Breakpoints
 // *----------------------------------*/
@@ -51,25 +48,21 @@ $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1200px,
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 1140px,
 );
-
-
 
 // *----------------------------------*\
 // Settings > Background imgae
 // *----------------------------------*/
 
-$sub-background-image: url(../../src/images/subbg.gif);
-
-
+$sub-background-image: url(../images/subbg.gif);
 
 // *----------------------------------*\
 // Settings > Grid
@@ -78,15 +71,11 @@ $sub-background-image: url(../../src/images/subbg.gif);
 $grid-columns: 12;
 $grid-gutter-width: 30px;
 
-
-
 // *----------------------------------*\
 // Settings > Card
 // *----------------------------------*/
 
 $card-deck-margin: 30px;
-
-
 
 // *----------------------------------*\
 // Settings > Album
