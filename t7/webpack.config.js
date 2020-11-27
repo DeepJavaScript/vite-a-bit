@@ -10,6 +10,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
+    hot: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
