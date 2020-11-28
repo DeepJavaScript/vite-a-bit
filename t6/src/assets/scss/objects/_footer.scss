@@ -1,0 +1,132 @@
+footer {
+    background-color: $white;
+    padding: 0 25px 30px;
+    box-shadow: 0 0 2px 0 rgba($color: $darkGray, $alpha: 0.7), 0 0 5px rgba($color: $darkGray, $alpha: 0.7);
+    [class^="col"]>div {
+        padding: 30px 15px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    .tweet {
+        p {
+            @include font(14px, 500, $black);
+        }
+    }
+    .testimonial {
+        .dialog {
+            position: relative;
+            padding: 15px 10px 15px 25px;
+            background-color: $gray;
+            border-radius: 3px 3px 3px 0;
+            @include font(13px, 500);
+            line-height: 1.1;
+            margin-bottom: 30px;
+            border: 1px solid $midGray;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: -1px;
+                border-left: 1px solid $midGray;
+                clip-path: polygon(0 0, 100% 0, 0 100%);
+            }
+            &::before {
+                background-color: $midGray;
+                width: 30px;
+                height: 16px;
+            }
+            &::after {
+                background-color: $gray;
+                width: 28px;
+                height: 15px;
+            }
+        }
+        .avatar {
+            font-size: 0;
+            &-image {
+                display: inline-block;
+                width: 50px;
+                margin-right: 15px;
+                vertical-align: middle;
+            }
+            &-caption {
+                display: inline-block;
+                vertical-align: middle;
+                h4 {
+                    @include font(13px, 600);
+                }
+                a {
+                    @include font(12px, 600, $green);
+                }
+            }
+        }
+    }
+    .contact {
+        input,
+        textarea {
+            width: 100%;
+            padding-left: 5px;
+            background-color: $gray;
+            border: 1px solid $midGray;
+            border-radius: 3px;
+            font-size: 12px;
+            vertical-align: top;
+            &::placeholder {
+                font-weight: 600;
+            }
+        }
+        textarea {
+            height: 105px;
+            resize: none;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 20px;
+            background-color: $black;
+            @include font(14px, 500, $white);
+            border: none;
+            &:hover {
+                background-color: $green;
+            }
+        }
+    }
+    .flickr .image-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        a {
+            width: calc((100% - 15px) / 4);
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.copyright-and-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: $black;
+    color: $darkGray;
+    text-align: center;
+    .copyright {
+        @include font(13px, 500);
+        span:nth-child(2) {
+            color: $green;
+        }
+    }
+    nav {
+        a {
+            display: inline-block;
+            text-decoration: none;
+            @include font(14px, 500);
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+}

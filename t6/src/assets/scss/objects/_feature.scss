@@ -1,0 +1,40 @@
+.feature {
+    position: relative;
+    padding: 50px 40px 75px;
+    .arrows {
+        position: absolute;
+        right: 40px;
+        top: 75px;
+        a {
+            text-decoration: none;
+            color: $midGray;
+            font-size: 20px;
+        }
+        i+i {
+            margin-left: 5px;
+        }
+    }
+    @media (min-width: 576px) {
+        .arrows {
+            top: 65px;
+        }
+    }
+}
+
+.image-wrapper {
+    display: flex;
+    overflow: hidden;
+    .image {
+        width: 100%;
+        flex: 0 0 auto;
+        @media (min-width: 576px) {
+            width: calc((100vw - 90px) / 2);
+        }
+        @media (min-width: 768px) {
+            width: calc((100% - 90px)/4);
+        }
+    }
+    .image+.image {
+        margin-left: 30px;
+    }
+}

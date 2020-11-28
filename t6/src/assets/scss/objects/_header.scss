@@ -1,0 +1,56 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $black;
+    padding: 35px 40px;
+    background-color: $white;
+    box-shadow: 0 0 3px 0 rgba($color: $darkGray, $alpha: 0.7), 0 0 5px rgba($color: $darkGray, $alpha: 0.7);
+    .logo {
+        max-width: 320px;
+        margin-bottom: 10px;
+    }
+    .social {
+        text-align: center;
+        a {
+            display: inline-block;
+            background: url('../images/social.png') no-repeat;
+            width: 28px;
+            height: 28px;
+        }
+        // 雪碧圖
+        a:nth-child(1) {
+            &:hover {
+                background-position: 0 -27px;
+            }
+        }
+        a:nth-child(2) {
+            background-position: -37px 0;
+            &:hover {
+                background-position: -37px -27px;
+            }
+        }
+        a:nth-child(3) {
+            background-position: -74px 0;
+            &:hover {
+                background-position: -74px -27px;
+            }
+        }
+        a:nth-child(4) {
+            background-position: -110px 0;
+            &:hover {
+                background-position: -110px -27px;
+            }
+        }
+        a:nth-child(5) {
+            background-position: -150px 0;
+            &:hover {
+                background-position: -150px -27px;
+            }
+        }
+        h4 {
+            @include font(13px,
+            500);
+        }
+    }
+}

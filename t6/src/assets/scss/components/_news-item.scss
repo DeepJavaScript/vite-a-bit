@@ -1,0 +1,26 @@
+.news-item {
+    display: flex;
+    .news-img {
+        flex: 0 0 40%;
+        margin-right: 30px;
+    }
+    .news-body {
+        flex: 1;
+    }
+    h4 {
+        width: 85px;
+        padding: 5px 0;
+        text-align: center;
+        font-size: 16px;
+        color: $white;
+        background-color: $green;
+        margin-bottom: 25px;
+    }
+    p {
+        @include font(13px, 500, $darkGray);
+    }
+}
+
+.news-item+.news-item {
+    margin-top: 30px;
+}

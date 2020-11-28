@@ -1,0 +1,67 @@
+.navigation {
+    .navbar {
+        background-color: $white;
+        padding: 0;
+        height: 100%;
+        border-top: 1px solid $gray;
+        .navbar-nav .nav-link {
+            @include font(13px, 500);
+            text-align: center;
+            padding: 16px 25px;
+            &:hover {
+                background-color: $green;
+                color: $white;
+            }
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        li {
+            border-right: 2px solid#eee;
+        }
+        @media (min-width:768px) {
+            border-top: none;
+            box-shadow: 4px -3px 4px -2px rgba($color: $darkGray, $alpha: 0.6);
+        }
+        @media (min-width: 992px) {
+            margin-right: 10px;
+        }
+    }
+    .dropdown-menu {
+        width: 100%;
+        min-width: auto;
+        margin: 0;
+        padding: 0;
+        border-radius: 0 0 3px 3px;
+    }
+    .search {
+        position: relative;
+        padding: 7px 15px 7px 20px;
+        background-color: $white;
+        height: 100%;
+        border-top: 1px solid $gray;
+        input {
+            width: 100%;
+            padding: 2px 5px;
+            background-color: #eee;
+            border: 1px solid $gray;
+        }
+        input::placeholder {
+            @include font(13px, 700, $midGray);
+        }
+        .fa-search {
+            position: absolute;
+            pointer-events: none;
+            color: $midGray;
+            right: 20px;
+            top: 17px;
+        }
+        @media (min-width:768px) {
+            border-top: none;
+            box-shadow: 2px -3px 5px -2px rgba($color: $darkGray, $alpha: 0.6);
+        }
+        @media (min-width:992px) {
+            box-shadow: -2px -1px 4px rgba($color: $darkGray, $alpha: 0.6);
+        }
+    }
+}
