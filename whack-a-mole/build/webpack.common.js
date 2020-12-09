@@ -23,10 +23,11 @@ module.exports = {
       // },
     }),
     // version must @next
-//     (node:94791) [DEP_WEBPACK_COMPILATION_ASSETS] DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.
-// BREAKING CHANGE: No more changes should happen to Compilation.assets after sealing the Compilation.
-//         Do changes to assets earlier, e. g. in Compilation.hooks.processAssets.
-//         Make sure to select an appropriate stage from Compilation.PROCESS_ASSETS_STAGE_*.
+    //     (node:94791) [DEP_WEBPACK_COMPILATION_ASSETS] DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.
+    // BREAKING CHANGE: No more changes should happen to Compilation.assets after sealing the Compilation.
+    //         Do changes to assets earlier, e. g. in Compilation.hooks.processAssets.
+    //         Make sure to select an appropriate stage from Compilation.PROCESS_ASSETS_STAGE_*.
+    // (node:37394) [DEP_WEBPACK_TEMPLATE_PATH_PLUGIN_REPLACE_PATH_VARIABLES_HASH] DeprecationWarning: [hash] is now [fullhash] (also consider using [chunkhash] or [contenthash], see documentation for details)
   ],
   output: {
     filename: '[name].[hash:4].bundle.js',

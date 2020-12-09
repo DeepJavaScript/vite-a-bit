@@ -1,4 +1,4 @@
-require("./index.css");
+require('./index.css');
 
 function render() {
   const template = `<h1>Whack-a-mole! <span class="score">0</span></h1>
@@ -23,22 +23,22 @@ function render() {
     <div class="hole hole6">
       <div class="mole"></div>
     </div>
-  </div>`
+  </div>`;
 
   document.body.innerHTML = template;
 }
 
 function initStartButtonEvent() {
-  const start_button = document.querySelector('#start');
-  start_button.addEventListener('click', () => {
+  const startButton = document.querySelector('#start');
+  startButton.addEventListener('click', () => {
     setInterval(() => {
-      const mole_show_rhythm = (Math.floor(Math.random()*10)%10+1)*100
+      const moleShowRhythm = Math.ceil(Math.random() * 1000);
       setTimeout(() => {
-        const index_hold = Math.floor(Math.random()*10)%6+1;
-        const hole = document.querySelector(`.hole${index_hold}`);
+        const indexHold = Math.ceil(Math.random() * 6);
+        const hole = document.querySelector(`.hole${indexHold}`);
         const mole = hole.querySelector('.mole');
         mole.style.top = '0%';
-      }, mole_show_rhythm);
+      }, moleShowRhythm);
     }, 1000);
   });
 }
@@ -46,11 +46,12 @@ function initStartButtonEvent() {
 function initKickMoleEvent() {
   let score = 0;
   const moles = document.querySelectorAll('.mole');
-  moles.forEach(mole => mole.addEventListener('click', e => {
+  moles.forEach((mole) => mole.addEventListener('click', (e) => {
     e.target.style.top = '100%';
 
     const scoreBoard = document.querySelector('.score');
-    scoreBoard.textContent = ++score;
+    score += 1;
+    scoreBoard.textContent = score;
   }));
 }
 
