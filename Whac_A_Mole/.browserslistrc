@@ -1,0 +1,7 @@
+# 只要支援 browserslist 的工具會自動來這邊找需適應的 browser 版本
+# 定期執行 npx browserslist@latest --update-db 來更新 caniuse 的 browser list
+# babel 如果有設定 target 就不會自己來吃這裡的設定
+
+defaults,
+# not IE 11, 無效...
+maintained node versions
