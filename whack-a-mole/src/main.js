@@ -1,5 +1,7 @@
 require('./index.css');
 
+// const run = null;
+
 function render() {
   const template = `<h1>Whack-a-mole! <span class="score">0</span></h1>
   <button id="start">Start!</button>
