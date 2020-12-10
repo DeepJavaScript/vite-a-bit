@@ -7,6 +7,7 @@ let timeUp = false;
 let score = 0;
 
 function randomTime(min, max) {
+  console.log(`${min}`)
   return Math.round(Math.random() * (max - min) + min);
 }
 

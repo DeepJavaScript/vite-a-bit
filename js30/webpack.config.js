@@ -26,6 +26,16 @@ module.exports = {
                 generator: {
                     filename: 'images/[hash:10][ext]'
                 }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             }
         ]
     },
