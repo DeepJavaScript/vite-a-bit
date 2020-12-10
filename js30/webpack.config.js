@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,24 +8,32 @@ module.exports = {
 	output: {
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: ""
+		publicPath: "",
 	},
 	devtool: 'inline-source-map',
-	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
-		port: 9000,
-		hot: true,
-	},
+	// devServer: {
+	// 	contentBase: path.join(__dirname, 'dist'),
+	// 	port: 9000,
+	// 	hot: true,
+	// },
 	plugins: [
-		// new CleanWebpackPlugin({
-		// 	// cleanStaleWebpackAssets: false,
-		// }),
+		new CleanWebpackPlugin({
+			// cleanStaleWebpackAssets: false,
+		}),
 		new HtmlWebpackPlugin({
-			template: "./src/index.html"
+			template: "./src/index.html",
 		}),
 	],
 	module: {
 		rules: [
+			{
+				test: /\.m?js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: require('./babel.config.js'),
+				},
+			},
 			{
 				test: /\.css$/i,
 				use: ['style-loader', 'css-loader',
