@@ -46,7 +46,7 @@ function startGame() {
   score = 0;
   peep();
   setTimeout(function () {
-    return timeUp = true;
+    return (timeUp = true);
   }, 10000);
 }
 
