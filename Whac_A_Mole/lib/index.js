@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-require("core-js/modules/es.array.for-each");
+require('core-js/modules/es.array.for-each');
 
-require("core-js/modules/web.dom-collections.for-each");
+require('core-js/modules/web.dom-collections.for-each');
 
 var holes = document.querySelectorAll('.hole');
 var scoreBoard = document.querySelector('.score');
