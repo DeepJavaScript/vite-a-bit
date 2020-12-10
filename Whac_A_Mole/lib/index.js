@@ -7,9 +7,11 @@ require("core-js/modules/web.dom-collections.for-each");
 var holes = document.querySelectorAll('.hole');
 var scoreBoard = document.querySelector('.score');
 var moles = document.querySelectorAll('.mole');
+var starButton = document.querySelector('.starButton');
 var lastHole;
 var timeUp = false;
 var score = 0;
+starButton.addEventListener('click', startGame);
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
