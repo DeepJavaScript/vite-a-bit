@@ -1,0 +1,19 @@
+{
+  "name": "whac-a-mole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jinwen",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  }
+}
