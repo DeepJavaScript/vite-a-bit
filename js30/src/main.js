@@ -79,7 +79,7 @@ const ES2018 = Promise.resolve(1).finally();
 console.log(ES2018);
 
 // # ES2019
-const ES2019 = Object.fromEntries([["a", 1]]);
+const ES2019 = Object.fromEntries([['a', 1]]);
 console.log(ES2019);
 
 // # ES2020
