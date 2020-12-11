@@ -7,6 +7,7 @@ let timeUp = false;
 let score = 0;
 
 starButton.addEventListener('click', startGame);
+moles.forEach((mole) => mole.addEventListener('click', bonk));
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -47,5 +48,3 @@ function bonk(e) {
   this.parentNode.classList.remove('up');
   scoreBoard.textContent = score;
 }
-
-moles.forEach((mole) => mole.addEventListener('click', bonk));
