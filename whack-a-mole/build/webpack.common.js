@@ -1,6 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '../', dir);
@@ -19,6 +21,14 @@ module.exports = {
     // }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash:4].css',
+    }),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'JS30-30',
+      template: './public/index.html',
+      // meta: {
+      //   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      // },
     }),
     // version must @next
     // (node:94791) [DEP_WEBPACK_COMPILATION_ASSETS] DeprecationWarning:
