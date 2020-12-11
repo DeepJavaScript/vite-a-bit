@@ -54,3 +54,5 @@ function header(e) {
   this.parentNode.classList.remove('up');
   scoreBoard.textContent = score;
 }
+
+var abcdef;

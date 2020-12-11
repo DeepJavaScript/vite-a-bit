@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "browserslist": [
-    "defaults",
     "cover 90% in TW"
   ],
   "devDependencies": {
@@ -27,6 +26,7 @@
     "generator-eslint": "^2.0.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
+    "husky": "^5.0.4",
     "prettier": "2.2.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.10.0",
