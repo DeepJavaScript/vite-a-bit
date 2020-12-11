@@ -7,6 +7,9 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 
+const startGameButton = document.querySelector('.start-game-button');
+startGameButton.addEventListener('click', startGame);
+
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
