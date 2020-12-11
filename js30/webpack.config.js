@@ -1,3 +1,4 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
@@ -22,6 +23,13 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
+		}),
+		new ESLintPlugin({
+			exclude: [
+				'node_modules',
+				'dist',
+			],
+			formatter: 'table',
 		}),
 	],
 	module: {
