@@ -3,8 +3,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
- 
- module.exports = {
+
+module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
@@ -26,7 +26,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
       filename: 'css/main.css'
     }),
     new ESLintPlugin({
-      files: ['.js', '.json', '.html', '.css'],
       fix: true
     })
   ],
@@ -62,12 +61,11 @@ const ESLintPlugin = require('eslint-webpack-plugin');
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/preset-env'
+              '@babel/preset-env',
             ]
           }
         }
       }
     ]
-  },
-  mode: "development"
- };
+  }
+};

@@ -16,7 +16,7 @@
       }
     },
     {
-      "files": ["*.json", "legacy/**/*.js"],
+      "files": ["*.json"],
       "options": {
         "singleQuote": false
       }

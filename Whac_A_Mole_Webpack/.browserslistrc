@@ -3,5 +3,4 @@
 # babel 如果有設定 target 就不會自己來吃這裡的設定
 
 defaults
-# not IE 11, 無效...
-maintained node versions
+# not IE 11 無效...
