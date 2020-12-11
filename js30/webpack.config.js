@@ -1,4 +1,5 @@
 const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -45,8 +46,12 @@ module.exports = {
             template: './src/index-FINISHED.html'
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].bundle.css",
+            filename: '[name].bundle.css',
             chunkFilename: '[id].css',
+        }),
+        new ESLintPlugin({
+            files: 'src/**/*.js',
+            fix: true
         })
     ],
     devServer: {
@@ -54,4 +59,4 @@ module.exports = {
         open: 'Google Chrome',
         compress: true
     },
-}
+};
