@@ -3,12 +3,6 @@
     [
       "@babel/env",
       {
-        "targets": {
-          "ie": "11",
-          "firefox": "21",
-          "chrome": "44",
-          "safari": "9.1"
-        },
         "useBuiltIns": "usage",
         "corejs": "3.6.5"
       }
