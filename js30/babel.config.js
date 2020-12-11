@@ -12,8 +12,6 @@ module.exports = {
 			// "chrome": "67",
 			// "safari": "11.1"
 			// },
-			"targets": "> 0.25%, not dead",
-			// "useBuiltIns": "usage",
 			"useBuiltIns": "entry",
 			"corejs": "3.6.5",
 			// bugfixes defaults to false, but enabled by default in bable 8, how about babel-loader ^8 ??
