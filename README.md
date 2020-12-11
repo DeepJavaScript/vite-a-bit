@@ -97,3 +97,32 @@ html-loader 可以想像成 把 template html file 轉換成 js code ,
 2. HMR: 原本的程式碼已經因為 HMR 更新，但是瀏覽器上的程式碼可能還在使用舊的 referance
 
 [Gotchas](https://webpack.js.org/guides/hot-module-replacement/#gotchas)
+
+---
+
+
+# js30
+
+1. babel 官方文件出現的 `@babel/evn` 和 `@babel/preset-evn` 有什麼差別?
+
+A: 沒有差別!! 當你把 `@babel/evn` 寫在 `preset` 欄位裡面時, babel 就能認出這個東西是 preset。官方文件只有說明 *可以省略掉 `@babel/preset-`*...
+
+[babel office document - preset](https://stackoverflow.com/questions/56108110/confused-with-babel-preset-configs-between-babel-env-and-babel-preset-env)
+
+[StackOverFlow - confused with babel preset configs between @babel/env and @babel/preset-env](https://stackoverflow.com/questions/56108110/confused-with-babel-preset-configs-between-babel-env-and-babel-preset-env)
+
+2. useBuiltIns ??
+
+[StackOverFlow - Confused about useBuiltIns option of @babel/preset-env (using Browserslist Integration)](https://stackoverflow.com/questions/52625979/confused-about-usebuiltins-option-of-babel-preset-env-using-browserslist-integ)
+
+[Webpack - Clarifying tree shaking and sideEffects](https://webpack.js.org/guides/tree-shaking/#clarifying-tree-shaking-and-sideeffects)
+似乎差不多概念
+
+3. browserslist 找不到 TW ??
+
+> $ npx browserslist "cover 90% in TW"
+> browserslist: Unknown browser query `TW`. Maybe you are using old Browserslist or made typo in query.
+
+4. 設置 browserslist query 在 babel.config - preset - @babel/env - target, 似乎吃不到?? 雖然官方說可以這樣寫...但和直接寫在 packeage.josn 跑出來的東西不大一樣??
+
+
