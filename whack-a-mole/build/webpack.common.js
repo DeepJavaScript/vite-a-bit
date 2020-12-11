@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '../', dir);
@@ -12,11 +12,11 @@ module.exports = {
     './src/assets/css/reset.css',
   ],
   plugins: [
-    new ESLintPlugin({
-      // for CD/CI report
-      fix: true,
-      outputReport: true, // not work
-    }),
+    // new ESLintPlugin({
+    //   // for CD/CI report
+    //   fix: true,
+    //   outputReport: true, // not work
+    // }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash:4].css',
     }),
@@ -44,6 +44,15 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.m?js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+    }, {
       test: /\.(png|svg|jpg|gif)$/,
       type: 'asset',
       generator: {
