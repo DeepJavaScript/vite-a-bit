@@ -12,8 +12,8 @@ module.exports = {
 				// "chrome": "67",
 				// "safari": "11.1"
 				// },
-				useBuiltIns: 'entry',
-				corejs: '3.6.5',
+				useBuiltIns: 'usage',
+				corejs: '3',
 				// bugfixes defaults to false, but enabled by default in bable 8, how about babel-loader ^8 ??
 				bugfixes: false,
 				debug: true,
