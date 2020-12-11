@@ -29,9 +29,9 @@
     "webpack-cli": "^4.2.0"
   },
   "browserslist": [
-    "> 1%",
-    "not IE 11",
-    "last 2 versions"
+    "cover 90% in TW",
+    "last 2 versions",
+    "not IE 11"
   ],
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
