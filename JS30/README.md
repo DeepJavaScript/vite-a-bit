@@ -9,6 +9,24 @@
 
 ## ESLint
 本專案我使用了 Airbnb 的 Style Guide，該 Style Guide 的介紹(中文)：[Airbnb JavaScript Style Guide](https://github.com/jigsawye/javascript)
+
+舉例來說關於 **箭頭函式** 的規範：
+若我們需要在箭頭函式寫建構式，那麼就需要使用 `return`，除非你是想要整個物件 return 出去。
+原本語法：
+```javascript
+[1, 2, 3].map(number => {
+  const nextNumber = number + 1;
+  `A string containing the ${nextNumber}.`;
+});
+```
+應該要改成：
+```javascript
+[1, 2, 3].map((number) => {
+  const nextNumber = number + 1;
+  return `A string containing the ${nextNumber}.`;
+});
+```
+
 ### 自動格式修正問題
 - 問題：想讓 ESLint 自動修正格式錯誤問題。
 - 解決方法：
