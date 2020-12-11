@@ -5,13 +5,14 @@ const moles = document.querySelectorAll('.mole');
 const startButton = document.getElementById("start-button");
   let lastHole;
   let timeUp = false;
-  let score = 0;
+let score = 0;
+let iamwrong;
 
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
 
-  function randomHole(holes) {
+  function randomHole(holes, iamwrong) {
     const index = Math.floor(Math.random() * holes.length);
     const hole = holes[index];
 
