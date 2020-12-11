@@ -1,9 +1,12 @@
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
+const starButton = document.querySelector('.starButton');
 let lastHole;
 let timeUp = false;
 let score = 0;
+
+starButton.addEventListener('click', startGame);
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -35,14 +38,14 @@ function startGame() {
   timeUp = false;
   score = 0;
   peep();
-  setTimeout(() => timeUp = true, 10000)
+  setTimeout(() => (timeUp = true), 10000);
 }
 
 function bonk(e) {
-  if(!e.isTrusted) return; // cheater!
+  if (!e.isTrusted) return; // cheater!
   score++;
   this.parentNode.classList.remove('up');
   scoreBoard.textContent = score;
 }
 
-moles.forEach(mole => mole.addEventListener('click', bonk));
+moles.forEach((mole) => mole.addEventListener('click', bonk));

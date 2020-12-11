@@ -1,55 +1,68 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-module.exports = {
+ 
+ module.exports = {
   entry: './src/index.js',
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/main.css'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Output Management',
-      template: 'index.html'
-    }),
-  ],
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    port: '5500',
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    // assetModuleFilename: 'images/[hash:5][ext][query]',
     publicPath: './'
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Whac A Mole',
+      template: './src/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/main.css'
+    }),
+  ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        // 把 css 打包出去 https://webpack.js.org/plugins/mini-css-extract-plugin/
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        generator: {
-          filename: 'css/[hash][ext][query]'
-        }
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
+          'css-loader'
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[hash:8][ext][query]'
-        }
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'vender/[hash:8][ext][query]'
+          filename: 'images/[hash:8][ext]'
         }
       },
       {
         test: /\.html$/i,
         loader: 'html-loader',
       },
-    ],
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env'
+            ]
+          }
+        }
+      }
+    ]
   },
   mode: "development"
-};
+ };
