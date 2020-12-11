@@ -30,7 +30,8 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
+    "not IE 11",
+    "last 2 versions"
   ],
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
