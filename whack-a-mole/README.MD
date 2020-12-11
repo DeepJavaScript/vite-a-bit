@@ -132,3 +132,7 @@ npm install --save-dev babel-loader @babel/core
   }
 }
 ```
+
+## browserlist
+
+設定順序有差
