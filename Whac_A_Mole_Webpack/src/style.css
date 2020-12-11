@@ -1,0 +1,205 @@
+/* -----------------------Reset------------------------ */
+
+body, h1, h2, h3, p {
+    margin:0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    padding: 0;
+}
+
+/* -----------------------Header------------------------ */
+
+/* * {
+    outline: 1px solid #000;
+} */
+
+header {
+    background-color: #eeeeee;
+}
+
+.header_container {
+    max-width: 898px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header nav {
+    font-size: 0;
+}
+
+.logo {
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo h1 {
+    font-size: 0.8rem;
+    margin-top: -6px;
+}
+
+header ul{
+    display: inline-block;
+    vertical-align: middle;
+    width: 90%;
+}
+
+header li {
+    display: inline-block;  
+    margin: 0 5%;
+    width: 10%;
+}
+
+header li a{
+    display: block;
+    color: #6e6e6e;
+    font-size: 0.9rem;
+    line-height: 3.5;
+    text-align: center;
+}
+
+header li a:hover {
+    color: #f2cf95;
+}
+
+/* -------------------------Main------------------------- */
+
+.banner_container {
+    margin: 0 auto;
+    max-width: 860px;
+    font-size: 0;
+}
+
+.article_container{
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 0 180px 0;
+}
+
+section {
+    background-color: #fdfdfd;
+    padding: 60px 0;
+}
+
+.section_content {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 2.3%;
+    width: 45.4%;
+}
+
+.section_image {
+    display: inline-block;
+    vertical-align: top;
+    width: 44%;
+    margin: 0 3%;
+}
+
+.section_image img {
+    width: 100%;
+}
+
+.section_content h2 {
+    font-size: 3.6rem;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.section_content h3 {
+    font-size: 1.9rem;
+    line-height: 1.2; 
+    font-weight: 400;
+}
+
+main p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #3d3d3d;
+    margin-bottom: 25px;
+}
+
+section p{
+    font-weight: 400;
+}
+
+.button_container {
+    width: 234px;
+    margin: auto;
+}
+
+.button_container button {
+    width: 100%;
+    background: linear-gradient(180deg, #ffba52 50%, #f99303 50%);
+    border-radius: 6px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 15px 44px;
+    margin-bottom: 6px;
+}
+
+.button_container::after {
+    display: block;
+    content: "Don't worry it's for free";
+    color: #4b4b4b;
+    font-size: 0.6rem;
+}
+
+article h3 {
+    font-size: 1.9rem;
+    margin: 30px 0;
+    font-weight: 400;
+}
+
+.article_content {
+    columns: 2;
+    column-gap: 5.23%;
+}
+
+/* --------------------------Footer--------------------------- */
+
+footer {
+    background-color: #eeeeee;
+}
+
+.footer_container {
+    max-width: 898px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 0;
+
+}
+
+footer p {
+    font-size: 0.75rem;
+    color: #3d3d3d;
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+}
+
+footer nav {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    width: 40%;
+}
+
+footer nav a {
+    color: #000;
+    margin-left: 6%;
+    display: inline-block;
+}
+
+footer nav a:hover {
+    color: #6e6e6e;
+}
+
+.svg-inline--fa.fa-w-14 {
+    width: 2rem;
+    height: auto;
+}
