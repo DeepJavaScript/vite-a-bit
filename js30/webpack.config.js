@@ -1,7 +1,7 @@
-const ESLintPlugin = require('eslint-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 module.exports = {
 	mode: 'development',
@@ -9,7 +9,7 @@ module.exports = {
 	output: {
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: "",
+		publicPath: '',
 	},
 	devtool: 'inline-source-map',
 	// devServer: {
@@ -22,13 +22,10 @@ module.exports = {
 			// cleanStaleWebpackAssets: false,
 		}),
 		new HtmlWebpackPlugin({
-			template: "./src/index.html",
+			template: './src/index.html',
 		}),
 		new ESLintPlugin({
-			exclude: [
-				'node_modules',
-				'dist',
-			],
+			exclude: ['node_modules', 'dist'],
 			formatter: 'table',
 		}),
 	],
@@ -44,20 +41,19 @@ module.exports = {
 			},
 			{
 				test: /\.css$/i,
-				use: ['style-loader', 'css-loader',
-				]
+				use: ['style-loader', 'css-loader'],
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'image/[name][ext]'
-				}
+					filename: 'image/[name][ext]',
+				},
 			},
 			{
 				test: /\.html$/i,
 				loader: 'html-loader',
 			},
-		]
+		],
 	},
 }
