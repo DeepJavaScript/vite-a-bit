@@ -68,7 +68,7 @@ module.exports = {
       use: [{
         loader: MiniCssExtractPlugin.loader,
         options: {
-          publicPath: './',
+          publicPath: '../',
         },
       }, {
         loader: 'css-loader', // translates CSS into CommonJS modules
