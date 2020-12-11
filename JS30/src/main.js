@@ -1,3 +1,4 @@
+const start = document.querySelector('.start')
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
@@ -48,4 +49,5 @@ function bonk(e) {
   scoreBoard.textContent = score;
 }
 
+start.addEventListener('click', startGame)
 moles.forEach((mole) => mole.addEventListener('click', bonk));

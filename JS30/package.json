@@ -28,6 +28,10 @@
     "webpack": "^5.10.0",
     "webpack-cli": "^4.2.0"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
   }

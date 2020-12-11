@@ -63,3 +63,12 @@ vs code 也有 Prettier 套件可以安裝 [Prettier - Code formatter](https://m
 
 browserslist 指定的瀏覽器支援度是建立在 Can I Use 上的。因此也可以去 Can I Use 上查詢語法支援度問題。
 
+```
+"browserslist": [
+    //所有全球使用率 1% 以上的瀏覽器
+    "> 1%",
+    //所有瀏覽器最新的 2 個版本
+    "last 2 versions",
+  ],
+```
+
