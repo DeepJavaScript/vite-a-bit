@@ -25,7 +25,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new ESLintPlugin()
+    new ESLintPlugin({
+      fix: true
+    })
   ],
   module: {
     rules: [
