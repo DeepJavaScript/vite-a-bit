@@ -50,6 +50,29 @@ rollup --config -o bundle-2.js # 手動指定輸出檔名
 
 ## [使用 plugin](https://rollupjs.org/guide/en/#using-plugins)
 
+為了更彈性的建構更複雜的軟體，要引用 npm 的套件，像是 Babel...
+所以要加入 plugin 的功能，在此使用 `@rollup/plugin-json` 的功能，讓 rollup 可以吃 JSON
+
+
 ```shell
 npm install --save-dev @rollup/plugin-json
+```
+
+**rollup.config.js**
+
+- 引用`import json from '@rollup/plugin-json';`
+- 加入 `plugins: [ json() ]`
+
+```javascript
+// rollup.config.js
+import json from '@rollup/plugin-json';
+
+export default {
+  input: 'src/main.js',
+  output: {
+    file: 'bundle.js',
+    format: 'cjs'
+  },
+  plugins: [ json() ]
+};
 ```
