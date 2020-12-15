@@ -76,3 +76,85 @@ export default {
   plugins: [ json() ]
 };
 ```
+
+## [輸出管理](https://rollupjs.org/guide/en/#using-output-plugins)
+
+想要讓輸入的 JS 檔變小，在瀏覽器使用時可以速度變快
+
+```shell
+npm install --save-dev rollup-plugin-terser
+```
+
+**rollup.config.js**
+
+```javascript
+// rollup.config.js
+import json from '@rollup/plugin-json';
+import {terser} from 'rollup-plugin-terser';
+
+export default {
+  // ...
+  output: [
+    // ...
+    {
+      file: 'bundle.min.js',
+      format: 'iife',
+      name: 'version',
+      plugins: [terser()]
+    }
+  ],
+  // ...
+};
+```
+
+- format 檔案輸出格式。
+  - iife: 立即執行函式
+  - es: ECMAScript
+
+## 拆分程式碼
+
+通常是自動拆分，`output.manualChunks` 可以明確指定拆分方式
+用程式碼拆分功能，實現動態載入的語法
+
+```javascript
+// src/main.js
+import foo from './foo.js';
+export default function () {
+  console.log(foo);
+}
+```
+改成
+```javascript
+// src/main.js
+export default function () {
+  import('./foo.js').then(({ default: foo }) => console.log(foo));
+}
+```
+
+**rollup.config.js**
+
+- output
+  - 設定 file 會輸出指定單一檔案。
+  - 設定 dir 會把檔案輸出到這個目錄下。
+
+檔名 `chunk-[hash].js` 其中，hash 是依內容 hash 的結果。
+可以指定 `output.chunkFileNames` 和 `output.entryFileNames` 決定命名原則。
+
+
+
+```javascript
+// rollup.config.js
+import json from '@rollup/plugin-json';
+import {terser} from 'rollup-plugin-terser';
+
+export default {
+  input: 'src/main.js',
+  output: {
+    dir: 'dist',
+    plugins: [ terser() ]
+  },
+  plugins: [ json() ]
+};
+```
+
+SystemJS 動態載入 JS
