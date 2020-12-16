@@ -18,9 +18,7 @@ export default {
     chunkFileNames: '[name].[hash][extname]'
   },
   plugins: [
-    sizeSnapshot({
-      matchSnapshot: true
-    }),
+    sizeSnapshot(),
     del({ targets: 'dist/*' }), // delete useless file before bundle
     terser(), // minify javascript file
     resolve({ browser: true }), // tells Rollup how to find date-fns in node_modules
