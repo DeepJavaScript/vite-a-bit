@@ -1,0 +1,7 @@
+// bootstrap 樣式
+// @import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
+// 重置樣式
+@import './reset.scss';
+// 頁面樣式
+@import './pages.scss';
