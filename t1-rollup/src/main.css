@@ -1,0 +1,178 @@
+/* reset */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1, h2, h3, p {
+  margin: 0;
+}
+h1 {
+  margin-top: -8px;
+  font-size: 14px;
+}
+h2 {
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.2;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+p {
+  font-size: 16px;
+  color: #585858;
+}
+a {
+  text-decoration: none;
+}
+.row {
+  font-size: 0;
+}
+.content {
+  width: 82%;
+  max-width: 820px;
+  margin: auto;
+}
+.col-half {
+  width: 50%;
+  padding: 0 20px;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+
+header {
+  padding: 26px 0 40px 0;
+  background-color: #eee;
+  /* background-image: url('img/box.png'); */
+}
+nav {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  font-size: 0;
+}
+.logo {
+  width: 13%;
+  color: black;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+.logo img {
+  max-width: 100%;
+}
+nav ul {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 87%;
+}
+nav li {
+  display: inline-block;
+  margin-left: 4%;
+}
+nav ul a {
+  display: inline-block;
+  width: 7em;
+  color: #818181;
+  font-size: 16px;
+}
+nav ul a:hover {
+  color: #f99603;
+}
+
+
+.banner-container {
+  padding: 60px 0;
+  background-color: #fdfdfd;
+}
+.banner-text {
+  padding-bottom: 20px;
+}
+.banner-button {
+  width: 230px;
+  margin: 0 auto;
+}
+.button {
+  width: 100%;
+  padding: 16px 40px;
+  background-image: linear-gradient(to bottom, #fbba55 50%, #f99603 50%);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.banner-button p {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #5e5e5e;
+}
+.banner-container img {
+  width: 100%;
+}
+
+.about-container {
+  padding: 80px 0 180px 0;
+  margin: auto;
+}
+.about-container .content {
+  column-count: 2;
+  column-gap: 40px;
+}
+.about-container h3 {
+  column-span: all;
+}
+.about-container h3,
+.about-container p {
+  margin-bottom: 24px;
+}
+
+
+footer {
+  background-color: #eee;
+}
+footer .container {
+  width: 88%;
+  max-width: 880px;
+  margin: auto;
+  padding: 20px 0;
+  font-size: 0;
+  /* overflow: hidden; */
+}
+footer .container::after {
+  clear: left;
+  content: "";
+  display: block;
+}
+.copyright {
+  font-size: 12px;
+  line-height: 36px;
+  float: left;
+}
+.social {
+  width: 190px;
+  text-align: right;
+  margin-left: auto;
+  font-size: 0;
+}
+.social a {
+  display: inline-block;
+  color: #040404;
+}
+.social a + a {
+  margin-left: 20px;
+}
+.social i,
+.social svg {
+  font-size: 36px;
+}
