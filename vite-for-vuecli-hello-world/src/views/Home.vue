@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld :msg="name" />
+    <HelloWorld :msg="count" @increment="increment" @reset="reset" />
   </div>
 </template>
 
@@ -19,7 +19,15 @@ export default {
   setup () {
     const store = useStore()
     return {
-      name: computed(() => store.getters.name)
+      count: computed(() => store.state.count),
+      increment: () => {
+        console.log('increment')
+        store.commit('increment')
+      },
+      reset: () => {
+        console.log('reset')
+        store.commit('reset')
+      },
     }
   }
 };

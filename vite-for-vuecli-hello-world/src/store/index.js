@@ -3,12 +3,18 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    name: "chris"
+    count: 0
   },
-  actions: {},
-  mutations: {},
+  mutations: {
+    increment (state) {
+      state.count++
+    },
+    reset (state) {
+      state.count = 0
+    }
+  },
   getters: {
-    name: state => state.name
+    count: state => state.count
   }
 })
 

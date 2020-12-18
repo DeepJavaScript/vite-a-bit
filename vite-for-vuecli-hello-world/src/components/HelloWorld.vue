@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button @click="$emit('increment')">increment</button>
+    <button @click="$emit('reset')">reset</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -115,6 +117,10 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  emits: {
+    increment: null,
+    reset: null,
   }
 };
 </script>
