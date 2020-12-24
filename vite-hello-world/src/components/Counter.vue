@@ -23,8 +23,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .count {
   margin-right: 16px;
+
+  @include media(lg) {
+    margin-right: 32px;
+  }
 }
 </style>
