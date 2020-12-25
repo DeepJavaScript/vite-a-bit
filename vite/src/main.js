@@ -4,8 +4,14 @@ import router from './router';
 import store from './store/hello-world'
 import './index.css';
 
-const app = createApp(App)
+// const app = createApp(App)
+// app.use(router)
+// app.use(store)
+// app.mount('#app')
 
-app.use(router)
-app.mount('#app')
-app.use(store)
+
+// 更簡潔的註冊法 Vue3 才有的功能
+createApp(App)
+  .use(router)
+  .use(store)
+  .mount('#app')
