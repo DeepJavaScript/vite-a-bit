@@ -1,6 +1,6 @@
 <template>
   <h1>{{ msg }}</h1>
-  <button @click="count++">click here</button>
+  <button @click="increment">click here</button>
   <span>{{ count }}</span>
 </template>
 
@@ -10,14 +10,16 @@ export default {
   props: {
     msg: String
   },
-  data() {
-    return {
-      count: 0
+  computed: {
+    // 在 computed 內拿到 getters 的資料
+    count() {
+      return this.$store.getters.count;
     }
   },
   methods: {
+    // 用 commit 觸發 mutations 內的事件
     increment () {
-      this.count++
+      this.$store.commit('increment');
     }
   }
 }
