@@ -9,7 +9,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: 'Counter',
+  name: 'CounterWithVuex',
   computed: {
     ...mapGetters({
       count: 'counter/count'

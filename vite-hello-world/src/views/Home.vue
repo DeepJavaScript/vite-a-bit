@@ -11,7 +11,7 @@
     />
     <hr />
 
-    <Counter />
+    <CounterWithVuex />
     <hr />
 
     <CounterWithComposition />
@@ -25,7 +25,7 @@
 import { ref } from 'vue';
 
 import HelloWorld from '/@/components/HelloWorld.vue';
-import Counter from '/@/components/Counter.vue';
+import CounterWithVuex from '/@/components/CounterWithVuex.vue';
 import CounterWithComposition from '/@/components/CounterWithComposition.vue';
 import CounterWithSetupScript from '/@/components/CounterWithSetupScript.vue';
 
@@ -33,7 +33,7 @@ export default {
   name: 'Home',
   components: {
     HelloWorld,
-    Counter,
+    CounterWithVuex,
     CounterWithComposition,
     CounterWithSetupScript
   },
