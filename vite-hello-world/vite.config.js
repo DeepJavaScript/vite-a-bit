@@ -4,6 +4,9 @@ const resolve = dir => path.join(__dirname, dir);
 
 export default {
   base: './',
+  alias: {
+    '/@/': resolve('src'),
+  },
   cssPreprocessOptions: {
     scss: {
       additionalData: `
