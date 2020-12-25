@@ -1,0 +1,85 @@
+$body-color: $greyish;
+$body-bg-color: $white;
+
+$link-color: $black;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  background-color: $body-bg-color;
+}
+
+// ====================================
+// # headings & paragraphs
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+// ====================================
+// # links
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    color: $green;
+    text-decoration: none;
+  }
+}
+
+// ====================================
+// # forms
+
+input,
+select,
+button,
+textarea {
+  &:focus {
+    outline: 0;
+  }
+}
+
+input,
+button,
+textarea {
+  // reset Firefox and Safari
+  margin: 0;
+
+  font-family: inherit;
+}
+
+input[hidden] {
+  display: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  resize: none;
+}

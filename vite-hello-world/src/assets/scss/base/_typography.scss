@@ -1,0 +1,27 @@
+// ====================================
+// # font-family
+
+$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$font-family-base: $font-family-sans-serif;
+
+// ====================================
+// # font-size
+
+$font-size-root: 1rem;
+$font-size-base: $font-size-root;
+
+// ====================================
+// # font-weight
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-weight-base: $font-weight-regular;
+
+// ====================================
+// # line height
+
+$line-height-base: 1.2;

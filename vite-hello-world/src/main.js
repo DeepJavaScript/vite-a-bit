@@ -3,7 +3,7 @@ import App from './App.vue';
 import devtools from './devtools';
 import router from './router';
 import store from './store';
-import './index.css';
+import './assets/scss/main.scss';
 
 createApp(App)
   .use(devtools)
