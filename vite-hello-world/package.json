@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@vueblocks/vue-use-vuex": "^0.1.9",
     "vue": "^3.0.4",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0-rc.2"
