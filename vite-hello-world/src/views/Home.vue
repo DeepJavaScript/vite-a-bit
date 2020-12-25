@@ -15,6 +15,9 @@
     <hr />
 
     <CounterWithComposition />
+    <hr />
+
+    <CounterWithSetupScript />
   </div>
 </template>
 
@@ -24,13 +27,15 @@ import { ref } from 'vue';
 import HelloWorld from '/@/components/HelloWorld.vue';
 import Counter from '/@/components/Counter.vue';
 import CounterWithComposition from '/@/components/CounterWithComposition.vue';
+import CounterWithSetupScript from '/@/components/CounterWithSetupScript.vue';
 
 export default {
   name: 'Home',
   components: {
     HelloWorld,
     Counter,
-    CounterWithComposition
+    CounterWithComposition,
+    CounterWithSetupScript
   },
   setup() {
     const count = ref(0);
