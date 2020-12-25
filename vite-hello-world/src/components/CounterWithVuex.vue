@@ -1,29 +1,56 @@
 <template>
   <div class="counter">
-    <span class="count">{{ count }}</span>
-    <button @click="increment">+</button>
+    <h2>Counter use Vuex</h2>
+    <p class="count">count: {{ count }}</p>
+    <p class="count">doubleCount: {{ doubleCount }}</p>
+    <div class="counter-action">
+      <button @click="increment">increment</button>
+      <button @click="reset">reset</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+// import { mapGetters, mapActions } from 'vuex';
+import { computed, reactive } from 'vue';
+import { useStore } from 'vuex'
 
 export default {
   name: 'CounterWithVuex',
-  computed: {
-    ...mapGetters({
-      count: 'counter/count'
-    })
+  setup() {
+    const store = useStore();
+
+    return {
+      count: computed(() => store.getters['counter/count']),
+      doubleCount: computed(() => store.getters['counter/doubleCount']),
+      increment: () => store.dispatch('counter/increment'),
+      reset: () => store.dispatch('counter/reset'),
+
+      // ...mapActions({
+      //   increment: 'counter/increment',
+      //   reset: 'counter/reset'
+      // })
+    }
   },
-  methods: {
-    ...mapActions({
-      increment: 'counter/increment'
-    })
-  }
+  // computed: {
+    // ...mapGetters({
+    //   count: 'counter/count'
+    // })
+  // },
+  // methods: {
+    // ...mapActions({
+    //   increment: 'counter/increment',
+    //   reset: 'counter/reset'
+    // })
+  // }
 };
 </script>
 
 <style lang="scss" scoped>
+p {
+  margin: 0;
+}
+
 .count {
   margin-right: 16px;
 
