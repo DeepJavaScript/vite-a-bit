@@ -1,0 +1,108 @@
+/********* navbar *******************/
+body{
+  margin: 0;
+  font-family: sans-serif;
+}
+.navbar_div{
+  background-color: #EEEEEE;
+}
+.navbar_content{
+  width: 700px;
+  margin: 0 auto;/*元素置中用法,上下0,左右auto*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar_content img{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  height: 100%;
+}
+.navbar_content span{
+  padding-top: 10%;
+}
+.home_txt_color{
+  color: #FF7F50;
+}
+/********* end navbar *******************/
+
+/********* body *******************/
+.body_txt1_content{
+  margin: 0 auto;
+  width: 65%;
+}
+.body_txt1_div{
+  padding-top: 50px;
+}
+.body_txt1_div h1{
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 120%;/*設定文字行高*/
+}
+.body_txt1_div h2{
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 100%;
+  margin: 0;
+}
+.body_txt1_div p{
+  color: #808080;
+}
+.body_img1_div img{
+  width: 350px;
+  padding-top: 70px;
+  float: right;
+}
+.body_txt2_content{
+  margin: 15% auto 10% auto;
+  width: 70%;
+}
+.body_txt2_content h2{
+  font-size: 30px;
+}
+.body_txt2_content p{
+  color: #808080;
+  font-size: 18px;
+}
+.body_txt2_div{
+  display: flex;
+}
+.txt2_p2{
+  padding-left: 10%;
+}
+
+.body_button_div{
+  width: 350px;
+  text-align: center;
+}
+#body_button_try{
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 8px;
+  width: 220px;
+  background: linear-gradient(#FFB366 50%,#F28500 50%);
+}
+.body_button_div p{
+  margin: 0;
+}
+/********* end body *******************/
+
+/********* footer ********************/
+.footer_div{
+  background-color: #EEEEEE;
+  height: 80px;
+}
+.footer_content{
+  width: 800px;
+  display: inline-block;
+  margin: 2% 0 2% 20%;
+}
+.footer_content img{
+  float: right;
+  margin-left: 2%;
+}
+/********* end footer ********************/
