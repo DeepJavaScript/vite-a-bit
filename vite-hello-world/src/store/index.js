@@ -1,6 +1,8 @@
-import { createStore } from "vuex";
+import { createStore, createLogger } from "vuex";
 
 import counter from './counter';
+
+const debug = process.env.NODE_ENV !== 'production';
 
 export default createStore({
   strict: true,
@@ -10,5 +12,6 @@ export default createStore({
   actions: {},
   modules: {
     counter
-  }
+  },
+  plugins: debug ? [createLogger()] : []
 });
