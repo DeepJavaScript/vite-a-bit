@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Vite" />
+    <HelloWorld
+      :msg="'Welcome to Vite'"
+      :value="$store.getters.count"
+      @click="$store.commit('count')"
+    />
   </div>
 </template>
 
