@@ -1,18 +1,9 @@
 import clear from 'rollup-plugin-clear'
-// import html from 'rollup-plugin-html';
-// import htmlTemplate from 'rollup-plugin-generate-html-template';
 import html2 from 'rollup-plugin-html2';
-// import css from 'rollup-plugin-css-only';
 import postcss from 'rollup-plugin-postcss';
-// import smartAsset from 'postcss-smart-asset';
-// import smartAsset from 'rollup-plugin-smart-asset';
-import url from '@rollup/plugin-url';
-import image from '@rollup/plugin-image';
-// import image from 'rollup-plugin-img';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
 import copy from 'rollup-plugin-copy';
 // import { terser } from 'rollup-plugin-terser';
 
@@ -25,7 +16,8 @@ export default {
       // file: 'dist/bundle.js',
       dir: 'dist',
       format: 'es',
-      sourcemap: true
+      // entryFileNames: '[name].[hash].js',
+      // sourcemap: true
     },
     // {
     //   // file: 'dist/bundle.min.js',
@@ -35,16 +27,11 @@ export default {
     //   plugins: [terser()]
     // }
   ],
-  // watch: {
-  //   buildDelay: 1000
-  // },
+  watch: {
+    buildDelay: 1000
+  },
   plugins: [
-    // css({ output: 'bundle.css' }),
     postcss({
-      extract: true,
-      // plugins: [
-      //   smartAsset({ url: 'rebase' })
-      // ]
       extract: 'style/main.css',
       minimize: true,
       // sourceMap: true
@@ -58,16 +45,6 @@ export default {
         keepClosingSlash: true,
       }
     }),
-    // htmlTemplate({
-    //   template: 'src/index.html',
-    //   target: 'dist/index.html',
-    // }),
-    image(),
-    // url({
-    //   destDir: 'dist/images',
-    //   sourceDir: 'src/img',
-    //   fileName: '[dirname][hash][extname]'
-    // }),
     copy({
       targets: [
         { src: 'src/img/*', dest: 'dist/img' },
@@ -79,7 +56,7 @@ export default {
         // }
       ]
     }),
-    nodeResolve(),
+    resolve(),
     clear({
       targets: ['dist'],
       // 在 --watch 模式下重新編譯 rollup 時是否清除目錄
