@@ -5,6 +5,7 @@ const devtools = {
       window.__VUE_DEVTOOLS_GLOBAL_HOOK__
     ) {
 			window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app;
+			app.config.devtools = true;
 		}
 	}
 };
