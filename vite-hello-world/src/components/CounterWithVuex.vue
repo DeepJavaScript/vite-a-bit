@@ -12,7 +12,7 @@
 
 <script>
 // import { mapGetters, mapActions } from 'vuex';
-import { computed, reactive } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex'
 
 export default {
