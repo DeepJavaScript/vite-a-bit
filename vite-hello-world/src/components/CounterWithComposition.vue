@@ -7,7 +7,12 @@
         <p>initCount: {{ initCounter }}</p>
         <p class="count">doubleCount: {{ doubleCount }}</p>
         <div class="counter-action">
-          <button @click="increment">increment</button>
+          <button
+            @click="increment"
+            :style="{ background: '#424242', color: '#fff' }"
+          >
+            increment
+          </button>
           <button @click="reset">reset</button>
         </div>
       </div>

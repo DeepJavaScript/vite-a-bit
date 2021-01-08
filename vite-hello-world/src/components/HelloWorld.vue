@@ -29,7 +29,7 @@ export default {
       doubleCount
     };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

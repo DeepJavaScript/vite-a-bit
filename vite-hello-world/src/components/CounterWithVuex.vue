@@ -13,7 +13,7 @@
 <script>
 // import { mapGetters, mapActions } from 'vuex';
 import { computed } from 'vue';
-import { useStore } from 'vuex'
+import { useStore } from 'vuex';
 
 export default {
   name: 'CounterWithVuex',
@@ -24,24 +24,24 @@ export default {
       count: computed(() => store.getters['counter/count']),
       doubleCount: computed(() => store.getters['counter/doubleCount']),
       increment: () => store.dispatch('counter/increment'),
-      reset: () => store.dispatch('counter/reset'),
+      reset: () => store.dispatch('counter/reset')
 
       // ...mapActions({
       //   increment: 'counter/increment',
       //   reset: 'counter/reset'
       // })
-    }
-  },
+    };
+  }
   // computed: {
-    // ...mapGetters({
-    //   count: 'counter/count'
-    // })
+  // ...mapGetters({
+  //   count: 'counter/count'
+  // })
   // },
   // methods: {
-    // ...mapActions({
-    //   increment: 'counter/increment',
-    //   reset: 'counter/reset'
-    // })
+  // ...mapActions({
+  //   increment: 'counter/increment',
+  //   reset: 'counter/reset'
+  // })
   // }
 };
 </script>

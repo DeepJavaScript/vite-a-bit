@@ -40,6 +40,7 @@
 </template>
 
 <script setup>
+/* eslint-disable no-unused-vars */
 // import 的任何東西 (包括 component) 都可直接在 template 使用
 // 就像在 `setup()` 中寫 Composition API code，但不用手動 return 東西
 import HelloWorld from '/@/components/HelloWorld.vue';

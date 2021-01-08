@@ -21,13 +21,13 @@ export default {
     return {
       ...useGetters({
         count: 'counter/count',
-        doubleCount: 'counter/doubleCount',
+        doubleCount: 'counter/doubleCount'
       }),
       ...useActions({
         increment: 'counter/increment',
         reset: 'counter/reset'
       })
-    }
+    };
   }
 };
 </script>

@@ -1,4 +1,4 @@
-import { createStore, createLogger } from "vuex";
+import { createStore, createLogger } from 'vuex';
 
 import counter from './counter';
 
