@@ -1,11 +1,11 @@
 import path from 'path';
 
-const resolve = dir => path.join(__dirname, dir);
+const pathResolve = dir => path.resolve(__dirname, dir);
 
 export default {
   base: './',
   alias: {
-    '/@/': resolve('src'),
+    '/@/': pathResolve('src'),
   },
   cssPreprocessOptions: {
     scss: {
