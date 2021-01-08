@@ -91,3 +91,25 @@ console.log([...ES2020]);
 // # ES2021
 const ES2021 = null ?? 'default';
 console.log(ES2021);
+
+class Demo {
+  constructor() {
+    this.state = {
+      name: 'Titan'
+    };
+    this.$app = document.querySelector('.game');
+    this.$app.addEventListener('click', this.printArrow);
+    this.$app.addEventListener('click', this.print);
+  }
+
+  printArrow = () => {
+    console.log('printArrow', this.state);
+  };
+
+  print() {
+    console.log('print', this.state);
+  }
+}
+
+const demo = new Demo();
+console.log(demo);
