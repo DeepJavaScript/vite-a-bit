@@ -29,3 +29,33 @@ Done. Now run:
 ```
 
 直接建立好資料來，只要照下面提供的指令即可完成專案初始化。
+
+## 執行 dev-serve
+
+```shell
+npm run dev
+```
+
+出現 Hello world 頁面，點一下 button 出現下面的問題
+
+![](https://i.imgur.com/iP39JQu.png)
+
+```
+Failed to load url /sw.js. Does the file exist?
+
+Error: Failed to load url /sw.js. Does the file exist?
+    at transformRequest (/Users/chris/case/vite-a-bit/vue3-form/node_modules/vite/dist/node/chunks/dep-85227760.js:66195:15
+-----------------------------------------------------------------------------
+Click outside or fix the code to dismiss.
+You can also disable this overlay with hmr: { overlay: false } in vite.config.js.
+```
+
+但是再繼續點擊就沒有再出現了。
+
+shell 出現錯誤訊息
+
+```shell
+19:15:18 [vite] Internal server error:
+  Error: Failed to load url /sw.js. Does the file exist?
+      at transformRequest (/Users/chris/case/vite-a-bit/vue3-form/node_modules/vite/dist/node/chunks/dep-85227760.js:66195:15) (x4)
+```
