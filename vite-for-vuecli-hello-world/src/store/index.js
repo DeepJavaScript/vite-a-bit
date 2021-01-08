@@ -8,7 +8,10 @@ export default createStore({
   },
   mutations: {
     increment (state) {
-      state.count++
+      state.count++;
+    },
+    reset (state) {
+      state.count = 0;
     }
   }
 })
