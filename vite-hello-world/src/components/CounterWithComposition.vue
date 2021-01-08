@@ -3,7 +3,7 @@
     <h2>Counter use Composition API</h2>
     <div class="counter-list">
       <div class="counter-item">
-          <h3>Counter1</h3>
+        <h3>Counter1</h3>
         <p>initCount: {{ initCounter }}</p>
         <p class="count">doubleCount: {{ doubleCount }}</p>
         <div class="counter-action">
