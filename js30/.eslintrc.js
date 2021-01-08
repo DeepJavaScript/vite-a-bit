@@ -9,9 +9,7 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-    requireConfigFile: false
+    ecmaVersion: 2021
   },
   rules: {
     'prettier/prettier': 'warn'
