@@ -80,3 +80,31 @@ export default {
 ## 看 Vue3 語法
 
 看 [Vue3 官網](https://v3.vuejs.org/)
+
+### Vue.js devtools
+
+[安裝新版](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg/related?utm_source=chrome-ntp-icon)
+
+舊版的直下架，安裝新版就好。(我有留舊版，但是先 disable)
+
+### using `v-model` on components
+
+[官網說明](https://v3.vuejs.org/guide/component-basics.html#using-v-model-on-components)
+
+```html
+<custom-input
+  :model-value="searchText"
+  @update:model-value="searchText = $event"
+></custom-input>
+```
+
+等同於下面的寫法
+
+```html
+<custom-input
+  v-model="searchText"
+></custom-input>
+```
+
+在 Vue3 中，在自訂的 component 用 v-model ，會等同於 `:model-value` + `@update:model-value` (不是 `:value` 和 `@input` 了)
+

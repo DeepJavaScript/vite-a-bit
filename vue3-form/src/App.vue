@@ -1,10 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <ProfileForm />
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import ProfileForm from './components/ProfileForm.vue';
 </script>
 
 <style>
@@ -12,8 +11,8 @@ import HelloWorld from './components/HelloWorld.vue'
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
