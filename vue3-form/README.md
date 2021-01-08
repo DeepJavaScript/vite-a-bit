@@ -59,3 +59,24 @@ shell 出現錯誤訊息
   Error: Failed to load url /sw.js. Does the file exist?
       at transformRequest (/Users/chris/case/vite-a-bit/vue3-form/node_modules/vite/dist/node/chunks/dep-85227760.js:66195:15) (x4)
 ```
+
+### 關閉錯誤訊息
+
+依錯誤息的提示 `hmr: { overlay: false }` 找到官網設定 [hmr 的介紹](https://vitejs.dev/config/#server-hmr)
+
+關閉覆蓋版面的錯誤訊息。
+
+```javascript
+export default {
+  //...
+  server: {
+    hmr: {
+      overlay: false
+    }
+  }
+}
+```
+
+## 看 Vue3 語法
+
+看 [Vue3 官網](https://v3.vuejs.org/)
