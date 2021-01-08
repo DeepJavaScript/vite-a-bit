@@ -4,7 +4,7 @@ module.exports = {
     node: true,
     es6: true
   },
-  plugins: ['prettier'],
+  plugins: ['@babel', 'prettier'],
   extends: ['eslint:recommended', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {
