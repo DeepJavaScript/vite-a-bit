@@ -1,14 +1,18 @@
 <template>
-  <div class="v-input">
+  <div class="v-select">
     <label>
       <span class="label-required" :class="{ required: required }">*</span>
       {{ label }}
-      <input
-        v-bind="$attrs"
+      <select
+        name="location"
         :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
-      />
-      <span v-if="$attrs.type === 'range'">{{ modelValue }}</span>
+        @change="$emit('update:modelValue', $event.target.value)"
+      >
+        <slot></slot>
+        <option v-for="(option, index) in options" :key="index" :value="option">
+          {{ option }}
+        </option>
+      </select>
     </label>
   </div>
 </template>
@@ -20,8 +24,12 @@ export default {
       type: String,
       default: ''
     },
+    options: {
+      type: Array,
+      default: () => []
+    },
     modelValue: {
-      type: [String, Number],
+      type: String,
       default: ''
     },
     required: {
@@ -39,5 +47,8 @@ export default {
 .required {
   color: red;
   opacity: 1;
+}
+select {
+  width: 11em;
 }
 </style>
