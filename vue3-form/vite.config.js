@@ -9,5 +9,8 @@ export default {
     hmr: {
       overlay: false
     }
+  },
+  build: {
+    base: '/vite-a-bit/vue3-form/chris/'
   }
 }
