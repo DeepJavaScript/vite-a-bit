@@ -1,0 +1,115 @@
+<template>
+	<form class="v-form">
+		<!-- <formPicture v-model="formData.picture" /> -->
+		<p>
+			<label for="name">name</label>
+			<input v-model="formData.name" id="name" type="text" />
+		</p>
+		<p>
+			<label for="age">age</label>
+			<input v-model="formData.age" id="age" type="number" />
+		</p>
+		<datePicker v-model="formData.date" />
+		<p>
+			<label for="time">time</label>
+			<input v-model="formData.time" id="time" type="time" />
+		</p>
+		<p>
+			<label for="gender">gender</label>
+			<input v-model="formData.gender" id="gender" type="radio" />
+		</p>
+		<p>
+			<label for="habit">habit</label>
+			<input v-model="formData.habit" id="habit" type="checkbox" />
+		</p>
+		<p>
+			<label for="phone">phone</label>
+			<input v-model="formData.phone" id="phone" type="tel" />
+		</p>
+		<p>
+			<label for="address">address</label>
+			<input v-model="formData.address" id="address" type="select" />
+		</p>
+		<p>
+			<label for="email">email</label>
+			<input v-model="formData.email" id="email" type="email" />
+		</p>
+		<p>
+			<label for="password">password</label>
+			<input v-model="formData.password" id="password" type="password" />
+		</p>
+		<p>
+			<label for="feelback">feelback</label>
+			<input v-model="formData.feelback" id="feelback" type="range" />
+		</p>
+		<p>
+			<label for="remark">remark</label>
+			<textarea
+				v-model="formData.remark"
+				id="remark"
+				cols="30"
+				rows="10"
+			></textarea>
+		</p>
+		<p>
+			<input @click.prevent="submitHandler" id="submit" type="submit" />
+			<input id="reset" type="reset" />
+		</p>
+	</form>
+</template>
+
+<script>
+import datePicker from "./formComponents/datePicker.vue";
+// import formPicture from './formComponents/picture.vue';
+
+export default {
+	components: { datePicker },
+	data() {
+		return {
+			formData: {
+				name: "Lo zhang",
+				phone: "090000",
+				date: "1999-01-12",
+				time: "",
+				gender: "",
+				habit: "",
+				address: "",
+				age: "18",
+				email: "",
+				password: "",
+				feelback: "",
+				remark: "",
+				picture: "",
+			},
+		}
+	},
+	emits: ['updataCurrent'],
+	methods: {
+		submitHandler() {
+			console.log('ggg')
+			this.$emit('updateCurrent', this.formData);
+		}
+	},
+	// watch: {
+	// 	formData: {
+	// 		handler() {
+	// 			this.$emit('updateForm', this.formData);
+	// 		},
+	// 		deep: true
+	// 	}
+	// },
+};
+</script>
+
+<style lang="scss">
+.v-form {
+	label {
+		text-transform: capitalize;
+
+		&::after {
+			content: ":";
+			margin-right: 5px;
+		}
+	}
+}
+</style>
