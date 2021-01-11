@@ -23,8 +23,13 @@
 			/>
 		</p>
 		<p>
-			<label for="habit">habit</label>
-			<input v-model="formData.habit" id="habit" type="checkbox" />
+			<label>habit</label>
+			<checkbox
+				v-model="formData.habit"
+				@updateOption="habitList = $event"
+				:options="habitList"
+				:groupName="'habit'"
+			/>
 		</p>
 		<p>
 			<label for="phone">phone</label>
@@ -65,11 +70,12 @@
 <script>
 import datePicker from "./formComponents/datePicker.vue";
 import radio from "./formComponents/radio.vue";
+import checkbox from "./formComponents/checkbox.vue";
 // import formPicture from './formComponents/picture.vue';
 
 export default {
 	emits: ["updateCurrent"],
-	components: { datePicker, radio },
+	components: { datePicker, radio, checkbox },
 	data() {
 		return {
 			formData: {
@@ -78,7 +84,7 @@ export default {
 				date: "1999-01-12",
 				time: "05:30",
 				gender: "gentle",
-				habit: "",
+				habit: ["吃飯", "睡覺"],
 				address: "",
 				age: "18",
 				email: "",
@@ -88,8 +94,9 @@ export default {
 				picture: "",
 			},
 			genderList: ["gentle", "lady", "multiple"],
+			habitList: ["吃飯", "睡覺", "打咚咚"],
+		};
 	},
-	emits: ['updataCurrent'],
 	methods: {
 		submitHandler() {
 			this.$emit("updateCurrent", this.formData);
