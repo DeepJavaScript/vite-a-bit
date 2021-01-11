@@ -4,7 +4,7 @@
 			@change="this.$emit('update:modelValue', $event.target.value)"
 			:name="groupName"
 			:value="option"
-      :checked="modelValue === option"
+			:checked="modelValue === option"
 			type="radio"
 		/>
 		<span>{{ option }}</span>
@@ -12,11 +12,11 @@
 </template>
 <script>
 export default {
-  props: {
-    modelValue: String,
-    groupName: String,
-    options: Object,
-  },
-  emits: ['update:modelValue'],
-}
+	props: {
+		modelValue: String,
+		groupName: String,
+		options: Object,
+	},
+	emits: ["update:modelValue"],
+};
 </script>

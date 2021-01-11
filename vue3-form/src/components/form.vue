@@ -9,7 +9,7 @@
 			<label for="age">age</label>
 			<input v-model="formData.age" id="age" type="number" />
 		</p>
-			<DatePicker v-model="formData.date" />
+		<DatePicker v-model="formData.date" />
 		<p>
 			<label for="time">time</label>
 			<input v-model="formData.time" id="time" type="time" />
@@ -53,7 +53,13 @@
 		</p>
 		<p>
 			<label for="feedback">feedback</label>
-			<input v-model="formData.feedback" id="feedback" min="0" max="10" type="range" />
+			<input
+				v-model="formData.feedback"
+				id="feedback"
+				min="0"
+				max="10"
+				type="range"
+			/>
 			<span :textContent="formData.feedback"></span>
 		</p>
 		<p>
@@ -77,8 +83,8 @@ import DatePicker from "./formComponents/datePicker.vue";
 import Radio from "./formComponents/radio.vue";
 import AddableCheckbox from "./formComponents/addableCheckbox.vue";
 import PasswordInput from "./formComponents/password.vue";
-import AddableTagList from './formComponents/addableTag.vue';
-import FormPicture from './formComponents/picture.vue';
+import AddableTagList from "./formComponents/addableTag.vue";
+import FormPicture from "./formComponents/picture.vue";
 
 export default {
 	emits: ["updateCurrent"],
@@ -99,7 +105,7 @@ export default {
 				time: "05:30",
 				gender: "gentle",
 				habit: ["吃飯", "睡覺"],
-				labelList: ['快樂', 'happy', '唷~'],
+				labelList: ["快樂", "happy", "唷~"],
 				address: "深海的大鳳梨裡",
 				age: "18",
 				email: "",

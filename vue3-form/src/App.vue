@@ -1,9 +1,9 @@
 <template>
 	<vue3Form @updateCurrent="updateCurrent" />
-  <div>
-    <h1>current data display</h1>
-	  <pre :textContent="displayData"></pre>
-  </div>
+	<div>
+		<h1>current data display</h1>
+		<pre :textContent="displayData"></pre>
+	</div>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 	},
 	methods: {
 		updateCurrent(emitedData) {
-			this.currentData = {...emitedData};
+			this.currentData = { ...emitedData };
 		},
 	},
 };
@@ -43,7 +43,7 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	color: #2c3e50;
 	margin-top: 60px;
-  
+
 	display: flex;
 }
 </style>
