@@ -15,8 +15,12 @@
 			<input v-model="formData.time" id="time" type="time" />
 		</p>
 		<p>
-			<label for="gender">gender</label>
-			<input v-model="formData.gender" id="gender" type="radio" />
+			<label>gender</label>
+			<radio
+				v-model="formData.gender"
+				:groupName="'gender'"
+				:options="genderList"
+			/>
 		</p>
 		<p>
 			<label for="habit">habit</label>
@@ -60,18 +64,20 @@
 
 <script>
 import datePicker from "./formComponents/datePicker.vue";
+import radio from "./formComponents/radio.vue";
 // import formPicture from './formComponents/picture.vue';
 
 export default {
-	components: { datePicker },
+	emits: ["updateCurrent"],
+	components: { datePicker, radio },
 	data() {
 		return {
 			formData: {
 				name: "Lo zhang",
 				phone: "090000",
 				date: "1999-01-12",
-				time: "",
-				gender: "",
+				time: "05:30",
+				gender: "gentle",
 				habit: "",
 				address: "",
 				age: "18",
@@ -81,23 +87,22 @@ export default {
 				remark: "",
 				picture: "",
 			},
-		}
+			genderList: ["gentle", "lady", "multiple"],
 	},
 	emits: ['updataCurrent'],
 	methods: {
 		submitHandler() {
-			console.log('ggg')
-			this.$emit('updateCurrent', this.formData);
-		}
+			this.$emit("updateCurrent", this.formData);
+		},
 	},
-	// watch: {
-	// 	formData: {
-	// 		handler() {
-	// 			this.$emit('updateForm', this.formData);
-	// 		},
-	// 		deep: true
-	// 	}
-	// },
+	watch: {
+		formData: {
+			handler() {
+				// console.table(this.formData);
+			},
+			deep: true,
+		},
+	},
 };
 </script>
 
@@ -106,7 +111,7 @@ export default {
 	label {
 		text-transform: capitalize;
 
-		&::after {
+		&:first-child:after {
 			content: ":";
 			margin-right: 5px;
 		}

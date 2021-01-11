@@ -30,7 +30,7 @@ export default {
 	},
 	methods: {
 		updateCurrent(emitedData) {
-			this.currentData = emitedData;
+			this.currentData = {...emitedData};
 		},
 	},
 };
