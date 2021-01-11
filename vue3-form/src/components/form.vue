@@ -32,6 +32,10 @@
 			/>
 		</p>
 		<p>
+			<label>label</label>
+			<AddableTagList v-model="formData.labelList" />
+		</p>
+		<p>
 			<label for="phone">phone</label>
 			<input v-model="formData.phone" id="phone" type="tel" />
 		</p>
@@ -72,6 +76,7 @@ import DatePicker from "./formComponents/datePicker.vue";
 import Radio from "./formComponents/radio.vue";
 import AddableCheckbox from "./formComponents/addableCheckbox.vue";
 import PasswordInput from "./formComponents/password.vue";
+import AddableTagList from './formComponents/addableTag.vue';
 // import formPicture from './formComponents/picture.vue';
 
 export default {
@@ -81,6 +86,7 @@ export default {
 		Radio,
 		AddableCheckbox,
 		PasswordInput,
+		AddableTagList,
 	},
 	data() {
 		return {
@@ -91,6 +97,7 @@ export default {
 				time: "05:30",
 				gender: "gentle",
 				habit: ["吃飯", "睡覺"],
+				labelList: ['快樂', 'happy', '唷~'],
 				address: "",
 				age: "18",
 				email: "",
@@ -111,7 +118,7 @@ export default {
 	watch: {
 		formData: {
 			handler() {
-				// console.table(this.formData);
+				console.table(this.formData);
 			},
 			deep: true,
 		},
@@ -121,7 +128,7 @@ export default {
 
 <style lang="scss">
 .v-form {
-	label {
+	p > label {
 		text-transform: capitalize;
 
 		&:first-child:after {

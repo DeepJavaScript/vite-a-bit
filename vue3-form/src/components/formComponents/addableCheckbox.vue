@@ -32,6 +32,7 @@ export default {
 		},
 		addNewOption(event) {
 			this.$emit("updateOption", [...this.options, event.target.value]);
+			event.target.value = '';
 		},
 		deleteOption(option) {
 			this.$emit(
