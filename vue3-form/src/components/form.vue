@@ -1,6 +1,6 @@
 <template>
 	<form class="v-form">
-		<!-- <formPicture v-model="formData.picture" /> -->
+		<formPicture v-model="formData.picture" />
 		<p>
 			<label for="name">name</label>
 			<input v-model="formData.name" id="name" type="text" />
@@ -53,7 +53,8 @@
 		</p>
 		<p>
 			<label for="feedback">feedback</label>
-			<input v-model="formData.feedback" id="feedback" type="range" />
+			<input v-model="formData.feedback" id="feedback" min="0" max="10" type="range" />
+			<span :textContent="formData.feedback"></span>
 		</p>
 		<p>
 			<label for="remark">remark</label>
@@ -61,7 +62,7 @@
 				v-model="formData.remark"
 				id="remark"
 				cols="30"
-				rows="10"
+				rows="3"
 			></textarea>
 		</p>
 		<p>
@@ -77,7 +78,7 @@ import Radio from "./formComponents/radio.vue";
 import AddableCheckbox from "./formComponents/addableCheckbox.vue";
 import PasswordInput from "./formComponents/password.vue";
 import AddableTagList from './formComponents/addableTag.vue';
-// import formPicture from './formComponents/picture.vue';
+import FormPicture from './formComponents/picture.vue';
 
 export default {
 	emits: ["updateCurrent"],
@@ -87,6 +88,7 @@ export default {
 		AddableCheckbox,
 		PasswordInput,
 		AddableTagList,
+		FormPicture,
 	},
 	data() {
 		return {
@@ -98,13 +100,13 @@ export default {
 				gender: "gentle",
 				habit: ["吃飯", "睡覺"],
 				labelList: ['快樂', 'happy', '唷~'],
-				address: "",
+				address: "深海的大鳳梨裡",
 				age: "18",
 				email: "",
 				password: "888888888",
-				feedback: "",
-				remark: "",
-				picture: "",
+				feedback: 5,
+				remark: "快樂",
+				picture: null,
 			},
 			genderList: ["gentle", "lady", "multiple"],
 			habitList: ["吃飯", "睡覺", "打咚咚"],
