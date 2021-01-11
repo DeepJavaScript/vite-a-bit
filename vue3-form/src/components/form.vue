@@ -9,14 +9,14 @@
 			<label for="age">age</label>
 			<input v-model="formData.age" id="age" type="number" />
 		</p>
-		<datePicker v-model="formData.date" />
+			<DatePicker v-model="formData.date" />
 		<p>
 			<label for="time">time</label>
 			<input v-model="formData.time" id="time" type="time" />
 		</p>
 		<p>
 			<label>gender</label>
-			<radio
+			<Radio
 				v-model="formData.gender"
 				:groupName="'gender'"
 				:options="genderList"
@@ -24,7 +24,7 @@
 		</p>
 		<p>
 			<label>habit</label>
-			<checkbox
+			<Checkbox
 				v-model="formData.habit"
 				@updateOption="habitList = $event"
 				:options="habitList"
@@ -44,8 +44,8 @@
 			<input v-model="formData.email" id="email" type="email" />
 		</p>
 		<p>
-			<label for="password">password</label>
-			<input v-model="formData.password" id="password" type="password" />
+			<label>password</label>
+			<PasswordInput v-model="formData.password" />
 		</p>
 		<p>
 			<label for="feelback">feelback</label>
@@ -68,14 +68,20 @@
 </template>
 
 <script>
-import datePicker from "./formComponents/datePicker.vue";
-import radio from "./formComponents/radio.vue";
-import checkbox from "./formComponents/checkbox.vue";
+import DatePicker from "./formComponents/datePicker.vue";
+import Radio from "./formComponents/radio.vue";
+import Checkbox from "./formComponents/checkbox.vue";
+import PasswordInput from "./formComponents/password.vue";
 // import formPicture from './formComponents/picture.vue';
 
 export default {
 	emits: ["updateCurrent"],
-	components: { datePicker, radio, checkbox },
+	components: {
+		DatePicker,
+		Radio,
+		Checkbox,
+		PasswordInput,
+	},
 	data() {
 		return {
 			formData: {
