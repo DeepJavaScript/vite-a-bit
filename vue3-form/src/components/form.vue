@@ -24,7 +24,7 @@
 		</p>
 		<p>
 			<label>habit</label>
-			<Checkbox
+			<AddableCheckbox
 				v-model="formData.habit"
 				@updateOption="habitList = $event"
 				:options="habitList"
@@ -70,7 +70,7 @@
 <script>
 import DatePicker from "./formComponents/datePicker.vue";
 import Radio from "./formComponents/radio.vue";
-import Checkbox from "./formComponents/checkbox.vue";
+import AddableCheckbox from "./formComponents/addableCheckbox.vue";
 import PasswordInput from "./formComponents/password.vue";
 // import formPicture from './formComponents/picture.vue';
 
@@ -79,7 +79,7 @@ export default {
 	components: {
 		DatePicker,
 		Radio,
-		Checkbox,
+		AddableCheckbox,
 		PasswordInput,
 	},
 	data() {

@@ -1,6 +1,5 @@
 <template>
-	<div v-for="(option, index) in options" :key="index">
-		<label>
+		<span v-for="(option, index) in options" :key="index">
 			<input
 				@change="checkHandler"
 				:checked="modelValue.includes(option)"
@@ -8,10 +7,9 @@
 				:value="option"
 				type="checkbox"
 			/>
-			<span>{{ option }}</span>
-		</label>
-		<button @click.prevent="deleteOption(option)">X</button>
-	</div>
+			<label>{{ option }}</label>
+			<button @click.prevent="deleteOption(option)">X</button>
+		</span>
 	<!-- keydown.enter 會觸發 上面的 button @click.... -->
 	<input @keydown.prevent.enter="addNewOption" type="text" />
 </template>
