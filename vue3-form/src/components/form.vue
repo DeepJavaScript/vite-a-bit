@@ -72,8 +72,8 @@
 			></textarea>
 		</p>
 		<p>
-			<input @click.prevent="submitHandler" id="submit" type="submit" />
-			<input id="reset" type="reset" />
+			<input @click.prevent="submitHandler" type="submit" />
+			<input @click.prevent="resetHandler" type="reset" />
 		</p>
 	</form>
 </template>
@@ -85,6 +85,8 @@ import AddableCheckbox from "./formComponents/addableCheckbox.vue";
 import PasswordInput from "./formComponents/password.vue";
 import AddableTagList from "./formComponents/addableTag.vue";
 import FormPicture from "./formComponents/picture.vue";
+
+const initData = {};
 
 export default {
 	emits: ["updateCurrent"],
@@ -114,13 +116,21 @@ export default {
 				remark: "快樂",
 				picture: null,
 			},
+			backup: {},
 			genderList: ["gentle", "lady", "multiple"],
 			habitList: ["吃飯", "睡覺", "打咚咚"],
 		};
 	},
+	created() {
+		this.backup = { ...this.formData };
+	},
 	methods: {
 		submitHandler() {
 			this.$emit("updateCurrent", this.formData);
+			this.backup = { ...this.formData };
+		},
+		resetHandler() {
+			this.formData = { ...this.backup };
 		},
 	},
 	watch: {
