@@ -2,7 +2,7 @@
 	<div class="date-picker">
 		<div class="date-display">
 			<label>date</label>
-			<span @click="isPickerOn = true" :textContent="dateValue"></span>
+			<span @click="isPickerOn = true" :textContent="modelValue"></span>
 		</div>
 		<div v-if="isPickerOn" class="picker">
 			<div class="head">
@@ -34,7 +34,6 @@ export default {
 			weekList: ["Mon", "Tue", "Wed", "Thu", "fir", "Sat", "Sun"],
 			isPickerOn: false,
 			dayInstance: new Date(),
-			dateValue: this.modelValue,
 		};
 	},
 	computed: {
@@ -60,10 +59,10 @@ export default {
 				event.target.textContent.length < 2
 					? "0".concat(event.target.textContent)
 					: event.target.textContent;
-			this.dateValue = `${this.year}-${this.numToString(
+			const emitedData = `${this.year}-${this.numToString(
 				this.month + 1
 			)}-${dateString}`;
-			this.$emit("update:modelValue", this.dateValue);
+			this.$emit("update:modelValue", this.emitedData);
 			this.isPickerOn = false;
 		},
 		nextMonth() {
