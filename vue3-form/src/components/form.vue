@@ -94,7 +94,7 @@ export default {
 				address: "",
 				age: "18",
 				email: "",
-				password: "",
+				password: "888888888",
 				feelback: "",
 				remark: "",
 				picture: "",
