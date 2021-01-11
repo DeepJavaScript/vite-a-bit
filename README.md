@@ -138,7 +138,7 @@ vite 基於 [vue3](https://v3.vuejs.org/guide/migration/introduction.html) ，
 ---
 
 # vue3-form
-
+1.
 ```htmlembedded
 <template>
 	<div v-for="(option, index) in options" :key="index">
@@ -159,5 +159,23 @@ vite 基於 [vue3](https://v3.vuejs.org/guide/migration/introduction.html) ，
 </template>
 ```
 
-1. 實際上傳圖片不知道是該傳 input[type="file"].value 還是 input[type="file"].files 的值
+2. 實際上傳圖片不知道是該傳 input[type="file"].value 還是 input[type="file"].files 的值
+3. 
+```javascript
+import vueImg from '/src/assets/logo.png';
 
+export default {
+	data() {
+		return {
+			fileSouce: vueImg,
+		};
+	},
+}
+```
+```htmlembedded
+<template>
+	<img :src="fileSouce" class="preview" />
+</template>
+```
+
+[Asset-handling](https://vitejs.dev/guide/features.html#asset-handling)

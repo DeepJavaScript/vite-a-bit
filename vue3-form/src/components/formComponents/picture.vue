@@ -11,12 +11,13 @@
 </template>
 
 <script>
+import vueImg from '/src/assets/logo.png';
 export default {
 	props: ["modelValue"],
 	emits: ["update:modelValue"],
 	data() {
 		return {
-			fileSouce: "./src/assets/logo.png",
+			fileSouce: vueImg,
 		};
 	},
 	methods: {
