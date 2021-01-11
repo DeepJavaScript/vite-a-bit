@@ -134,3 +134,30 @@ vite 基於 [vue3](https://v3.vuejs.org/guide/migration/introduction.html) ，
 1. vue cli 建立 vue3 專案 當作 src
 2. vscode 的 eslint extension - eslint-plugin-vue 因為 vue3 語法允許 temelate 有兩個以上 element 而出現警示 (vue2 只能有一個 element)，先用 eslint --init 建立基本 config。參考 [eslint-plugin-vue 文件](https://eslint.vuejs.org/user-guide/#installation) 加進去對應 vue3 的 plugin。 (中間貼錯 plugin ...貼到 vue2 鬼打牆....)
 3. Vuex@4 設立。
+
+---
+
+# vue3-form
+
+```htmlembedded
+<template>
+	<div v-for="(option, index) in options" :key="index">
+		<label>
+			<input
+				@change="checkHandler"
+				:checked="modelValue.includes(option)"
+				:name="groupName"
+				:value="option"
+				type="checkbox"
+			/>
+			<span>{{ option }}</span>
+		</label>
+		<button @click.prevent="deleteOption(option)">X</button>
+	</div>
+  <!-- keydown.enter 會觸發 上面的 button @click.... -->
+	<input @keydown.prevent.enter="addNewOption" type="text" />
+</template>
+```
+
+1. 實際上傳圖片不知道是該傳 input[type="file"].value 還是 input[type="file"].files 的值
+
