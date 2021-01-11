@@ -52,8 +52,8 @@
 			<PasswordInput v-model="formData.password" />
 		</p>
 		<p>
-			<label for="feelback">feelback</label>
-			<input v-model="formData.feelback" id="feelback" type="range" />
+			<label for="feedback">feedback</label>
+			<input v-model="formData.feedback" id="feedback" type="range" />
 		</p>
 		<p>
 			<label for="remark">remark</label>
@@ -102,7 +102,7 @@ export default {
 				age: "18",
 				email: "",
 				password: "888888888",
-				feelback: "",
+				feedback: "",
 				remark: "",
 				picture: "",
 			},
