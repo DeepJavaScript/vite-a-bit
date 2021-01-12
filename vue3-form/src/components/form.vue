@@ -119,18 +119,22 @@ export default {
 			backup: {},
 			genderList: ["gentle", "lady", "multiple"],
 			habitList: ["吃飯", "睡覺", "打咚咚"],
+			habitListBackup: [],
 		};
 	},
 	created() {
 		this.backup = { ...this.formData };
+		this.habitListBackup = [ ...this.habitList]
 	},
 	methods: {
 		submitHandler() {
 			this.$emit("updateCurrent", this.formData);
 			this.backup = { ...this.formData };
+			this.habitListBackup = [ ...this.habitList ];
 		},
 		resetHandler() {
 			this.formData = { ...this.backup };
+			this.habitList = [ ...this.habitListBackup ];
 		},
 	},
 	watch: {
