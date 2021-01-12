@@ -7,6 +7,7 @@ const { resolve } = require('path')
 export default {
   plugins: [vue()],
   build: {
+    base: './',
     outDir: 'Lo/',
   }
 }
