@@ -17,6 +17,14 @@ export default {
 		groupName: String,
 		options: Object,
 	},
-	emits: ["update:modelValue"],
+	emits: {
+		"update:modelValue": (eventTargetValue) => {
+			console.log('跑驗證 fuction 唷')
+			if ( eventTargetValue === 'gentle') {
+				return true;
+			}
+			else return false;
+		},
+	},
 };
 </script>
