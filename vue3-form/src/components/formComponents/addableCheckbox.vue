@@ -20,7 +20,7 @@ export default {
 		options: Array,
 		groupName: String,
 	},
-	emits: ["update:modelValue", "updateOption"],
+	emits: ["update:modelValue", "update:options"],
 	methods: {
 		checkHandler(event) {
 			this.$emit(
@@ -31,12 +31,12 @@ export default {
 			);
 		},
 		addNewOption(event) {
-			this.$emit("updateOption", [...this.options, event.target.value]);
+			this.$emit("update:options", [...this.options, event.target.value]);
 			event.target.value = "";
 		},
 		deleteOption(option) {
 			this.$emit(
-				"updateOption",
+				"update:options",
 				this.options.filter((item) => item != option)
 			);
 		},

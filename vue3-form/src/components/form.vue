@@ -25,9 +25,8 @@
 		<p>
 			<label>habit</label>
 			<AddableCheckbox
-				v-model="formData.habit"
-				@updateOption="habitList = $event"
-				:options="habitList"
+				v-model:modelValue="formData.habit"
+				v-model:options="habitList"
 				:groupName="'habit'"
 			/>
 		</p>
@@ -140,7 +139,7 @@ export default {
 	watch: {
 		formData: {
 			handler() {
-				console.table(this.formData);
+				// console.table(this.formData);
 			},
 			deep: true,
 		},
