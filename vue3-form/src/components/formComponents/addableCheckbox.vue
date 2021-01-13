@@ -32,6 +32,7 @@ export default {
 		},
 		addNewOption(event) {
 			this.$emit("update:options", [...this.options, event.target.value]);
+			this.$emit("update:modelValue", [...this.modelValue, event.target.value]);
 			event.target.value = "";
 		},
 		deleteOption(option) {
@@ -39,6 +40,8 @@ export default {
 				"update:options",
 				this.options.filter((item) => item != option)
 			);
+			if (this.modelValue.includes(option))
+				this.$emit('update:modelValue', this.modelValue.filter((item) => item != option))
 		},
 	},
 };
