@@ -44,7 +44,6 @@ export default {
 <style lang="scss" scoped>
 .select-group {
 	select {
-		padding: 2px;
     width: 100%;
 	}
 }

@@ -5,3 +5,11 @@ body {
 * {
 	box-sizing: border-box;
 }
+
+input, 
+select {
+	padding: 3px;
+}
+textarea {
+	padding: 8px;
+}
