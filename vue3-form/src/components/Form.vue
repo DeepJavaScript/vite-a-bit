@@ -23,7 +23,7 @@
         <RadioGroup
           groupName="gender"
           :options="genderOptions"
-          @updateSelected="selectedGender = $event"
+          @updateSelected="form.gender = $event"
         ></RadioGroup>
       </div>
       <div class="form-field">
@@ -31,7 +31,7 @@
         <DynamicCheckbox
           groupName="hobbies"
           :options="hobbiesOptions"
-          @updateSelected="selectedHobbies = $event"
+          @updateSelected="form.hobbies = $event"
         ></DynamicCheckbox>
       </div>
       <div class="form-field">
@@ -39,7 +39,7 @@
         <DynamicHashTag
           groupName="hashTags"
           :options="hashTagsOptions"
-          @updateSelected="selectedHashTags = $event"
+          @updateSelected="form.hashTags = $event"
         ></DynamicHashTag>
       </div>
     </form>
@@ -64,9 +64,11 @@ export default {
   },
   data() {
     return {
-      selectedGender: null,
-      selectedHobbies: [],
-      selectedHashTags: []
+      form: {
+        gender: null,
+        hobbies: [],
+        hashTags: [],
+      }
     }
   },
   computed: {
