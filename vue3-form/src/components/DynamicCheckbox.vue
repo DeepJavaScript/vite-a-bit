@@ -5,7 +5,7 @@
 			type="text"
 			ref="createCheckboxItem"
 			@change.enter="handler"
-			placeholder="輸入興趣，Enter 後即可新增"
+			placeholder="Enter 後即可新增"
 		>
 		<CheckboxGroup
 			:groupName="groupName"
