@@ -23,7 +23,7 @@
         <RadioGroup
           groupName="gender"
           :options="genderOptions"
-          @updateSelected="form.gender = $event"
+          @update:radio="form.gender = $event"
         ></RadioGroup>
       </div>
       <div class="form-field">
@@ -31,7 +31,7 @@
         <DynamicCheckbox
           groupName="hobbies"
           :options="hobbiesOptions"
-          @updateSelected="form.hobbies = $event"
+          @update:Checked="form.hobbies = $event"
         ></DynamicCheckbox>
       </div>
       <div class="form-field">
@@ -39,7 +39,7 @@
         <DynamicHashTag
           groupName="hashTags"
           :options="hashTagsOptions"
-          @updateSelected="form.hashTags = $event"
+          @update:hashTags="form.hashTags = $event"
         ></DynamicHashTag>
       </div>
       <div class="form-field">
@@ -47,7 +47,7 @@
         <SelectGroup
           groupName="city"
           :options="cityOptions"
-          @updateSelected="form.city = $event"
+          @update:selected="form.city = $event"
         ></SelectGroup>
       </div>
       <div class="form-field">
@@ -69,6 +69,7 @@
         <label>備註</label>
         <textarea v-model="form.note" rows="3" maxlength="250"></textarea>
       </div>
+      {{form}}
     </form>
   </section>
 </template>

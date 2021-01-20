@@ -35,7 +35,7 @@ export default {
 			const selectedItem = this.options.find(item => {
 				return item.value === selectedValue
 			}) 
-			this.$emit('updateSelected', selectedItem)
+			this.$emit('update:selected', selectedItem)
 		}
 	},
 }

@@ -49,7 +49,7 @@ export default {
 					...this.selected,
 					item
 				]
-				this.$emit('updateSelected', this.selected)
+				this.$emit('update:Checked', this.selected)
 			}else {
 				const newSelected = this.selected.filter(item => {
 					return item.value !== selectedValue
@@ -57,7 +57,7 @@ export default {
 				this.selected = [
 					...newSelected
 				]
-				this.$emit('updateSelected', this.selected)
+				this.$emit('update:Checked', this.selected)
 
 			}
 		}

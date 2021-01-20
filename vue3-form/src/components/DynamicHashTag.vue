@@ -7,10 +7,6 @@
 			@change.enter="handler"
 			placeholder="Enter 後即可新增"
 		>
-			<!-- @keyup.self.enter="handler" -->
-		<!-- @change.stop.enter="handler" -->
-		<!-- @change.enter.stop="handler" -->
-		<!-- @keyup.enter="handler" -->
 		<div class="hashtag-group">
 			<div
 				v-for="item in dynamicOptions"
@@ -18,7 +14,8 @@
 				class="hashtag-item"
 			>
 				<button
-					@click.self="removeHashTag(item)"
+					type="button"
+					@click="removeHashTag(item)"
 				>
 					{{ item.text }}
 					<span>x</span>
@@ -42,7 +39,7 @@ export default {
 	},
 	mounted () {
 		this.dynamicOptions = [...this.options]
-		this.$emit('updateSelected', this.dynamicOptions)
+		this.$emit('update:hashTags', this.dynamicOptions)
 	},
 	data() {
 		return {
@@ -61,7 +58,7 @@ export default {
 				newHashTagsItem
 			]
 			console.log(this.dynamicOptions);
-			this.$emit('updateSelected', this.dynamicOptions)
+			this.$emit('update:hashTags', this.dynamicOptions)
 			this.$refs.createHashTagsItem.value = null
 		},
 		removeHashTag(removeItem) {
@@ -69,7 +66,7 @@ export default {
 			this.dynamicOptions = this.dynamicOptions.filter(item => {
 				return item.value !== removeItem.value
 			})
-			this.$emit('updateSelected', this.dynamicOptions)
+			this.$emit('update:hashTags', this.dynamicOptions)
 		}
 	},
 }

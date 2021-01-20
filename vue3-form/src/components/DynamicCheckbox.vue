@@ -10,7 +10,7 @@
 		<CheckboxGroup
 			:groupName="groupName"
 			:options="dynamicOptions"
-			@updateSelected="$emit('updateSelected', $event)"
+			@update:Checked="$emit('update:Checked', $event)"
 		></CheckboxGroup>
 	</div>
 </template>

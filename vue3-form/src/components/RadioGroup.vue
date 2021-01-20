@@ -10,7 +10,7 @@
 				:name="groupName"
 				:id="item.value"
 				:value="item.value"
-				@input="$emit('updateSelected', $event.target.value)"
+				@input="$emit('update:radio', $event.target.value)"
 			>
 			<label
 				:for="item.value"
