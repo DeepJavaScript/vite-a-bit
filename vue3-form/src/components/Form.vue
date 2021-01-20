@@ -59,6 +59,13 @@
         <input v-model="form.email" type="email">
       </div>
       <div class="form-field">
+        <label>密碼</label>
+        <PlainPassword
+          :value="form.password"
+          @update:psaaword="form.password = $event"
+        ></PlainPassword>
+      </div>
+      <div class="form-field">
         <label>備註</label>
         <textarea v-model="form.note" rows="3" maxlength="250"></textarea>
       </div>
@@ -71,12 +78,14 @@ import RadioGroup from '../components/RadioGroup.vue'
 import DynamicCheckbox from '../components/DynamicCheckbox.vue'
 import DynamicHashTag from '../components/DynamicHashTag.vue'
 import SelectGroup from '../components/SelectGroup.vue'
+import PlainPassword from '../components/PlainPassword.vue'
 export default {
 	components: {
     RadioGroup,
     DynamicCheckbox,
     DynamicHashTag,
-    SelectGroup
+    SelectGroup,
+    PlainPassword
   },
   props: {
     title: {
@@ -97,6 +106,7 @@ export default {
         city: null,
         age: null,
         email: null,
+        password: null,
         note: null
       }
     }
