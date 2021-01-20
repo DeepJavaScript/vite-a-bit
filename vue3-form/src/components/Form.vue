@@ -34,6 +34,14 @@
           @updateSelected="selectedHobbies = $event"
         ></DynamicCheckbox>
       </div>
+      <div class="form-field">
+        <label for="">標籤</label>
+        <DynamicHashTag
+          groupName="hashTags"
+          :options="hashTagsOptions"
+          @updateSelected="selectedHashTags = $event"
+        ></DynamicHashTag>
+      </div>
     </form>
   </section>
 </template>
@@ -41,10 +49,12 @@
 <script>
 import RadioGroup from '../components/RadioGroup.vue'
 import DynamicCheckbox from '../components/DynamicCheckbox.vue'
+import DynamicHashTag from '../components/DynamicHashTag.vue'
 export default {
 	components: {
     RadioGroup,
-    DynamicCheckbox
+    DynamicCheckbox,
+    DynamicHashTag
   },
   props: {
     title: {
@@ -55,7 +65,8 @@ export default {
   data() {
     return {
       selectedGender: null,
-      selectedHobbies: []
+      selectedHobbies: [],
+      selectedHashTags: []
     }
   },
   computed: {
@@ -87,6 +98,23 @@ export default {
         },{
           text: '賺$',
           value: 'earning-income'
+        }
+      ] 
+    },
+    hashTagsOptions() {
+      return [
+        {
+          text: '碼農',
+          value: '碼農'
+        },{
+          text: '有機',
+          value: '有機'
+        },{
+          text: '舞棍阿伯',
+          value: '舞棍阿伯'
+        },{
+          text: '暴發戶',
+          value: '暴發戶'
         }
       ] 
     }
