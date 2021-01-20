@@ -26,16 +26,25 @@
           @updateSelected="selectedGender = $event"
         ></RadioGroup>
       </div>
+      <div class="form-field">
+        <label for="">興趣</label>
+        <DynamicCheckbox
+          groupName="hobbies"
+          :options="hobbiesOptions"
+          @updateSelected="selectedHobbies = $event"
+        ></DynamicCheckbox>
+      </div>
     </form>
-
   </section>
 </template>
 
 <script>
 import RadioGroup from '../components/RadioGroup.vue'
+import DynamicCheckbox from '../components/DynamicCheckbox.vue'
 export default {
 	components: {
     RadioGroup,
+    DynamicCheckbox
   },
   props: {
     title: {
@@ -46,6 +55,7 @@ export default {
   data() {
     return {
       selectedGender: null,
+      selectedHobbies: []
     }
   },
   computed: {
@@ -63,6 +73,23 @@ export default {
         }
       ] 
     },
+    hobbiesOptions() {
+      return [
+        {
+          text: '打字',
+          value: 'coding'
+        },{
+          text: '抓蟲',
+          value: 'debug'
+        },{
+          text: '跳舞',
+          value: 'dancing'
+        },{
+          text: '賺$',
+          value: 'earning-income'
+        }
+      ] 
+    }
   },
 }
 </script>
