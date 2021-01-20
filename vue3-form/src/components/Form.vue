@@ -4,19 +4,19 @@
     <form class="form" action="">
       <div class="form-field">
         <label for="">姓名</label>
-        <input type="text" name="" id="">
+        <input type="text">
       </div>
       <div class="form-field">
         <label for="">電話</label>
-        <input type="tel" name="" id="">
+        <input type="tel">
       </div>
       <div class="form-field">
         <label for="">日期</label>
-        <input type="date" name="" id="">
+        <input type="date">
       </div>
       <div class="form-field">
         <label for="">時間</label>
-        <input type="time" name="" id="">
+        <input type="time">
       </div>
       <div class="form-field">
         <label for="">性別</label>
@@ -42,6 +42,15 @@
           @updateSelected="form.hashTags = $event"
         ></DynamicHashTag>
       </div>
+      <div class="form-field">
+        <label for="">棲息地</label>
+        <SelectGroup
+          groupName="city"
+          :options="cityOptions"
+          @updateSelected="form.city = $event"
+        ></SelectGroup>
+      </div>
+      <pre>{{form}}</pre>
     </form>
   </section>
 </template>
@@ -50,11 +59,13 @@
 import RadioGroup from '../components/RadioGroup.vue'
 import DynamicCheckbox from '../components/DynamicCheckbox.vue'
 import DynamicHashTag from '../components/DynamicHashTag.vue'
+import SelectGroup from '../components/SelectGroup.vue'
 export default {
 	components: {
     RadioGroup,
     DynamicCheckbox,
-    DynamicHashTag
+    DynamicHashTag,
+    SelectGroup
   },
   props: {
     title: {
@@ -68,6 +79,7 @@ export default {
         gender: null,
         hobbies: [],
         hashTags: [],
+        city: null
       }
     }
   },
@@ -119,7 +131,18 @@ export default {
           value: '暴發戶'
         }
       ] 
-    }
+    },
+    cityOptions() {
+      return [
+        {
+          text: '台南',
+          value: '台南'
+        },{
+          text: '其他',
+          value: '其他'
+        }
+      ] 
+    },
   },
 }
 </script>
