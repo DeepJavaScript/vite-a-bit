@@ -3,23 +3,23 @@
     <h1>{{ title }}</h1>
     <form class="form" action="">
       <div class="form-field">
-        <label for="">姓名</label>
-        <input type="text">
+        <label>姓名</label>
+        <input v-model="form.name" type="text">
       </div>
       <div class="form-field">
-        <label for="">電話</label>
-        <input type="tel">
+        <label>電話</label>
+        <input v-model="form.phone" type="tel">
       </div>
       <div class="form-field">
-        <label for="">日期</label>
-        <input type="date">
+        <label>日期</label>
+        <input v-model="form.date" type="date">
       </div>
       <div class="form-field">
-        <label for="">時間</label>
-        <input type="time">
+        <label>時間</label>
+        <input v-model="form.time" type="time">
       </div>
       <div class="form-field">
-        <label for="">性別</label>
+        <label>性別</label>
         <RadioGroup
           groupName="gender"
           :options="genderOptions"
@@ -27,7 +27,7 @@
         ></RadioGroup>
       </div>
       <div class="form-field">
-        <label for="">興趣</label>
+        <label>興趣</label>
         <DynamicCheckbox
           groupName="hobbies"
           :options="hobbiesOptions"
@@ -35,7 +35,7 @@
         ></DynamicCheckbox>
       </div>
       <div class="form-field">
-        <label for="">標籤</label>
+        <label>標籤</label>
         <DynamicHashTag
           groupName="hashTags"
           :options="hashTagsOptions"
@@ -43,14 +43,25 @@
         ></DynamicHashTag>
       </div>
       <div class="form-field">
-        <label for="">棲息地</label>
+        <label>棲息地</label>
         <SelectGroup
           groupName="city"
           :options="cityOptions"
           @updateSelected="form.city = $event"
         ></SelectGroup>
       </div>
-      <pre>{{form}}</pre>
+      <div class="form-field">
+        <label>年齡</label>
+        <input v-model="form.age" type="number" min="1">
+      </div>
+      <div class="form-field">
+        <label>信箱</label>
+        <input v-model="form.email" type="email">
+      </div>
+      <div class="form-field">
+        <label>備註</label>
+        <textarea v-model="form.note" rows="3" maxlength="250"></textarea>
+      </div>
     </form>
   </section>
 </template>
@@ -76,10 +87,17 @@ export default {
   data() {
     return {
       form: {
+        name: null,
+        phone: null,
+        date: null,
+        time: null,
         gender: null,
         hobbies: [],
         hashTags: [],
-        city: null
+        city: null,
+        age: null,
+        email: null,
+        note: null
       }
     }
   },
@@ -148,9 +166,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
-  color: #42b983;
-}
 .form-container {
   max-width: 600px;
   margin: auto;
