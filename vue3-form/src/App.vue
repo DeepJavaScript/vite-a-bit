@@ -3,7 +3,8 @@
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+/* eslint-disable no-unused-vars */
+import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <style lang="scss">
