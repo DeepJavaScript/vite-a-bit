@@ -66,6 +66,12 @@
         ></PlainPassword>
       </div>
       <div class="form-field">
+        <label>照片</label>
+        <UploadFile
+          @update:files="form.files = $event"
+        ></UploadFile>
+      </div>
+      <div class="form-field">
         <label>備註</label>
         <textarea v-model="form.note" rows="3" maxlength="250"></textarea>
       </div>
@@ -80,13 +86,15 @@ import DynamicCheckbox from '../components/DynamicCheckbox.vue'
 import DynamicHashTag from '../components/DynamicHashTag.vue'
 import SelectGroup from '../components/SelectGroup.vue'
 import PlainPassword from '../components/PlainPassword.vue'
+import UploadFile from '../components/UploadFile.vue'
 export default {
 	components: {
     RadioGroup,
     DynamicCheckbox,
     DynamicHashTag,
     SelectGroup,
-    PlainPassword
+    PlainPassword,
+    UploadFile
   },
   props: {
     title: {
@@ -108,7 +116,8 @@ export default {
         age: null,
         email: null,
         password: null,
-        note: null
+        note: null,
+        files: []
       }
     }
   },
