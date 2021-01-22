@@ -72,10 +72,22 @@
         ></UploadFile>
       </div>
       <div class="form-field">
+        <label>宅指數 {{ form.range }}</label>
+        <Slider
+          :min="0"
+          :max="10"
+          :value="form.range"
+          @update:range="form.range = $event"
+        ></Slider>
+      </div>
+      <div class="form-field">
         <label>備註</label>
         <textarea v-model="form.note" rows="3" maxlength="250"></textarea>
       </div>
-      {{form}}
+      <div class="button-container">
+        <button @click="resetForm" type="button">重設</button>
+        <button @click="submitForm" type="button">送出</button>
+      </div>
     </form>
   </section>
 </template>
@@ -87,6 +99,7 @@ import DynamicHashTag from '../components/DynamicHashTag.vue'
 import SelectGroup from '../components/SelectGroup.vue'
 import PlainPassword from '../components/PlainPassword.vue'
 import UploadFile from '../components/UploadFile.vue'
+import Slider from '../components/Slider.vue'
 export default {
 	components: {
     RadioGroup,
@@ -94,7 +107,8 @@ export default {
     DynamicHashTag,
     SelectGroup,
     PlainPassword,
-    UploadFile
+    UploadFile,
+    Slider
   },
   props: {
     title: {
@@ -102,9 +116,17 @@ export default {
 			requery: true
     },
   },
+  mounted () {
+    this.resetForm();
+  },
   data() {
     return {
-      form: {
+      form: {}
+    }
+  },
+  computed: {
+    initForm() {
+      return {
         name: null,
         phone: null,
         date: null,
@@ -116,12 +138,11 @@ export default {
         age: null,
         email: null,
         password: null,
-        note: null,
-        files: []
+        files: [],
+        range: 0,
+        note: null
       }
-    }
-  },
-  computed: {
+    },
     genderOptions() {
       return [
         {
@@ -182,6 +203,14 @@ export default {
       ] 
     },
   },
+  methods: {
+    resetForm() {
+      this.form = {...this.initForm};
+    },
+    submitForm() {
+      console.log(this.form);
+    }
+  },
 }
 </script>
 
@@ -189,12 +218,21 @@ export default {
 .form-container {
   max-width: 600px;
   margin: auto;
-  padding: 0 100px;
+  padding: 0 6.25rem;
+  margin-bottom: 4rem;
   .form {
     .form-field {
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
+    }
+    .button-container {
+      button {
+        padding: 2px 1rem;
+      }
+      button:not(:last-child) {
+        margin-right: 1rem;
+      }
     }
   }
 }
