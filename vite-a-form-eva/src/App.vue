@@ -487,6 +487,10 @@ export default {
 </script>
 
 <style>
+@import url('https://necolas.github.io/normalize.css/latest/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+
 * {
 	box-sizing: border-box;
 	margin: 0 auto;
