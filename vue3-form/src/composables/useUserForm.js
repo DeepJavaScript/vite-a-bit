@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 
-export default function useUserForm() {
+export default function useUserForm(defaultOptions) {
   const user = reactive({
     name: '',
     age: 18,
@@ -16,7 +16,8 @@ export default function useUserForm() {
     location: null,
     feel: 0,
     image: null,
-    note: ''
+    note: '',
+    ...defaultOptions
   });
 
   function submit() {

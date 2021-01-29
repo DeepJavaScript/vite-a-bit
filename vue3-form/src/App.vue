@@ -144,7 +144,10 @@ import useUserForm from './composables/useUserForm';
 
 export default {
   setup() {
-    const { user, submit } = useUserForm();
+    const defaultUserOptions = {
+      tags: ['Vue', 'JS']
+    };
+    const { user, submit } = useUserForm(defaultUserOptions);
 
     return {
       user,
