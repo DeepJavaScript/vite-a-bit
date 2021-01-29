@@ -6,6 +6,7 @@
       <select
         name="location"
         :value="modelValue"
+        :required="required"
         @change="$emit('update:modelValue', $event.target.value)"
       >
         <slot></slot>

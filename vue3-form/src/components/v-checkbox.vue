@@ -6,9 +6,12 @@
     >
     <span :key="index" v-for="(item, index) in options">
       <label
-        ><input type="checkbox" :value="item.toString()" v-model="value" />{{
-          item
-        }}</label
+        ><input
+          type="checkbox"
+          :value="item.toString()"
+          v-model="value"
+          :required="required"
+        />{{ item }}</label
       >
     </span>
   </div>

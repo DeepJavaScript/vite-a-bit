@@ -6,6 +6,7 @@
       <input
         v-bind="$attrs"
         :value="modelValue"
+        :required="required"
         @input="$emit('update:modelValue', $event.target.value)"
       />
       <span v-if="$attrs.type === 'range'">{{ modelValue }}</span>

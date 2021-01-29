@@ -1,7 +1,14 @@
 <template>
   <h1>表單</h1>
-  <form action="">
-    <VPhoto label="上傳照片" type="file" name="name" v-model="photo"></VPhoto>
+  <form id="form" action="" @reset.prevent="onReset">
+    <VPhoto
+      label="上傳照片"
+      type="file"
+      name="photo"
+      accept=".jpg,.png"
+      v-model="photo"
+    ></VPhoto>
+    <pre>{{ photo.name }}</pre>
     <VInput
       label="姓名"
       placeholder="Chris"
@@ -50,6 +57,7 @@
       placeholder="18"
       type="number"
       name="age"
+      min="0"
       v-model.number="age"
       required
     ></VInput>
@@ -135,6 +143,12 @@ export default {
     },
     optionsLocation() {
       return ["高雄", "台南", "府城"];
+    },
+  },
+  methods: {
+    onReset() {
+      // document.form.photo.value = "";
+      this.photo = { name: "" };
     },
   },
 };

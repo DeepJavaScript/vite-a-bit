@@ -5,9 +5,15 @@
       {{ label }}
       <input
         v-bind="$attrs"
+        ref="photo"
         @input="inputHandler($event.target.files.item(0))"
       />
-      <img v-if="!!blob_url" class="photo" :src="blob_url" alt="" />
+      <img
+        class="profile-photo photo"
+        v-if="!!blob_url"
+        :src="blob_url"
+        alt=""
+      />
     </label>
   </div>
 </template>
@@ -32,6 +38,13 @@ export default {
     return {
       blob_url: "",
     };
+  },
+  updated() {
+    if (this.modelValue.name === "") {
+      // reset
+      this.blob_url = "";
+      this.$refs.photo.value = null;
+    }
   },
   methods: {
     inputHandler(file) {
