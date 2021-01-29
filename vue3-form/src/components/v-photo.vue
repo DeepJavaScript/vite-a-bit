@@ -7,7 +7,7 @@
         v-bind="$attrs"
         @input="inputHandler($event.target.files.item(0))"
       />
-      <img class="photo" :src="blob_url" alt="" />
+      <img v-if="!!blob_url" class="photo" :src="blob_url" alt="" />
     </label>
   </div>
 </template>
