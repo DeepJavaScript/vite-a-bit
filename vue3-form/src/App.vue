@@ -68,23 +68,12 @@
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend>興趣</legend>
-        <input type="checkbox" id="sleep" value="睡覺" v-model="user.hobbies" />
-        <label for="sleep">睡覺</label>
-        <input
-          type="checkbox"
-          id="coding"
-          value="寫程式"
-          v-model="user.hobbies"
-        />
-        <label for="coding">寫程式</label>
-
-        <div>
-          <input type="text" id="add-hobby" />
-          <button type="button">加興趣</button>
-        </div>
-      </fieldset>
+      <FormAdderCheckbox
+        title="興趣"
+        addText="加興趣"
+        v-model:options="hobbyOptions"
+        v-model:checkedItems="user.hobbies"
+      />
 
       <FormTag v-model:tags="user.tags" />
 
@@ -128,21 +117,30 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 import FormTag from './components/FormTag.vue';
+import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
 
 import useUserForm from './composables/useUserForm';
 
 export default {
   components: {
-    FormTag
+    FormTag,
+    FormAdderCheckbox
   },
   setup() {
+    const hobbyOptions = ref(['睡覺', '寫程式']);
+
     const defaultUserOptions = {
+      hobbies: ['寫程式'],
       tags: ['Vue', 'JS']
     };
     const { user, submit } = useUserForm(defaultUserOptions);
 
     return {
+      hobbyOptions,
+
       user,
       submit
     };
