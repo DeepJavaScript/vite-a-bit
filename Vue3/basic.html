@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Basic Prac</title>
+  <!-- Vue3 CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="counter">
+    <!-- 用 {{}} 來顯示 element 內的動態值 -->
+    Counter: {{ counter }}
+  </div>
+
+  <div id="bind-attribute">
+    <!-- 使用動態屬性 v-bind 來顯示變動值，簡寫為 ":" -->
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds to see my dynamically bound
+      title!
+    </span>
+  </div>
+
+  <div id="event-handling">
+    <p>{{ message }}</p>
+    <!-- 用 v-on 綁定 click 事件，reverseMessage 為 handler，簡寫為 "@click" -->
+    <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+  <div id="two-way-binding">
+    <p>{{ message }}</p>
+    <!-- 透過 v-model 雙向綁定 message 參數，等同於做了 @inpit 與 :value -->
+    <input v-model="message" />
+  </div>
+  <script>
+    const Counter = {
+      // 初始 counter 值
+      data() {
+        return {
+          counter: 0
+        }
+      },
+      // 當頁面生成後，馬上綁定 interval 函式，每一秒 counter +1
+      mounted() {
+        setInterval(() => {
+          this.counter++
+        }, 1000)
+      }
+    };
+    // 生成一個叫做 Counter 的 vue instance，將它綁定在 id 為 #counter 的 element 上
+    Vue.createApp(Counter).mount('#counter');
+
+    const AttributeBinding = {
+      data() {
+        return {
+          message: 'You loaded this page on ' + new Date().toLocaleString()
+        }
+      }
+    };
+
+    Vue.createApp(AttributeBinding).mount('#bind-attribute');
+
+    const EventHandling = {
+      data() {
+        return {
+          message: 'Hello Vue.js!'
+        }
+      },
+      methods: {
+        // event handler
+        reverseMessage() {
+          this.message = this.message
+            .split('')
+            .reverse()
+            .join('')
+        }
+      }
+    };
+
+    Vue.createApp(EventHandling).mount('#event-handling');
+
+    const TwoWayBinding = {
+      data() {
+        return {
+          message: 'Hello Vue!'
+        }
+      }
+    };
+
+    Vue.createApp(TwoWayBinding).mount('#two-way-binding');
+  </script>
+</body>
+</html>

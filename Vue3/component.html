@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Component Prc.</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="todo-list-app">
+    待辦事項：
+    <ol>
+      <todo-item 
+        v-for="item in groceryList"
+        :todo="item"
+        :key="item.id"
+      ></todo-item>
+    </ol>
+  </div>
+
+  <script>
+    const TodoList = {
+      data() {
+        return {
+          groceryList: [
+            { id: 0, text: '玩' },
+            { id: 1, text: '大玩特玩' },
+            { id: 2, text: '繼續玩' }
+          ]
+        }
+      }
+    };
+    // Create Vue application
+    const app = Vue.createApp(TodoList);
+
+    // Define a new component called todo-item
+    app.component('todo-item', {
+      props: ['todo'],
+      template: `<li>{{ todo.text }}</li>`
+    })
+
+    // Mount Vue application
+    app.mount('#todo-list-app');
+  </script>
+</body>
+</html>
