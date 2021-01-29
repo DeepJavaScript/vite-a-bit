@@ -18,17 +18,17 @@ export default {
   props: {
     label: {
       type: String,
-      default: ''
+      default: "",
     },
     labels: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     required: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 

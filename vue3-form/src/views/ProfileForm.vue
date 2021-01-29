@@ -1,6 +1,7 @@
 <template>
   <h1>表單</h1>
   <form action="">
+    <VPhoto label="上傳照片" type="file" name="name" v-model="photo"></VPhoto>
     <VInput
       label="姓名"
       placeholder="Chris"
@@ -57,9 +58,10 @@
       placeholder="chris@goodideas-studio.com"
       type="email"
       name="email"
+      autocomplete="username"
       v-model="email"
     ></VInput>
-    <VPassword label="密碼" name="password" v-model="password"></VPassword>
+    <VPassword label="密碼" v-model="password"></VPassword>
     <VInput
       label="最近心情"
       type="range"
@@ -85,52 +87,56 @@
 </template>
 
 <script>
-import VInput from './v-input.vue';
-import VRadio from './v-radio.vue';
-import VCheckbox from './v-checkbox.vue';
-import VAddText from './v-add-text.vue';
-import VLabel from './v-label.vue';
-import VSelect from './v-select.vue';
-import VPassword from './v-password.vue';
+import VPhoto from "../components/v-photo.vue";
+import VInput from "../components/v-input.vue";
+import VRadio from "../components/v-radio.vue";
+import VCheckbox from "../components/v-checkbox.vue";
+import VAddText from "../components/v-add-text.vue";
+import VLabel from "../components/v-label.vue";
+import VSelect from "../components/v-select.vue";
+import VPassword from "../components/v-password.vue";
 
 export default {
   components: {
+    VPhoto,
     VInput,
     VRadio,
     VCheckbox,
     VLabel,
     VAddText,
     VSelect,
-    VPassword
+    VPassword,
   },
   data() {
     return {
-      name: '',
-      phone: '',
-      date: '2021-01-08',
-      time: '23:17:55',
-      gender: '',
+      photo: { name: "" },
+      name: "",
+      phone: "",
+      date: "2021-01-08",
+      time: "23:17:55",
+      gender: "",
       hobbies: [],
       labels: [],
       location: null,
       age: null,
       email: null,
+      password: "",
       range: 1,
       multi_line_text: null,
-      other: null
+      other: null,
     };
   },
   computed: {
     optionsGender() {
-      return ['女', '男', '中'];
+      return ["女", "男", "中"];
     },
     optionsHobby() {
-      return ['打 code', '看書', '跳 swing'];
+      return ["打 code", "看書", "跳 swing"];
     },
     optionsLocation() {
-      return ['高雄', '台南', '府城'];
-    }
-  }
+      return ["高雄", "台南", "府城"];
+    },
+  },
 };
 </script>
 

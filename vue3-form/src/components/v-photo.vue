@@ -5,10 +5,9 @@
       {{ label }}
       <input
         v-bind="$attrs"
-        :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
+        @input="inputHandler($event.target.files.item(0))"
       />
-      <span v-if="$attrs.type === 'range'">{{ modelValue }}</span>
+      <img class="photo" :src="blob_url" alt="" />
     </label>
   </div>
 </template>
@@ -21,12 +20,24 @@ export default {
       default: "",
     },
     modelValue: {
-      type: [String, Number],
-      default: "",
+      type: Object,
+      required: true,
     },
     required: {
       type: Boolean,
       default: false,
+    },
+  },
+  data() {
+    return {
+      blob_url: "",
+    };
+  },
+  methods: {
+    inputHandler(file) {
+      console.log(file);
+      this.blob_url = URL.createObjectURL(file);
+      this.$emit("update:modelValue", file);
     },
   },
 };
@@ -39,5 +50,10 @@ export default {
 .required {
   color: red;
   opacity: 1;
+}
+.photo {
+  display: block;
+  width: 200px;
+  height: 200px;
 }
 </style>

@@ -19,36 +19,36 @@ export default {
   props: {
     label: {
       type: String,
-      default: ''
+      default: "",
     },
     options: {
       typye: Array,
       default: () => [
         {
-          label: '',
-          value: null
-        }
-      ]
+          label: "",
+          value: null,
+        },
+      ],
     },
     modelValue: {
       type: Array,
-      required: true
+      required: true,
     },
     required: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     value: {
       set(new_value) {
-        this.$emit('update:modelValue', new_value);
+        this.$emit("update:modelValue", new_value);
       },
       get() {
         return this.modelValue;
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 

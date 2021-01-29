@@ -21,10 +21,10 @@ export default {
   data() {
     return {
       state: {
-        count: 0
-      }
+        count: 0,
+      },
     };
-  }
+  },
 };
 </script>
 

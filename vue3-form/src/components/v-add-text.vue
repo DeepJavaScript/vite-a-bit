@@ -13,12 +13,12 @@ export default {
   props: {
     text: {
       typye: String,
-      default: ''
+      default: "",
     },
     options: {
       typye: Array,
-      default: () => ['']
-    }
+      default: () => [""],
+    },
   },
   methods: {
     addOption() {
@@ -26,19 +26,19 @@ export default {
         this.myOptions = [...this.myOptions, this.newOption];
         this.newOption = null;
       }
-    }
+    },
   },
   data() {
     return {
       newOption: null,
-      myOptions: []
+      myOptions: [],
     };
   },
   computed: {
     allOptions() {
       return [...this.options, ...this.myOptions];
-    }
-  }
+    },
+  },
 };
 </script>
 
