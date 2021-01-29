@@ -92,15 +92,6 @@
         <input type="range" id="feel" v-model.number="user.feel" />
       </div>
 
-      <div class="form-group">
-        <label for="image">上傳圖片 (限圖片)</label>
-        <input type="file" id="image" :value="user.image" />
-
-        <div class="preview-image">
-          <img src="" alt="圖片" />
-        </div>
-      </div>
-
       <FormFile v-model:file="user.image" />
 
       <div class="form-group">
