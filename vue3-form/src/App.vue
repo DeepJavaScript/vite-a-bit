@@ -101,6 +101,8 @@
         </div>
       </div>
 
+      <FormFile v-model:file="user.image" />
+
       <div class="form-group">
         <label for="note">備註</label>
         <textarea id="note" cols="30" rows="10" v-model="user.note" />
@@ -121,13 +123,15 @@ import { ref } from 'vue';
 
 import FormTag from './components/FormTag.vue';
 import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
+import FormFile from './components/FormFile.vue';
 
 import useUserForm from './composables/useUserForm';
 
 export default {
   components: {
     FormTag,
-    FormAdderCheckbox
+    FormAdderCheckbox,
+    FormFile
   },
   setup() {
     const hobbyOptions = ref(['睡覺', '寫程式']);
