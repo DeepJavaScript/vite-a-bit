@@ -5,5 +5,10 @@ import vue from '@vitejs/plugin-vue'
  */
 export default {
   plugins: [vue()],
-  root: "/"
+  server: {
+    open: './index.html'
+  },
+  build: {
+    outDir: "./mango"
+  }
 }
