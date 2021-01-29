@@ -86,19 +86,7 @@
         </div>
       </fieldset>
 
-      <fieldset class="form-tag">
-        <legend>標籤</legend>
-        <ul class="form-tag-list">
-          <li class="form-tag-item">
-            <span class="form-tag-content">Titan</span>
-            <button type="button" class="form-tag-remove">X</button>
-          </li>
-        </ul>
-        <div class="form-group">
-          <input type="text" />
-          <button type="button">加標籤</button>
-        </div>
-      </fieldset>
+      <FormTag v-model:tags="user.tags" />
 
       <div class="form-group">
         <label for="location">棲息地</label>
@@ -140,9 +128,14 @@
 </template>
 
 <script>
+import FormTag from './components/FormTag.vue';
+
 import useUserForm from './composables/useUserForm';
 
 export default {
+  components: {
+    FormTag
+  },
   setup() {
     const defaultUserOptions = {
       tags: ['Vue', 'JS']
