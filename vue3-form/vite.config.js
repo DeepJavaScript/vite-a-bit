@@ -10,6 +10,6 @@ export default {
   },
   build: {
     base: "./",
-    outDir: "./mango"
+    outDir: "/mango"
   }
 }
