@@ -12,7 +12,7 @@
     <div class="form-group">
       <input
         type="text"
-        ref="$input"
+        ref="input"
         v-model="inputTag"
         @keyup.enter="addTag(inputTag)"
       />
@@ -43,7 +43,7 @@ export default {
     }
   },
   setup(props, { emit }) {
-    const $input = ref(null);
+    const input = ref(null);
     const inputTag = ref('');
     const error = ref('');
 
@@ -52,14 +52,14 @@ export default {
 
       if (props.tags.includes(tag)) {
         error.value = '已重複';
-        $input.value.focus();
+        input.value.focus();
         return;
       }
 
       emit('update:tags', [...props.tags, tag]);
       inputTag.value = '';
       error.value = '';
-      $input.value.focus();
+      input.value.focus();
     }
 
     function removeTag(tag) {
@@ -71,7 +71,7 @@ export default {
     }
 
     return {
-      $input,
+      input,
       inputTag,
       error,
 
