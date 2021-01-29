@@ -9,6 +9,7 @@ export default {
     open: './index.html'
   },
   build: {
+    base: "./",
     outDir: "./mango"
   }
 }
