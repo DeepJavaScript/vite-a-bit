@@ -1,20 +1,19 @@
 <template>
   <h1>表單</h1>
-  <form id="form" action="" @reset.prevent="onReset">
+  <form id="form" action="" @reset="onReset">
     <VPhoto
       label="上傳照片"
       type="file"
       name="photo"
       accept=".jpg,.png"
-      v-model="photo"
+      v-model="user.photo"
     ></VPhoto>
-    <pre>{{ photo.name }}</pre>
     <VInput
       label="姓名"
       placeholder="Chris"
       type="text"
       name="name"
-      v-model="name"
+      v-model="user.name"
       required
     ></VInput>
     <VInput
@@ -23,11 +22,15 @@
       type="tel"
       name="phone"
       required
-      v-model="phone"
+      v-model="user.phone"
     ></VInput>
-    <VInput label="日期" type="date" name="date" v-model="date"></VInput>
-    <VInput label="時間" type="time" name="time" v-model="time"></VInput>
-    <VRadio label="性別" :options="optionsGender" v-model="gender"></VRadio>
+    <VInput label="日期" type="date" name="date" v-model="user.date"></VInput>
+    <VInput label="時間" type="time" name="time" v-model="user.time"></VInput>
+    <VRadio
+      label="性別"
+      :options="optionsGender"
+      v-model="user.gender"
+    ></VRadio>
     <VAddText
       v-slot="{ allOptions }"
       required
@@ -38,18 +41,18 @@
         label="興趣"
         :options="allOptions"
         name="hobbies"
-        v-model="hobbies"
+        v-model="user.hobbies"
       ></VCheckbox>
     </VAddText>
     <VAddText
       v-slot="{ allOptions }"
-      :options="labels"
+      :options="user.labels"
       name="labels"
       text="標籤+"
     >
       <VLabel label="標籤" :labels="allOptions"></VLabel>
     </VAddText>
-    <VSelect label="棲息地" :options="optionsLocation" v-model="location">
+    <VSelect label="棲息地" :options="optionsLocation" v-model="user.location">
       <option disabled :value="null">--</option>
     </VSelect>
     <VInput
@@ -58,7 +61,7 @@
       type="number"
       name="age"
       min="0"
-      v-model.number="age"
+      v-model.number="user.age"
       required
     ></VInput>
     <VInput
@@ -67,9 +70,9 @@
       type="email"
       name="email"
       autocomplete="username"
-      v-model="email"
+      v-model="user.email"
     ></VInput>
-    <VPassword label="密碼" v-model="password"></VPassword>
+    <VPassword label="密碼" v-model="user.password"></VPassword>
     <VInput
       label="最近心情"
       type="range"
@@ -77,7 +80,7 @@
       min="1"
       setp="1"
       max="5"
-      v-model="range"
+      v-model="user.range"
     ></VInput>
     <div>
       <label> 備註 </label><br />
@@ -86,7 +89,7 @@
         id=""
         cols="30"
         rows="3"
-        v-model="multi_line_text"
+        v-model="user.multi_line_text"
       ></textarea>
     </div>
     <input type="submit" value="submit" />
@@ -117,22 +120,11 @@ export default {
   },
   data() {
     return {
-      photo: { name: "" },
-      name: "",
-      phone: "",
-      date: "2021-01-08",
-      time: "23:17:55",
-      gender: "",
-      hobbies: [],
-      labels: [],
-      location: null,
-      age: null,
-      email: null,
-      password: "",
-      range: 1,
-      multi_line_text: null,
-      other: null,
+      user: {},
     };
+  },
+  created() {
+    this.onReset();
   },
   computed: {
     optionsGender() {
@@ -144,11 +136,30 @@ export default {
     optionsLocation() {
       return ["高雄", "台南", "府城"];
     },
+    initUser() {
+      return {
+        photo: { name: "" },
+        name: "",
+        phone: "",
+        date: "2021-01-08",
+        time: "23:17:55",
+        gender: "",
+        hobbies: [],
+        labels: [],
+        location: null,
+        age: 0,
+        email: null,
+        password: "",
+        range: 1,
+        multi_line_text: null,
+        other: null,
+      };
+    },
   },
   methods: {
     onReset() {
       // document.form.photo.value = "";
-      this.photo = { name: "" };
+      this.user = this.initUser;
     },
   },
 };
