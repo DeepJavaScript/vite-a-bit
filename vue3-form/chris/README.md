@@ -26,11 +26,11 @@
 
 由下到上
 
-[vue3-form] modify vue syntax to vue2 in component
-[vue3-form] complete vue3-form in vue2 syntax  (tag: 20210115.chris.vue3-form.1)
-[vue3-form] add v-model, Vue.js devtools, setup sass
-[vue3-form] modify vue syntax to vue2 in component
-[vue3-form] add eslint, prettier
-[vue3-form] disabled hmr cover page of error messages
-[vue3-form] Error: Failed to load url /sw.js. Does the file exist?
-[vue3-form] init project
+- [vue3-form] modify vue syntax to vue2 in component
+- [vue3-form] complete vue3-form in vue2 syntax  (tag: 20210115.chris.- vue3-form.1)
+- [vue3-form] add v-model, Vue.js devtools, setup sass
+- [vue3-form] modify vue syntax to vue2 in component
+- [vue3-form] add eslint, prettier
+- [vue3-form] disabled hmr cover page of error messages
+- [vue3-form] Error: Failed to load url /sw.js. Does the file exist?
+- [vue3-form] init project
