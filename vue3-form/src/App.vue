@@ -20,7 +20,7 @@
       <FormGroup label="密碼" label-for="password">
         <FormPassword
           id="password"
-          showPasswordId="show-password"
+          show-password-id="show-password"
           v-model="user.password"
         />
       </FormGroup>
