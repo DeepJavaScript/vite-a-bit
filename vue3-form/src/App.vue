@@ -99,8 +99,8 @@
         <textarea id="note" cols="30" rows="10" v-model="user.note" />
       </div>
 
-      <button type="reset">重設</button>
-      <button type="button" @click="submit">送出</button>
+      <button type="button" @click="onReset">重設</button>
+      <button type="button" @click="onSubmit">送出</button>
     </form>
 
     <div class="result">
@@ -131,13 +131,14 @@ export default {
       hobbies: ['寫程式'],
       tags: ['Vue', 'JS']
     };
-    const { user, submit } = useUserForm(defaultUserOptions);
+    const { user, onSubmit, onReset } = useUserForm(defaultUserOptions);
 
     return {
       hobbyOptions,
 
       user,
-      submit
+      onSubmit,
+      onReset
     };
   }
 };

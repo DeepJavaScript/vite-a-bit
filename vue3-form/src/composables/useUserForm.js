@@ -1,7 +1,7 @@
-import { reactive } from 'vue';
+import { reactive, toRefs, readonly } from 'vue';
 
 export default function useUserForm(defaultOptions) {
-  const user = reactive({
+  const initUser = readonly({
     name: '',
     age: 18,
     phone: '',
@@ -20,12 +20,23 @@ export default function useUserForm(defaultOptions) {
     ...defaultOptions
   });
 
-  function submit() {
-    console.log(user);
+  const state = reactive({ user: { ...initUser } });
+  const { user } = toRefs(state);
+
+  function onSubmit() {
+    console.log('onSubmit');
+    console.log(state.user);
+  }
+
+  function onReset() {
+    console.log('onReset');
+    state.user = { ...initUser };
+    console.log(state.user);
   }
 
   return {
     user,
-    submit
+    onSubmit,
+    onReset
   };
 }
