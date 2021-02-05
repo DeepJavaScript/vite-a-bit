@@ -1,34 +1,28 @@
 <template>
   <div class="container">
     <form @submit.prevent>
-      <div class="form-group">
-        <label for="name">姓名</label>
+      <FormGroup label="姓名" label-for="name">
         <input type="text" id="name" v-model="user.name" />
-      </div>
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="age">年齡</label>
-        <input type="number" id="age" v-model.number="user.age" />
-      </div>
+      <FormGroup label="年齡" label-for="age">
+        <input type="number" id="age" min="1" v-model="user.age" />
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="phone">電話</label>
+      <FormGroup label="電話" label-for="phone">
         <input type="tel" id="phone" v-model="user.phone" />
-      </div>
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="email">Email</label>
+      <FormGroup label="Email" label-for="email">
         <input type="email" id="email" v-model="user.email" />
-      </div>
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="password">密碼</label>
+      <FormGroup label="密碼" label-for="password">
         <input
           :type="user.isShowPassword ? 'text' : 'password'"
           id="password"
           v-model="user.password"
         />
-
         <div class="form-check">
           <input
             type="checkbox"
@@ -37,67 +31,48 @@
           />
           <label for="show-password">看密碼</label>
         </div>
-      </div>
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="date">日期</label>
+      <FormGroup label="日期" label-for="date">
         <input type="date" id="date" v-model="user.date" />
-      </div>
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="time">時間</label>
+      <FormGroup label="時間" label-for="time">
         <input type="time" id="time" v-model="user.time" />
-      </div>
+      </FormGroup>
 
-      <fieldset>
-        <legend>性別</legend>
-
-        <div class="form-check">
-          <input type="radio" id="male" value="生理男" v-model="user.sex" />
-          <label for="male">生理男</label>
-        </div>
-
-        <div class="form-check">
-          <input type="radio" id="female" value="生理女" v-model="user.sex" />
-          <label for="female">生理女</label>
-        </div>
-
-        <div class="form-check">
-          <input type="radio" id="sexual" value="多元" v-model="user.sex" />
-          <label for="sexual">多元</label>
-        </div>
-      </fieldset>
+      <FormGroup label="性別">
+        <FormRadioGroup id="sex" :options="sexOptions" v-model="user.sex" />
+      </FormGroup>
 
       <FormAdderCheckbox
+        id="hobby"
         title="興趣"
         addText="加興趣"
-        v-model:options="hobbyOptions"
+        v-model:options="hobbies"
         v-model:checkedItems="user.hobbies"
       />
 
       <FormTag v-model:tags="user.tags" />
 
-      <div class="form-group">
-        <label for="location">棲息地</label>
+      <FormGroup label="棲息地" label-for="location">
         <select id="location" v-model="user.location">
           <option :value="null" disabled>請選擇</option>
           <option value="台南">台南</option>
           <option value="台北">台北</option>
           <option value="高雄">高雄</option>
         </select>
-      </div>
+      </FormGroup>
 
-      <div class="form-group">
-        <label for="feel">感覺</label>
+      <FormGroup label="感覺" label-for="feel">
         <input type="range" id="feel" v-model.number="user.feel" />
-      </div>
+      </FormGroup>
 
       <FormFile v-model:file="user.image" />
 
-      <div class="form-group">
-        <label for="note">備註</label>
+      <FormGroup label="備註" label-for="note">
         <textarea id="note" cols="30" rows="10" v-model="user.note" />
-      </div>
+      </FormGroup>
 
       <button type="button" @click="onReset">重設</button>
       <button type="button" @click="onSubmit">送出</button>
@@ -110,22 +85,45 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
+import FormGroup from './components/FormGroup.vue';
+import FormRadioGroup from './components/FormRadioGroup.vue';
 import FormTag from './components/FormTag.vue';
 import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
 import FormFile from './components/FormFile.vue';
 
-import useUserForm from './composables/useUserForm';
+import useUserForm from '@/composables/useUserForm';
 
 export default {
   components: {
+    FormGroup,
+    FormRadioGroup,
     FormTag,
     FormAdderCheckbox,
     FormFile
   },
   setup() {
-    const hobbyOptions = ref(['睡覺', '寫程式']);
+    const sexOptions = [
+      {
+        text: '生理男',
+        value: 'male'
+      },
+      {
+        text: '生理女',
+        value: 'female'
+      },
+      {
+        text: '多元',
+        value: 'sexual'
+      }
+    ];
+    const hobbies = ref(['睡覺', '寫程式']);
+    const hobbyOptions = computed(() => {
+      return hobbies.value.map(item => {
+        return { text: item, value: item };
+      });
+    });
 
     const defaultUserOptions = {
       hobbies: ['寫程式'],
@@ -134,6 +132,8 @@ export default {
     const { user, onSubmit, onReset } = useUserForm(defaultUserOptions);
 
     return {
+      sexOptions,
+      hobbies,
       hobbyOptions,
 
       user,
