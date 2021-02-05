@@ -65,7 +65,13 @@
       </FormGroup>
 
       <FormGroup label="感覺" label-for="feel">
-        <input type="range" id="feel" v-model.number="user.feel" />
+        <input
+          type="range"
+          id="feel"
+          v-model.number="user.feel"
+          min="0"
+          max="6"
+        />
       </FormGroup>
 
       <FormFile v-model:file="user.image" />
