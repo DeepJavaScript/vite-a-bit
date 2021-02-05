@@ -63,6 +63,7 @@
           min="0"
           max="6"
         />
+        <span>{{ user.feel }}</span>
       </FormGroup>
 
       <FormFile v-model:file="user.image" />
