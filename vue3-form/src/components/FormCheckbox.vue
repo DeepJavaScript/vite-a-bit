@@ -1,12 +1,7 @@
 <template>
   <div class="form-check">
-    <input
-      type="checkbox"
-      :id="$attrs.id"
-      :value="$attrs.value"
-      v-model="value"
-    />
-    <label :for="$attrs.id">
+    <input type="checkbox" :id="id" :value="$attrs.value" v-model="value" />
+    <label :for="id">
       <slot />
     </label>
   </div>
@@ -18,6 +13,10 @@ import { computed } from 'vue';
 export default {
   name: 'FormCheckbox',
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     modelValue: {}
   },
   emits: ['update:modelValue'],
