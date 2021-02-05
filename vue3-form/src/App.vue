@@ -18,19 +18,11 @@
       </FormGroup>
 
       <FormGroup label="密碼" label-for="password">
-        <input
-          :type="user.isShowPassword ? 'text' : 'password'"
+        <FormPassword
           id="password"
+          showPasswordId="show-password"
           v-model="user.password"
         />
-        <div class="form-check">
-          <input
-            type="checkbox"
-            id="show-password"
-            v-model="user.isShowPassword"
-          />
-          <label for="show-password">看密碼</label>
-        </div>
       </FormGroup>
 
       <FormGroup label="日期" label-for="date">
@@ -94,6 +86,7 @@
 import { ref, computed } from 'vue';
 
 import FormGroup from './components/FormGroup.vue';
+import FormPassword from './components/FormPassword.vue';
 import FormRadioGroup from './components/FormRadioGroup.vue';
 import FormTag from './components/FormTag.vue';
 import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
@@ -104,6 +97,7 @@ import useUserForm from '@/composables/useUserForm';
 export default {
   components: {
     FormGroup,
+    FormPassword,
     FormRadioGroup,
     FormTag,
     FormAdderCheckbox,
