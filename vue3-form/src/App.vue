@@ -107,18 +107,9 @@ export default {
   },
   setup() {
     const sexOptions = [
-      {
-        text: '生理男',
-        value: 'male'
-      },
-      {
-        text: '生理女',
-        value: 'female'
-      },
-      {
-        text: '多元',
-        value: 'sexual'
-      }
+      { text: '生理男', value: 'male' },
+      { text: '生理女', value: 'female' },
+      { text: '多元', value: 'sexual' }
     ];
     const locations = ref(['北部', '南部', '其他']);
     const locationOptions = computed(() => {
