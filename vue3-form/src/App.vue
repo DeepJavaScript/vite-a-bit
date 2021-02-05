@@ -48,12 +48,11 @@
       <FormTag v-model:tags="user.tags" />
 
       <FormGroup label="棲息地" label-for="location">
-        <select id="location" v-model="user.location">
-          <option :value="null" disabled>請選擇</option>
-          <option value="台南">台南</option>
-          <option value="台北">台北</option>
-          <option value="高雄">高雄</option>
-        </select>
+        <FormSelect
+          id="location"
+          :options="locationOptions"
+          v-model="user.location"
+        />
       </FormGroup>
 
       <FormGroup label="感覺" label-for="feel">
@@ -87,6 +86,7 @@ import { ref, computed } from 'vue';
 
 import FormGroup from './components/FormGroup.vue';
 import FormPassword from './components/FormPassword.vue';
+import FormSelect from './components/FormSelect.vue';
 import FormRadioGroup from './components/FormRadioGroup.vue';
 import FormTag from './components/FormTag.vue';
 import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
@@ -98,6 +98,7 @@ export default {
   components: {
     FormGroup,
     FormPassword,
+    FormSelect,
     FormRadioGroup,
     FormTag,
     FormAdderCheckbox,
@@ -118,6 +119,12 @@ export default {
         value: 'sexual'
       }
     ];
+    const locations = ref(['北部', '南部', '其他']);
+    const locationOptions = computed(() => {
+      return locations.value.map(item => {
+        return { text: item, value: item };
+      });
+    });
     const hobbies = ref(['睡覺', '寫程式']);
     const hobbyOptions = computed(() => {
       return hobbies.value.map(item => {
@@ -133,6 +140,8 @@ export default {
 
     return {
       sexOptions,
+      locations,
+      locationOptions,
       hobbies,
       hobbyOptions,
 
