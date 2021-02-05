@@ -3,19 +3,12 @@
     <legend>{{ title }}</legend>
 
     <div class="form-adder-list">
-      <div
-        class="form-adder-item form-group"
-        v-for="option in options"
-        :key="option"
-      >
-        <input
-          type="checkbox"
-          :id="option"
-          :value="option"
-          v-model="adderCheckedItems"
-        />
-        <label :for="option">{{ option }}</label>
-      </div>
+      <FormCheckboxGroup
+        :id="id"
+        class="form-adder-item"
+        :options="options"
+        v-model="adderCheckedItems"
+      />
     </div>
 
     <div class="form-group">
@@ -41,13 +34,22 @@
 <script>
 import { ref, computed } from 'vue';
 
+import FormCheckboxGroup from '@/components/FormCheckboxGroup.vue';
+
 export default {
   name: 'FormAdderCheckbox',
+  components: {
+    FormCheckboxGroup
+  },
   emits: {
     'update:options': payload => Array.isArray(payload),
     'update:checkedItems': payload => Array.isArray(payload)
   },
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     title: {
       type: String,
       required: true
