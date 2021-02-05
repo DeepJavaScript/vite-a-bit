@@ -6,11 +6,11 @@
   >
     <input
       type="radio"
-      :id="`${$attrs.id}-options-${index}`"
+      :id="`${id}-options-${index}`"
       :value="option.value"
       v-model="value"
     />
-    <label :for="`${$attrs.id}-options-${index}`">
+    <label :for="`${id}-options-${index}`">
       {{ option.text }}
     </label>
   </div>
@@ -22,6 +22,10 @@ import { computed } from 'vue';
 export default {
   name: 'FormRadioGroup',
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     modelValue: {},
     options: {
       type: Array,
