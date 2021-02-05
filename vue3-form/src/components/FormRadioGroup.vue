@@ -1,7 +1,7 @@
 <template>
   <div
     class="form-check"
-    v-for="(option, index) in options"
+    v-for="(option, index) in formOptions"
     :key="option.value"
   >
     <input
@@ -17,7 +17,9 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, toRefs } from 'vue';
+
+import { generateFormOptions } from '@/composables/useForm';
 
 export default {
   name: 'FormRadioGroup',
@@ -41,8 +43,12 @@ export default {
       }
     });
 
+    const { options } = toRefs(props);
+    const formOptions = generateFormOptions(options);
+
     return {
-      value
+      value,
+      formOptions
     };
   }
 };
