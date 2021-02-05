@@ -18,7 +18,9 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, toRefs } from 'vue';
+
+import { generateFormOptions } from '@/composables/useForm';
 
 export default {
   name: 'FormCheckboxGroup',
@@ -42,11 +44,8 @@ export default {
       }
     });
 
-    const formOptions = computed(() => {
-      return props.options.map(item => {
-        return { text: item, value: item };
-      });
-    });
+    const { options } = toRefs(props);
+    const formOptions = generateFormOptions(options);
 
     return {
       value,
