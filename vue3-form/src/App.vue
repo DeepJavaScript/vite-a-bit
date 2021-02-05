@@ -24,7 +24,7 @@
       <div class="form-group">
         <label for="password">密碼</label>
         <input
-          :type="user.isShowPassword ? 'password' : 'text'"
+          :type="user.isShowPassword ? 'text' : 'password'"
           id="password"
           v-model="user.password"
         />
