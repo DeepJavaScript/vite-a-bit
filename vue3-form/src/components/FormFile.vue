@@ -19,7 +19,7 @@ export default {
   props: {
     file: {
       type: Object,
-      requied: true
+      required: true
     }
   },
   setup(props, { emit }) {

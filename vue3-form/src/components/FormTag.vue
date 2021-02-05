@@ -39,7 +39,7 @@ export default {
   props: {
     tags: {
       type: Array,
-      requied: true
+      required: true
     }
   },
   setup(props, { emit }) {

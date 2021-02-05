@@ -50,19 +50,19 @@ export default {
   props: {
     title: {
       type: String,
-      requied: true
+      required: true
     },
     addText: {
       type: String,
-      requied: true
+      required: true
     },
     options: {
       type: Array,
-      requied: true
+      required: true
     },
     checkedItems: {
       type: Array,
-      requied: true
+      required: true
     }
   },
   setup(props, { emit }) {
