@@ -1,6 +1,7 @@
 <template>
   <div
     class="form-check"
+    :class="$attrs.class"
     v-for="(option, index) in formOptions"
     :key="option.value"
   >
