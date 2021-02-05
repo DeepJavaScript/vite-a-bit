@@ -7,7 +7,6 @@ export default function useUserForm(defaultOptions) {
     phone: '',
     email: '',
     password: '',
-    isShowPassword: false,
     date: '',
     time: '',
     sex: null,
