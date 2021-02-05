@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 import FormGroup from './components/FormGroup.vue';
 import FormPassword from './components/FormPassword.vue';
@@ -94,6 +94,7 @@ import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
 import FormFile from './components/FormFile.vue';
 
 import useUserForm from '@/composables/useUserForm';
+import { generateFormOptions } from '@/composables/useForm';
 
 export default {
   components: {
@@ -117,11 +118,7 @@ export default {
       { text: '其他', value: '其他' }
     ];
     const hobbies = ref(['睡覺', '寫程式']);
-    const hobbyOptions = computed(() => {
-      return hobbies.value.map(item => {
-        return { text: item, value: item };
-      });
-    });
+    const hobbyOptions = generateFormOptions(hobbies.value);
 
     const defaultUserOptions = {
       hobbies: ['寫程式'],
