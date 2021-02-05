@@ -1,8 +1,8 @@
-import { computed } from 'vue';
+import { computed, unref } from 'vue';
 
 export function generateFormOptions(options) {
   return computed(() =>
-    options.map(item => {
+    unref(options).map(item => {
       return { text: item, value: item };
     })
   );
