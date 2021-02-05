@@ -37,13 +37,14 @@
         <FormRadioGroup id="sex" :options="sexOptions" v-model="user.sex" />
       </FormGroup>
 
-      <FormAdderCheckbox
-        id="hobby"
+      <FormAdder
         title="興趣"
         addText="加興趣"
-        v-model:options="hobbies"
-        v-model:checkedItems="user.hobbies"
-      />
+        v-model:items="hobbies"
+        #default="{ items }"
+      >
+        <FormCheckboxGroup id="hobby" :options="items" v-model="user.hobbies" />
+      </FormAdder>
 
       <FormTag v-model:tags="user.tags" />
 
@@ -88,9 +89,10 @@ import { ref } from 'vue';
 import FormGroup from './components/FormGroup.vue';
 import FormPassword from './components/FormPassword.vue';
 import FormSelect from './components/FormSelect.vue';
+import FormCheckboxGroup from './components/FormCheckboxGroup.vue';
 import FormRadioGroup from './components/FormRadioGroup.vue';
 import FormTag from './components/FormTag.vue';
-import FormAdderCheckbox from './components/FormAdderCheckbox.vue';
+import FormAdder from './components/FormAdder.vue';
 import FormFile from './components/FormFile.vue';
 
 import useUserForm from '@/composables/useUserForm';
@@ -101,9 +103,10 @@ export default {
     FormGroup,
     FormPassword,
     FormSelect,
+    FormCheckboxGroup,
     FormRadioGroup,
     FormTag,
-    FormAdderCheckbox,
+    FormAdder,
     FormFile
   },
   setup() {
