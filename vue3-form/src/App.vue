@@ -111,12 +111,11 @@ export default {
       { text: '生理女', value: 'female' },
       { text: '多元', value: 'sexual' }
     ];
-    const locations = ref(['北部', '南部', '其他']);
-    const locationOptions = computed(() => {
-      return locations.value.map(item => {
-        return { text: item, value: item };
-      });
-    });
+    const locationOptions = [
+      { text: '北部', value: '北部' },
+      { text: '南部', value: '南部' },
+      { text: '其他', value: '其他' }
+    ];
     const hobbies = ref(['睡覺', '寫程式']);
     const hobbyOptions = computed(() => {
       return hobbies.value.map(item => {
@@ -132,7 +131,6 @@ export default {
 
     return {
       sexOptions,
-      locations,
       locationOptions,
       hobbies,
       hobbyOptions,
