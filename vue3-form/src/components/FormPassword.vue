@@ -1,11 +1,11 @@
 <template>
   <input
     :type="isShowPassword ? 'text' : 'password'"
-    id="password"
+    :id="id"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
   />
-  <FormCheckbox id="show-password" v-model="isShowPassword">
+  <FormCheckbox :id="showPasswordId" v-model="isShowPassword">
     看密碼
   </FormCheckbox>
 </template>
@@ -21,6 +21,10 @@ export default {
     FormCheckbox
   },
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     showPasswordId: {
       type: String,
       required: true
