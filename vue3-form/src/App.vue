@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form @submit.prevent="submit">
+    <form @submit.prevent>
       <div class="form-group">
         <label for="name">姓名</label>
         <input type="text" id="name" v-model="user.name" />
@@ -100,7 +100,7 @@
       </div>
 
       <button type="reset">重設</button>
-      <button type="submit">送出</button>
+      <button type="button" @click="submit">送出</button>
     </form>
 
     <div class="result">
