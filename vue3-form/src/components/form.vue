@@ -139,16 +139,17 @@ export default {
 	},
 	created() {
 		this.backup = { ...this.formData };
-		this.habitListBackup = [ ...this.habitList]
+		this.habitListBackup = [...this.habitList];
 	},
 	methods: {
 		submitHandler() {
 			this.$emit("updateCurrent", this.formData);
 			this.backup = { ...this.formData };
-			this.habitListBackup = [ ...this.habitList ];
+			this.habitListBackup = [...this.habitList];
 		},
 		resetHandler() {
 			this.formData = { ...this.backup };
+			this.habitList = [...this.habitListBackup];
 			this.$refs.picture.reset();
 		},
 		clearHandler() {
