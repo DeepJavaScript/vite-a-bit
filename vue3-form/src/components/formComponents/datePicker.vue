@@ -33,7 +33,7 @@ export default {
 	setup(_props, { emit }) {
 		const weekList = ref(["Mon", "Tue", "Wed", "Thu", "fir", "Sat", "Sun"]);
 		const isPickerOn = ref(false);
-		const dayInstance = new Date();
+		let dayInstance = new Date();
 
 		let date = dayInstance.getDate();
 		let month = dayInstance.getMonth();
