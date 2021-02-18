@@ -157,14 +157,6 @@ export default {
 			this.$refs.picture.reset();
 		},
 	},
-	watch: {
-		formData: {
-			handler() {
-				// console.table(this.formData);
-			},
-			deep: true,
-		},
-	},
 };
 </script>
 
