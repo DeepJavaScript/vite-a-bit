@@ -31,6 +31,7 @@ export default {
 			);
 		};
 		const addNewOption = (event) => {
+			if (event.target.value === "") return;
 			emit("update:options", [...props.options, event.target.value]);
 			emit("update:modelValue", [...props.modelValue, event.target.value]);
 			event.target.value = "";

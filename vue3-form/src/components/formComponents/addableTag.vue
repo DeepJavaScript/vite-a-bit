@@ -13,6 +13,7 @@ export default {
 	emits: ["update:modelValue"],
 	setup(props, { emit }) {
 		const addNewOption = (event) => {
+			if (event.target.value === "") return;
 			emit("update:modelValue", [...props.modelValue, event.target.value]);
 			event.target.value = "";
 		};
