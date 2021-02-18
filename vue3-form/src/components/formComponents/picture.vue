@@ -12,40 +12,34 @@
 </template>
 
 <script>
+import { ref, computed } from "vue";
 import vueImg from "/src/assets/logo.png";
 export default {
 	props: ["modelValue"],
 	emits: ["update:modelValue"],
-	data() {
-		return {
-			parseURL: "",
-		};
-	},
-	computed: {
-		imgSrc() {
-			// 多加一個三元運算式防止跳動= =+
-			return this.modelValue
-				? this.parseURL != ""
-					? this.parseURL
-					: vueImg
-				: vueImg;
-		},
-	},
-	methods: {
-		uploadFileHandler(event) {
+	setup(props, { emit }) {
+		const parseURL = ref("");
+		const imgSrc = computed(() => (props.modelValue ? parseURL.value : vueImg));
+		const uploadFileHandler = (event) => {
 			// 實際上要傳出去的是 input.files (???) 暫時先用 value
-			this.$emit("update:modelValue", event.target.value);
+			emit("update:modelValue", event.target.value);
 
 			if (event.target.files && event.target.files[0]) {
 				var reader = new FileReader();
 
 				reader.addEventListener("load", (loadEvent) => {
-					this.parseURL = loadEvent.target.result;
+					parseURL.value = loadEvent.target.result;
 				});
 
 				reader.readAsDataURL(event.target.files[0]);
 			}
-		},
+		};
+
+		return {
+			parseURL,
+			imgSrc,
+			uploadFileHandler,
+		};
 	},
 };
 </script>
