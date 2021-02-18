@@ -13,7 +13,7 @@
 <script>
 import { ref } from 'vue';
 
-import FormCheckbox from '@/components/FormCheckbox.vue';
+import FormCheckbox from '/@/components/FormCheckbox.vue';
 
 export default {
   name: 'FormPassword',

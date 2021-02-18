@@ -86,17 +86,17 @@
 <script>
 import { ref } from 'vue';
 
-import FormGroup from './components/FormGroup.vue';
-import FormPassword from './components/FormPassword.vue';
-import FormSelect from './components/FormSelect.vue';
-import FormCheckboxGroup from './components/FormCheckboxGroup.vue';
-import FormRadioGroup from './components/FormRadioGroup.vue';
-import FormTag from './components/FormTag.vue';
-import FormAdder from './components/FormAdder.vue';
-import FormFile from './components/FormFile.vue';
+import FormGroup from '/@/components/FormGroup.vue';
+import FormPassword from '/@/components/FormPassword.vue';
+import FormSelect from '/@/components/FormSelect.vue';
+import FormCheckboxGroup from '/@/components/FormCheckboxGroup.vue';
+import FormRadioGroup from '/@/components/FormRadioGroup.vue';
+import FormTag from '/@/components/FormTag.vue';
+import FormAdder from '/@/components/FormAdder.vue';
+import FormFile from '/@/components/FormFile.vue';
 
-import useUserForm from '@/composables/useUserForm';
-import { generateFormOptions } from '@/composables/useForm';
+import useUserForm from '/@/composables/useUserForm';
+import { generateFormOptions } from '/@/composables/useForm';
 
 export default {
   components: {

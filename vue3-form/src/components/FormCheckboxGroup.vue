@@ -20,7 +20,7 @@
 <script>
 import { computed, toRefs } from 'vue';
 
-import { generateFormOptions } from '@/composables/useForm';
+import { generateFormOptions } from '/@/composables/useForm';
 
 export default {
   name: 'FormCheckboxGroup',
