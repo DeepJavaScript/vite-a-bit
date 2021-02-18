@@ -21,28 +21,37 @@ export default {
 		groupName: String,
 	},
 	emits: ["update:modelValue", "update:options"],
-	methods: {
-		checkHandler(event) {
-			this.$emit(
+	setup(props, { emit }) {
+		const checkHandler = (event) => {
+			emit(
 				"update:modelValue",
 				event.target.checked
-					? [...this.modelValue, event.target.value]
-					: this.modelValue.filter((item) => item != event.target.value)
+					? [...props.modelValue, event.target.value]
+					: props.modelValue.filter((item) => item != event.target.value)
 			);
-		},
-		addNewOption(event) {
-			this.$emit("update:options", [...this.options, event.target.value]);
-			this.$emit("update:modelValue", [...this.modelValue, event.target.value]);
+		};
+		const addNewOption = (event) => {
+			emit("update:options", [...props.options, event.target.value]);
+			emit("update:modelValue", [...props.modelValue, event.target.value]);
 			event.target.value = "";
-		},
-		deleteOption(option) {
-			this.$emit(
+		};
+		const deleteOption = (option) => {
+			emit(
 				"update:options",
-				this.options.filter((item) => item != option)
+				props.options.filter((item) => item != option)
 			);
-			if (this.modelValue.includes(option))
-				this.$emit('update:modelValue', this.modelValue.filter((item) => item != option))
-		},
+			if (props.modelValue.includes(option))
+				emit(
+					"update:modelValue",
+					props.modelValue.filter((item) => item != option)
+				);
+		};
+
+		return {
+			checkHandler,
+			addNewOption,
+			deleteOption,
+		};
 	},
 };
 </script>
