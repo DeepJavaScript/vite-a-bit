@@ -1,6 +1,6 @@
 <template>
 	<form class="v-form">
-		<formPicture ref="picture" v-model="formData.picture" />
+		<formPicture v-model="formData.picture" />
 		<p>
 			<label for="name">name</label>
 			<input v-model="formData.name" id="name" type="text" />
@@ -150,11 +150,9 @@ export default {
 		resetHandler() {
 			this.formData = { ...this.backup };
 			this.habitList = [...this.habitListBackup];
-			this.$refs.picture.reset();
 		},
 		clearHandler() {
 			this.formData = { ...initData };
-			this.$refs.picture.reset();
 		},
 	},
 };

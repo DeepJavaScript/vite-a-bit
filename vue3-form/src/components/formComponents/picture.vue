@@ -1,9 +1,10 @@
 <template>
-	<img :src="fileSouce" class="preview" />
+	<img :src="imgSrc" class="preview" />
 	<label>
 		<span>picture</span>
 		<input
 			@change="uploadFileHandler"
+			:value="modelValue"
 			type="file"
 			accept="image/png, image/jpeg"
 		/>
@@ -17,8 +18,18 @@ export default {
 	emits: ["update:modelValue"],
 	data() {
 		return {
-			fileSouce: vueImg,
+			parseURL: "",
 		};
+	},
+	computed: {
+		imgSrc() {
+			// 多加一個三元運算式防止跳動= =+
+			return this.modelValue
+				? this.parseURL != ""
+					? this.parseURL
+					: vueImg
+				: vueImg;
+		},
 	},
 	methods: {
 		uploadFileHandler(event) {
@@ -29,14 +40,11 @@ export default {
 				var reader = new FileReader();
 
 				reader.addEventListener("load", (loadEvent) => {
-					this.fileSouce = loadEvent.target.result;
+					this.parseURL = loadEvent.target.result;
 				});
 
 				reader.readAsDataURL(event.target.files[0]);
 			}
-		},
-		reset() {
-			this.fileSouce = vueImg;
 		},
 	},
 };
