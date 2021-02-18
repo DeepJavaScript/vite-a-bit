@@ -11,17 +11,22 @@ export default {
 		modelValue: Array,
 	},
 	emits: ["update:modelValue"],
-	methods: {
-		addNewOption(event) {
-			this.$emit("update:modelValue", [...this.modelValue, event.target.value]);
+	setup(props, { emit }) {
+		const addNewOption = (event) => {
+			emit("update:modelValue", [...props.modelValue, event.target.value]);
 			event.target.value = "";
-		},
-		deleteOption(tag) {
-			this.$emit(
+		};
+		const deleteOption = (tag) => {
+			emit(
 				"update:modelValue",
-				this.modelValue.filter((item) => item != tag)
+				props.modelValue.filter((item) => item != tag)
 			);
-		},
+		};
+
+		return {
+			addNewOption,
+			deleteOption,
+		};
 	},
 };
 </script>
