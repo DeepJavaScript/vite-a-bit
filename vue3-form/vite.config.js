@@ -1,13 +1,12 @@
-import vue from '@vitejs/plugin-vue';
+import vue from "@vitejs/plugin-vue";
 
-const { resolve } = require('path')
 /**
  * @type {import('vite').UserConfig}
  */
 export default {
-  plugins: [vue()],
-  build: {
-    base: './',
-    outDir: 'Lo/',
-  }
-}
+	plugins: [vue()],
+	build: {
+		base: "./",
+		outDir: "Lo/",
+	},
+};
