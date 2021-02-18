@@ -71,8 +71,9 @@
 			></textarea>
 		</p>
 		<p>
-			<input @click.prevent="submitHandler" type="submit" />
-			<input @click.prevent="resetHandler" type="reset" />
+			<button type="button" @click="submitHandler">submit</button>
+			<button type="button" @click="resetHandler">reset</button>
+			<button type="button" @click="clearHandler">clear</button>
 		</p>
 	</form>
 </template>
@@ -85,7 +86,22 @@ import PasswordInput from "./formComponents/password.vue";
 import AddableTagList from "./formComponents/addableTag.vue";
 import FormPicture from "./formComponents/picture.vue";
 
-const initData = {};
+const initData = {
+	name: "",
+	phone: "",
+	date: "",
+	time: "",
+	gender: "",
+	habit: ["吃飯", "睡覺"],
+	labelList: ["快樂", "happy", "唷~"],
+	address: "",
+	age: "",
+	email: "",
+	password: "",
+	feedback: 5,
+	remark: "",
+	picture: null,
+};
 
 export default {
 	emits: ["updateCurrent"],
@@ -133,6 +149,10 @@ export default {
 		},
 		resetHandler() {
 			this.formData = { ...this.backup };
+			this.$refs.picture.reset();
+		},
+		clearHandler() {
+			this.formData = { ...initData };
 			this.$refs.picture.reset();
 		},
 	},
