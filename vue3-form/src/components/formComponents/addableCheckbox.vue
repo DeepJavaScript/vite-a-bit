@@ -8,10 +8,10 @@
 			type="checkbox"
 		/>
 		<label>{{ option }}</label>
-		<button @click.prevent="deleteOption(option)">X</button>
+		<button type="button" @click="deleteOption(option)">X</button>
 	</span>
 	<!-- keydown.enter 會觸發 上面的 button @click.... -->
-	<input @keydown.prevent.enter="addNewOption" type="text" />
+	<input @keydown.enter="addNewOption" type="text" />
 </template>
 <script>
 export default {

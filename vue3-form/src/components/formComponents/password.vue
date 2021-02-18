@@ -4,7 +4,7 @@
 		:value="modelValue"
 		:type="canYouSee ? 'text' : 'password'"
 	/>
-	<button @click.prevent="canYouSee = !canYouSee">
+	<button type="button" @click="canYouSee = !canYouSee">
 		canYouSee: {{ canYouSee }}
 	</button>
 </template>

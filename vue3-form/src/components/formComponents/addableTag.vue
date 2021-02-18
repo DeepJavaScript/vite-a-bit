@@ -1,9 +1,9 @@
 <template>
 	<span v-for="(tag, index) in modelValue" :key="index">
 		<label>{{ tag }}</label>
-		<button @click.prevent="deleteOption(tag)">X</button>
+		<button type="button" @click="deleteOption(tag)">X</button>
 	</span>
-	<input @keydown.prevent.enter="addNewOption" type="text" />
+	<input @keydown.enter="addNewOption" type="text" />
 </template>
 <script>
 export default {
