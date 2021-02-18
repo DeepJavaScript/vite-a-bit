@@ -7,12 +7,12 @@
 		<div v-if="isPickerOn" class="picker">
 			<div class="head">
 				<button @click="previousMonth" type="button">＜</button>
-				<p :textContent="`${year}-${numToString(month + 1)}`"></p>
+				<p :textContent="`${year}-${numToString(month)}`"></p>
 				<button @click="nextMonth" type="button">＞</button>
 			</div>
 			<div class="body">
 				<p v-for="week in weekList" class="week-list">{{ week }}</p>
-				<p v-for="empty in emptyAmout"></p>
+				<p v-for="empty in emptyAmount"></p>
 				<p @click="pickDate" v-for="date in dayOnThisMonth" class="date">
 					{{ date }}
 				</p>
@@ -21,6 +21,7 @@
 	</div>
 </template>
 <script>
+import { ref, computed } from "vue";
 export default {
 	props: {
 		modelValue: {
@@ -29,53 +30,53 @@ export default {
 		},
 	},
 	emits: ["update:modelValue"],
-	data() {
-		return {
-			weekList: ["Mon", "Tue", "Wed", "Thu", "fir", "Sat", "Sun"],
-			isPickerOn: false,
-			dayInstance: new Date(),
-		};
-	},
-	computed: {
-		date() {
-			return this.dayInstance.getDate();
-		},
-		month() {
-			return this.dayInstance.getMonth();
-		},
-		year() {
-			return this.dayInstance.getFullYear();
-		},
-		emptyAmout() {
-			return this.dayInstance.getDay();
-		},
-		dayOnThisMonth() {
-			return new Date(this.date, this.month, 0).getDate();
-		},
-	},
-	methods: {
-		pickDate(event) {
+	setup(_props, { emit }) {
+		const weekList = ref(["Mon", "Tue", "Wed", "Thu", "fir", "Sat", "Sun"]);
+		const isPickerOn = ref(false);
+		const dayInstance = new Date();
+
+		let date = dayInstance.getDate();
+		let month = dayInstance.getMonth();
+		let year = dayInstance.getFullYear();
+		let emptyAmount = dayInstance.getDay();
+
+		const dayOnThisMonth = computed(() => new Date(date, month, 0).getDate());
+
+		const pickDate = (event) => {
 			const dateString =
 				event.target.textContent.length < 2
 					? "0".concat(event.target.textContent)
 					: event.target.textContent;
-			const emitedData = `${this.year}-${this.numToString(
-				this.month + 1
-			)}-${dateString}`;
-			this.$emit("update:modelValue", emitedData);
-			this.isPickerOn = false;
-		},
-		nextMonth() {
-			this.dayInstance = new Date(this.year, this.month + 1);
-		},
-		previousMonth() {
-			this.dayInstance = new Date(this.year, this.month - 1);
-		},
-		numToString(num) {
+
+			const emitedData = `${year}-${numToString(month + 1)}-${dateString}`;
+			emit("update:modelValue", emitedData);
+			isPickerOn.value = false;
+		};
+		const nextMonth = () => {
+			dayInstance = new Date(year, month + 1);
+		};
+		const previousMonth = () => {
+			dayInstance = new Date(year, month - 1);
+		};
+		const numToString = (num) => {
 			if (typeof num !== "number")
 				throw "Number to String error: input is not a Number";
 			return num < 10 ? "0".concat(num.toString()) : num.toString();
-		},
+		};
+
+		return {
+			weekList,
+			isPickerOn,
+			date,
+			month,
+			year,
+			emptyAmount,
+			dayOnThisMonth,
+			pickDate,
+			nextMonth,
+			previousMonth,
+			numToString,
+		};
 	},
 };
 </script>
