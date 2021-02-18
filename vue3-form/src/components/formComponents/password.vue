@@ -5,25 +5,24 @@
 	</button>
 </template>
 <script>
+import { ref, computed } from "vue";
 export default {
 	props: {
 		modelValue: String,
 	},
 	emits: ["update:modelValue"],
-	data() {
+	setup(props, { emit }) {
+		const canYouSee = ref(false);
+		console.log(props.modelValue);
+
+		const value = computed({
+			get: () => props.modelValue,
+			set: (newValue) => emit("update:modelValue", newValue),
+		});
 		return {
-			canYouSee: false,
+			canYouSee,
+			value,
 		};
-	},
-	computed: {
-		value: {
-			get() {
-				return this.modelValue;
-			},
-			set(newValue) {
-				this.$emit("update:modelValue", newValue);
-			},
-		},
 	},
 };
 </script>
