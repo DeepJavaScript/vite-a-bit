@@ -79,29 +79,13 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import DatePicker from "./formComponents/datePicker.vue";
 import Radio from "./formComponents/radio.vue";
 import AddableCheckbox from "./formComponents/addableCheckbox.vue";
 import PasswordInput from "./formComponents/password.vue";
 import AddableTagList from "./formComponents/addableTag.vue";
 import FormPicture from "./formComponents/picture.vue";
-
-const initData = {
-	name: "",
-	phone: "",
-	date: "",
-	time: "",
-	gender: "",
-	habit: ["吃飯", "睡覺"],
-	labelList: ["快樂", "happy", "唷~"],
-	address: "",
-	age: "",
-	email: "",
-	password: "",
-	feedback: 5,
-	remark: "",
-	picture: null,
-};
 
 export default {
 	emits: ["updateCurrent"],
@@ -113,47 +97,68 @@ export default {
 		AddableTagList,
 		FormPicture,
 	},
-	data() {
-		return {
-			formData: {
-				name: "Lo zhang",
-				phone: "090000",
-				date: "1999-01-12",
-				time: "05:30",
-				gender: "gentle",
-				habit: ["吃飯", "睡覺"],
-				labelList: ["快樂", "happy", "唷~"],
-				address: "深海的大鳳梨裡",
-				age: "18",
-				email: "",
-				password: "888888888",
-				feedback: 5,
-				remark: "快樂",
-				picture: null,
-			},
-			backup: {},
-			genderList: ["gentle", "lady", "multiple"],
-			habitList: ["吃飯", "睡覺", "打咚咚"],
-			habitListBackup: [],
+	setup(_props, { emit }) {
+		const initData = {
+			name: "",
+			phone: "",
+			date: "",
+			time: "",
+			gender: "",
+			habit: ["吃飯", "睡覺"],
+			labelList: ["快樂", "happy", "唷~"],
+			address: "",
+			age: "",
+			email: "",
+			password: "",
+			feedback: 5,
+			remark: "",
+			picture: null,
 		};
-	},
-	created() {
-		this.backup = { ...this.formData };
-		this.habitListBackup = [...this.habitList];
-	},
-	methods: {
-		submitHandler() {
-			this.$emit("updateCurrent", this.formData);
-			this.backup = { ...this.formData };
-			this.habitListBackup = [...this.habitList];
-		},
-		resetHandler() {
-			this.formData = { ...this.backup };
-			this.habitList = [...this.habitListBackup];
-		},
-		clearHandler() {
-			this.formData = { ...initData };
-		},
+		const formData = ref({
+			name: "Lo zhang",
+			phone: "090000",
+			date: "1999-01-12",
+			time: "05:30",
+			gender: "gentle",
+			habit: ["吃飯", "睡覺"],
+			labelList: ["快樂", "happy", "唷~"],
+			address: "深海的大鳳梨裡",
+			age: "18",
+			email: "",
+			password: "888888888",
+			feedback: 5,
+			remark: "快樂",
+			picture: null,
+		});
+		const habitList = ref(["吃飯", "睡覺", "打咚咚"]);
+		const genderList = ref(["gentle", "lady", "multiple"]);
+
+		let backup = { ...formData.value };
+		let habitListBackup = [...habitList.value];
+
+		const submitHandler = () => {
+			emit("updateCurrent", formData.value);
+			backup = { ...formData.value };
+			habitListBackup = [...habitList.value];
+		};
+		const resetHandler = () => {
+			formData.value = { ...backup };
+			habitList.value = [...habitListBackup];
+		};
+		const clearHandler = () => {
+			formData.value = { ...initData };
+		};
+
+		return {
+			formData,
+			backup,
+			genderList,
+			habitList,
+			habitListBackup,
+			submitHandler,
+			resetHandler,
+			clearHandler,
+		};
 	},
 };
 </script>
