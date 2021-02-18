@@ -7,7 +7,7 @@
 		<div v-if="isPickerOn" class="picker">
 			<div class="head">
 				<button @click="previousMonth" type="button">＜</button>
-				<p :textContent="`${year}-${numToString(month)}`"></p>
+				<p :textContent="`${year}-${numToString(month + 1)}`"></p>
 				<button @click="nextMonth" type="button">＞</button>
 			</div>
 			<div class="body">
@@ -33,14 +33,16 @@ export default {
 	setup(_props, { emit }) {
 		const weekList = ref(["Mon", "Tue", "Wed", "Thu", "fir", "Sat", "Sun"]);
 		const isPickerOn = ref(false);
-		let dayInstance = new Date();
+		const dayInstance = ref(new Date());
 
-		let date = dayInstance.getDate();
-		let month = dayInstance.getMonth();
-		let year = dayInstance.getFullYear();
-		let emptyAmount = dayInstance.getDay();
+		const date = computed(() => dayInstance.value.getDate());
+		const month = computed(() => dayInstance.value.getMonth());
+		const year = computed(() => dayInstance.value.getFullYear());
+		const emptyAmount = computed(() => dayInstance.value.getDay());
 
-		const dayOnThisMonth = computed(() => new Date(date, month, 0).getDate());
+		const dayOnThisMonth = computed(() =>
+			new Date(date.value, month.value + 1, 0).getDate()
+		);
 
 		const pickDate = (event) => {
 			const dateString =
@@ -48,15 +50,17 @@ export default {
 					? "0".concat(event.target.textContent)
 					: event.target.textContent;
 
-			const emitedData = `${year}-${numToString(month + 1)}-${dateString}`;
+			const emitedData = `${year.value}-${numToString(
+				month.value + 1
+			)}-${dateString}`;
 			emit("update:modelValue", emitedData);
 			isPickerOn.value = false;
 		};
 		const nextMonth = () => {
-			dayInstance = new Date(year, month + 1);
+			dayInstance.value = new Date(year.value, month.value + 1);
 		};
 		const previousMonth = () => {
-			dayInstance = new Date(year, month - 1);
+			dayInstance.value = new Date(year.value, month.value - 1);
 		};
 		const numToString = (num) => {
 			if (typeof num !== "number")
@@ -68,6 +72,7 @@ export default {
 			weekList,
 			isPickerOn,
 			date,
+			dayInstance,
 			month,
 			year,
 			emptyAmount,
