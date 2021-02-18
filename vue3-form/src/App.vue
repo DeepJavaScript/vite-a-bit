@@ -7,31 +7,26 @@
 </template>
 
 <script>
-// import { reactive } from "vue";
+import { ref, computed } from "vue";
 import vue3Form from "./components/form.vue";
-// import currentDataDisplay from "./components/currentDataDisplay.vue";
-
 export default {
-	data() {
-		return {
-			currentData: {},
+	setup() {
+		const currentData = ref({});
+		const displayData = computed(() =>
+			JSON.stringify(currentData.value).replace(new RegExp(",", "g"), ",\n")
+		);
+		const updateCurrent = (emitedData) => {
+			currentData.value = { ...emitedData };
 		};
-	},
-	computed: {
-		displayData() {
-			return JSON.stringify(this.currentData).replace(
-				new RegExp(",", "g"),
-				",\n"
-			);
-		},
+
+		return {
+			currentData,
+			displayData,
+			updateCurrent,
+		};
 	},
 	components: {
 		vue3Form,
-	},
-	methods: {
-		updateCurrent(emitedData) {
-			this.currentData = { ...emitedData };
-		},
 	},
 };
 </script>
