@@ -62,7 +62,7 @@ export default {
 			const emitedData = `${this.year}-${this.numToString(
 				this.month + 1
 			)}-${dateString}`;
-			this.$emit("update:modelValue", this.emitedData);
+			this.$emit("update:modelValue", emitedData);
 			this.isPickerOn = false;
 		},
 		nextMonth() {

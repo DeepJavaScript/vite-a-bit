@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import vueImg from '/src/assets/logo.png';
+import vueImg from "/src/assets/logo.png";
 export default {
 	props: ["modelValue"],
 	emits: ["update:modelValue"],
@@ -34,6 +34,9 @@ export default {
 
 				reader.readAsDataURL(event.target.files[0]);
 			}
+		},
+		reset() {
+			this.fileSouce = vueImg;
 		},
 	},
 };
