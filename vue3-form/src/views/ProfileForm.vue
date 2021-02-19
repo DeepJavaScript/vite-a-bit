@@ -31,20 +31,20 @@
       :options="optionsGender"
       v-model="user.gender"
     ></VRadio>
-    <VAddText v-model:options="optionsHobbies" required text="興趣+">
+    <VAddText
+      :options="optionsHobbies"
+      required
+      text="興趣+"
+      v-slot="{ allOptions }"
+    >
       <VCheckbox
         label="興趣"
-        :options="optionsHobbies"
+        :options="allOptions"
         name="hobbies"
         v-model="user.hobbies"
       ></VCheckbox>
     </VAddText>
-    <VAddText
-      :options="user.labels"
-      @update:options="user.labels = $event"
-      name="labels"
-      text="標籤+"
-    >
+    <VAddText v-model:options="user.labels" name="labels" text="標籤+">
       <VLabel label="標籤" v-model="user.labels"></VLabel>
     </VAddText>
     <VSelect label="棲息地" :options="optionsLocation" v-model="user.location">
