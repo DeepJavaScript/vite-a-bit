@@ -2,8 +2,14 @@
   <ProfileForm />
 </template>
 
-<script setup>
+<script>
 import ProfileForm from "./views/ProfileForm.vue";
+
+export default {
+  components: {
+    ProfileForm,
+  },
+};
 </script>
 
 <style>
