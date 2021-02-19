@@ -73,7 +73,7 @@
       type="range"
       name="range"
       min="1"
-      setp="1"
+      step="0.5"
       max="5"
       v-model="user.range"
     ></VInput>
