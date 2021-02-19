@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     text: {
       type: String,

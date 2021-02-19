@@ -23,6 +23,7 @@
 import VInput from "./v-input.vue";
 
 export default {
+  inheritAttrs: false,
   components: {
     VInput,
   },
