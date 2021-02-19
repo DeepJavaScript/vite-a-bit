@@ -13,5 +13,8 @@ export default defineConfig({
     alias: {
       '/@': pathResolve('src')
     }
+  },
+  build: {
+    outDir: 'titangene'
   }
 });
