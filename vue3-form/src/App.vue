@@ -41,9 +41,13 @@
         title="興趣"
         addText="加興趣"
         v-model:items="hobbies"
-        #default="{ items }"
+        #default="{ items: options }"
       >
-        <FormCheckboxGroup id="hobby" :options="items" v-model="user.hobbies" />
+        <FormCheckboxGroup
+          id="hobby"
+          :options="options"
+          v-model="user.hobbies"
+        />
       </FormAdder>
 
       <FormAdder
