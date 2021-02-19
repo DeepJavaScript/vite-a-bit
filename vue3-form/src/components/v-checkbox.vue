@@ -8,7 +8,7 @@
       <label
         ><input
           type="checkbox"
-          :value="item.toString()"
+          :value="item"
           v-model="value"
           :required="required"
         />{{ item }}</label
