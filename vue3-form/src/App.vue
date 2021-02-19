@@ -46,7 +46,16 @@
         <FormCheckboxGroup id="hobby" :options="items" v-model="user.hobbies" />
       </FormAdder>
 
-      <FormTag v-model:tags="user.tags" />
+      <FormAdder
+        title="標籤"
+        addText="加標籤"
+        v-model:items="user.tags"
+        #default="{ items: tags }"
+      >
+        <VTag v-for="tag in tags" :key="tag" closable @close="removeTag(tag)">
+          {{ tag }}
+        </VTag>
+      </FormAdder>
 
       <FormGroup label="棲息地" label-for="location">
         <FormSelect
@@ -91,9 +100,9 @@ import FormPassword from '/@/components/FormPassword.vue';
 import FormSelect from '/@/components/FormSelect.vue';
 import FormCheckboxGroup from '/@/components/FormCheckboxGroup.vue';
 import FormRadioGroup from '/@/components/FormRadioGroup.vue';
-import FormTag from '/@/components/FormTag.vue';
 import FormAdder from '/@/components/FormAdder.vue';
 import FormFile from '/@/components/FormFile.vue';
+import VTag from '/@/components/VTag.vue';
 
 import useUserForm from '/@/composables/useUserForm';
 import { generateFormOptions } from '/@/composables/useForm';
@@ -105,9 +114,9 @@ export default {
     FormSelect,
     FormCheckboxGroup,
     FormRadioGroup,
-    FormTag,
     FormAdder,
-    FormFile
+    FormFile,
+    VTag
   },
   setup() {
     const sexOptions = [
@@ -129,6 +138,10 @@ export default {
     };
     const { user, onSubmit, onReset } = useUserForm(defaultUserOptions);
 
+    function removeTag(tag) {
+      user.tags = user.tags.filter(item => item !== tag);
+    }
+
     return {
       sexOptions,
       locationOptions,
@@ -137,7 +150,8 @@ export default {
 
       user,
       onSubmit,
-      onReset
+      onReset,
+      removeTag
     };
   }
 };
