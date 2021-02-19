@@ -12,11 +12,11 @@
 export default {
   props: {
     text: {
-      typye: String,
+      type: String,
       default: "",
     },
     options: {
-      typye: Array,
+      type: Array,
       default: () => [""],
     },
   },

@@ -25,7 +25,7 @@ export default {
       default: "",
     },
     options: {
-      typye: Array,
+      type: Array,
       default: () => [
         {
           label: "",
