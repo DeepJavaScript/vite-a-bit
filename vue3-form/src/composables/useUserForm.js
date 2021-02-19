@@ -1,4 +1,4 @@
-import { reactive, toRefs, readonly } from 'vue';
+import { reactive, readonly, toRaw } from 'vue';
 
 export default function useUserForm(defaultOptions) {
   const initUser = readonly({
@@ -19,18 +19,18 @@ export default function useUserForm(defaultOptions) {
     ...defaultOptions
   });
 
-  const state = reactive({ user: { ...initUser } });
-  const { user } = toRefs(state);
+  const user = reactive({ ...initUser });
 
   function onSubmit() {
     console.log('onSubmit');
-    console.log(state.user);
+    console.log(toRaw(user));
   }
 
   function onReset() {
     console.log('onReset');
-    state.user = { ...initUser };
-    console.log(state.user);
+    // 不能用物件解構重新賦值，只能用 `Object.assign()` QQ
+    // user = { ...initUser };
+    Object.assign(user, initUser);
   }
 
   return {
