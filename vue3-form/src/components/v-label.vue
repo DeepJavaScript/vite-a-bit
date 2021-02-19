@@ -3,7 +3,7 @@
     <label>
       <span class="label-required" :class="{ required: required }">*</span>
       {{ label }}
-      <div class="label-tap" v-for="(label, index) in labels" :key="index">
+      <div class="label-tap" v-for="(label, index) in modelValue" :key="index">
         <span class="label-tab-text">
           {{ label }}
         </span>
@@ -20,13 +20,21 @@ export default {
       type: String,
       default: "",
     },
-    labels: {
+    modelValue: {
       type: Array,
-      default: () => [],
+      required: true,
     },
     required: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    remove(index) {
+      this.$emit("update:modelValue", [
+        ...this.modelValue.slice(0, index),
+        ...this.modelValue.slice(index + 1),
+      ]);
     },
   },
 };

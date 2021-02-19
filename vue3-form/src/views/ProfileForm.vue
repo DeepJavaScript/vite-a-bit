@@ -31,26 +31,21 @@
       :options="optionsGender"
       v-model="user.gender"
     ></VRadio>
-    <VAddText
-      v-slot="{ allOptions }"
-      required
-      :options="optionsHobby"
-      text="興趣+"
-    >
+    <VAddText v-model:options="optionsHobbies" required text="興趣+">
       <VCheckbox
         label="興趣"
-        :options="allOptions"
+        :options="optionsHobbies"
         name="hobbies"
         v-model="user.hobbies"
       ></VCheckbox>
     </VAddText>
     <VAddText
-      v-slot="{ allOptions }"
       :options="user.labels"
+      @update:options="user.labels = $event"
       name="labels"
       text="標籤+"
     >
-      <VLabel label="標籤" :labels="allOptions"></VLabel>
+      <VLabel label="標籤" v-model="user.labels"></VLabel>
     </VAddText>
     <VSelect label="棲息地" :options="optionsLocation" v-model="user.location">
       <option disabled :value="null">--</option>
@@ -121,6 +116,8 @@ export default {
   data() {
     return {
       user: {},
+      optionsHobbies: ["打 code", "看書", "跳 swing"],
+      optionslabels: [],
     };
   },
   created() {
@@ -130,9 +127,9 @@ export default {
     optionsGender() {
       return ["女", "男", "中"];
     },
-    optionsHobby() {
-      return ["打 code", "看書", "跳 swing"];
-    },
+    // optionsHobby() {
+    //   return ["打 code", "看書", "跳 swing"];
+    // },
     optionsLocation() {
       return ["高雄", "台南", "府城"];
     },
@@ -158,8 +155,9 @@ export default {
   },
   methods: {
     onReset() {
-      // document.form.photo.value = "";
-      this.user = this.initUser;
+      this.user = {
+        ...this.initUser,
+      };
     },
   },
 };

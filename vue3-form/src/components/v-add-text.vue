@@ -1,6 +1,6 @@
 <template>
   <div class="v-add-text">
-    <slot :allOptions="allOptions"></slot>
+    <slot></slot>
     <div class="controller">
       <input class="new-option-text" type="text" v-model="newOption" />
       <input type="button" @click.prevent="addOption" :value="text" />
@@ -23,21 +23,15 @@ export default {
   methods: {
     addOption() {
       if (this.newOption != null) {
-        this.myOptions = [...this.myOptions, this.newOption];
+        this.$emit("update:options", [...this.options, this.newOption]);
         this.newOption = null;
       }
     },
   },
   data() {
     return {
-      newOption: null,
-      myOptions: [],
+      newOption: "",
     };
-  },
-  computed: {
-    allOptions() {
-      return [...this.options, ...this.myOptions];
-    },
   },
 };
 </script>

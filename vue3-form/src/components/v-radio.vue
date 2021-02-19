@@ -1,9 +1,9 @@
 <template>
-  <div class="v-radio">
-    <label>
+  <fieldset class="v-radio">
+    <legend>
       <span class="label-required" :class="{ required: required }">*</span>
       {{ label }}
-    </label>
+    </legend>
     <span :key="index" v-for="(item, index) in options">
       <label
         ><input
@@ -14,7 +14,7 @@
         />{{ item }}</label
       >
     </span>
-  </div>
+  </fieldset>
 </template>
 
 <script>
