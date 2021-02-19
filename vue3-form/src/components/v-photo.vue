@@ -40,10 +40,11 @@ export default {
     };
   },
   updated() {
+    console.log("photo name", this.modelValue.name);
     if (this.modelValue.name === "") {
       // reset
       this.blob_url = "";
-      this.$refs.photo.value = null;
+      this.$refs.photo.value = "";
     }
   },
   methods: {
