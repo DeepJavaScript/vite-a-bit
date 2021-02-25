@@ -1,6 +1,6 @@
 <template>
 	<form class="v-form">
-		<formPicture v-model="formData.picture" />
+		<Picture v-model="formData.picture" />
 		<p>
 			<label for="name">name</label>
 			<input v-model="formData.name" id="name" type="text" />
@@ -32,7 +32,7 @@
 		</p>
 		<p>
 			<label>label</label>
-			<AddableTagList v-model="formData.labelList" />
+			<AddableTag v-model="formData.labelList" />
 		</p>
 		<p>
 			<label for="phone">phone</label>
@@ -48,7 +48,7 @@
 		</p>
 		<p>
 			<label>password</label>
-			<PasswordInput v-model="formData.password" />
+			<Password v-model="formData.password" />
 		</p>
 		<p>
 			<label for="feedback">feedback</label>
@@ -83,9 +83,10 @@ import { ref } from "vue";
 import DatePicker from "./formComponents/datePicker.vue";
 import Radio from "./formComponents/radio.vue";
 import AddableCheckbox from "./formComponents/addableCheckbox.vue";
-import PasswordInput from "./formComponents/password.vue";
-import AddableTagList from "./formComponents/addableTag.vue";
-import FormPicture from "./formComponents/picture.vue";
+import Password from "./formComponents/password.vue";
+import AddableTag from "./formComponents/addableTag.vue";
+import Picture from "./formComponents/picture.vue";
+import { useForm, useField } from "vee-validate";
 
 export default {
 	emits: ["updateCurrent"],
@@ -93,9 +94,9 @@ export default {
 		DatePicker,
 		Radio,
 		AddableCheckbox,
-		PasswordInput,
-		AddableTagList,
-		FormPicture,
+		Password,
+		AddableTag,
+		Picture,
 	},
 	setup(_props, { emit }) {
 		const initData = {
