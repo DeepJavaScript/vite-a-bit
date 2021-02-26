@@ -1,74 +1,67 @@
 <template>
 	<form class="v-form">
-		<Picture v-model="formData.picture" />
+		<!-- <Picture v-model="picture" /> -->
 		<p>
 			<label for="name">name</label>
-			<input v-model="formData.name" id="name" type="text" />
+			<input v-model="name" type="text" />
+			<span class="error-style">{{ nameError }}</span>
 		</p>
 		<p>
 			<label for="age">age</label>
-			<input v-model="formData.age" id="age" type="number" />
+			<input v-model="age" type="number" />
+			<span class="error-style">{{ ageError }}</span>
 		</p>
-		<DatePicker v-model="formData.date" />
+		<DatePicker v-model="date" /><span class="error-style">{{ dateError }}</span>
 		<p>
 			<label for="time">time</label>
-			<input v-model="formData.time" id="time" type="time" />
+			<input v-model="time" type="time" />
+			<span class="error-style">{{ timeError }}</span>
 		</p>
 		<p>
 			<label>gender</label>
-			<Radio
-				v-model="formData.gender"
-				:groupName="'gender'"
-				:options="genderList"
-			/>
+			<Radio v-model="gender" :groupName="'gender'" :options="genderList" />
+			<span class="error-style">{{ genderError }}</span>
 		</p>
 		<p>
 			<label>habit</label>
-			<AddableCheckbox
-				v-model:modelValue="formData.habit"
-				v-model:options="habitList"
-				:groupName="'habit'"
-			/>
+			<AddableCheckbox v-model:modelValue="habit" v-model:options="habitList" :groupName="'habit'" />
+			<span class="error-style">{{ habitError }}</span>
 		</p>
 		<p>
 			<label>label</label>
-			<AddableTag v-model="formData.labelList" />
+			<AddableTag v-model="labelList" />
+			<span class="error-style">{{ labelListError }}</span>
 		</p>
 		<p>
 			<label for="phone">phone</label>
-			<input v-model="formData.phone" id="phone" type="tel" />
+			<input v-model="phone" type="tel" />
+			<span class="error-style">{{ phoneError }}</span>
 		</p>
 		<p>
 			<label for="address">address</label>
-			<input v-model="formData.address" id="address" type="select" />
+			<input v-model="address" type="select" />
+			<span class="error-style">{{ addressError }}</span>
 		</p>
 		<p>
 			<label for="email">email</label>
-			<input v-model="formData.email" id="email" type="email" />
+			<input v-model="email" type="email" />
+			<span class="error-style">{{ emailError }}</span>
 		</p>
 		<p>
 			<label>password</label>
-			<Password v-model="formData.password" />
+			<Password v-model="password" />
+			<span class="error-style">{{ passwordError }}</span>
 		</p>
 		<p>
 			<label for="feedback">feedback</label>
-			<input
-				v-model="formData.feedback"
-				id="feedback"
-				min="0"
-				max="10"
-				type="range"
-			/>
-			<span :textContent="formData.feedback"></span>
+			<input v-model="feedback" min="0" max="10" type="range" />
+			<span :textContent="feedback"></span>
+			<span class="error-style">{{ feedbackError }}</span>
 		</p>
 		<p>
 			<label for="remark">remark</label>
-			<textarea
-				v-model="formData.remark"
-				id="remark"
-				cols="30"
-				rows="3"
-			></textarea>
+			<textarea v-model="remark" cols="30" rows="3"></textarea>
+			<span class="error-style">{{ remarkError }}</span>
 		</p>
 		<p>
 			<button type="button" @click="submitHandler">submit</button>
@@ -105,8 +98,8 @@ export default {
 			date: "",
 			time: "",
 			gender: "",
-			habit: ["吃飯", "睡覺"],
-			labelList: ["快樂", "happy", "唷~"],
+			habit: [],
+			labelList: [],
 			address: "",
 			age: "",
 			email: "",
@@ -115,7 +108,7 @@ export default {
 			remark: "",
 			picture: null,
 		};
-		const formData = ref({
+		const formData = {
 			name: "Lo zhang",
 			phone: "090000",
 			date: "1999-01-12",
@@ -130,35 +123,100 @@ export default {
 			feedback: 5,
 			remark: "快樂",
 			picture: null,
-		});
+		};
 		const habitList = ref(["吃飯", "睡覺", "打咚咚"]);
 		const genderList = ref(["gentle", "lady", "multiple"]);
-
-		let backup = { ...formData.value };
 		let habitListBackup = [...habitList.value];
 
-		const submitHandler = () => {
-			emit("updateCurrent", formData.value);
-			backup = { ...formData.value };
-			habitListBackup = [...habitList.value];
+		function requireValidate(value) {
+			console.log(value);
+			if (!value) {
+				return "this field is required";
+			}
+			return true;
+		}
+		const schema = {
+			name: requireValidate,
+			age: requireValidate,
+			date: requireValidate,
+			time: requireValidate,
+			gender: requireValidate,
+			habit: requireValidate,
+			labelList: requireValidate,
+			phone: requireValidate,
+			address: requireValidate,
+			email: requireValidate,
+			password: requireValidate,
+			feedback: requireValidate,
+			remark: requireValidate,
 		};
+
+		const { resetForm, setValues, handleSubmit } = useForm({
+			validationSchema: schema,
+			initialValues: formData,
+		});
+		const submitHandler = handleSubmit((value) => {
+			emit("updateCurrent", value);
+			habitListBackup = [...habitList.value];
+		});
 		const resetHandler = () => {
-			formData.value = { ...backup };
+			resetForm();
 			habitList.value = [...habitListBackup];
 		};
 		const clearHandler = () => {
-			formData.value = { ...initData };
+			setValues(initData);
+			habitList.value = [];
 		};
+
+		const { value: name, errorMessage: nameError } = useField("name");
+		const { value: age, errorMessage: ageError } = useField("age");
+		const { value: date, errorMessage: dateError } = useField("date");
+		const { value: time, errorMessage: timeError } = useField("time");
+		const { value: gender, errorMessage: genderError } = useField("gender");
+		const { value: habit, errorMessage: habitError } = useField("habit");
+		const { value: labelList, errorMessage: labelListError } = useField("labelList");
+		const { value: phone, errorMessage: phoneError } = useField("phone");
+		const { value: address, errorMessage: addressError } = useField("address");
+		const { value: email, errorMessage: emailError } = useField("email");
+		const { value: password, errorMessage: passwordError } = useField("password");
+		const { value: feedback, errorMessage: feedbackError } = useField("feedback");
+		const { value: remark, errorMessage: remarkError } = useField("remark");
 
 		return {
 			formData,
-			backup,
 			genderList,
 			habitList,
-			habitListBackup,
+
 			submitHandler,
 			resetHandler,
 			clearHandler,
+
+			name,
+			nameError,
+			age,
+			ageError,
+			date,
+			dateError,
+			time,
+			timeError,
+			gender,
+			genderError,
+			habit,
+			habitError,
+			labelList,
+			labelListError,
+			phone,
+			phoneError,
+			address,
+			addressError,
+			email,
+			emailError,
+			password,
+			passwordError,
+			feedback,
+			feedbackError,
+			remark,
+			remarkError,
 		};
 	},
 };
@@ -174,5 +232,8 @@ export default {
 			margin-right: 5px;
 		}
 	}
+}
+.error-style {
+	color: red;
 }
 </style>
