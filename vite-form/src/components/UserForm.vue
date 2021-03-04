@@ -8,28 +8,24 @@
       <label for="photo">大頭貼</label>
       <input
         type="file"
-        name="photo"
         id="photo"
         accept=".png,.jpg,.jpeg,.svg"
-        @input.prevent="setPhoto"
+        @input.prevent="handlePhoto"
       >
-        <!-- :value="userProfile.photoFile" -->
     </div>
     <div class="field">
       <label for="name">姓名</label>
       <input
         type="text"
-        name="name"
         id="name"
-        @change.prevent="setProfile({name: $event.target.value})"
         :value="userProfile.name"
+        @change.prevent="$emit('update:name', $event.target.value)"
       >
     </div>
     <div class="field">
       <label for="tel">電話</label>
       <input
         type="tel"
-        name="tel"
         id="tel"
         :value="userProfile.tel"
         @change.prevent="setProfile({tel: $event.target.value})"
@@ -39,50 +35,47 @@
       <label for="date">日期</label>
       <input
         type="date"
-        name="date"
         id="date"
         :value="userProfile.date"
-        @input.prevent="setProfile({date: $event.target.value})"
+        @change.prevent="setProfile({date: $event.target.value})"
       >
     </div>
     <div class="field">
       <label for="time">時間</label>
       <input
         type="time"
-        name="time"
         id="time"
         :value="userProfile.time"
-        @input.prevent="setProfile({time: $event.target.value})"
+        @change.prevent="setProfile({time: $event.target.value})"
       >
     </div>
     <div class="field">
-      <legend>興趣</legend>
-      <input type="text" @input.prevent="newInterest = $event.target.value">
-      <button type="button" @click="addInterestOption">加入</button>
-      <div v-for="item in interestsOptions" :key="item.value">
-        <input
-          type="checkbox"
-          :name="`interests-${item.value}`"
-          :id="`interests-${item.value}`"
-          :value="item.value"
-          :checked="isInterestChecked(item.value)"
-          @change.prevent="setInterests(item.value, $event.target.checked)"
-        >
-        <label for="interests-item-1">{{ item.name }}</label>
-      </div>
+      <ItemAddInput
+        :inputType="'text'"
+        :inputId="'interests'"
+        :labelText="'興趣'"
+        @valueInput="newInterest = $event"
+        @click="addInterestOption"
+      />
+    </div>
+    <div class="check-list">
+      <CheckItem
+        :list="userProfile.interests"
+        :interestsOptions="interestsOptions"
+        @check="handleInterests"
+      />
     </div>
     <div class="field">
-      <label for="tag">標籤</label>
-      <input
-        type="text"
-        name="tag"
-        id="tag"
-        @change.prevent="newTag = $event.target.value"
-      >
-      <button type="button" @click="setTags">加入</button>
-      <div class="tag-list">
-        <span v-for="(tag, index) in userProfile.tags" :key="'tag' + index">{{ tag }}</span>
-      </div>
+      <ItemAddInput
+        :inputType="'text'"
+        :inputId="'tag'"
+        :labelText="'標籤'"
+        @valueInput="newTag = $event"
+        @click="handleTagAdd"
+      />
+    </div>
+    <div class="tag-list">
+      <Tag :userProfileTags="userProfile.tags" @removeTag="handleTagRemove"/>
     </div>
     <div class="field">
       <label for="location">居住地</label>
@@ -100,7 +93,6 @@
       <label for="age">年齡</label>
       <input
         type="number"
-        name="age"
         id="age"
         :value="userProfile.age"
         @change.prevent="setProfile({age: $event.target.value})"
@@ -110,7 +102,6 @@
       <label for="email">e-mail</label>
       <input
         type="email"
-        name="email"
         id="email"
         :value="userProfile.email"
         @change.prevent="setProfile({email: $event.target.value})"
@@ -119,8 +110,7 @@
     <div class="field">
       <label for="password">密碼</label>
       <input
-        :type="passwordType"
-        name="password"
+        :type="passwordType ? 'password' : 'text'"
         id="password"
         :value="userProfile.password"
         @change.prevent="setProfile({password: $event.target.value})"
@@ -131,7 +121,6 @@
       <label for="evaluate">本表單的體驗（0-5 分）</label>
       <input
         type="range"
-        name="evaluate"
         id="evaluate"
         min="0"
         max="5"
@@ -142,7 +131,6 @@
     <div class="field">
       <label for="comment">備註</label>
       <textarea
-        name="comment"
         id="comment"
         cols="30"
         rows="3"
@@ -158,7 +146,17 @@
 </template>
 
 <script>
+import CheckItem from './FormComponents/CheckItem.vue';
+import Tag from './FormComponents/Tag.vue';
+import ItemAddInput from './FormComponents/ItemAddInput.vue';
+
 export default {
+  name: 'UserForm',
+  components: {
+    CheckItem,
+    Tag,
+    ItemAddInput
+  },
   props: {
     userProfile: {
       type: Object,
@@ -175,35 +173,19 @@ export default {
   },
   emits: [
     'update:userProfile',
-    // 'update:photoFile',
-    // 'update:name',
-    // 'update:tel',
-    // 'update:date',
-    // 'update:time',
-    // 'update:interest',
-    // 'update:location',
-    // 'update:age',
-    // 'update:email',
-    // 'update:password',
-    // 'update:evaluate',
-    // 'update:comment',
-    // 'update:tags',
-    // 'update:interests'
+    'update:name',
   ],
   data() {
     return {
       newTag: null,
-      interestsArray: [],
       newUserProfile: {},
       newInterest: null,
-      passwordType: 'password'
+      passwordType: true
     }
   },
   methods: {
-    isInterestChecked(interestValue) {
-      return this.userProfile.interests.some(interest =>  interest === interestValue);
-    },
     addInterestOption() {
+      console.log(this.newInterest);
       if (!this.newInterest) return;
       const newOption = {
         name: this.newInterest,
@@ -214,27 +196,35 @@ export default {
       this.$emit('update:interestsOptions', newOptionsArray);
     },
     switchPassword() {
-      if(this.passwordType === 'password') {
-        this.passwordType = 'text';
-      }
-      if(this.passwordType === 'text') {
-        this.passwordType = 'password';
-      }
+      this.passwordType = !this.passwordType;
     },
-    setPhoto(e) {
+    handlePhoto(e) {
       const photoURL = URL.createObjectURL(e.target.files[0]);
       this.setProfile({photoURL});
     },
-    setTags(payload) {
+    handleTagAdd() {
       if(!this.newTag) return;
       let newTagsArray = this.userProfile.tags;
       newTagsArray.push(this.newTag);
       this.setProfile({tags: newTagsArray});
     },
-    setInterests(interestValue, isChecked) {
-      this.interestArray = this.userProfile.interests;
-      this.interestArray.push(interestValue);
-      this.setProfile({interests: this.interestArray});
+    handleTagRemove(tagName) {
+      let newTagsArray = this.userProfile.tags;
+      const tagIndex = newTagsArray.findIndex(item => item === tagName);
+      newTagsArray.splice(tagIndex, 1);
+      this.setProfile({tags: newTagsArray});
+    },
+    handleInterests({ interestValue, isChecked }) {
+      console.log(interestValue, isChecked);
+      let newInterestArray = this.userProfile.interests;
+      if (isChecked) {
+        newInterestArray.push(interestValue);
+      } else {
+        const interestIndex = newInterestArray.findIndex(item => item === interestValue);
+        newInterestArray.splice(interestIndex, 1);
+      }
+      console.log(newInterestArray);
+      this.setProfile({interests: newInterestArray});
     },
     setProfile(newField) {
       console.log('newField', newField);
@@ -280,14 +270,8 @@ form {
   }
 }
 
-.tag {
-  &-list {
-    span {
-      margin: 0 3px;
-      padding: 2px;
-      background: green;
-      color: #fff;
-    }
-  }
+.check-list, .tag-list {
+  text-align: left;
+  margin-bottom: 10px;
 }
 </style>

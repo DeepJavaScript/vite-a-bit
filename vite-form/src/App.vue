@@ -6,6 +6,7 @@
     v-model:userProfile="userProfile"
     v-model:interestsOptions="interestsOptions"
 
+    @update:name="userProfile.name = $event"
     @onSubmit="onSubmit"
     @onReset="onReset"
   />
@@ -84,6 +85,9 @@ export default {
     }
   },
   methods: {
+    print(val) {
+      console.log(val);
+    },
     onSubmit() {
       this.popoverIsShow = true;
     },
