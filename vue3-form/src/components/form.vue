@@ -172,20 +172,14 @@ export default {
 			habitList.value = [];
 		};
 
-		const { value: name, errorMessage: nameError } = useField("name");
-		const { value: age, errorMessage: ageError } = useField("age");
-		const { value: date, errorMessage: dateError } = useField("date");
-		const { value: time, errorMessage: timeError } = useField("time");
-		const { value: gender, errorMessage: genderError } = useField("gender");
-		const { value: habit, errorMessage: habitError } = useField("habit");
-		const { value: labelList, errorMessage: labelListError } = useField("labelList");
-		const { value: phone, errorMessage: phoneError } = useField("phone");
-		const { value: address, errorMessage: addressError } = useField("address");
-		const { value: email, errorMessage: emailError } = useField("email");
-		const { value: password, errorMessage: passwordError } = useField("password");
-		const { value: feedback, errorMessage: feedbackError } = useField("feedback");
-		const { value: remark, errorMessage: remarkError } = useField("remark");
-		const { value: picture, errorMessage: pictureError } = useField("picture");
+		const fields = Object.keys(initData).reduce((result, key) => {
+			const { value, errorMessage } = useField(key);
+			return {
+				...result,
+				[`${key}Error`]: errorMessage,
+				[key]: value,
+			};
+		}, {});
 
 		return {
 			formData,
@@ -196,34 +190,7 @@ export default {
 			resetHandler,
 			clearHandler,
 
-			name,
-			nameError,
-			age,
-			ageError,
-			date,
-			dateError,
-			time,
-			timeError,
-			gender,
-			genderError,
-			habit,
-			habitError,
-			labelList,
-			labelListError,
-			phone,
-			phoneError,
-			address,
-			addressError,
-			email,
-			emailError,
-			password,
-			passwordError,
-			feedback,
-			feedbackError,
-			remark,
-			remarkError,
-			picture,
-			pictureError,
+			...fields,
 		};
 	},
 };
