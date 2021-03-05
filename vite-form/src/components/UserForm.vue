@@ -1,5 +1,5 @@
 <template>
-  <form action="" @submit.prevent="$emit('onSubmit')" @reset.prevent="$emit('onReset')">
+  <Form action="" @submit.prevent="$emit('onSubmit')" @reset.prevent="$emit('onReset')">
     <h1>填一下ㄅ！</h1>
     <div class="field photo">
       <div>
@@ -14,43 +14,45 @@
       >
     </div>
     <div class="field">
-      <label for="name">姓名</label>
-      <input
-        type="text"
-        id="name"
+      <BasicInput
+        :inputType="'text'"
         :value="userProfile.name"
-        @change.prevent="$emit('update:name', $event.target.value)"
-      >
+        :labelText="'姓名'"
+        :dataProperty="'name'"
+        :fieldName="'name'"
+        @setProfile="setProfile"
+      />
     </div>
     <div class="field">
-      <label for="tel">電話</label>
-      <input
-        type="tel"
-        id="tel"
+      <BasicInput
+        :inputType="'tel'"
         :value="userProfile.tel"
-        @change.prevent="setProfile({tel: $event.target.value})"
-      >
+        :labelText="'電話'"
+        :dataProperty="'tel'"
+        :fieldName="'tel'"
+        @setProfile="setProfile"
+      />
     </div>
     <div class="field">
-      <label for="date">日期</label>
-      <input
-        type="date"
-        id="date"
+      <BasicInput
+        :inputType="'date'"
         :value="userProfile.date"
-        @change.prevent="setProfile({date: $event.target.value})"
-      >
+        :labelText="'日期'"
+        :dataProperty="'date'"
+        @setProfile="setProfile"
+      />
     </div>
     <div class="field">
-      <label for="time">時間</label>
-      <input
-        type="time"
-        id="time"
+      <BasicInput
+        :inputType="'time'"
         :value="userProfile.time"
-        @change.prevent="setProfile({time: $event.target.value})"
-      >
+        :labelText="'時間'"
+        :dataProperty="'time'"
+        @setProfile="setProfile"
+      />
     </div>
     <div class="field">
-      <ItemAddInput
+      <AddingInput
         :inputType="'text'"
         :inputId="'interests'"
         :labelText="'興趣'"
@@ -66,7 +68,7 @@
       />
     </div>
     <div class="field">
-      <ItemAddInput
+      <AddingInput
         :inputType="'text'"
         :inputId="'tag'"
         :labelText="'標籤'"
@@ -75,7 +77,10 @@
       />
     </div>
     <div class="tag-list">
-      <Tag :userProfileTags="userProfile.tags" @removeTag="handleTagRemove"/>
+      <Tag
+        :userProfileTags="userProfile.tags"
+        @removeTag="handleTagRemove"
+      />
     </div>
     <div class="field">
       <label for="location">居住地</label>
@@ -90,32 +95,28 @@
       </select>
     </div>
     <div class="field">
-      <label for="age">年齡</label>
-      <input
-        type="number"
-        id="age"
+      <BasicInput
+        :inputType="'number'"
         :value="userProfile.age"
-        @change.prevent="setProfile({age: $event.target.value})"
-      >
+        :labelText="'年齡'"
+        :dataProperty="'age'"
+        @setProfile="setProfile"
+      />
     </div>
     <div class="field">
-      <label for="email">e-mail</label>
-      <input
-        type="email"
-        id="email"
+      <BasicInput
+        :inputType="'email'"
         :value="userProfile.email"
-        @change.prevent="setProfile({email: $event.target.value})"
-      >
+        :labelText="'e-mail'"
+        :dataProperty="'email'"
+        @setProfile="setProfile"
+      />
     </div>
     <div class="field">
-      <label for="password">密碼</label>
-      <input
-        :type="passwordType ? 'password' : 'text'"
-        id="password"
-        :value="userProfile.password"
-        @change.prevent="setProfile({password: $event.target.value})"
-      >
-      <button type="button" @click="switchPassword">切換明碼/密碼</button>
+      <PasswordInput
+        :password="userProfile.password"
+        @setProfile="setProfile($event)"
+      />
     </div>
     <div class="field">
       <label for="evaluate">本表單的體驗（0-5 分）</label>
@@ -142,20 +143,26 @@
       <button type="submit">確認</button>
       <button type="reset">取消重填</button>
     </div>
-  </form>
+  </Form>
 </template>
 
 <script>
+import { Form } from 'vee-validate';
+import BasicInput from './FormComponents/BasicInput.vue'
 import CheckItem from './FormComponents/CheckItem.vue';
 import Tag from './FormComponents/Tag.vue';
-import ItemAddInput from './FormComponents/ItemAddInput.vue';
+import AddingInput from './FormComponents/AddingInput.vue';
+import PasswordInput from './FormComponents/PasswordInput.vue';
 
 export default {
   name: 'UserForm',
   components: {
+    Form,
+    BasicInput,
     CheckItem,
     Tag,
-    ItemAddInput
+    AddingInput,
+    PasswordInput
   },
   props: {
     userProfile: {
@@ -179,8 +186,7 @@ export default {
     return {
       newTag: null,
       newUserProfile: {},
-      newInterest: null,
-      passwordType: true
+      newInterest: null
     }
   },
   methods: {
@@ -194,9 +200,6 @@ export default {
       let newOptionsArray = this.interestsOptions;
       newOptionsArray.push(newOption);
       this.$emit('update:interestsOptions', newOptionsArray);
-    },
-    switchPassword() {
-      this.passwordType = !this.passwordType;
     },
     handlePhoto(e) {
       const photoURL = URL.createObjectURL(e.target.files[0]);
@@ -273,5 +276,11 @@ form {
 .check-list, .tag-list {
   text-align: left;
   margin-bottom: 10px;
+}
+
+.validation-message {
+  display: block;
+  color: red;
+  margin-left: 5px;
 }
 </style>

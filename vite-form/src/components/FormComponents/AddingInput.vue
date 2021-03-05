@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'ItemAddInput',
+  name: 'AddingInput',
   props: {
     inputType: {
       type: String,

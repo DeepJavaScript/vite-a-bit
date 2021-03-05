@@ -1,5 +1,7 @@
 <template>
-  <span v-for="(tag, index) in userProfileTags" :key="'tag' + index">{{ tag }}<button @click.prevent="$emit('removeTag', tag)">x</button></span>
+  <span v-for="(tag, index) in userProfileTags" :key="'tag' + index">{{ tag }}
+    <button @click.prevent="$emit('removeTag', tag)">x</button>
+  </span>
 </template>
 
 <script>
