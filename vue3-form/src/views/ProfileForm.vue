@@ -1,6 +1,6 @@
 <template>
   <h1>表單</h1>
-  <form id="form" action="" @reset="onReset">
+  <Form id="form" action="" @submit.prevent="onSubmit" @reset.prevent="onReset">
     <VPhoto
       label="上傳照片"
       type="file"
@@ -14,6 +14,7 @@
       type="text"
       name="name"
       v-model="user.name"
+      :rules="isRequired"
       required
     ></VInput>
     <VInput
@@ -89,7 +90,7 @@
     </div>
     <input type="submit" value="submit" />
     <input type="reset" value="reset" />
-  </form>
+  </Form>
 </template>
 
 <script>
@@ -101,6 +102,8 @@ import VAddText from "../components/v-add-text.vue";
 import VLabel from "../components/v-label.vue";
 import VSelect from "../components/v-select.vue";
 import VPassword from "../components/v-password.vue";
+import { Form } from "vee-validate";
+// import { email, password } from "./utility/rules";
 
 export default {
   components: {
@@ -112,12 +115,14 @@ export default {
     VAddText,
     VSelect,
     VPassword,
+    Form,
   },
   data() {
     return {
       user: {},
       optionsHobbies: ["打 code", "看書", "跳 swing"],
       optionslabels: [],
+      // simpleSchema: { email, password },
     };
   },
   created() {
@@ -154,6 +159,17 @@ export default {
     },
   },
   methods: {
+    // Validator function
+    isRequired(value) {
+      console.log(value);
+      if (!value) {
+        return "This field is required";
+      }
+      return true;
+    },
+    onSubmit() {
+      console.lgo(this.user);
+    },
     onReset() {
       this.user = {
         ...this.initUser,
