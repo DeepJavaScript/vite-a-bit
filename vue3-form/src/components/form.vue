@@ -1,6 +1,7 @@
 <template>
 	<form class="v-form">
-		<!-- <Picture v-model="picture" /> -->
+		<Picture v-model="picture" />
+		<span class="error-style">{{ pictureError }}</span>
 		<p>
 			<label for="name">name</label>
 			<input v-model="name" type="text" />
@@ -118,7 +119,7 @@ export default {
 			labelList: ["快樂", "happy", "唷~"],
 			address: "深海的大鳳梨裡",
 			age: "18",
-			email: "",
+			email: "g100@gamil.com",
 			password: "888888888",
 			feedback: 5,
 			remark: "快樂",
@@ -135,7 +136,7 @@ export default {
 			}
 			return true;
 		}
-		const schema = {
+		const validationSchema = {
 			name: requireValidate,
 			age: requireValidate,
 			date: requireValidate,
@@ -149,15 +150,18 @@ export default {
 			password: requireValidate,
 			feedback: requireValidate,
 			remark: requireValidate,
+			picture: requireValidate,
 		};
 
 		const { resetForm, setValues, handleSubmit } = useForm({
-			validationSchema: schema,
+			validationSchema,
 			initialValues: formData,
 		});
 		const submitHandler = handleSubmit((value) => {
+			console.log(value);
 			emit("updateCurrent", value);
 			habitListBackup = [...habitList.value];
+			console.log(picture);
 		});
 		const resetHandler = () => {
 			resetForm();
@@ -181,6 +185,7 @@ export default {
 		const { value: password, errorMessage: passwordError } = useField("password");
 		const { value: feedback, errorMessage: feedbackError } = useField("feedback");
 		const { value: remark, errorMessage: remarkError } = useField("remark");
+		const { value: picture, errorMessage: pictureError } = useField("picture");
 
 		return {
 			formData,
@@ -217,6 +222,8 @@ export default {
 			feedbackError,
 			remark,
 			remarkError,
+			picture,
+			pictureError,
 		};
 	},
 };
