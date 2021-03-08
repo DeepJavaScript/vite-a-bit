@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import MyForm from './components/MyForm.vue';
+import MyForm from './views/MyForm.vue';
 </script>
 
 <style>

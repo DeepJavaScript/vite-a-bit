@@ -93,6 +93,21 @@
       <textarea form="myform" rows="3" id="comment" name="comment"></textarea>
     </p>
     <p>
+      <label for="photo">照片</label>
+      <input
+        type="file"
+        id="photo"
+        name="photo"
+        accept="image/*"
+        multiple
+        @change="onPhotoChange"
+      />
+    </p>
+    <p>
+      <label>預覽</label>
+      <img v-for="(photo, index) of photos" :key="index" :src="photo.url" />
+    </p>
+    <p>
       <input type="reset" value="Reset" />
       <input type="submit" value="Submit" />
     </p>
@@ -108,6 +123,8 @@ export default {
       tags: [],
       newTag: "",
       isPasswordShown: false,
+      photo: null,
+      photos: [],
     };
   },
   methods: {
@@ -121,6 +138,14 @@ export default {
     },
     removeTag(index) {
       this.tags.splice(index, 1);
+    },
+    onPhotoChange(event) {
+      const files = [...event.target.files];
+      this.photos = files.map((file) => {
+        return {
+          url: URL.createObjectURL(file),
+        };
+      });
     },
   },
 };
