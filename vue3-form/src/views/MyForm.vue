@@ -1,150 +1,138 @@
 <template>
-  <pre>
-    {{ userData }}
-  </pre>
-  <form id="myform" action="" @reset.prevent="onReset" @submit.prevent="onSubmit">
-    <p>
-      <label for="name">名字：</label>
-      <input v-model="userData.name" type="text" id="name" name="name" />
-    </p>
-    <p>
-      <label for="tel">電話</label>
-      <input v-model="userData.tel" type="tel" id="tel" name="tel" />
-    </p>
-    <p>
-      <label for="date">日期：</label>
-      <input v-model="userData.date" type="date" id="date" name="date" />
-    </p>
-    <p>
-      <label for="time">時間：</label>
-      <input v-model="userData.time" type="time" id="time" name="time" />
-    </p>
-    <p>
-      性別：
-      <input v-model="userData.gender" type="radio" id="male" name="gender" value="male" checked />
-      <label for="male">生理男</label>
+  <form
+    id="myform"
+    action=""
+    @reset.prevent="onReset"
+    @submit.prevent="onSubmit"
+  >
+    <v-input
+      v-model="userData.name"
+      inputType="text"
+      label="名字"
+      name="name"
+    />
+    <v-input v-model="userData.tel" inputType="tel" label="電話" name="tel" />
+    <v-input
+      v-model="userData.date"
+      inputType="date"
+      label="日期"
+      name="date"
+    />
+    <v-input
+      v-model="userData.time"
+      inputType="time"
+      label="時間"
+      name="time"
+    />
+    <v-radios
+      v-model="userData.gender"
+      label="性別"
+      name="gender"
+      :options="[
+        { label: '生理男', value: 'male' },
+        { label: '生理女', value: 'female' },
+        { label: '多元', value: 'others' },
+      ]"
+    />
+    <v-addable-checkbox
+      v-model="userData.interests"
+      v-model:options="interestOptions"
+      label="興趣"
+      buttonLabel="新增興趣"
+      name="interests"
+    />
+    <v-tags v-model="userData.tags" label="標籤" buttonLabel="新增標籤" />
 
-      <input v-model="userData.gender" type="radio" id="female" name="gender" value="female" />
-      <label for="female">生理女</label>
-
-      <input v-model="userData.gender" type="radio" id="custom" name="gender" value="custom" />
-      <label for="custom">多元</label>
-    </p>
-
-    <label for="interests">興趣：</label>
-    <div v-for="(interestOption, index) in interestOptions" :key="index">
-      <input
-        v-model="userData.interests"
-        type="checkbox"
-        :id="interestOption"
-        :value="interestOption"
-        name="interests"
-      />
-      <label :for="interestOption">{{ interestOption }}</label>
-    </div>
-
-    <input type="text" v-model="newInterest" />
-    <button type="button" @click="addInterestOption">新增興趣</button>
-
-    <p>
-      <span v-for="(tag, index) of userData.tags" :key="index">
-        &nbsp;
-        <span>{{ tag }}</span>
-        <span @click="removeTag(index)">x</span>
-        &nbsp;
-      </span>
-
-      <input type="text" v-model="newTag" />
-      <button type="button" @click="addTag">+</button>
-    </p>
-    <p>
-      <label for="location">棲息地：</label>
-      <select v-model="userData.location" id="location" name="residence">
-        <option value="" disabled>請選擇</option>
-        <option value="tainan">台南</option>
-        <option value="taipei">台北</option>
-        <option value="other">其他</option>
-      </select>
-    </p>
-    <p>
-      <label for="age">年齡：</label>
-      <input v-model="userData.age" type="number" id="age" name="age" />
-    </p>
-    <p>
-      <label for="email">Email：</label>
-      <input v-model="userData.email" type="email" id="email" name="email" />
-    </p>
-    <p>
-      <label for="password">Password：</label>
-      <input
-        v-model="userData.password"
-        :type="isPasswordShown ? 'text' : 'password'"
-        id="password"
-        name="password"
-      />
-    </p>
-
-    <p>
-      <input type="checkbox" id="passwordSwitch" v-model="isPasswordShown" />
-      <label for="passwordSwitch">看明碼</label>
-    </p>
-
-    <p>
-      <label for="feeling">體驗感受</label>
-      <input v-model="userData.feeling" type="range" id="feeling" name="feeling" min="1" max="3" />
-    </p>
+    <v-select
+      v-model="userData.location"
+      label="居住地"
+      name="residence"
+      :options="[
+        { label: '台南', value: 'Tainan' },
+        { label: '台北', value: 'Taipei' },
+        { label: '其他地區', value: 'Others' },
+      ]"
+    />
+    <v-input
+      v-model="userData.age"
+      inputType="number"
+      label="年齡"
+      name="age"
+    />
+    <v-input
+      v-model="userData.email"
+      inputType="email"
+      label="Email"
+      name="email"
+    />
+    <v-password v-model="userData.password" name="password" label="Password" />
+    <v-input
+      v-model="userData.feeling"
+      inputType="range"
+      label="體驗分數"
+      name="feeling"
+      mix="1"
+      max="10"
+    />
     <p>
       <label for="comment">備註</label>
-      <textarea v-model="userData.comment" form="myform" rows="3" id="comment" name="comment"></textarea>
+      <textarea
+        v-model="userData.comment"
+        form="myform"
+        rows="3"
+        id="comment"
+        name="comment"
+      ></textarea>
     </p>
-    <p>
-      <label for="photo">照片</label>
-      <input
-        type="file"
-        id="photo"
-        name="photo"
-        accept="image/*"
-        multiple
-        @change="onPhotoChange"
-      />
-    </p>
-    <p>
-      <label>預覽</label>
-      <img v-for="(photo, index) of userData.photos" :key="index" :src="photo.url" />
-    </p>
+    <v-file-image
+      v-model="userData.photos"
+      label="照片"
+      name="photo"
+      :multipleImage="true"
+      :imagePreview="true"
+    />
     <p>
       <input type="reset" value="Reset" />
       <input type="submit" value="Submit" />
     </p>
   </form>
+
+  <pre>{{ userData }}</pre>
 </template>
 
 <script>
+import VAddableCheckbox from "../components/v-addable-checkbox.vue";
+import vCheckboxes from "../components/v-checkboxes.vue";
+import VFileImage from "../components/v-file-image.vue";
+import vInput from "../components/v-input.vue";
+import vPassword from "../components/v-password.vue";
+import vRadios from "../components/v-radios.vue";
+import VSelect from "../components/v-select.vue";
+import VTags from "../components/v-tags.vue";
+
 export default {
+  components: {
+    vInput,
+    vRadios,
+    vCheckboxes,
+    VAddableCheckbox,
+    VTags,
+    VSelect,
+    vPassword,
+    VFileImage,
+  },
   data() {
     return {
       userData: {},
       interestOptions: ["寫程式", "看電影"],
       newInterest: "",
       newTag: "",
-      isPasswordShown: false,
     };
   },
   created() {
     this.onReset();
   },
   methods: {
-    addInterestOption() {
-      this.interestOptions.push(this.newInterest);
-      this.newInterest = "";
-    },
-    addTag() {
-      this.userData.tags.push(this.newTag);
-      this.newTag = "";
-    },
-    removeTag(index) {
-      this.userData.tags.splice(index, 1);
-    },
     onPhotoChange(event) {
       const files = [...event.target.files];
       this.userData.photos = files.map((file) => {
@@ -160,7 +148,7 @@ export default {
   computed: {
     initialData() {
       return {
-        name: 'louis',
+        name: "louis",
         tel: null,
         date: null,
         time: null,
