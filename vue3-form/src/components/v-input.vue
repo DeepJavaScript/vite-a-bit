@@ -5,13 +5,14 @@
         <span class="label-required" :class="{ required: required }">*</span
         >{{ label }}
       </div>
-      <Field
-        as="input"
-        v-bind="$attrs"
-        :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
-      />
-      <span v-if="$attrs.type === 'range'">{{ modelValue }}</span>
+      <Field v-bind="$attrs" v-slot="{ field }">
+        <input
+          v-bind="{ ...field, ...$attrs }"
+          :value="modelValue"
+          @input="$emit('update:modelValue', $event.target.value)"
+        />
+        <span v-if="$attrs.type === 'range'">{{ modelValue }}</span>
+      </Field>
       <div>
         <ErrorMessage class="error-message" v-bind="$attrs"></ErrorMessage>
       </div>
@@ -42,8 +43,6 @@ export default {
       default: false,
     },
   },
-  // methods: {
-  // },
 };
 </script>
 

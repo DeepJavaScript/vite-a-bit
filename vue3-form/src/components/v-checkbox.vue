@@ -4,22 +4,32 @@
       <span class="label-required" :class="{ required: required }">*</span>
       {{ label }}</label
     >
-    <span :key="index" v-for="(item, index) in options">
-      <label
-        ><input
+    <label :key="index" v-for="(item, index) in options">
+      <Field v-bind="$attrs" v-slot="{ field }">
+        <input
+          v-bind="{ ...field, ...$attrs }"
           type="checkbox"
           :value="item"
           v-model="value"
-          :required="required"
-        />{{ item }}</label
-      >
-    </span>
+        />
+      </Field>
+      <!-- <Field v-bind="$attrs" type="checkbox" :value="item" v-model="value" /> -->
+      {{ item }}
+    </label>
+    <div>
+      <ErrorMessage class="error-message" v-bind="$attrs"></ErrorMessage>
+    </div>
   </div>
 </template>
 
 <script>
+import { Field, ErrorMessage } from "vee-validate";
 export default {
   inheritAttrs: false,
+  components: {
+    Field,
+    ErrorMessage,
+  },
   props: {
     label: {
       type: String,
@@ -59,6 +69,9 @@ export default {
 <style lang="scss" scoped>
 .label-required {
   opacity: 0;
+}
+.error-message {
+  color: red;
 }
 .required {
   color: red;

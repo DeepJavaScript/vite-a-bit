@@ -1,5 +1,8 @@
 <template>
   <h1>表單</h1>
+  <div class="right">
+    <pre>{{ user }}</pre>
+  </div>
   <Form id="form" action="" @submit.prevent="onSubmit" @reset.prevent="onReset">
     <VPhoto
       label="上傳照片"
@@ -22,14 +25,28 @@
       placeholder="0921026229"
       type="tel"
       name="phone"
-      required
+      :rules="isRequired"
       v-model="user.phone"
     ></VInput>
-    <VInput label="日期" type="date" name="date" v-model="user.date"></VInput>
-    <VInput label="時間" type="time" name="time" v-model="user.time"></VInput>
+    <VInput
+      label="日期"
+      type="date"
+      name="date"
+      :rules="isRequired"
+      v-model="user.date"
+    ></VInput>
+    <VInput
+      label="時間"
+      type="time"
+      name="time"
+      :rules="isRequired"
+      v-model="user.time"
+    ></VInput>
     <VRadio
       label="性別"
+      name="gender"
       :options="optionsGender"
+      :rules="isRequired"
       v-model="user.gender"
     ></VRadio>
     <VAddText
@@ -43,12 +60,19 @@
         :options="allOptions"
         name="hobbies"
         v-model="user.hobbies"
+        :rules="isRequired"
       ></VCheckbox>
     </VAddText>
     <VAddText v-model:options="user.labels" name="labels" text="標籤+">
       <VLabel label="標籤" v-model="user.labels"></VLabel>
     </VAddText>
-    <VSelect label="棲息地" :options="optionsLocation" v-model="user.location">
+    <VSelect
+      name="location"
+      label="棲息地"
+      :options="optionsLocation"
+      :rules="isRequired"
+      v-model="user.location"
+    >
       <option disabled :value="null">--</option>
     </VSelect>
     <VInput
@@ -58,7 +82,7 @@
       name="age"
       min="0"
       v-model.number="user.age"
-      required
+      :rules="isRequired"
     ></VInput>
     <VInput
       label="e-mail"
@@ -67,8 +91,13 @@
       name="email"
       autocomplete="username"
       v-model="user.email"
+      :rules="isRequired"
     ></VInput>
-    <VPassword label="密碼" v-model="user.password"></VPassword>
+    <VPassword
+      label="密碼"
+      v-model="user.password"
+      :rules="isRequired"
+    ></VPassword>
     <VInput
       label="最近心情"
       type="range"
@@ -77,16 +106,27 @@
       step="0.5"
       max="5"
       v-model="user.range"
+      :rules="isRequired"
     ></VInput>
     <div>
       <label> 備註 </label><br />
-      <textarea
-        name=""
-        id=""
-        cols="30"
-        rows="3"
+      <Field
+        name="comment"
         v-model="user.multi_line_text"
-      ></textarea>
+        :rules="isRequired"
+        v-slot="{ field }"
+      >
+        <textarea
+          v-bind="{ ...field, ...$attrs }"
+          id=""
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+      </Field>
+      <div>
+        <ErrorMessage name="comment" class="error-message"></ErrorMessage>
+      </div>
     </div>
     <input type="submit" value="submit" />
     <input type="reset" value="reset" />
@@ -102,7 +142,7 @@ import VAddText from "../components/v-add-text.vue";
 import VLabel from "../components/v-label.vue";
 import VSelect from "../components/v-select.vue";
 import VPassword from "../components/v-password.vue";
-import { Form } from "vee-validate";
+import { Form, Field, ErrorMessage } from "vee-validate";
 // import { email, password } from "./utility/rules";
 
 export default {
@@ -116,6 +156,8 @@ export default {
     VSelect,
     VPassword,
     Form,
+    Field,
+    ErrorMessage,
   },
   data() {
     return {
@@ -161,9 +203,8 @@ export default {
   methods: {
     // Validator function
     isRequired(value) {
-      console.log(value);
       if (!value) {
-        return "This field is required";
+        return "不可以跳過";
       }
       return true;
     },
@@ -182,5 +223,12 @@ export default {
 <style scoped>
 a {
   color: #42b983;
+}
+.right {
+  float: right;
+  width: 50%;
+}
+.error-message {
+  color: red;
 }
 </style>

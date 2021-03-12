@@ -3,24 +3,39 @@
     <label>
       <span class="label-required" :class="{ required: required }">*</span>
       {{ label }}
-      <select
-        name="location"
-        :value="modelValue"
-        :required="required"
-        @change="$emit('update:modelValue', $event.target.value)"
-      >
-        <slot></slot>
-        <option v-for="(option, index) in options" :key="index" :value="option">
-          {{ option }}
-        </option>
-      </select>
+      <Field v-bind="$attrs" v-slot="{ field }">
+        <select
+          v-bind="{ ...field, ...$attrs }"
+          name="location"
+          :value="modelValue"
+          @change="$emit('update:modelValue', $event.target.value)"
+        >
+          <slot></slot>
+          <option
+            v-for="(option, index) in options"
+            :key="index"
+            :value="option"
+          >
+            {{ option }}
+          </option>
+        </select>
+      </Field>
     </label>
+    <div>
+      <ErrorMessage class="error-message" v-bind="$attrs"></ErrorMessage>
+    </div>
   </div>
 </template>
 
 <script>
+import { Field, ErrorMessage } from "vee-validate";
+
 export default {
   inheritAttrs: false,
+  components: {
+    Field,
+    ErrorMessage,
+  },
   props: {
     label: {
       type: String,
@@ -52,5 +67,8 @@ export default {
 }
 select {
   width: 11em;
+}
+.error-message {
+  color: red;
 }
 </style>
