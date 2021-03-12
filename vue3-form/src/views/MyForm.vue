@@ -1,15 +1,11 @@
 <template>
-  <form
-    id="myform"
-    action=""
-    @reset.prevent="onReset"
-    @submit.prevent="onSubmit"
-  >
+  <ValidateForm id="myForm" @reset="onReset" @submit="onSubmit">
     <v-input
       v-model="userData.name"
       inputType="text"
       label="名字"
       name="name"
+      :isRequired="true"
     />
     <v-input v-model="userData.tel" inputType="tel" label="電話" name="tel" />
     <v-input
@@ -28,6 +24,7 @@
       v-model="userData.gender"
       label="性別"
       name="gender"
+      :isRequired="true"
       :options="[
         { label: '生理男', value: 'male' },
         { label: '生理女', value: 'female' },
@@ -40,6 +37,7 @@
       label="興趣"
       buttonLabel="新增興趣"
       name="interests"
+      :isRequired="true"
     />
     <v-tags v-model="userData.tags" label="標籤" buttonLabel="新增標籤" />
 
@@ -78,7 +76,7 @@
       <label for="comment">備註</label>
       <textarea
         v-model="userData.comment"
-        form="myform"
+        form="myForm"
         rows="3"
         id="comment"
         name="comment"
@@ -95,12 +93,13 @@
       <input type="reset" value="Reset" />
       <input type="submit" value="Submit" />
     </p>
-  </form>
+  </ValidateForm>
 
   <pre>{{ userData }}</pre>
 </template>
 
 <script>
+import { Form } from "vee-validate";
 import VAddableCheckbox from "../components/v-addable-checkbox.vue";
 import vCheckboxes from "../components/v-checkboxes.vue";
 import VFileImage from "../components/v-file-image.vue";
@@ -112,6 +111,7 @@ import VTags from "../components/v-tags.vue";
 
 export default {
   components: {
+    ValidateForm: Form,
     vInput,
     vRadios,
     vCheckboxes,
@@ -144,23 +144,26 @@ export default {
     onReset() {
       this.userData = this.initialData;
     },
+    onSubmit() {
+      console.log(this.userData);
+    },
   },
   computed: {
     initialData() {
       return {
         name: "louis",
-        tel: null,
-        date: null,
-        time: null,
+        tel: "098812****",
+        date: "2021-03-12",
+        time: "15:15",
         gender: null,
-        interests: [],
-        tags: [],
-        location: null,
-        age: null,
-        email: null,
-        password: null,
-        feeling: null,
-        comment: null,
+        interests: ["寫程式"],
+        tags: ["#VITEABIT"],
+        location: "Tainan",
+        age: "18",
+        email: "louis222220@gmail.com",
+        password: "myPassword123IsABadPassword",
+        feeling: "7",
+        comment: "Hello\nWorld",
         photos: [],
       };
     },

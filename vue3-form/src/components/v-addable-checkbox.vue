@@ -4,6 +4,7 @@
     :label="label"
     :options="options"
     :name="name"
+    :isRequired="isRequired"
   />
   <input v-model="newOption" type="text" @submit.prevent="addOption" />
   <button type="button" @click="addOption">{{ buttonLabel }}</button>
@@ -20,6 +21,7 @@ export default {
       type: Array,
       required: true,
     },
+    isRequired: Boolean,
     label: {
       type: String,
       required: true,

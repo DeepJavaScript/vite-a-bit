@@ -444,6 +444,11 @@ util-deprecate@^1.0.2:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
+vee-validate@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-4.2.2.tgz#5ef1f693af13d82b6975276a24c664765a78137d"
+  integrity sha512-YSs9YtmrdeipBLfM0xt/rvWHWqAbFe5L//baFFPPJbeMTBYBnV+YV77l8gG74xSZtpCu25o4Loyszntd6R17/w==
+
 vite@^2.0.0-beta.12:
   version "2.0.0-beta.30"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.30.tgz#d0c1056d1fb05c489614360f92363eebec41a6b4"

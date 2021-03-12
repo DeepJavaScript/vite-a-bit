@@ -1,5 +1,9 @@
 # Vue 3 - Form
 
+## [Demo](https://deepjavascript.github.io/vite-a-bit/vue3-form/louis/)
+
+## Version
+
 - [Native HTML form with Vue 3](https://github.com/DeepJavaScript/vite-a-bit/tree/20210115.louis.vue3-form.2/vue3-form)
 - [Wrap with Vue 3 Component](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form)
   - v-input
@@ -10,6 +14,10 @@
   - v-select
   - v-password
   - v-file-image
+- [Validate with Vee-Validate for Vue 3](https://github.com/DeepJavaScript/vite-a-bit/tree/20210312.louis.vue3-form.4/vue3-form)
+  - v-input
+  - v-radios
+  - v-checkboxes
 
 ---
 
@@ -112,3 +120,10 @@ export default {
 </script>
 
 ```
+
+---
+
+## 看不懂
+
+- [Validation Metadata](https://vee-validate.logaretm.com/v4/guide/components/validation#validation-metadata)
+- v-slot

@@ -1,20 +1,31 @@
 <template>
   <div>
     <label :for="name">{{ label }}: </label>
-    <input
-      :value="modelValue"
+    <Field
       :type="inputType"
       :id="name"
-      @input="$emit('update:modelValue', $event.target.value)"
+      :name="name"
+      :value="modelValue"
+      :label="label"
       v-bind="$attrs"
+      :rules="Validate"
+      @input="$emit('update:modelValue', $event.target.value)"
     />
+    <ErrorMessage :name="name" />
   </div>
 </template>
 
 <script>
+import { ErrorMessage, Field } from "vee-validate";
+
 export default {
+  components: {
+    Field,
+    ErrorMessage,
+  },
   props: {
     modelValue: [String, Number],
+    isRequired: Boolean,
     inputType: {
       type: String,
       required: true,
@@ -28,8 +39,14 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {};
+  methods: {
+    Validate(value) {
+      if (this.isRequired) {
+        if (value != null && (value || value.trim())) return true;
+        return "This is required";
+      }
+      return true;
+    },
   },
 };
 </script>
