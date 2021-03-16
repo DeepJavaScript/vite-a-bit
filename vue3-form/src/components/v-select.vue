@@ -5,8 +5,7 @@
       {{ label }}
       <Field v-bind="$attrs" v-slot="{ field }">
         <select
-          v-bind="{ ...field, ...$attrs }"
-          name="location"
+          v-bind="field"
           :value="modelValue"
           @change="$emit('update:modelValue', $event.target.value)"
         >

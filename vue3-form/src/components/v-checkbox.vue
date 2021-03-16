@@ -6,12 +6,7 @@
     >
     <label :key="index" v-for="(item, index) in options">
       <Field v-bind="$attrs" v-slot="{ field }">
-        <input
-          v-bind="{ ...field, ...$attrs }"
-          type="checkbox"
-          :value="item"
-          v-model="value"
-        />
+        <input v-bind="field" type="checkbox" :value="item" v-model="value" />
       </Field>
       <!-- <Field v-bind="$attrs" type="checkbox" :value="item" v-model="value" /> -->
       {{ item }}

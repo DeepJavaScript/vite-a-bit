@@ -3,7 +3,7 @@
   <div class="right">
     <pre>{{ user }}</pre>
   </div>
-  <Form id="form" action="" @submit.prevent="onSubmit" @reset.prevent="onReset">
+  <Form id="form" action="" @submit="onSubmit" @reset="onReset">
     <VPhoto
       label="上傳照片"
       type="file"
@@ -27,6 +27,7 @@
       name="phone"
       :rules="isRequired"
       v-model="user.phone"
+      required
     ></VInput>
     <VInput
       label="日期"
@@ -34,6 +35,7 @@
       name="date"
       :rules="isRequired"
       v-model="user.date"
+      required
     ></VInput>
     <VInput
       label="時間"
@@ -41,13 +43,15 @@
       name="time"
       :rules="isRequired"
       v-model="user.time"
-    ></VInput>
+      required
+    />
     <VRadio
       label="性別"
       name="gender"
       :options="optionsGender"
       :rules="isRequired"
       v-model="user.gender"
+      required
     ></VRadio>
     <VAddText
       :options="optionsHobbies"
@@ -61,9 +65,10 @@
         name="hobbies"
         v-model="user.hobbies"
         :rules="isRequired"
+        required
       ></VCheckbox>
     </VAddText>
-    <VAddText v-model:options="user.labels" name="labels" text="標籤+">
+    <VAddText v-model:options="user.labels" name="labels" text="標籤+" required>
       <VLabel label="標籤" v-model="user.labels"></VLabel>
     </VAddText>
     <VSelect
@@ -72,6 +77,7 @@
       :options="optionsLocation"
       :rules="isRequired"
       v-model="user.location"
+      required
     >
       <option disabled :value="null">--</option>
     </VSelect>
@@ -81,6 +87,7 @@
       type="number"
       name="age"
       min="0"
+      required
       v-model.number="user.age"
       :rules="isRequired"
     ></VInput>
@@ -209,7 +216,7 @@ export default {
       return true;
     },
     onSubmit() {
-      console.lgo(this.user);
+      console.log(this.user);
     },
     onReset() {
       this.user = {

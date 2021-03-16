@@ -6,12 +6,7 @@
     </legend>
     <label :key="index" v-for="(item, index) in options">
       <Field v-bind="$attrs" v-slot="{ field }">
-        <input
-          v-bind="{ ...field, ...$attrs }"
-          type="radio"
-          :value="item"
-          v-model="value"
-        />
+        <input v-bind="field" type="radio" :value="item" v-model="value" />
       </Field>
       {{ item }}
     </label>

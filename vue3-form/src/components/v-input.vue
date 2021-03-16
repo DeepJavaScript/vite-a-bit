@@ -7,7 +7,7 @@
       </div>
       <Field v-bind="$attrs" v-slot="{ field }">
         <input
-          v-bind="{ ...field, ...$attrs }"
+          v-bind="field"
           :value="modelValue"
           @input="$emit('update:modelValue', $event.target.value)"
         />
