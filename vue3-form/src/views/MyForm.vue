@@ -104,6 +104,7 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
 import VAddableCheckbox from "../components/v-addable-checkbox.vue";
 import vCheckboxes from "../components/v-checkboxes.vue";
 import VFileImage from "../components/v-file-image.vue";
@@ -124,11 +125,11 @@ export default {
     vPassword,
     VFileImage,
   },
-  data() {
-    return {
-      userData: {},
-      interestOptions: ["寫程式", "看電影"],
-    };
+  setup() {
+    const userData = ref({});
+    const interestOptions = ref(["寫程式", "看電影"]);
+
+    return { userData, interestOptions };
   },
   created() {
     this.onReset();

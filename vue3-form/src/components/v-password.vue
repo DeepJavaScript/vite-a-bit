@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { computed, ref } from '@vue/runtime-core';
 import vInput from "./v-input.vue";
 export default {
   components: {
@@ -28,10 +29,12 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      isPasswordShown: false,
-    };
+  setup() {
+    const isPasswordShown = ref(false);
+    const passwordType = computed(() => {
+      return isPasswordShown === true ? "text" : "password";
+    })
+    return { isPasswordShown, passwordType };
   },
   computed: {
     value: {
@@ -41,9 +44,6 @@ export default {
       get() {
         return this.modelValue;
       },
-    },
-    passwordType() {
-      return this.isPasswordShown ? "text" : "password";
     },
   },
 };
