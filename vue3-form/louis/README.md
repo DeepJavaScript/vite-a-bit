@@ -7,4 +7,7 @@
      - v-input
      - v-radios
      - v-checkboxes
+  4. [Composition API](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form)
+    - [useTag](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/compositions/useTags.js) for [v-tags](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/components/v-tags.vue)
+    - [v-file-image](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/components/v-file-image.vue)
 - [Demo of latest version](https://deepjavascript.github.io/vite-a-bit/vue3-form/louis/)

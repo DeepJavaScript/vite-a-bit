@@ -1,12 +1,17 @@
 <template>
-  <ValidateForm id="myForm" @reset="onReset" @submit="onSubmit">
+  <form
+    id="myForm"
+    action=""
+    @reset.prevent="onReset"
+    @submit.prevent="onSubmit"
+  >
     <v-input
       v-model="userData.name"
       inputType="text"
       label="名字"
       name="name"
-      :isRequired="true"
     />
+    <!-- :isRequired="true" -->
     <v-input v-model="userData.tel" inputType="tel" label="電話" name="tel" />
     <v-input
       v-model="userData.date"
@@ -24,21 +29,21 @@
       v-model="userData.gender"
       label="性別"
       name="gender"
-      :isRequired="true"
       :options="[
         { label: '生理男', value: 'male' },
         { label: '生理女', value: 'female' },
         { label: '多元', value: 'others' },
       ]"
     />
+    <!-- :isRequired="true" -->
     <v-addable-checkbox
       v-model="userData.interests"
       v-model:options="interestOptions"
       label="興趣"
       buttonLabel="新增興趣"
       name="interests"
-      :isRequired="true"
     />
+    <!-- :isRequired="true" -->
     <v-tags v-model="userData.tags" label="標籤" buttonLabel="新增標籤" />
 
     <v-select
@@ -93,13 +98,12 @@
       <input type="reset" value="Reset" />
       <input type="submit" value="Submit" />
     </p>
-  </ValidateForm>
+  </form>
 
   <pre>{{ userData }}</pre>
 </template>
 
 <script>
-import { Form } from "vee-validate";
 import VAddableCheckbox from "../components/v-addable-checkbox.vue";
 import vCheckboxes from "../components/v-checkboxes.vue";
 import VFileImage from "../components/v-file-image.vue";
@@ -111,7 +115,6 @@ import VTags from "../components/v-tags.vue";
 
 export default {
   components: {
-    ValidateForm: Form,
     vInput,
     vRadios,
     vCheckboxes,
@@ -125,26 +128,17 @@ export default {
     return {
       userData: {},
       interestOptions: ["寫程式", "看電影"],
-      newInterest: "",
-      newTag: "",
     };
   },
   created() {
     this.onReset();
   },
   methods: {
-    onPhotoChange(event) {
-      const files = [...event.target.files];
-      this.userData.photos = files.map((file) => {
-        return {
-          url: URL.createObjectURL(file),
-        };
-      });
-    },
     onReset() {
-      this.userData = this.initialData;
+      this.userData = { ...this.initialData };
     },
     onSubmit() {
+      console.log('userData:');
       console.log(this.userData);
     },
   },

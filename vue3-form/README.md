@@ -6,18 +6,23 @@
 
 - [Native HTML form with Vue 3](https://github.com/DeepJavaScript/vite-a-bit/tree/20210115.louis.vue3-form.2/vue3-form)
 - [Wrap with Vue 3 Component](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form)
-  - v-input
-  - v-radios
-  - v-checkboxes
-  - v-addable-checkboxes
-  - v-tags
-  - v-select
-  - v-password
-  - v-file-image
+  - [v-input](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-input.vue)
+  - [v-radios](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-radios.vue)
+  - [v-checkboxes](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-checkboxes.vue)
+  - [v-addable-checkboxes](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-addable-checkboxes.vue)
+  - [v-tags](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-tags.vue)
+  - [v-select](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-select.vue)
+  - [v-password](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-password.vue)
+  - [v-file-image](https://github.com/DeepJavaScript/vite-a-bit/tree/20210219.louis.vue3-form.3/vue3-form/src/components/v-file-image.vue)
 - [Validate with Vee-Validate for Vue 3](https://github.com/DeepJavaScript/vite-a-bit/tree/20210312.louis.vue3-form.4/vue3-form)
-  - v-input
-  - v-radios
-  - v-checkboxes
+  - [v-input](https://github.com/DeepJavaScript/vite-a-bit/tree/20210312.louis.vue3-form.4/vue3-form/src/components/v-input.vue)
+  - [v-radios](https://github.com/DeepJavaScript/vite-a-bit/tree/20210312.louis.vue3-form.4/vue3-form/src/components/v-radios.vue)
+  - [v-checkboxes](https://github.com/DeepJavaScript/vite-a-bit/tree/20210312.louis.vue3-form.4/vue3-form/src/components/v-checkboxes.vue)
+
+- [Composition API](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form)
+  - [useTag](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/compositions/useTags.js) for [v-tags](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/components/v-tags.vue)
+  - [v-file-image](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/components/v-file-image.vue)
+
 
 ---
 
@@ -46,6 +51,7 @@ export default {
 ```
 
 ---
+
 ## Problems
 
 ### `Math.random()`
@@ -123,7 +129,23 @@ export default {
 
 ---
 
+### Composition 傳入 props / props.property (Array)
+
+v-tags 如果把傳入的參數從 props 改成 props.modelValue (type: Array)
+會造成新增有問題
+
 ## 看不懂
 
-- [Validation Metadata](https://vee-validate.logaretm.com/v4/guide/components/validation#validation-metadata)
-- v-slot
+- Vee-Validate
+  - [Validation Metadata](https://vee-validate.logaretm.com/v4/guide/components/validation#validation-metadata)
+- Composition API
+  - [Template Refs](https://v3.vuejs.org/guide/composition-api-template-refs.html)
+- Reactivity
+  - [Ref Unwrapping](https://v3.vuejs.org/guide/reactivity-fundamentals.html#ref-unwrapping)
+  - [Side Effect Invalidation](https://v3.vuejs.org/guide/reactivity-computed-watchers.html#side-effect-invalidation)
+
+- [`h` function](https://v3.vuejs.org/guide/composition-api-setup.html#usage-with-templates) 是什麼用途？
+- composition 傳出來的 ref 要如何被 <input> 的 v-model 使用？
+  - [v-password](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.tmp/vue3-form/src/components/v-password.vue)
+  - [MyForm](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.tmp/vue3-form/src/views/MyForm.vue)
+

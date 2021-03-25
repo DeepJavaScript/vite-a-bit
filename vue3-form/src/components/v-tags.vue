@@ -1,49 +1,43 @@
 <template>
   <div>
-		<span>{{ label }}: </span>
+    <span>{{ label }}: </span>
     <span v-for="(tag, index) of modelValue" :key="index">
       <span>{{ tag }}</span>
       <span @click="removeTag(index)">&nbsp;ˣ</span>
       &nbsp;&nbsp;
     </span>
-    <input type="text" v-model="newTag" @submit.prevent="addTag" @keypress="onEnter" />
+    <input
+      type="text"
+      v-model="newTag"
+      @submit.prevent="addTag"
+      @keypress.enter.prevent="addTag"
+    />
     <button type="button" @click="addTag">{{ buttonLabel }}</button>
   </div>
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
+import useTags from "../compositions/useTags";
+
 export default {
   props: {
     modelValue: {
       type: Array,
       required: true,
     },
-		label: {
-			type: String,
-			required: true,
-		},
+    label: {
+      type: String,
+      required: true,
+    },
     buttonLabel: {
       type: String,
       default: "Add",
     },
   },
-  data() {
-    return {
-      newTag: "",
-    };
-  },
-  methods: {
-		onEnter(event) {
-			if (event.keyCode === 13) this.addTag();
-		},
-    addTag() {
-			const newTag = this.newTag.trim();
-			if (newTag) this.modelValue.push(newTag);
-      this.newTag = "";
-    },
-    removeTag(index) {
-      this.modelValue.splice(index, 1);
-    },
+  setup(props, context) {
+    const { newTag, addTag, removeTag } = useTags(props, context);
+    return { newTag, addTag, removeTag };
   },
 };
 </script>

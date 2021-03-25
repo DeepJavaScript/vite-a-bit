@@ -39,22 +39,18 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      // images: null,
-    };
-  },
-  methods: {
-    onImageChange(event) {
+  setup(props, { emit }) {
+    const onImageChange = (event) => {
       const files = [...event.target.files];
       const images = files.map((file) => {
         return {
           url: URL.createObjectURL(file),
         };
       });
-      this.$emit("update:modelValue", images);
-    },
-  },
+      emit("update:modelValue", images);
+    }
+    return { onImageChange };
+  }
 };
 </script>
 
