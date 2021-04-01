@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
 import useTags from "../compositions/useTags";
 
 export default {
@@ -36,7 +35,7 @@ export default {
     },
   },
   setup(props, context) {
-    const { newTag, addTag, removeTag } = useTags(props, context);
+    const { newTag, addTag, removeTag } = useTags(props.modelValue, context);
     return { newTag, addTag, removeTag };
   },
 };

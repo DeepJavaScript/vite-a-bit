@@ -1,16 +1,18 @@
 import { ref } from "@vue/reactivity";
 
-export default function useTags(props, { emit }) {
+export default function useTags({ modelValue }, { emit }) {
+	console.log(modelValue); // modelValue: undefined
+
 	const newTag = ref("");
 
 	const addTag = () => {
 		const tagStr = newTag.value.trim();
-		if (tagStr) emit('update:modelValue', [...props.modelValue, tagStr]);
+		if (tagStr) emit('update:modelValue', [...modelValue, tagStr]);
 		newTag.value = '';
 	}
 
 	const removeTag = (index) => {
-		emit('update:modelValue', props.modelValue.filter(((str, i) => i != index)));
+		emit('update:modelValue', modelValue.filter(((str, i) => i != index)));
 	}
 
 	const onEnter = (event) => {
