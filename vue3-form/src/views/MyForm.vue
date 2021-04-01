@@ -104,6 +104,7 @@
 </template>
 
 <script>
+import { ref, computed, reactive } from "vue";
 import VAddableCheckbox from "../components/v-addable-checkbox.vue";
 import vCheckboxes from "../components/v-checkboxes.vue";
 import VFileImage from "../components/v-file-image.vue";
@@ -124,26 +125,11 @@ export default {
     vPassword,
     VFileImage,
   },
-  data() {
-    return {
-      userData: {},
-      interestOptions: ["寫程式", "看電影"],
-    };
-  },
-  created() {
-    this.onReset();
-  },
-  methods: {
-    onReset() {
-      this.userData = { ...this.initialData };
-    },
-    onSubmit() {
-      console.log('userData:');
-      console.log(this.userData);
-    },
-  },
-  computed: {
-    initialData() {
+  setup() {
+    const userData = ref({});
+    const interestOptions = ref(["寫程式", "看電影"]);
+
+    const initialData = computed(() => {
       return {
         name: "louis",
         tel: "098812****",
@@ -160,7 +146,20 @@ export default {
         comment: "Hello\nWorld",
         photos: [],
       };
-    },
+    });
+
+    const onReset = () => {
+      userData.value = initialData.value;
+    };
+
+    const onSubmit = () => {
+      console.log("userData:");
+      console.log(userData.value);
+    };
+
+    onReset();
+
+    return { userData, interestOptions, initialData, onReset, onSubmit };
   },
 };
 </script>

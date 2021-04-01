@@ -22,7 +22,8 @@
 - [Composition API](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form)
   - [useTag](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/compositions/useTags.js) for [v-tags](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/components/v-tags.vue)
   - [v-file-image](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.5/vue3-form/src/components/v-file-image.vue)
-
+  - [v-password](https://github.com/DeepJavaScript/vite-a-bit/tree/20210409.louis.vue3-form.6/vue3-form/src/components/v-password.vue)
+  - [MyForm](https://github.com/DeepJavaScript/vite-a-bit/tree/20210409.louis.vue3-form.6/vue3-form/src/views/MyForm.vue)
 
 ---
 
@@ -129,23 +130,40 @@ export default {
 
 ---
 
-### Composition 傳入 props / props.property (Array)
-
-v-tags 如果把傳入的參數從 props 改成 props.modelValue (type: Array)
-會造成新增有問題
-
-## 看不懂
+## 疑問
 
 - Vee-Validate
-  - [Validation Metadata](https://vee-validate.logaretm.com/v4/guide/components/validation#validation-metadata)
+  - [Validatio Metadata](https://vee-validate.logaretm.com/v4/guide/components/validation#validation-metadata)
 - Composition API
   - [Template Refs](https://v3.vuejs.org/guide/composition-api-template-refs.html)
 - Reactivity
   - [Ref Unwrapping](https://v3.vuejs.org/guide/reactivity-fundamentals.html#ref-unwrapping)
   - [Side Effect Invalidation](https://v3.vuejs.org/guide/reactivity-computed-watchers.html#side-effect-invalidation)
+- 對 Composition 傳入 props.property
+  - [useTag](https://github.com/DeepJavaScript/vite-a-bit/tree/20210409.louis.vue3-form.bug2/vue3-form/src/compositions/useTags.js) for [v-tags](https://github.com/DeepJavaScript/vite-a-bit/tree/20210409.louis.vue3-form.bug2/vue3-form/src/components/v-tags.vue)
+    如果把傳入的參數從 props 改成 props.modelValue (type: Array)
+    會造成新增有問題
+    ```
+      // v-tags.vue
+      useTags(props.modelValue, context);
+    ```
+    ```
+      // useTags.js
+      export default function useTags({ modelValue }, { emit }) {
+        console.log(modelValue); // modelValue: undefined
 
-- [`h` function](https://v3.vuejs.org/guide/composition-api-setup.html#usage-with-templates) 是什麼用途？
-- composition 傳出來的 ref 要如何被 <input> 的 v-model 使用？
-  - [v-password](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.tmp/vue3-form/src/components/v-password.vue)
-  - [MyForm](https://github.com/DeepJavaScript/vite-a-bit/tree/20210326.louis.vue3-form.tmp/vue3-form/src/views/MyForm.vue)
+        const addTag = () => {
+          const tagStr = newTag.value.trim();
+          if (tagStr) emit('update:modelValue', [...modelValue, tagStr]);
+          newTag.value = '';
+        }
+      }
+    ```
 
+    Error message
+    ```
+      [Vue warn]: Unhandled error during execution of native event handler 
+      at <VTags modelValue= ["#VITEABIT"] onUpdate:modelValue=fn label="標籤"  ... > 
+
+      Uncaught TypeError: modelValue is not iterable
+    ```
