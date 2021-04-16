@@ -35,7 +35,7 @@ export default {
     },
   },
   setup(props, context) {
-    const { newTag, addTag, removeTag } = useTags(props.modelValue, context);
+    const { newTag, addTag, removeTag } = useTags(props, context);
     return { newTag, addTag, removeTag };
   },
 };
